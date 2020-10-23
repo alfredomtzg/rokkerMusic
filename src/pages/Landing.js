@@ -31,21 +31,25 @@ const LandingSignUpButton = styled.div`
   justify-self: center; 
 `
 
-export default function Landing() {
-  return (
-    <MainContainer dark>
-      <MainLanding>
-        <LandingLogo>
-          
-        </LandingLogo>
-        <LandingLoginButtons>
-          
-        </LandingLoginButtons>
-        <LandingSignUpButton>
-          
-        </LandingSignUpButton>
-      </MainLanding>
-    </MainContainer>
-  )
+class Landing extends React.Component {
+  render() {
+    return (
+      <MainContainer dark>
+        <MainLanding>
+          <LandingLogo>
+            
+          </LandingLogo>
+          <LandingLoginButtons>
+            
+          </LandingLoginButtons>
+          <LandingSignUpButton>
+            
+          </LandingSignUpButton>
+        </MainLanding>
+      </MainContainer>
+    )
+  }
 }
+
+export default Landing
 
