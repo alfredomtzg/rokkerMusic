@@ -12,9 +12,13 @@ export const TopTextBox = styled.div`
   text-align: center;
   color: #FAFBFC;
 `
+export const FormBox = styled.main`
+  display: flex;
+  justify-content: center;
+`
 
 export const NextButtonBox = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 3vh 0 6vh;
-` 
+`

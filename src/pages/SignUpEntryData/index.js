@@ -1,7 +1,6 @@
 import React from 'react'
 import MainContainer from '../../containers/MainContainer'
-import {EntryDataForm } from './style'
-import { TopBar, TopTextBox, NextButtonBox } from '../Globals/GlobalStyle'
+import { TopBar, TopTextBox, NextButtonBox, FormBox } from '../Globals/GlobalStyle'
 
 const SignUpEntryData = () => {
   return(
@@ -11,9 +10,9 @@ const SignUpEntryData = () => {
         <h2>Welcome!</h2>
         <h5>Ready to rock with us?</h5>
       </TopTextBox>
-      <EntryDataForm>
-        
-      </EntryDataForm>
+      <FormBox>
+
+      </FormBox>
       <NextButtonBox>
         
       </NextButtonBox>
