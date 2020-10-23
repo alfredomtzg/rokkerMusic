@@ -41,3 +41,16 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 `
+
+export const Colors = {
+  facebookInactive: "#1A77F2",
+  facebookActive: "#005AD1",
+  R500: "#F51E38",
+  R400: "#FF5A6E",
+  B400: "#6A57F1",
+  B500: "#3E2AD1",
+  G100: "#FAFBFC",
+  G200: "#F4F5F7",
+  G400: "#B3BAC5",
+  G700: "#091E42",
+}
