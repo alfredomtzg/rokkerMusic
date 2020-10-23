@@ -1,13 +1,11 @@
 import React from 'react'
-import { GlobalStyle } from '../../components/styles/globals'
 import MainContainer from '../../containers/MainContainer'
 import { TopBar, TopTextBox, NextButtonBox } from '../Globals/GlobalStyle'
 import {AvatarsGrid} from './style'
 
 const SingUpPickAvatar = () => {
   return(
-    <MainContainer dark>
-      <GlobalStyle/>        
+    <MainContainer dark>        
       <TopBar/>
       <TopTextBox>
         <h2>Mike</h2>

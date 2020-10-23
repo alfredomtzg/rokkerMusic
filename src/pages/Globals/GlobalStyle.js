@@ -5,12 +5,12 @@ export const TopBar = styled.header`
   justify-content: center;
 `
 export const TopTextBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5vh;
   margin: 6vh 0 9vh;
+  text-align: center;
   color: #FAFBFC;
-  font-family: 'Source Sans Pro', Helvetica, sans-serif;
 `
 
 export const NextButtonBox = styled.div`

@@ -1,18 +1,15 @@
 import React from 'react'
 import MainContainer from '../../containers/MainContainer'
-import {WelcomeSubTitle, WelcomeTitle, EntryDataForm } from './style'
+import {EntryDataForm } from './style'
 import { TopBar, TopTextBox, NextButtonBox } from '../Globals/GlobalStyle'
-import { GlobalStyle } from '../../components/styles/globals'
-
 
 const SignUpEntryData = () => {
   return(
     <MainContainer dark>
-      <GlobalStyle/>
       <TopBar/>
       <TopTextBox>
-        <WelcomeTitle>Welcome!</WelcomeTitle>
-        <WelcomeSubTitle>Ready to rock with us?</WelcomeSubTitle>
+        <h2>Welcome!</h2>
+        <h5>Ready to rock with us?</h5>
       </TopTextBox>
       <EntryDataForm>
         
