@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Colors} from '../../components/styles/globals'
 
 export const TopBar = styled.header`
   display: flex;
@@ -18,7 +19,7 @@ export const TopTextBox = styled.div`
   gap: 1.5vh;
   margin: 6vh 0 9vh;
   text-align: center;
-  color: #FAFBFC;
+  color: ${Colors.G100};
 `
 export const FormBox = styled.main`
   display: flex;
