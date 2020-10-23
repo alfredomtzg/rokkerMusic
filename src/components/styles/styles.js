@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 // init Component Login styles
 
 // Form Style
@@ -11,7 +12,7 @@ width:400px;
 `
 // Label style
 export const TextLabel = styled.label`
-text-align:left
+text-align:left;
 `
 
 // Input Style
