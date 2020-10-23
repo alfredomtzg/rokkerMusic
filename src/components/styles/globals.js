@@ -1,9 +1,9 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   
   body {
-    font-family: Helvetica;
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     font-size: 10px;
   }
