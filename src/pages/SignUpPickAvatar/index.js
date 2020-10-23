@@ -1,25 +1,26 @@
 import React from 'react'
+import { GlobalStyle } from '../../components/styles/globals'
 import MainContainer from '../../containers/MainContainer'
-import {WelcomeSubTitle, WelcomeTitle, EntryDataForm } from './style'
 import { TopBar, TopTextBox, NextButtonBox } from '../Globals/GlobalStyle'
+import {AvatarsGrid} from './style'
 
-
-const SignUpEntryData = () => {
+const SingUpPickAvatar = () => {
   return(
     <MainContainer dark>
+      <GlobalStyle/>        
       <TopBar/>
       <TopTextBox>
-        <WelcomeTitle>Welcome!</WelcomeTitle>
-        <WelcomeSubTitle>Ready to rock with us?</WelcomeSubTitle>
+        <h2>Mike</h2>
+        <h5>Pick your avatar</h5>
       </TopTextBox>
-      <EntryDataForm>
+      <AvatarsGrid>
         
-      </EntryDataForm>
+      </AvatarsGrid>
       <NextButtonBox>
-        
+
       </NextButtonBox>
     </MainContainer>
   )
 }
 
-export default SignUpEntryData;
+export default SingUpPickAvatar
