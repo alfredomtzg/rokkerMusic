@@ -9,7 +9,6 @@ export const StyledButton = styled.button`
   font-weight: 400;
 `;
 export const StyledFacebookButton = styled(StyledButton)`
-  font-size: 18px;
   background: #1a77f2;
   color: #fff;
   &:active {
@@ -17,17 +16,23 @@ export const StyledFacebookButton = styled(StyledButton)`
   }
 `;
 export const StyledGoogleButton = styled(StyledButton)`
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
   background: #fff;
-  border: 0.5px solid #b3bac5;
-  font-size: 16px;
+  border: 0.05rem solid #b3bac5;
   color: #7a869a;
   &:active {
     background: #FAFBFC;
   }
 `;
+export const StyledImgGoogleButton=styled.image`
+  width:30px;
+  height:30px;
+  background:red;
+`;
 export const StyledLoginButton = styled(StyledButton)`
   background: #FF5A6E;
-  font-size:18px;
   color: #FAFBFC;
   &:active {
     background: #F51E38;
@@ -35,14 +40,12 @@ export const StyledLoginButton = styled(StyledButton)`
 `;
 export const StyledSignupButton = styled(StyledButton)`
   background: #6A57F1;
-  font-size: 18px;
   color: #FAFBFC;
   &:active {
     background: #3E2AD1;
   }
 `;
-export const StyledNextButton = styled(StyledLoginButton)`
+ export const StyledNextButton = styled(StyledLoginButton)`
   width:138px;
-  font-size: 18px;
   color: #FAFBFC;
-`;
+`; 
