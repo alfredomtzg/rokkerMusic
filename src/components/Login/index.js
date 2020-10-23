@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FormContainer, TextLabel, TextInput } from './styles/styles'
+import { FormContainer, TextLabel, TextInput } from '../styles/styles'
 
 export default function Login() {
   // Login Values
