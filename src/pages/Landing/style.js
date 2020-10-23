@@ -7,13 +7,6 @@ export const MainLanding = styled.main`
   grid-template-rows: 35vh 35vh 30vh;
 `
 
-export const LandingLogo = styled.figure`
-  display: flex;
-  justify-self: center;
-  align-self: flex-end;
-  margin: 0;
-`
-
 export const LandingLoginButtons = styled.section`
   display: flex;
   flex-direction: column;
