@@ -1,12 +1,10 @@
 import React from 'react';
 
-
-
 function App() {
   return (
-    <>
-      Music app
-    </>
+    <div className="App">
+      Music App
+    </div>
   );
 }
 
