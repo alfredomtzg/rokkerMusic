@@ -7,4 +7,4 @@ const MainContainer = styled.div`
   background-color: ${props => props.dark ? Colors.G700 : Colors.G100};
 `
 
-export default MainContainer;
+export default MainContainer; 

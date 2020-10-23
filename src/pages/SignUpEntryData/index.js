@@ -5,7 +5,9 @@ import { TopBar, TopTextBox, NextButtonBox, FormBox } from '../Globals/GlobalSty
 const SignUpEntryData = () => {
   return(
     <MainContainer dark>
-      <TopBar/>
+      <TopBar>
+        
+      </TopBar>
       <TopTextBox>
         <h2>Welcome!</h2>
         <h5>Ready to rock with us?</h5>
