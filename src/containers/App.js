@@ -6,11 +6,6 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <GoogleButton />
-      <FacebookButton/>
-      <SignupButton/>
-      <LoginButton/>
-      <NextButton/>
       <h1>Music App</h1>
     </div>
   );
