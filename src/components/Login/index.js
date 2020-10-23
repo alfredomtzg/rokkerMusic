@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FormContainer, TextLabel, TextInput } from '../styles/styles'
+import { FormContainer, TextLabel, TextInput } from './styles'
 
 export default function Login() {
   // Login Values
@@ -24,20 +24,26 @@ export default function Login() {
     <FormContainer
       onSubmit={handleSubmitLogin}>
 
-      <TextLabel>Name</TextLabel>
+      <TextLabel>
+        <h4>Name</h4>
+      </TextLabel>
       <TextInput
         name="name"
         value={valuesLogin.name}
         onChange={handleChangeLogin} />
 
-      <TextLabel>E-mail</TextLabel>
+      <TextLabel>
+        <h4>E-mail</h4>
+      </TextLabel>
       <TextInput
         name="email"
         autoComplete="current-email"
         value={valuesLogin.email}
         onChange={handleChangeLogin} />
 
-      <TextLabel >Password</TextLabel>
+      <TextLabel >
+        <h4>Password</h4>
+      </TextLabel>
       <TextInput
         type="password"
         name="password"
@@ -45,15 +51,19 @@ export default function Login() {
         onChange={handleChangeLogin}
       />
 
-      <TextLabel >Confirm your password</TextLabel>
+      <TextLabel >
+        <h4>Confirm your password</h4>
+      </TextLabel>
       <TextInput
         type="password"
         name="confirmPassword"
         value={valuesLogin.confirmPassword}
         onChange={handleChangeLogin}
       />
-
-      <button type="submit" >Next</button>
+      {/* wait a style from Sergio */}
+      <button type="submit" >
+        <h5>Next</h5>
+      </button>
     </FormContainer>
   )
 }
