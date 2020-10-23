@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
 import { FormContainer, TextLabel, TextInput } from './styles'
 
-export default function Login() {
-  // Login Values
-  const [valuesLogin, setValuesLogin] = useState({
+export default function SignUp() {
+  // SignUp Values
+  const [valuesSignUp, setValuesSignUp] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   })
-  // function handleChange to Login
+  // function handleChange to SignUp
   const handleChangeLogin = (event) => {
-    setValuesLogin({ ...valuesLogin, [event.target.name]: event.target.value })
+    setValuesSignUp({ ...valuesSignUp, [event.target.name]: event.target.value })
   }
 
   // Function HandleSubmitLogin
   const handleSubmitLogin = (event) => {
     event.preventDefault();
-    console.log(valuesLogin);
+    console.log(valuesSignUp);
   }
 
   return (
@@ -29,7 +29,7 @@ export default function Login() {
       </TextLabel>
       <TextInput
         name="name"
-        value={valuesLogin.name}
+        value={valuesSignUp.name}
         onChange={handleChangeLogin} />
 
       <TextLabel>
@@ -38,7 +38,7 @@ export default function Login() {
       <TextInput
         name="email"
         autoComplete="current-email"
-        value={valuesLogin.email}
+        value={valuesSignUp.email}
         onChange={handleChangeLogin} />
 
       <TextLabel >
@@ -47,7 +47,7 @@ export default function Login() {
       <TextInput
         type="password"
         name="password"
-        value={valuesLogin.password}
+        value={valuesSignUp.password}
         onChange={handleChangeLogin}
       />
 
@@ -57,7 +57,7 @@ export default function Login() {
       <TextInput
         type="password"
         name="confirmPassword"
-        value={valuesLogin.confirmPassword}
+        value={valuesSignUp.confirmPassword}
         onChange={handleChangeLogin}
       />
       {/* wait a style from Sergio */}
