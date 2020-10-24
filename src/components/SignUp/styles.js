@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Colors } from '../styles/globals'
 
 // init Component Login styles
 
@@ -7,20 +7,18 @@ import styled from 'styled-components'
 export const FormContainer = styled.form`
 flex-direction: column;
 display:flex;
-width:400px;
-
+width: 33.5rem;
 `
 // Label style
 export const TextLabel = styled.label`
 text-align:left;
+color: ${Colors.G100}
 `
 
 // Input Style
 export const TextInput = styled.input`
-  /* Gray / G100 */
-background: #FAFBFC;
-/* Gray / G200 */
-border: 1px solid #F4F5F7;
+background: ${Colors.G100};
+border: 0.1rem solid ${Colors.G200};
 box-sizing: border-box;
-border-radius: 10px;
+border-radius: 1rem;
 `
