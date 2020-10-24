@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
+    margin:0;
   }
 
   h1 {
@@ -45,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Colors = {
   facebookInactive: "#1A77F2",
   facebookActive: "#005AD1",
+  white: "#ffffff",
   R500: "#F51E38",
   R400: "#FF5A6E",
   B400: "#6A57F1",
@@ -53,4 +55,5 @@ export const Colors = {
   G200: "#F4F5F7",
   G400: "#B3BAC5",
   G700: "#091E42",
+  G600: "#7a869a",
 }
