@@ -6,7 +6,9 @@ import {AvatarsGrid} from './style'
 const SingUpPickAvatar = () => {
   return(
     <MainContainer dark>        
-      <TopBar/>
+      <TopBar>
+        
+      </TopBar>
       <TopTextBox>
         <h2>Mike</h2>
         <h5>Pick your avatar</h5>

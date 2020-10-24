@@ -9,8 +9,8 @@ const SignUpEntryData = () => {
         
       </TopBar>
       <TopTextBox>
-        <h2>Welcome!</h2>
-        <h5>Ready to rock with us?</h5>
+        <h2>And Mike,</h2>
+        <h5>So we can serve you better</h5>
       </TopTextBox>
       <FormBox>
 
