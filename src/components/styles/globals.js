@@ -41,7 +41,19 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     font-weight: 400;
   }
-  i{
-    color:rgb(245,30,56);
-  }
 `
+
+export const Colors = {
+  facebookInactive: "#1A77F2",
+  facebookActive: "#005AD1",
+  white: "#ffffff",
+  R500: "#F51E38",
+  R400: "#FF5A6E",
+  B400: "#6A57F1",
+  B500: "#3E2AD1",
+  G100: "#FAFBFC",
+  G200: "#F4F5F7",
+  G400: "#B3BAC5",
+  G700: "#091E42",
+  G600: "#7a869a",
+}

@@ -6,9 +6,11 @@ import {
   StyledLoginButton,
   StyledNextButton,
   StyledImgGoogleButton,
+  
 } from "./style";
 
 import  '../../assets/fonts/coolicons.css'
+import logoG from '../../assets/fonts/icons/btn_google_light_normal_ios.svg'
 
 export const FacebookButton = () => {
   return (
@@ -21,9 +23,7 @@ export const FacebookButton = () => {
 export const GoogleButton = () => {
   return (
     <StyledGoogleButton>
-      <StyledImgGoogleButton >
-        <i className="ci-google"></i>
-      </StyledImgGoogleButton>
+      <StyledImgGoogleButton src={logoG} />
       <h6>Sign in with Google</h6>
     </StyledGoogleButton>
   );

@@ -1,52 +1,52 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
+import { Colors } from "../styles/globals";
 
 export const StyledButton = styled.button`
   display: flex;
-  justify-content:center;
-  align-items:center;
-  width: 237px;
-  height: 45px;
-  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 23, 7rem;
+  height: 4, 5rem;
+  border-radius: 1rem;
   outline: none;
   border: none;
-  font-weight: 400;
 `;
 export const StyledFacebookButton = styled(StyledButton)`
-  background: #1a77f2;
-  color: #fff;
+  background: ${Colors.facebookInactive};
+  color: ${Colors.white};
   &:active {
-    background: #005ad1;
+    background: ${Colors.facebookActive};
   }
 `;
 export const StyledGoogleButton = styled(StyledButton)`
   justify-content: space-around;
-  background: #fff;
-  border: 0.05rem solid #b3bac5;
-  color: #7a869a;
+  background: ${Colors.white};
+  border: 0.05rem solid ${Colors.G400};
+  color: ${Colors.G600};
   &:active {
-    background: #fafbfc;
+    background: ${Colors.G100};
   }
 `;
-export const StyledImgGoogleButton = styled.i`
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
+export const StyledImgGoogleButton = styled.img`
+  width: 3rem;
+  height: 3rem;
+  background-size: cover;
 `;
 export const StyledLoginButton = styled(StyledButton)`
-  background: #ff5a6e;
-  color: #fafbfc;
+  background: ${Colors.R400};
+  color: ${Colors.G100};
   &:active {
-    background: #f51e38;
+    background: ${Colors.R500};
   }
 `;
 export const StyledSignupButton = styled(StyledButton)`
-  background: #6a57f1;
-  color: #fafbfc;
+  background: ${Colors.B400};
+  color: ${Colors.G100};
   &:active {
-    background: #3e2ad1;
+    background: ${Colors.B500};
   }
 `;
 export const StyledNextButton = styled(StyledLoginButton)`
-  width: 138px;
-  color: #fafbfc;
+  width: 13, 8rem;
+  color: ${Colors.G100};
 `;

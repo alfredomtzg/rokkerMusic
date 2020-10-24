@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-
-document.body.style.margin = 0;
+import {Colors} from '../components/styles/globals'
 
 const MainContainer = styled.div`
   min-height: 100vh;
   padding: 0 5vw;
-  margin: 0;
-  background-color: ${props => props.dark ? '#091E42' : '#FAFBFC'};
+  background-color: ${props => props.dark ? Colors.G700 : Colors.G100};
 `
 
-export default MainContainer;
+export default MainContainer; 
