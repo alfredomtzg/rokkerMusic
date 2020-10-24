@@ -1,6 +1,5 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import { GoogleButton,FacebookButton,SignupButton,LoginButton,NextButton } from "../components/Buttons/index";
 
 function App() {
   return (
