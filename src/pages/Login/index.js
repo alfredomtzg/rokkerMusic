@@ -1,20 +1,22 @@
 import React from 'react'
-import MainContainer from '../../containers/MainContainer';
+import {PageContainer, MainContainer } from '../../containers/LayoutContainers'
 import { FormBox, LandingLogoBox, LoginOrSendButtonBox } from '../Globals/GlobalStyle';
 
 const Login = () => {
   return (
-    <MainContainer dark>
-      <LandingLogoBox>
+    <PageContainer dark>
+      <MainContainer>
+        <LandingLogoBox>
+  
+        </LandingLogoBox>
+        <FormBox>
 
-      </LandingLogoBox>
-      <FormBox>
+        </FormBox>   
+        <LoginOrSendButtonBox>
 
-      </FormBox>   
-      <LoginOrSendButtonBox>
-
-      </LoginOrSendButtonBox>
-    </MainContainer>
+        </LoginOrSendButtonBox>
+      </MainContainer>
+    </PageContainer>
   )
 }
 

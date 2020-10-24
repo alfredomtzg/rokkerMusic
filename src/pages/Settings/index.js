@@ -1,27 +1,29 @@
 import React from 'react'
-import MainContainer from "../../containers/MainContainer"
+import {PageContainer, MainContainer } from '../../containers/LayoutContainers'
 import { TopBar, FormBox, MiniPlayerAndNavContainer } from '../Globals/GlobalStyle'
 import {UserAvatarBox, SettingsButtonsBox} from './style'
 
 const Settings = () => {
   return(
-    <MainContainer>
+    <PageContainer>
       <TopBar>
 
       </TopBar>
-      <UserAvatarBox>
-        
-      </UserAvatarBox>
-      <FormBox>
+      <MainContainer>
+        <UserAvatarBox>
+          
+        </UserAvatarBox>
+        <FormBox>
 
-      </FormBox>
-      <SettingsButtonsBox>        
-        
-      </SettingsButtonsBox>
+        </FormBox>
+        <SettingsButtonsBox>        
+          
+        </SettingsButtonsBox>
+      </MainContainer>
       <MiniPlayerAndNavContainer>
         
       </MiniPlayerAndNavContainer>
-    </MainContainer>
+    </PageContainer>
   )
 }
 
