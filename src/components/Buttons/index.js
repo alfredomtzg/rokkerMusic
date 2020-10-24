@@ -8,6 +8,8 @@ import {
   StyledImgGoogleButton,
 } from "./style";
 
+import  '../../assets/fonts/coolicons.css'
+
 export const FacebookButton = () => {
   return (
     <StyledFacebookButton>
@@ -19,7 +21,9 @@ export const FacebookButton = () => {
 export const GoogleButton = () => {
   return (
     <StyledGoogleButton>
-      <StyledImgGoogleButton></StyledImgGoogleButton>
+      <StyledImgGoogleButton >
+        <i className="ci-google"></i>
+      </StyledImgGoogleButton>
       <h6>Sign in with Google</h6>
     </StyledGoogleButton>
   );

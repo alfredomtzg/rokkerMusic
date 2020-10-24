@@ -41,4 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     font-weight: 400;
   }
+  i{
+    color:rgb(245,30,56);
+  }
 `

@@ -26,10 +26,14 @@ export const StyledGoogleButton = styled(StyledButton)`
     background: #FAFBFC;
   }
 `;
-export const StyledImgGoogleButton=styled.image`
+export const StyledImgGoogleButton=styled.i`
+  display:flex;
+  justify-content:center;
+  align-items:center;
   width:30px;
   height:30px;
-  background:red;
+  font-size:30px;
+
 `;
 export const StyledLoginButton = styled(StyledButton)`
   background: #FF5A6E;
