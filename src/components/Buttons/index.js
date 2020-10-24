@@ -10,12 +10,14 @@ import {
   StyledChangePassButton,
   StyledSingOutButton,
   StyledSaveButton,
-  StyledPlayButton
+  StyledPlayButton,
+  StyledImgPlayButton,
   
 } from "./style";
 
 import  '../../assets/fonts/coolicons.css'
 import logoG from '../../assets/fonts/icons/btn_google_light_normal_ios.svg'
+import playArrow from '../../assets/fonts/icons/play-arrow.svg'
 
 export const FacebookButton = () => {
   return (
@@ -87,6 +89,7 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
+      <StyledImgPlayButton src={playArrow}/>
       <h5>Play</h5>
     </StyledPlayButton>
   );
