@@ -37,3 +37,11 @@ export const LoginOrSendButtonBox = styled.div`
   justify-content: center;
   padding-top: 9vh;
 `
+
+export const MiniPlayerAndNavContainer = styled.footer`
+  position:fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+` 
