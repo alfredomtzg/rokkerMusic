@@ -1,12 +1,11 @@
 import React from 'react'
 import { GlobalStyle } from "../components/styles/globals";
-import PlaylistList from '../pages/PlaylistsList';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <PlaylistList></PlaylistList>
+      <h1>Music App</h1>
     </div>
   );
 }
