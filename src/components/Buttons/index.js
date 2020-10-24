@@ -6,6 +6,11 @@ import {
   StyledLoginButton,
   StyledNextButton,
   StyledImgGoogleButton,
+  StyledSendButton,
+  StyledChangePassButton,
+  StyledSingOutButton,
+  StyledSaveButton,
+  StyledPlayButton
   
 } from "./style";
 
@@ -44,11 +49,45 @@ export const LoginButton = () => {
     </StyledLoginButton>
   );
 };
-
+export const SendButton =()=>{
+  return(
+         <StyledSendButton>
+           <h5>Send</h5>
+         </StyledSendButton> 
+  )
+};
+export const ChangePassButton =()=>{
+  return(
+         <StyledChangePassButton>
+           <h5>Change Password</h5>
+         </StyledChangePassButton> 
+  )
+};
+export const SingOutButton =()=>{
+  return(
+         <StyledSingOutButton>
+           <h5>Sign Out</h5>
+         </StyledSingOutButton> 
+  )
+};
 export const NextButton = () => {
   return (
     <StyledNextButton>
       <h5>Next</h5>
     </StyledNextButton>
+  );
+};
+export const SaveButton = () => {
+  return (
+    <StyledSaveButton>
+      <h5>Save</h5>
+    </StyledSaveButton>
+  );
+};
+export const PlayButton = () => {
+  return (
+    <StyledPlayButton>
+      <h5>Play</h5>
+    </StyledPlayButton>
   );
 };
