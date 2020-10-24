@@ -5,11 +5,12 @@ export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 23, 7rem;
-  height: 4, 5rem;
+  width: 23.7rem;
+  height: 4.5rem;
   border-radius: 1rem;
   outline: none;
   border: none;
+  padding: 0;
 `;
 export const StyledFacebookButton = styled(StyledButton)`
   background: ${Colors.facebookInactive};
