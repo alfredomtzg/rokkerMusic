@@ -1,6 +1,7 @@
-import styled,{css} from "styled-components";
+import styled, { css } from "styled-components";
 import { Colors } from "../styles/globals";
 
+/*Const of buttons*/
 export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@ export const StyledButton = styled.button`
   border: none;
   padding: 0;
 `;
+/*Button particular characters*/
 export const StyledFacebookButton = styled(StyledButton)`
   background: ${Colors.facebookInactive};
   color: ${Colors.white};
@@ -47,7 +49,39 @@ export const StyledSignupButton = styled(StyledButton)`
     background: ${Colors.B500};
   }
 `;
-export const StyledNextButton = styled(StyledLoginButton)`
-  width: 13, 8rem;
+
+export const StyledSendButton = styled(StyledButton)`
+  background: ${Colors.R400};
   color: ${Colors.G100};
+  &:active {
+    background: ${Colors.R500};
+  }
+`;
+export const StyledChangePassButton = styled(StyledButton)`
+  background: ${Colors.R400};
+  color: ${Colors.G100};
+  &:active {
+    background: ${Colors.R500};
+  }
+`;
+export const StyledSingOutButton = styled(StyledButton)`
+  background: ${Colors.R400};
+  color: ${Colors.G100};
+  &:active {
+    background: ${Colors.R500};
+  }
+`;
+/*Buttons Mid*/
+export const StyledNextButton = styled(StyledLoginButton)`
+  width: 13.8rem;
+  color: ${Colors.G100};
+`;
+export const StyledSaveButton = styled(StyledNextButton)``;
+export const StyledPlayButton = styled(StyledNextButton)``;
+export const StyledImgPlayButton = styled.img`
+  width: 1.1rem;
+  height: 1.4rem;
+  background-size:cover;
+  position: absolute;
+  left: 1rem;
 `;
