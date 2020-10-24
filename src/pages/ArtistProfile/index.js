@@ -11,13 +11,13 @@ const ArtistProfile = () => {
       </TopBar>
       <MainContainer>
         <ArtistBox>
-          <h1>Test</h1>
+          
         </ArtistBox>
         <PlaylistContentBox>
-          <h1>Test</h1>
+          
         </PlaylistContentBox>
         <StatsBox>
-          <h1>Test</h1>
+          
         </StatsBox> 
       </MainContainer>
       <MiniPlayerAndNavContainer>
