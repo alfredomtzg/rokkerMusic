@@ -1,23 +1,25 @@
 import React from 'react'
-import MainContainer from '../../containers/MainContainer'
+import {PageContainer, MainContainer } from '../../containers/LayoutContainers'
 import {LandingLogoBox} from '../Globals/GlobalStyle'
 import {MainLanding, LandingLoginButtons, LandingSignUpButton} from './style'
 
 const Landing = () => {
   return (
-    <MainContainer dark>
-      <MainLanding>
-        <LandingLogoBox>
-          
-        </LandingLogoBox>
-        <LandingLoginButtons>
-          
-        </LandingLoginButtons>
-        <LandingSignUpButton>
-          
-        </LandingSignUpButton>
-      </MainLanding>
-    </MainContainer>
+    <PageContainer dark>  
+      <MainContainer>
+        <MainLanding>
+          <LandingLogoBox>
+            
+          </LandingLogoBox>
+          <LandingLoginButtons>
+            
+          </LandingLoginButtons>
+          <LandingSignUpButton>
+            
+          </LandingSignUpButton>
+        </MainLanding>
+      </MainContainer>
+    </PageContainer>
   )
 }
 
