@@ -45,14 +45,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     font-weight: 400;
   }
-<<<<<<< HEAD
   span{
     font-family:'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
   }
-=======
->>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8
 `;
 
 export const Colors = {
@@ -68,9 +65,6 @@ export const Colors = {
   G400: "#B3BAC5",
   G700: "#091E42",
   G600: "#7a869a",
-<<<<<<< HEAD
-=======
   S700: "#2E3A59",
   shadow: "3px 4px 9px 0px rgba(0, 0, 0, 0.15)",
->>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8
 };
