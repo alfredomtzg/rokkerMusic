@@ -2,14 +2,15 @@ import React from 'react'
 import { PageContainer } from '../../containers/LayoutContainers';
 import { FullPageCenterMsgBox } from '../Globals/GlobalStyle';
 
-const SettingsSignOut = () => {
+const Page404 = () => {
   return(
     <PageContainer dark>
       <FullPageCenterMsgBox>
-        <h1>Rokk you soon!</h1>
+        <h1>Oops!</h1>
+        <h5>Sometimes is better to turn backwards</h5>
       </FullPageCenterMsgBox>
     </PageContainer>
   )
 }
 
-export default SettingsSignOut;
+export default Page404;
