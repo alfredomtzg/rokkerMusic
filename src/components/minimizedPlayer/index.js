@@ -4,6 +4,7 @@ import {
   StyledMinimizedPlayer,
   StyledIconsLeft,
   StyledIconsRight,
+  StyledSongDescription,
 } from "./styles";
 
 export const MinimizedPlayer = () => {
@@ -11,10 +12,10 @@ export const MinimizedPlayer = () => {
     <StyledMinimizedPlayer>
       <StyledIconsLeft>
         <i className="ci-play_arrow"></i>
-        <div>
+        <StyledSongDescription>
           <h6>Song title</h6>
           <p>Artist</p>
-        </div>
+        </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
         <i className="ci-heart_outline"></i>
