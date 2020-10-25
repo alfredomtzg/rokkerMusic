@@ -5,7 +5,7 @@ import {
 } from "../../containers/LayoutContainers";
 import { MiniPlayerAndNavContainer, TopBar } from "../Globals/GlobalStyle";
 import { SearchBox } from "../Search/style";
-import { SearchResultsBox } from "./style";
+import SearchResultsBox from "./style";
 
 const SearchResults = () => {
   return (
