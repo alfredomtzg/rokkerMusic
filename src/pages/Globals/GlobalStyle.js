@@ -44,6 +44,15 @@ export const PlaylistContentBox = styled.section`
   margin-bottom: 5vh;
 `
 
+export const FullPageCenterMsgBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: ${Colors.G100};
+`
+
 export const MiniPlayerAndNavContainer = styled.footer`
   position:fixed;
   bottom: 0;
