@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-export const SearchResultsBox = styled.div`
+const SearchResultsBox = styled.div`
   margin-bottom: 5vh;
 `;
+
+export default SearchResultsBox;

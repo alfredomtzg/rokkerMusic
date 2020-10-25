@@ -13,15 +13,15 @@ import { CancelSaveBox, CreatePlaylistBox } from "./style";
 const PlaylistsCreate = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <CancelSaveBox></CancelSaveBox>
+        <CancelSaveBox />
         <CreatePlaylistBox>
           <h1>Create Playlist</h1>
         </CreatePlaylistBox>
-        <FormBox></FormBox>
+        <FormBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

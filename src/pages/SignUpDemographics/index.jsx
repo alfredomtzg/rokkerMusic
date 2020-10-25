@@ -13,14 +13,14 @@ import {
 const SignUpDemographics = () => {
   return (
     <PageContainer dark>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer dark>
         <TopTextBox>
           <h2>And Mike,</h2>
           <h5>So we can serve you better</h5>
         </TopTextBox>
-        <FormBox></FormBox>
-        <NextButtonBox></NextButtonBox>
+        <FormBox />
+        <NextButtonBox />
       </MainContainer>
     </PageContainer>
   );

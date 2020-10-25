@@ -12,7 +12,7 @@ import {
 const LoginRecoverPasswordSent = () => {
   return (
     <PageContainer dark>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
         <TopTextBox>
           <h2>Nice!</h2>
@@ -21,7 +21,7 @@ const LoginRecoverPasswordSent = () => {
             in your inbox you must receive <br />a new password
           </h5>
         </TopTextBox>
-        <LoginOrSendButtonBox></LoginOrSendButtonBox>
+        <LoginOrSendButtonBox />
       </MainContainer>
     </PageContainer>
   );

@@ -11,9 +11,9 @@ const Landing = () => {
     <PageContainer dark>
       <MainContainer>
         <MainLanding>
-          <LandingLogoBox></LandingLogoBox>
-          <LandingLoginButtons></LandingLoginButtons>
-          <LandingSignUpButton></LandingSignUpButton>
+          <LandingLogoBox />
+          <LandingLoginButtons />
+          <LandingSignUpButton />
         </MainLanding>
       </MainContainer>
     </PageContainer>

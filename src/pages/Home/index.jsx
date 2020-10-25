@@ -13,17 +13,17 @@ import { GreetingBox, FavoritesBox, RecommendPlaylistsBox } from "./style";
 const Home = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <GreetingBox></GreetingBox>
-        <FavoritesBox></FavoritesBox>
+        <GreetingBox />
+        <FavoritesBox />
         <h5>Recommended playlists</h5>
-        <RecommendPlaylistsBox></RecommendPlaylistsBox>
+        <RecommendPlaylistsBox />
         <h5>Playlists by genre</h5>
-        <RecommendPlaylistsBox></RecommendPlaylistsBox>
-        <PlaylistContentBox></PlaylistContentBox>
+        <RecommendPlaylistsBox />
+        <PlaylistContentBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

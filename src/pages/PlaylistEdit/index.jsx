@@ -14,13 +14,13 @@ import { PlaylistsBox } from "../PlaylistsList/style";
 const PlaylistEdit = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <CancelSaveBox></CancelSaveBox>
-        <PlaylistsBox></PlaylistsBox>
-        <PlaylistContentBox></PlaylistContentBox>
+        <CancelSaveBox />
+        <PlaylistsBox />
+        <PlaylistContentBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

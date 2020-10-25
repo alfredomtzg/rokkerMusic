@@ -13,14 +13,14 @@ import {
 const SignUpEntryData = () => {
   return (
     <PageContainer dark>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
         <TopTextBox>
           <h2>Welcome!</h2>
           <h5>Ready to rock with us?</h5>
         </TopTextBox>
-        <FormBox></FormBox>
-        <NextButtonBox></NextButtonBox>
+        <FormBox />
+        <NextButtonBox />
       </MainContainer>
     </PageContainer>
   );

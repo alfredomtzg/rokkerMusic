@@ -8,9 +8,9 @@ import { QueueBar, QueueList } from "./style";
 const FullScreenQueue = () => {
   return (
     <PageContainer>
-      <QueueBar></QueueBar>
+      <QueueBar />
       <MainContainer>
-        <QueueList></QueueList>
+        <QueueList />
       </MainContainer>
     </PageContainer>
   );

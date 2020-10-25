@@ -13,13 +13,13 @@ import { UserAvatarBox, SettingsButtonsBox } from "./style";
 const Settings = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <UserAvatarBox></UserAvatarBox>
-        <FormBox></FormBox>
-        <SettingsButtonsBox></SettingsButtonsBox>
+        <UserAvatarBox />
+        <FormBox />
+        <SettingsButtonsBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };
