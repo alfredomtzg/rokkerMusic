@@ -1,33 +1,32 @@
-import React from 'react'
-import { MainContainer, PageContainer } from '../../containers/LayoutContainers';
-import { MiniPlayerAndNavContainer, PlaylistContentBox, TopBar } from '../Globals/GlobalStyle';
-import { EditPlaylistButtonBox, PlaylistCardAndTitleBox, PlayButtonBox} from './style'
+import React from "react";
+import {
+  MainContainer,
+  PageContainer,
+} from "../../containers/LayoutContainers";
+import {
+  MiniPlayerAndNavContainer,
+  PlaylistContentBox,
+  TopBar,
+} from "../Globals/GlobalStyle";
+import {
+  EditPlaylistButtonBox,
+  PlaylistCardAndTitleBox,
+  PlayButtonBox,
+} from "./style";
 
 const PlaylistContent = () => {
   return (
     <PageContainer>
-      <TopBar>
-
-      </TopBar>
+      <TopBar></TopBar>
       <MainContainer>
-        <EditPlaylistButtonBox>
-          
-        </EditPlaylistButtonBox>
-        <PlaylistCardAndTitleBox>
-        
-        </PlaylistCardAndTitleBox>
-        <PlayButtonBox>
-        
-        </PlayButtonBox>
-        <PlaylistContentBox>
-        
-        </PlaylistContentBox>
+        <EditPlaylistButtonBox></EditPlaylistButtonBox>
+        <PlaylistCardAndTitleBox></PlaylistCardAndTitleBox>
+        <PlayButtonBox></PlayButtonBox>
+        <PlaylistContentBox></PlaylistContentBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-
-      </MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
     </PageContainer>
-  )
-}
+  );
+};
 
 export default PlaylistContent;

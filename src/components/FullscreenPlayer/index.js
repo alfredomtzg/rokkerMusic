@@ -1,7 +1,17 @@
-import React from 'react'
-import "../../assets/fonts/coolicons.css"
-import {TopOptions, SongCover, SongTitleAndArtist, Timeline, PlayerMedia, PlayerButtons, PlayerBottomButtons, TotalBar, ProgressBar} from './style'
-import SongCoverImg from '../../assets/images/SongCoverFullPlayer.svg'
+import React from "react";
+import "../../assets/fonts/coolicons.css";
+import {
+  TopOptions,
+  SongCover,
+  SongTitleAndArtist,
+  Timeline,
+  PlayerMedia,
+  PlayerButtons,
+  PlayerBottomButtons,
+  TotalBar,
+  ProgressBar,
+} from "./style";
+import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 export const FullscreenPlayer = () => {
   return (
@@ -11,7 +21,7 @@ export const FullscreenPlayer = () => {
         <div>
           <h6>Played from playlist</h6>
           <h5>My Playlist</h5>
-        </div> 
+        </div>
         <i className="ci-more_vertical"></i>
       </TopOptions>
       <SongCover>
@@ -48,5 +58,5 @@ export const FullscreenPlayer = () => {
         </PlayerBottomButtons>
       </PlayerMedia>
     </div>
-  )
-}
+  );
+};

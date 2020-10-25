@@ -1,28 +1,25 @@
-import React from 'react'
-import {PageContainer, MainContainer } from '../../containers/LayoutContainers'
-import { TopBar, TopTextBox, NextButtonBox } from '../Globals/GlobalStyle'
-import {AvatarsGrid} from './style'
+import React from "react";
+import {
+  PageContainer,
+  MainContainer,
+} from "../../containers/LayoutContainers";
+import { TopBar, TopTextBox, NextButtonBox } from "../Globals/GlobalStyle";
+import { AvatarsGrid } from "./style";
 
 const SingUpPickAvatar = () => {
-  return(
+  return (
     <PageContainer dark>
-      <TopBar>
-        
-      </TopBar>
-      <MainContainer>        
+      <TopBar></TopBar>
+      <MainContainer>
         <TopTextBox>
           <h2>Mike</h2>
           <h5>Pick your avatar</h5>
         </TopTextBox>
-        <AvatarsGrid>
-          
-        </AvatarsGrid>
-        <NextButtonBox>
-
-        </NextButtonBox>
+        <AvatarsGrid></AvatarsGrid>
+        <NextButtonBox></NextButtonBox>
       </MainContainer>
     </PageContainer>
-  )
-}
+  );
+};
 
-export default SingUpPickAvatar
+export default SingUpPickAvatar;
