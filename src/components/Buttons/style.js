@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Colors } from "../styles/globals";
+import { Colors, GlobalStyle } from "../styles/globals";
 
 /*Const of buttons*/
 export const StyledButton = styled.button`
@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
   outline: none;
   border: none;
   padding: 0;
+  cursor: pointer;
 `;
 /*Button particular characters*/
 export const StyledFacebookButton = styled(StyledButton)`
@@ -81,7 +82,45 @@ export const StyledPlayButton = styled(StyledNextButton)``;
 export const StyledImgPlayButton = styled.img`
   width: 1.1rem;
   height: 1.4rem;
-  background-size:cover;
+  background-size: cover;
   position: absolute;
   left: 1rem;
+`;
+/* Cancel/ TxtSave/ Edit*/
+
+export const StyledButtonWhite = styled.button`
+  background: ${Colors.white};
+  color: ${Colors.B400};
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  margin: 0;
+`;
+export const StyledCancelButton = styled(StyledButtonWhite)`
+  width: 5.1rem;
+  height: 2rem;
+  border: none;
+  overflow: visible;
+  &:active {
+    color: ${Colors.B500};
+  }
+`;
+export const StyledTxtSaveButton = styled(StyledCancelButton)`
+  width: 3.6rem;
+`;
+export const StyledEditButton = styled(StyledButtonWhite)`
+  width: 1.822rem;
+  height: 1.822rem;
+  border: none;
+ 
+`;
+export const StyledImgEditButton = styled.img`
+  width: 1.822rem;
+  height: 1.822rem;
+  &:active{
+    background:${Colors.G200};
+  }
 `;

@@ -12,12 +12,17 @@ import {
   StyledSaveButton,
   StyledPlayButton,
   StyledImgPlayButton,
-  
+  StyledCancelButton,
+  StyledTxtSaveButton,
+  StyledEditButton,
+  StyledImgEditButton,
+
 } from "./style";
 
-import  '../../assets/fonts/coolicons.css'
-import logoG from '../../assets/fonts/icons/btn_google_light_normal_ios.svg'
-import playArrow from '../../assets/fonts/icons/play-arrow.svg'
+import "../../assets/fonts/coolicons.css";
+import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
+import playArrow from "../../assets/fonts/icons/play-arrow.svg";
+import edit from "../../assets/fonts/icons/edit.svg";
 
 export const FacebookButton = () => {
   return (
@@ -51,26 +56,26 @@ export const LoginButton = () => {
     </StyledLoginButton>
   );
 };
-export const SendButton =()=>{
-  return(
-         <StyledSendButton>
-           <h5>Send</h5>
-         </StyledSendButton> 
-  )
+export const SendButton = () => {
+  return (
+    <StyledSendButton>
+      <h5>Send</h5>
+    </StyledSendButton>
+  );
 };
-export const ChangePassButton =()=>{
-  return(
-         <StyledChangePassButton>
-           <h5>Change Password</h5>
-         </StyledChangePassButton> 
-  )
+export const ChangePassButton = () => {
+  return (
+    <StyledChangePassButton>
+      <h5>Change Password</h5>
+    </StyledChangePassButton>
+  );
 };
-export const SingOutButton =()=>{
-  return(
-         <StyledSingOutButton>
-           <h5>Sign Out</h5>
-         </StyledSingOutButton> 
-  )
+export const SingOutButton = () => {
+  return (
+    <StyledSingOutButton>
+      <h5>Sign Out</h5>
+    </StyledSingOutButton>
+  );
 };
 export const NextButton = () => {
   return (
@@ -89,8 +94,29 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
-      <StyledImgPlayButton src={playArrow}/>
+      <StyledImgPlayButton src={playArrow} />
       <h5>Play</h5>
     </StyledPlayButton>
+  );
+};
+export const CancelButton = () => {
+  return (
+    <StyledCancelButton>
+      <h5>Cancel</h5>
+    </StyledCancelButton>
+  );
+};
+export const TxtSaveButton = () => {
+  return (
+    <StyledTxtSaveButton>
+      <h5>Save</h5>
+    </StyledTxtSaveButton>
+  );
+};
+export const EditButton = () => {
+  return (
+    <StyledEditButton>
+      <StyledImgEditButton src={edit}/>
+    </StyledEditButton>
   );
 };
