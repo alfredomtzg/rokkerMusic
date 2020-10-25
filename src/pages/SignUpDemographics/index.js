@@ -2,16 +2,16 @@ import React from 'react'
 import {PageContainer, MainContainer } from '../../containers/LayoutContainers'
 import { TopBar, TopTextBox, NextButtonBox, FormBox } from '../Globals/GlobalStyle'
 
-const SignUpEntryData = () => {
+const SignUpDemographics = () => {
   return(
-    <PageContainer dark>
+    <PageContainer dark>  
       <TopBar>
         
       </TopBar>
-      <MainContainer>
+      <MainContainer dark>
         <TopTextBox>
-          <h2>Welcome!</h2>
-          <h5>Ready to rock with us?</h5>
+          <h2>And Mike,</h2>
+          <h5>So we can serve you better</h5>
         </TopTextBox>
         <FormBox>
 
@@ -24,4 +24,4 @@ const SignUpEntryData = () => {
   )
 }
 
-export default SignUpEntryData;
+export default SignUpDemographics;
