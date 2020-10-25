@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   
@@ -45,7 +45,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     font-weight: 400;
   }
-`
+  span{
+    font-family:'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+`;
 
 export const Colors = {
   facebookInactive: "#1A77F2",
@@ -60,4 +65,4 @@ export const Colors = {
   G400: "#B3BAC5",
   G700: "#091E42",
   G600: "#7a869a",
-}
+};

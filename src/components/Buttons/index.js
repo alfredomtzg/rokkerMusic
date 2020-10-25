@@ -16,13 +16,10 @@ import {
   StyledTxtSaveButton,
   StyledEditButton,
   StyledImgEditButton,
-
 } from "./style";
 
 import "../../assets/fonts/coolicons.css";
 import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
-import playArrow from "../../assets/fonts/icons/play-arrow.svg";
-import edit from "../../assets/fonts/icons/edit.svg";
 
 export const FacebookButton = () => {
   return (
@@ -36,7 +33,7 @@ export const GoogleButton = () => {
   return (
     <StyledGoogleButton>
       <StyledImgGoogleButton src={logoG} />
-      <h6>Sign in with Google</h6>
+      <span>Sign in with Google</span>
     </StyledGoogleButton>
   );
 };
@@ -94,7 +91,9 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
-      <StyledImgPlayButton src={playArrow} />
+      <StyledImgPlayButton>
+        <i className="ci-play_arrow"></i>
+      </StyledImgPlayButton>
       <h5>Play</h5>
     </StyledPlayButton>
   );
@@ -116,7 +115,9 @@ export const TxtSaveButton = () => {
 export const EditButton = () => {
   return (
     <StyledEditButton>
-      <StyledImgEditButton src={edit}/>
+      <StyledImgEditButton>
+        <i className="ci-edit"></i>
+      </StyledImgEditButton>
     </StyledEditButton>
   );
 };
