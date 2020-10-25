@@ -1,6 +1,11 @@
 import React from "react";
 import "../../assets/fonts/coolicons.css";
-import { StyledMidCard, StyledSmallCard, StyledWideCard } from "./styles";
+import {
+  StyledMidCard,
+  StyledSmallCard,
+  StyledWideCard,
+  StyledGenreCard,
+} from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 
 export const WideCard = () => {
@@ -55,5 +60,13 @@ export const SmallPlusCard = () => {
     <StyledSmallCard>
       <i className="ci-plus"></i>
     </StyledSmallCard>
+  );
+};
+
+export const GenreCard = () => {
+  return (
+    <StyledGenreCard>
+      <p>Your playlist name</p>
+    </StyledGenreCard>
   );
 };

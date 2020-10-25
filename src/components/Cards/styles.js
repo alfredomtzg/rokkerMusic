@@ -74,3 +74,8 @@ export const StyledSmallCard = styled(StyledMidCard)`
 export const StyledWideCard = styled(StyledMidCard)`
   width: 33.5rem;
 `;
+
+export const StyledGenreCard = styled(StyledMidCard)`
+  height: 4.5rem;
+  background-color: ${Colors.G600};
+`;
