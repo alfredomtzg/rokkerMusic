@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {Colors} from '../styles/globals'
+import styled from "styled-components";
+import { Colors } from "../styles/globals";
 
 export const TopOptions = styled.div`
   display: flex;
@@ -17,13 +17,13 @@ export const TopOptions = styled.div`
   i {
     font-size: 2.4rem;
   }
-`
+`;
 
 export const SongCover = styled.div`
   display: flex;
   justify-content: center;
   margin: 7vh 0;
-`
+`;
 
 export const SongTitleAndArtist = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ export const SongTitleAndArtist = styled.div`
   h4 {
     color: ${Colors.G600};
   }
-`
+`;
 
 export const Timeline = styled.div`
   display: flex;
@@ -50,21 +50,21 @@ export const Timeline = styled.div`
     display: flex;
     align-items: center;
   }
-`
+`;
 
 export const TotalBar = styled.div`
   position: relative;
   height: 1vh;
   width: 50vw;
-  background-color: ${Colors.G400}  
-`
+  background-color: ${Colors.G400};
+`;
 
 export const ProgressBar = styled.div`
   position: absolute;
   height: 1vh;
   width: 40vw;
   background-color: ${Colors.R500};
-`
+`;
 
 export const PlayerMedia = styled.div`
   position: fixed;
@@ -72,7 +72,7 @@ export const PlayerMedia = styled.div`
   right: 0;
   bottom: 0;
   background-color: ${Colors.G200};
-`
+`;
 
 export const PlayerButtons = styled.div`
   display: flex;
@@ -98,6 +98,6 @@ export const PlayerButtons = styled.div`
   .ci-shuffle {
     margin-right: 1rem;
   }
-`
+`;
 
-export const PlayerBottomButtons = styled(PlayerButtons)``
+export const PlayerBottomButtons = styled(PlayerButtons)``;

@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Colors } from "../styles/globals";
 
-/*Const of buttons*/
+/* Const of buttons */
 export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
@@ -14,7 +14,8 @@ export const StyledButton = styled.button`
   padding: 0;
   cursor: pointer;
 `;
-/*Button particular characters*/
+
+/* Button particular characters */
 export const StyledFacebookButton = styled(StyledButton)`
   background: ${Colors.facebookInactive};
   color: ${Colors.G100};
@@ -22,6 +23,7 @@ export const StyledFacebookButton = styled(StyledButton)`
     background: ${Colors.facebookActive};
   }
 `;
+
 export const StyledGoogleButton = styled(StyledButton)`
   justify-content: space-around;
   background: ${Colors.white};
@@ -31,11 +33,13 @@ export const StyledGoogleButton = styled(StyledButton)`
     background: ${Colors.G100};
   }
 `;
+
 export const StyledImgGoogleButton = styled.img`
   width: 3rem;
   height: 3rem;
   background-size: cover;
 `;
+
 export const StyledLoginButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};
@@ -43,6 +47,7 @@ export const StyledLoginButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
+
 export const StyledSignupButton = styled(StyledButton)`
   background: ${Colors.B400};
   color: ${Colors.G100};
@@ -58,6 +63,7 @@ export const StyledSendButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
+
 export const StyledChangePassButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};
@@ -65,6 +71,7 @@ export const StyledChangePassButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
+
 export const StyledSingOutButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};
@@ -72,16 +79,25 @@ export const StyledSingOutButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
-/*Buttons Mid*/
+
+/* Buttons Mid */
 export const StyledNextButton = styled(StyledLoginButton)`
   width: 13.8rem;
   color: ${Colors.G100};
 `;
+
 export const StyledSaveButton = styled(StyledNextButton)``;
 export const StyledPlayButton = styled(StyledNextButton)``;
+<<<<<<< HEAD
 export const StyledImgPlayButton = styled.i`
   font-size: 2.9rem;
   color: ${Colors.G700};
+=======
+export const StyledImgPlayButton = styled.img`
+  width: 1.1rem;
+  height: 1.4rem;
+  background-size: cover;
+>>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8
   position: absolute;
   left: 0.5rem;
 `;

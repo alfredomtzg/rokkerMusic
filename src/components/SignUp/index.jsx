@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { FormContainer, TextLabel, TextInput } from './styles'
+/* eslint-disable no-console */
+import React, { useState } from "react";
+import { FormContainer, TextLabel, TextInput } from "./styles";
 
 export default function SignUp() {
   // SignUp Values
@@ -8,29 +9,31 @@ export default function SignUp() {
     email: "",
     password: "",
     confirmPassword: "",
-  })
+  });
   // function handleChange to SignUp
   const handleChangeLogin = (event) => {
-    setValuesSignUp({ ...valuesSignUp, [event.target.name]: event.target.value })
-  }
+    setValuesSignUp({
+      ...valuesSignUp,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   // Function HandleSubmitLogin
   const handleSubmitLogin = (event) => {
     event.preventDefault();
     console.log(valuesSignUp);
-  }
+  };
 
   return (
-    <FormContainer
-      onSubmit={handleSubmitLogin}>
-
+    <FormContainer onSubmit={handleSubmitLogin}>
       <TextLabel>
         <h4>Name</h4>
       </TextLabel>
       <TextInput
         name="name"
         value={valuesSignUp.name}
-        onChange={handleChangeLogin} />
+        onChange={handleChangeLogin}
+      />
 
       <TextLabel>
         <h4>E-mail</h4>
@@ -39,9 +42,10 @@ export default function SignUp() {
         name="email"
         autoComplete="current-email"
         value={valuesSignUp.email}
-        onChange={handleChangeLogin} />
+        onChange={handleChangeLogin}
+      />
 
-      <TextLabel >
+      <TextLabel>
         <h4>Password</h4>
       </TextLabel>
       <TextInput
@@ -51,7 +55,7 @@ export default function SignUp() {
         onChange={handleChangeLogin}
       />
 
-      <TextLabel >
+      <TextLabel>
         <h4>Confirm your password</h4>
       </TextLabel>
       <TextInput
@@ -61,9 +65,9 @@ export default function SignUp() {
         onChange={handleChangeLogin}
       />
       {/* wait a style from Sergio */}
-      <button type="submit" >
+      <button type="submit">
         <h5>Next</h5>
       </button>
     </FormContainer>
-  )
+  );
 }

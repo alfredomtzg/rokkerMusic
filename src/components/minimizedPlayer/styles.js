@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../styles/globals";
+
 export const StyledMinimizedPlayer = styled.div`
   display: flex;
   align-items: center;
