@@ -81,7 +81,7 @@ export const StyledPlayButton = styled(StyledNextButton)``;
 export const StyledImgPlayButton = styled.img`
   width: 1.1rem;
   height: 1.4rem;
-  background-size:cover;
+  background-size: cover;
   position: absolute;
   left: 1rem;
 `;

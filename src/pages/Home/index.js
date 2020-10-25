@@ -1,38 +1,31 @@
-import React from 'react'
-import { MainContainer, PageContainer } from '../../containers/LayoutContainers';
-import { MiniPlayerAndNavContainer, TopBar, PlaylistContentBox } from '../Globals/GlobalStyle';
-import {GreetingBox, FavoritesBox, RecommendPlaylistsBox} from './style'
+import React from "react";
+import {
+  MainContainer,
+  PageContainer,
+} from "../../containers/LayoutContainers";
+import {
+  MiniPlayerAndNavContainer,
+  TopBar,
+  PlaylistContentBox,
+} from "../Globals/GlobalStyle";
+import { GreetingBox, FavoritesBox, RecommendPlaylistsBox } from "./style";
 
 const Home = () => {
-  return(
+  return (
     <PageContainer>
-      <TopBar>
-
-      </TopBar>
+      <TopBar></TopBar>
       <MainContainer>
-        <GreetingBox>
-          
-        </GreetingBox>
-        <FavoritesBox>
-
-        </FavoritesBox>
+        <GreetingBox></GreetingBox>
+        <FavoritesBox></FavoritesBox>
         <h5>Recommended playlists</h5>
-        <RecommendPlaylistsBox>
-          
-        </RecommendPlaylistsBox>
+        <RecommendPlaylistsBox></RecommendPlaylistsBox>
         <h5>Playlists by genre</h5>
-        <RecommendPlaylistsBox>
-
-        </RecommendPlaylistsBox>
-        <PlaylistContentBox>
-
-        </PlaylistContentBox>
+        <RecommendPlaylistsBox></RecommendPlaylistsBox>
+        <PlaylistContentBox></PlaylistContentBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-
-      </MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
     </PageContainer>
-  )
-}
+  );
+};
 
 export default Home;
