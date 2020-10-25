@@ -11,8 +11,8 @@ import Logo from "../../assets/images/logo-rokker.png";
 export const WideCard = () => {
   return (
     <StyledWideCard>
-      <i className="ci-heart_fill"></i>
-      <i className="ci-play_circle_filled black"></i>
+      <i className="ci-heart_fill" />
+      <i className="ci-play_circle_filled black" />
     </StyledWideCard>
   );
 };
@@ -22,7 +22,7 @@ export const MidFilledCard = () => {
     <StyledMidCard>
       <img src={Logo} alt="" />
       <p>Your playlist name</p>
-      <i className="ci-play_circle_filled"></i>
+      <i className="ci-play_circle_filled" />
     </StyledMidCard>
   );
 };
@@ -30,8 +30,8 @@ export const MidFilledCard = () => {
 export const MidFavoriteCard = () => {
   return (
     <StyledMidCard>
-      <i className="ci-heart_fill"></i>
-      <i className="ci-play_circle_filled black"></i>
+      <i className="ci-heart_fill" />
+      <i className="ci-play_circle_filled black" />
     </StyledMidCard>
   );
 };
@@ -41,7 +41,7 @@ export const SmallFilledCard = () => {
     <StyledSmallCard>
       <img src={Logo} alt="" />
       <p>Your playlist name</p>
-      <i className="ci-play_circle_filled"></i>
+      <i className="ci-play_circle_filled" />
     </StyledSmallCard>
   );
 };
@@ -49,8 +49,8 @@ export const SmallFilledCard = () => {
 export const SmallFavoriteCard = () => {
   return (
     <StyledSmallCard>
-      <i className="ci-heart_fill"></i>
-      <i className="ci-play_circle_filled black"></i>
+      <i className="ci-heart_fill" />
+      <i className="ci-play_circle_filled black" />
     </StyledSmallCard>
   );
 };
@@ -58,7 +58,7 @@ export const SmallFavoriteCard = () => {
 export const SmallPlusCard = () => {
   return (
     <StyledSmallCard>
-      <i className="ci-plus"></i>
+      <i className="ci-plus" />
     </StyledSmallCard>
   );
 };

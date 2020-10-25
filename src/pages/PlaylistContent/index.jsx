@@ -17,14 +17,14 @@ import {
 const PlaylistContent = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <EditPlaylistButtonBox></EditPlaylistButtonBox>
-        <PlaylistCardAndTitleBox></PlaylistCardAndTitleBox>
-        <PlayButtonBox></PlayButtonBox>
-        <PlaylistContentBox></PlaylistContentBox>
+        <EditPlaylistButtonBox />
+        <PlaylistCardAndTitleBox />
+        <PlayButtonBox />
+        <PlaylistContentBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

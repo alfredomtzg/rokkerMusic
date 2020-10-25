@@ -14,13 +14,13 @@ import { UserAvatarBox } from "../Settings/style";
 const SettingsChangePassword = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <UserAvatarBox></UserAvatarBox>
-        <FormBox></FormBox>
-        <NextButtonBox></NextButtonBox>
+        <UserAvatarBox />
+        <FormBox />
+        <NextButtonBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

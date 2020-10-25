@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from "react";
 import { FormContainer, TextLabel, TextInput } from "./styles";
 

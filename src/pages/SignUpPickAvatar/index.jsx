@@ -9,14 +9,14 @@ import { AvatarsGrid } from "./style";
 const SingUpPickAvatar = () => {
   return (
     <PageContainer dark>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
         <TopTextBox>
           <h2>Mike</h2>
           <h5>Pick your avatar</h5>
         </TopTextBox>
-        <AvatarsGrid></AvatarsGrid>
-        <NextButtonBox></NextButtonBox>
+        <AvatarsGrid />
+        <NextButtonBox />
       </MainContainer>
     </PageContainer>
   );

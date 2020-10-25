@@ -13,13 +13,13 @@ import { ArtistBox, StatsBox } from "./style";
 const ArtistProfile = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <ArtistBox></ArtistBox>
-        <PlaylistContentBox></PlaylistContentBox>
-        <StatsBox></StatsBox>
+        <ArtistBox />
+        <PlaylistContentBox />
+        <StatsBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

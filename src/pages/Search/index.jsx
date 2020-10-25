@@ -9,15 +9,15 @@ import { SearchBox, SearchRecommendationBox } from "./style";
 const Search = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <SearchBox></SearchBox>
+        <SearchBox />
         <SearchRecommendationBox>
           {/* Your last searches */}
         </SearchRecommendationBox>
         <SearchRecommendationBox>{/* Trending */}</SearchRecommendationBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };
