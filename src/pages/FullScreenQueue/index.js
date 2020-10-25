@@ -1,19 +1,19 @@
-import React from 'react'
-import {PageContainer, MainContainer} from '../../containers/LayoutContainers'
-import {QueueBar, QueueList} from './style'
+import React from "react";
+import {
+  PageContainer,
+  MainContainer,
+} from "../../containers/LayoutContainers";
+import { QueueBar, QueueList } from "./style";
 
 const FullScreenQueue = () => {
-  return(
+  return (
     <PageContainer>
-        <QueueBar>
-        </QueueBar>
+      <QueueBar></QueueBar>
       <MainContainer>
-        <QueueList>
- 
-        </QueueList>
+        <QueueList></QueueList>
       </MainContainer>
     </PageContainer>
-  )
-}
+  );
+};
 
 export default FullScreenQueue;

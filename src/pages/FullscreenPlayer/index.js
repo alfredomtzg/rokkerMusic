@@ -1,12 +1,10 @@
-import React from 'react'
-import { PageContainer } from '../../containers/LayoutContainers';
+import React from "react";
+import { PageContainer } from "../../containers/LayoutContainers";
 
 const FullscreenPlayerPage = () => {
   return (
-    <PageContainer>
-      {/* insert FullscreenPlayer component */}
-    </PageContainer>
-  )
-}
+    <PageContainer>{/* insert FullscreenPlayer component */}</PageContainer>
+  );
+};
 
 export default FullscreenPlayerPage;
