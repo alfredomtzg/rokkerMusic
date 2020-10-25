@@ -12,12 +12,13 @@ export const StyledButton = styled.button`
   outline: none;
   border: none;
   padding: 0;
+  cursor: pointer;
 `;
 
 /* Button particular characters */
 export const StyledFacebookButton = styled(StyledButton)`
   background: ${Colors.facebookInactive};
-  color: ${Colors.white};
+  color: ${Colors.G100};
   &:active {
     background: ${Colors.facebookActive};
   }
@@ -87,10 +88,53 @@ export const StyledNextButton = styled(StyledLoginButton)`
 
 export const StyledSaveButton = styled(StyledNextButton)``;
 export const StyledPlayButton = styled(StyledNextButton)``;
+<<<<<<< HEAD
+export const StyledImgPlayButton = styled.i`
+  font-size: 2.9rem;
+  color: ${Colors.G700};
+=======
 export const StyledImgPlayButton = styled.img`
   width: 1.1rem;
   height: 1.4rem;
   background-size: cover;
+>>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8
   position: absolute;
-  left: 1rem;
+  left: 0.5rem;
+`;
+/* Cancel/ TxtSave/ Edit*/
+
+export const StyledButtonWhite = styled.button`
+  background: ${Colors.G100};
+  color: ${Colors.B400};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  margin: 0;
+`;
+export const StyledCancelButton = styled(StyledButtonWhite)`
+  width: 5.1rem;
+  height: 2rem;
+  border: none;
+  overflow: visible;
+  &:active {
+    color: ${Colors.B500};
+  }
+`;
+export const StyledTxtSaveButton = styled(StyledCancelButton)`
+  width: 3.6rem;
+`;
+export const StyledEditButton = styled(StyledButtonWhite)`
+  width: 1.822rem;
+  height: 1.822rem;
+  border: none;
+  margin: 0;
+`;
+export const StyledImgEditButton = styled.i`
+  font-size: 1.822rem;
+  &:active {
+    color: ${Colors.B500};
+  }
 `;
