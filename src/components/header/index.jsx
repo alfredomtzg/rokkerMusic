@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledHeader } from "./styles";
+import StyledHeader from "./styles";
 import Logo from "../../assets/Logo/Rkr-black-nav.svg";
 
 const Header = () => {
