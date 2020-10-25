@@ -1,12 +1,11 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import Login from "../pages/Login";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Login />
+      <h1>Music App</h1>
     </div>
   );
 }
