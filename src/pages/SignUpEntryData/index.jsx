@@ -1,26 +1,26 @@
 import React from "react";
+import Header from "../../components/header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  TopBar,
-  TopTextBox,
-  NextButtonBox,
-  FormBox,
-} from "../Globals/GlobalStyle";
+import { TopBar, TopTextBox, FormBox } from "../Globals/GlobalStyle";
+import SignUpEntryDataForm from "../../components/FormSignUp";
 
 const SignUpEntryData = () => {
   return (
     <PageContainer dark>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <TopTextBox>
           <h2>Welcome!</h2>
           <h5>Ready to rock with us?</h5>
         </TopTextBox>
-        <FormBox />
-        <NextButtonBox />
+        <FormBox>
+          <SignUpEntryDataForm />
+        </FormBox>
       </MainContainer>
     </PageContainer>
   );
