@@ -64,6 +64,8 @@ export const StyledSendButton = styled(StyledButton)`
   }
 `;
 
+export const StyledHomeButton = styled(StyledSendButton)``;
+
 export const StyledChangePassButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};

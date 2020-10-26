@@ -1,4 +1,6 @@
 import React from "react";
+import { HomeButton } from "../../components/Buttons";
+import Header from "../../components/header";
 import {
   PageContainer,
   MainContainer,
@@ -12,7 +14,9 @@ import {
 const LoginRecoverPasswordSent = () => {
   return (
     <PageContainer dark>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <TopTextBox>
           <h2>Nice!</h2>
@@ -21,7 +25,9 @@ const LoginRecoverPasswordSent = () => {
             in your inbox you must receive <br />a new password
           </h5>
         </TopTextBox>
-        <LoginOrSendButtonBox />
+        <LoginOrSendButtonBox>
+          <HomeButton />
+        </LoginOrSendButtonBox>
       </MainContainer>
     </PageContainer>
   );
