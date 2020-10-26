@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
 import { NextButton } from "../Buttons";
-import { FormContainer, TextLabel, TextInput } from "./styles";
+import { FormContainer, TextLabel, TextInput } from "../Forms/styles";
 
-export default function SignUp() {
+export default function SignUpEntryData() {
   // SignUp Values
   const [valuesSignUp, setValuesSignUp] = useState({
     name: "",
@@ -74,10 +74,8 @@ export default function SignUp() {
       />
       <h6>Password does not match</h6>
 
-      <div>
-        <NextButton type="submit">
-          <h5>Next</h5>
-        </NextButton>
+      <div className="NextBtn">
+        <NextButton type="submit" />
       </div>
     </FormContainer>
   );
