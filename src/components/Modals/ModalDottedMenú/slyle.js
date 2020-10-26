@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const StyledOpenModal = styled.a`
-
+&:target{
+  opacity:1;
+    pointer-events:auto;
+}
 `;
 export const StyledModal = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
