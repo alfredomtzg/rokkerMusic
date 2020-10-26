@@ -8,14 +8,23 @@ import {
   LandingLogoBox,
   LoginOrSendButtonBox,
 } from "../Globals/GlobalStyle";
+import RokkerBlack from "../../assets/Logo/Rkr-black.svg";
+import LoginForm from "../../components/FormLogin";
+import MainLogin from "./style";
 
 const Login = () => {
   return (
     <PageContainer dark>
       <MainContainer>
-        <LandingLogoBox />
-        <FormBox />
-        <LoginOrSendButtonBox />
+        <MainLogin>
+          <LandingLogoBox>
+            <img src={RokkerBlack} alt="rokker logo" />
+          </LandingLogoBox>
+          <FormBox>
+            <LoginForm />
+          </FormBox>
+          <LoginOrSendButtonBox />
+        </MainLogin>
       </MainContainer>
     </PageContainer>
   );
