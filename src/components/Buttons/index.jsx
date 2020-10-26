@@ -12,21 +12,14 @@ import {
   StyledSaveButton,
   StyledPlayButton,
   StyledImgPlayButton,
-<<<<<<< HEAD:src/components/Buttons/index.js
   StyledCancelButton,
   StyledTxtSaveButton,
   StyledEditButton,
   StyledImgEditButton,
-=======
->>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8:src/components/Buttons/index.jsx
 } from "./style";
 
 import "../../assets/fonts/coolicons.css";
 import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
-<<<<<<< HEAD:src/components/Buttons/index.js
-=======
-import playArrow from "../../assets/fonts/icons/play-arrow.svg";
->>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8:src/components/Buttons/index.jsx
 
 export const FacebookButton = () => {
   return (
@@ -98,13 +91,7 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
-<<<<<<< HEAD:src/components/Buttons/index.js
-      <StyledImgPlayButton>
-        <i className="ci-play_arrow"></i>
-      </StyledImgPlayButton>
-=======
-      <StyledImgPlayButton src={playArrow} />
->>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8:src/components/Buttons/index.jsx
+      <StyledImgPlayButton className="ci-play_arrow" />
       <h5>Play</h5>
     </StyledPlayButton>
   );
@@ -127,7 +114,7 @@ export const EditButton = () => {
   return (
     <StyledEditButton>
       <StyledImgEditButton>
-        <i className="ci-edit"></i>
+        <i className="ci-edit" />
       </StyledImgEditButton>
     </StyledEditButton>
   );

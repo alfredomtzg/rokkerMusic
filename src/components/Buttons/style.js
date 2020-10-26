@@ -88,20 +88,14 @@ export const StyledNextButton = styled(StyledLoginButton)`
 
 export const StyledSaveButton = styled(StyledNextButton)``;
 export const StyledPlayButton = styled(StyledNextButton)``;
-<<<<<<< HEAD
+
 export const StyledImgPlayButton = styled.i`
   font-size: 2.9rem;
   color: ${Colors.G700};
-=======
-export const StyledImgPlayButton = styled.img`
-  width: 1.1rem;
-  height: 1.4rem;
-  background-size: cover;
->>>>>>> bb3e985fc9dd1cca302af55073b417bad00d91a8
   position: absolute;
   left: 0.5rem;
 `;
-/* Cancel/ TxtSave/ Edit*/
+/* Cancel/ TxtSave/ Edit */
 
 export const StyledButtonWhite = styled.button`
   background: ${Colors.G100};
