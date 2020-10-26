@@ -45,6 +45,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 12px;
     font-weight: 400;
   }
+  span{
+    font-family:'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
 `;
 
 export const Colors = {

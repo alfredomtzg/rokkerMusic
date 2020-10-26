@@ -5,19 +5,19 @@ import {
 } from "../../containers/LayoutContainers";
 import { MiniPlayerAndNavContainer, TopBar } from "../Globals/GlobalStyle";
 import { SearchBox } from "../Search/style";
-import { SearchResultsBox } from "./style";
+import SearchResultsBox from "./style";
 
 const SearchResults = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
-        <SearchBox></SearchBox>
+        <SearchBox />
         <SearchResultsBox>{/* Songs */}</SearchResultsBox>
         <SearchResultsBox>{/* Artists */}</SearchResultsBox>
         <SearchResultsBox>{/* Playlists */}</SearchResultsBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };

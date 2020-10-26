@@ -13,9 +13,9 @@ const Login = () => {
   return (
     <PageContainer dark>
       <MainContainer>
-        <LandingLogoBox></LandingLogoBox>
-        <FormBox></FormBox>
-        <LoginOrSendButtonBox></LoginOrSendButtonBox>
+        <LandingLogoBox />
+        <FormBox />
+        <LoginOrSendButtonBox />
       </MainContainer>
     </PageContainer>
   );

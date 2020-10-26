@@ -9,15 +9,15 @@ import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
 const PlaylistList = () => {
   return (
     <PageContainer>
-      <TopBar></TopBar>
+      <TopBar />
       <MainContainer>
         <YourPlaylistsBox>
           <h1>Your playlists</h1>
         </YourPlaylistsBox>
-        <NewAndFavoritesBox></NewAndFavoritesBox>
-        <PlaylistsBox></PlaylistsBox>
+        <NewAndFavoritesBox />
+        <PlaylistsBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer></MiniPlayerAndNavContainer>
+      <MiniPlayerAndNavContainer />
     </PageContainer>
   );
 };
