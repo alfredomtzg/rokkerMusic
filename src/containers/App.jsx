@@ -1,11 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
+import SignUpEntryData from "../pages/SignUpEntryData";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <h1>Music App</h1>
+      <SignUpEntryData />
     </div>
   );
 }

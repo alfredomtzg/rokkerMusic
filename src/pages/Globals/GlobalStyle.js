@@ -21,7 +21,7 @@ export const TopTextBox = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5vh;
-  padding: 6vh 0 9vh;
+  padding: 4vh 0 4vh;
   text-align: center;
   color: ${Colors.G100};
 `;
