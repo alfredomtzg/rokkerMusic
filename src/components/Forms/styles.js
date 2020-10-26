@@ -16,7 +16,24 @@ export const FormContainer = styled.form`
 
   div {
     display: flex;
-    justify-content   : flex-end;
+  }
+
+  .NextBtn {
+    justify-content: flex-end;
+  }
+
+  .LoginBtn {
+    justify-content: center;
+  }
+
+  a {
+    color: ${Colors.G100};
+    margin-bottom: 9vh;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 `;
 // Label style
