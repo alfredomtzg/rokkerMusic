@@ -126,6 +126,19 @@ export const StyledEditButton = styled(StyledButtonWhite)`
   border: none;
   margin: 0;
 `;
+
+export const StyledSearchButton = styled(StyledButtonWhite)`
+  width: 1.822rem;
+  height: 1.822rem;
+  border: none;
+  margin: 0;
+  background-color: ${Colors.white};
+`;
+
+export const StyledDeletePlaylistButton = styled(StyledSearchButton)`
+  color: ${Colors.R500};
+`;
+
 export const StyledImgEditButton = styled.i`
   font-size: 1.822rem;
   &:active {
