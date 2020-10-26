@@ -60,7 +60,5 @@ export const FullPageCenterMsgBox = styled.div`
 export const MiniPlayerAndNavContainer = styled.footer`
   position: fixed;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
 `;
