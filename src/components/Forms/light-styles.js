@@ -76,3 +76,29 @@ export const TextAreaInput = styled.textarea`
     outline: none;
   }
 `;
+
+export const StyledSearchBar = styled.div`
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 2vw;
+  border: 0.1rem solid ${Colors.G400};
+  border-radius: 1rem;
+  color: ${Colors.G700};
+  background-color: ${Colors.white};
+
+  .ci-search {
+    font-size: 2.4rem;
+  }
+`;
+
+export const SearchInput = styled.input`
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+
+  &:focus {
+    outline: none;
+  }
+`;

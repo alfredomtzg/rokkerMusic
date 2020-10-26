@@ -16,6 +16,7 @@ import {
   StyledTxtSaveButton,
   StyledEditButton,
   StyledImgEditButton,
+  StyledSearchButton,
 } from "./style";
 
 import "../../assets/fonts/coolicons.css";
@@ -117,5 +118,14 @@ export const EditButton = () => {
         <i className="ci-edit" />
       </StyledImgEditButton>
     </StyledEditButton>
+  );
+};
+export const SearchButton = () => {
+  return (
+    <StyledSearchButton>
+      <StyledImgEditButton>
+        <i className="ci-search" />
+      </StyledImgEditButton>
+    </StyledSearchButton>
   );
 };
