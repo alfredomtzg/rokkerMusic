@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
 import { LoginButton } from "../Buttons";
-import { FormContainer, TextLabel, TextInput } from "../Forms/styles";
+import { FormContainer, TextLabel, TextInput } from "../Forms/dark-styles";
 
 export default function LoginForm() {
   // Login Values
