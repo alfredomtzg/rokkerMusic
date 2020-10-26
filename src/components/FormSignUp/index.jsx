@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NextButton } from "../Buttons";
 import { FormContainer, TextLabel, TextInput } from "../Forms/dark-styles";
 
-export default function SignUpEntryData() {
+export default function SignUpEntryDataForm() {
   // SignUp Values
   const [valuesSignUp, setValuesSignUp] = useState({
     name: "",
