@@ -55,4 +55,24 @@ export const TextInput = styled.input`
   color: ${Colors.G700};
   background-color: ${Colors.G100};
   caret-color: ${Colors.G700};
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const TextAreaInput = styled.textarea`
+  padding: 1vh 2vw;
+  box-sizing: border-box;
+  border: 0.1rem solid ${Colors.G400};
+  border-radius: 1rem;
+  color: ${Colors.G700};
+  background-color: ${Colors.G100};
+  caret-color: ${Colors.G700};
+  height: 15vh;
+  font-family: "Source Sans Pro";
+
+  &:focus {
+    outline: none;
+  }
 `;

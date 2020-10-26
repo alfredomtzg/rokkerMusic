@@ -53,4 +53,8 @@ export const TextInput = styled.input`
   color: ${Colors.G700};
   background-color: ${Colors.G100};
   caret-color: ${Colors.G600};
+
+  &:focus {
+    outline: none;
+  }
 `;
