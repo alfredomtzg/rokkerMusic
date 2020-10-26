@@ -11,6 +11,10 @@ export const LandingLogoBox = styled.figure`
   justify-self: center;
   align-self: flex-end;
   margin: 0;
+
+  img {
+    width: 8.4rem;
+  }
 `;
 
 export const TopTextBox = styled.div`
