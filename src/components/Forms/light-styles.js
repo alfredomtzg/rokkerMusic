@@ -7,25 +7,23 @@ import { Colors } from "../styles/globals";
 export const FormContainer = styled.form`
   flex-direction: column;
   display: flex;
-  width: 33.5rem;
+  width: 100%;
 
   h6 {
     margin-bottom: 1vh;
     color: ${Colors.R500};
   }
 
-  div {
-    display: flex;
-  }
-
   .NextBtn,
   .SaveBtn {
+    display: flex;
     justify-content: flex-end;
     margin-top: 4vh;
   }
 
   .LoginBtn,
   .SendBtn {
+    display: flex;
     justify-content: center;
     margin-top: 9vh;
   }
@@ -55,4 +53,50 @@ export const TextInput = styled.input`
   color: ${Colors.G700};
   background-color: ${Colors.G100};
   caret-color: ${Colors.G700};
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const TextAreaInput = styled.textarea`
+  padding: 1vh 2vw;
+  box-sizing: border-box;
+  border: 0.1rem solid ${Colors.G400};
+  border-radius: 1rem;
+  color: ${Colors.G700};
+  background-color: ${Colors.G100};
+  caret-color: ${Colors.G700};
+  height: 15vh;
+  font-family: "Source Sans Pro";
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const StyledSearchBar = styled.div`
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 2vw;
+  border: 0.1rem solid ${Colors.G400};
+  border-radius: 1rem;
+  color: ${Colors.G700};
+  background-color: ${Colors.white};
+
+  .ci-search {
+    font-size: 2.4rem;
+  }
+`;
+
+export const SearchInput = styled.input`
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+
+  &:focus {
+    outline: none;
+  }
 `;
