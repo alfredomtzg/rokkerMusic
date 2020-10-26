@@ -22,13 +22,14 @@ export const FormContainer = styled.form`
     justify-content: flex-end;
   }
 
-  .LoginBtn {
+  .LoginBtn,
+  .SendBtn {
     justify-content: center;
+    margin-top: 9vh;
   }
 
   a {
     color: ${Colors.G100};
-    margin-bottom: 9vh;
     text-decoration: none;
   }
 
