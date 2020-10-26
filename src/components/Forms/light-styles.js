@@ -7,25 +7,23 @@ import { Colors } from "../styles/globals";
 export const FormContainer = styled.form`
   flex-direction: column;
   display: flex;
-  width: 33.5rem;
+  width: 100%;
 
   h6 {
     margin-bottom: 1vh;
     color: ${Colors.R500};
   }
 
-  div {
-    display: flex;
-  }
-
   .NextBtn,
   .SaveBtn {
+    display: flex;
     justify-content: flex-end;
     margin-top: 4vh;
   }
 
   .LoginBtn,
   .SendBtn {
+    display: flex;
     justify-content: center;
     margin-top: 9vh;
   }

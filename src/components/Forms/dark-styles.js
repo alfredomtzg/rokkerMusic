@@ -7,7 +7,7 @@ import { Colors } from "../styles/globals";
 export const FormContainer = styled.form`
   flex-direction: column;
   display: flex;
-  width: 33.5rem;
+  width: 100%;
 
   h6 {
     margin-bottom: 1vh;

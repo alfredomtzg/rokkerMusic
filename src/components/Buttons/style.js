@@ -135,6 +135,10 @@ export const StyledSearchButton = styled(StyledButtonWhite)`
   background-color: ${Colors.white};
 `;
 
+export const StyledDeletePlaylistButton = styled(StyledSearchButton)`
+  color: ${Colors.R500};
+`;
+
 export const StyledImgEditButton = styled.i`
   font-size: 1.822rem;
   &:active {

@@ -17,6 +17,7 @@ import {
   StyledEditButton,
   StyledImgEditButton,
   StyledSearchButton,
+  StyledDeletePlaylistButton,
 } from "./style";
 
 import "../../assets/fonts/coolicons.css";
@@ -127,5 +128,14 @@ export const SearchButton = () => {
         <i className="ci-search" />
       </StyledImgEditButton>
     </StyledSearchButton>
+  );
+};
+export const DeletePlaylistButton = () => {
+  return (
+    <StyledDeletePlaylistButton>
+      <StyledImgEditButton>
+        <i className="ci-trash_full" />
+      </StyledImgEditButton>
+    </StyledDeletePlaylistButton>
   );
 };
