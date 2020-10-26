@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import { Context } from "../utils/Context";
+import Login from "../pages/Login";
 
 function App() {
-  const { name } = useContext(Context);
   return (
     <div className="App">
       <GlobalStyle />
-      <h1> {name} </h1>
+      <Login />
     </div>
   );
 }

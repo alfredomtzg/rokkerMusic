@@ -5,18 +5,35 @@ import {
 } from "../../containers/LayoutContainers";
 import { TopBar, TopTextBox, NextButtonBox } from "../Globals/GlobalStyle";
 import { AvatarsGrid } from "./style";
+import Avatar from "../../assets/images/avatars/Alexander.svg";
+import Header from "../../components/header";
+import { NextButton } from "../../components/Buttons";
 
 const SingUpPickAvatar = () => {
   return (
     <PageContainer dark>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <TopTextBox>
           <h2>Mike</h2>
           <h5>Pick your avatar</h5>
         </TopTextBox>
-        <AvatarsGrid />
-        <NextButtonBox />
+        <AvatarsGrid>
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+          <img src={Avatar} alt="avatar" />
+        </AvatarsGrid>
+        <NextButtonBox>
+          <NextButton />
+        </NextButtonBox>
       </MainContainer>
     </PageContainer>
   );
