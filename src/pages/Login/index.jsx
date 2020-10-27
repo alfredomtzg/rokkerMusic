@@ -3,11 +3,7 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  FormBox,
-  LandingLogoBox,
-  LoginOrSendButtonBox,
-} from "../Globals/GlobalStyle";
+import { FormBox, LandingLogoBox } from "../Globals/GlobalStyle";
 import RokkerBlack from "../../assets/Logo/Rkr-black.svg";
 import LoginForm from "../../components/FormLogin";
 import MainLogin from "./style";
@@ -23,7 +19,6 @@ const Login = () => {
           <FormBox>
             <LoginForm />
           </FormBox>
-          <LoginOrSendButtonBox />
         </MainLogin>
       </MainContainer>
     </PageContainer>
