@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../../components/header";
 import {
   PageContainer,
   MainContainer,
@@ -10,17 +11,30 @@ import {
   NextButtonBox,
 } from "../Globals/GlobalStyle";
 import { UserAvatarBox } from "../Settings/style";
+import Avatar from "../../assets/images/avatars/Alexander.svg";
+import NewPassForm from "../../components/FormChangePassword";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
 
 const SettingsChangePassword = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
-        <UserAvatarBox />
-        <FormBox />
+        <UserAvatarBox>
+          <img src={Avatar} alt="avatar" />
+        </UserAvatarBox>
+        <FormBox>
+          <NewPassForm />
+        </FormBox>
         <NextButtonBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

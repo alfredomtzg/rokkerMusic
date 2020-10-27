@@ -43,9 +43,7 @@ export const LoginOrSendButtonBox = styled.div`
 `;
 
 export const PlaylistContentBox = styled.section`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5vh;
+  padding-bottom: 20vh;
 `;
 
 export const FullPageCenterMsgBox = styled.div`
@@ -60,7 +58,5 @@ export const FullPageCenterMsgBox = styled.div`
 export const MiniPlayerAndNavContainer = styled.footer`
   position: fixed;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
 `;

@@ -1,23 +1,36 @@
 import React from "react";
+import SearchBar from "../../components/SearchBar";
+import Header from "../../components/header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
 import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
 import { SearchBox, SearchRecommendationBox } from "./style";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
 
 const Search = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
-        <SearchBox />
+        <SearchBox>
+          <SearchBar />
+        </SearchBox>
+        <h3>Your last searches</h3>
         <SearchRecommendationBox>
           {/* Your last searches */}
         </SearchRecommendationBox>
+        <h3>Trending</h3>
         <SearchRecommendationBox>{/* Trending */}</SearchRecommendationBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

@@ -7,6 +7,7 @@ import {
   StyledNextButton,
   StyledImgGoogleButton,
   StyledSendButton,
+  StyledHomeButton,
   StyledChangePassButton,
   StyledSingOutButton,
   StyledSaveButton,
@@ -60,6 +61,13 @@ export const SendButton = () => {
     <StyledSendButton>
       <h5>Send</h5>
     </StyledSendButton>
+  );
+};
+export const HomeButton = () => {
+  return (
+    <StyledHomeButton>
+      <h5>Home</h5>
+    </StyledHomeButton>
   );
 };
 export const ChangePassButton = () => {
