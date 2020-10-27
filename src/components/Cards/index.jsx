@@ -75,7 +75,7 @@ export const GenreCard = () => {
 export const SearchRecommendation = () => {
   return (
     <StyledSearchRecommendation>
-      <i className="ci-long_bottom-up" />
+      <i className="ci-long_bottom_up" />
       <h5>Autocomplete item</h5>
     </StyledSearchRecommendation>
   );
