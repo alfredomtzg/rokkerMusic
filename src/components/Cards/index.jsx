@@ -6,8 +6,10 @@ import {
   StyledWideCard,
   StyledGenreCard,
   StyledSearchRecommendation,
+  StyledArtistSearchCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
+import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
 
 export const WideCard = () => {
   return (
@@ -78,5 +80,17 @@ export const SearchRecommendation = () => {
       <i className="ci-long_bottom_up" />
       <h5>Autocomplete item</h5>
     </StyledSearchRecommendation>
+  );
+};
+
+export const ArtistSearchCard = () => {
+  return (
+    <StyledArtistSearchCard>
+      <div>
+        <img src={ArtistAvatar} alt="Artist Avatar" />
+        <h6>Artist name</h6>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledArtistSearchCard>
   );
 };
