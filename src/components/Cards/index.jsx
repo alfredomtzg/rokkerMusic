@@ -11,6 +11,8 @@ import {
   StyledNewPlaylistCard,
   StyledMyFavoritesCard,
   StyledPlaylistCard,
+  StyledPlaylistBigCard,
+  StyledFavoritesBigCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -144,5 +146,23 @@ export const PlaylistCard = () => {
       </div>
       <i className="ci-chevron_big_right" />
     </StyledPlaylistCard>
+  );
+};
+
+export const PlaylistBigCard = () => {
+  return (
+    <StyledPlaylistBigCard>
+      <MidFilledCard />
+      <h1>Playlist title</h1>
+    </StyledPlaylistBigCard>
+  );
+};
+
+export const FavoritesBigCard = () => {
+  return (
+    <StyledFavoritesBigCard>
+      <MidFavoriteCard />
+      <h1>Playlist title</h1>
+    </StyledFavoritesBigCard>
   );
 };
