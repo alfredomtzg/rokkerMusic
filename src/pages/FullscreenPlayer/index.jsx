@@ -1,9 +1,12 @@
 import React from "react";
 import { PageContainer } from "../../containers/LayoutContainers";
+import FullscreenPlayer from "../../components/FullscreenPlayer";
 
 const FullscreenPlayerPage = () => {
   return (
-    <PageContainer>{/* insert FullscreenPlayer component */}</PageContainer>
+    <PageContainer>
+      <FullscreenPlayer />
+    </PageContainer>
   );
 };
 

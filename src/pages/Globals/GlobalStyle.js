@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../components/styles/globals";
 
-export const TopBar = styled.header`
-  display: flex;
-  justify-content: center;
-`;
+export const TopBar = styled.div``;
 
 export const LandingLogoBox = styled.figure`
   display: flex;
@@ -13,7 +10,7 @@ export const LandingLogoBox = styled.figure`
   margin: 0;
 
   img {
-    width: 8.4rem;
+    width: 12vh;
   }
 `;
 
@@ -43,9 +40,7 @@ export const LoginOrSendButtonBox = styled.div`
 `;
 
 export const PlaylistContentBox = styled.section`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5vh;
+  padding-bottom: 3vh;
 `;
 
 export const FullPageCenterMsgBox = styled.div`
@@ -60,7 +55,5 @@ export const FullPageCenterMsgBox = styled.div`
 export const MiniPlayerAndNavContainer = styled.footer`
   position: fixed;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
 `;

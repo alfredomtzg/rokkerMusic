@@ -8,20 +8,30 @@ import {
   MiniPlayerAndNavContainer,
   FormBox,
 } from "../Globals/GlobalStyle";
-import { CancelSaveBox, CreatePlaylistBox } from "./style";
+import Header from "../../components/header";
+import CreatePlaylistBox from "./style";
+import CreatePlaylistForm from "../../components/FormCreatePlaylist";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
 
 const PlaylistsCreate = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
-        <CancelSaveBox />
         <CreatePlaylistBox>
           <h1>Create Playlist</h1>
         </CreatePlaylistBox>
-        <FormBox />
+        <FormBox>
+          <CreatePlaylistForm />
+        </FormBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

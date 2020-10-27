@@ -1,6 +1,6 @@
 import React from "react";
 import StyledHeader from "./styles";
-import Logo from "../../assets/Logo/Rkr-black-nav.svg";
+import Logo from "../../assets/Logo/Rkr-red-nav.svg";
 
 const Header = () => {
   return (

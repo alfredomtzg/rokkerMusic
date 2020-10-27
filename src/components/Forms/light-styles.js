@@ -95,6 +95,7 @@ export const SearchInput = styled.input`
   padding: 0;
   margin: 0;
   width: 80vw;
+  height: 3rem;
 
   &:focus {
     outline: none;
