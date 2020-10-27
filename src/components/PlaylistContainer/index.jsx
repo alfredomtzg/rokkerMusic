@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { StyledPlaylistContainer } from "./styles" 
+import StyledPlaylistContainer from "./styles";
 
-export const PlaylistContainer = ({ children }) => {
+const PlaylistContainer = ({ children }) => {
   return (
-      <StyledPlaylistContainer>
-        <h4>Playlis Title</h4>
-        { children }
-      </StyledPlaylistContainer>
-  )
-}
+    <StyledPlaylistContainer>
+      <h4>Playlist Title</h4>
+      {children}
+    </StyledPlaylistContainer>
+  );
+};
+
+export default PlaylistContainer;

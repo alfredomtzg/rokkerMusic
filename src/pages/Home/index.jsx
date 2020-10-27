@@ -13,6 +13,8 @@ import Header from "../../components/header";
 import { GenreCard, MidFilledCard, WideCard } from "../../components/Cards";
 import MinimizedPlayer from "../../components/minimizedPlayer";
 import Footer from "../../components/Footer";
+import PlaylistContainer from "../../components/PlaylistContainer";
+import PlaylistItem from "../../components/PlaylistItem";
 
 const Home = () => {
   return (
@@ -45,7 +47,12 @@ const Home = () => {
           <GenreCard />
           <GenreCard />
         </RecommendPlaylistsBox>
-        <PlaylistContentBox />
+        <PlaylistContentBox>
+          <PlaylistContainer>
+            <PlaylistItem />
+            <PlaylistItem />
+          </PlaylistContainer>
+        </PlaylistContentBox>
       </MainContainer>
       <MiniPlayerAndNavContainer>
         <MinimizedPlayer />
