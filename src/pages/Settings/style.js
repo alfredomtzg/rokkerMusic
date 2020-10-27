@@ -4,6 +4,10 @@ export const UserAvatarBox = styled.div`
   display: flex;
   justify-content: center;
   padding: 5vh 0 6vh;
+
+  img {
+    width: 10rem;
+  }
 `;
 
 export const SettingsButtonsBox = styled.div`
