@@ -8,6 +8,9 @@ import {
   StyledSearchRecommendation,
   StyledArtistSearchCard,
   StyledPlaylistSearchCard,
+  StyledNewPlaylistCard,
+  StyledMyFavoritesCard,
+  StyledPlaylistCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -105,5 +108,41 @@ export const PlaylistSearchCard = () => {
       </div>
       <i className="ci-chevron_big_right" />
     </StyledPlaylistSearchCard>
+  );
+};
+
+export const NewPlaylistCard = () => {
+  return (
+    <StyledNewPlaylistCard>
+      <div>
+        <SmallPlusCard />
+        <h4>New Playlist</h4>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledNewPlaylistCard>
+  );
+};
+
+export const MyFavoritesCard = () => {
+  return (
+    <StyledMyFavoritesCard>
+      <div>
+        <SmallFavoriteCard />
+        <h4>Favorites</h4>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledMyFavoritesCard>
+  );
+};
+
+export const PlaylistCard = () => {
+  return (
+    <StyledPlaylistCard>
+      <div>
+        <SmallFilledCard />
+        <h4>Playlist title</h4>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledPlaylistCard>
   );
 };

@@ -115,3 +115,25 @@ export const StyledPlaylistSearchCard = styled(StyledArtistSearchCard)`
     width: 3.9rem;
   }
 `;
+
+export const StyledNewPlaylistCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  div h4 {
+    margin-left: 1rem;
+  }
+
+  i {
+    font-size: 4.2rem;
+  }
+`;
+export const StyledMyFavoritesCard = styled(StyledNewPlaylistCard)``;
+
+export const StyledPlaylistCard = styled(StyledNewPlaylistCard)``;
