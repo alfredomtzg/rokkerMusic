@@ -10,7 +10,7 @@ import {
   FormBox,
   NextButtonBox,
 } from "../Globals/GlobalStyle";
-import { UserAvatarBox } from "../Settings/style";
+import UserAvatarBox from "./style";
 import Avatar from "../../assets/images/avatars/Alexander.svg";
 import NewPassForm from "../../components/FormChangePassword";
 import MinimizedPlayer from "../../components/minimizedPlayer";
