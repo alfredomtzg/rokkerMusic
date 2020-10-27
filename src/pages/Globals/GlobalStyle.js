@@ -13,7 +13,7 @@ export const LandingLogoBox = styled.figure`
   margin: 0;
 
   img {
-    width: 8.4rem;
+    width: 12vh;
   }
 `;
 
