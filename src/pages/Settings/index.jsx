@@ -3,23 +3,33 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  TopBar,
-  FormBox,
-  MiniPlayerAndNavContainer,
-} from "../Globals/GlobalStyle";
+import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
 import { UserAvatarBox, SettingsButtonsBox } from "./style";
+import Header from "../../components/header";
+import { ChangePassButton, SingOutButton } from "../../components/Buttons";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
+import UserCard from "../../components/UserCard";
 
 const Settings = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
-        <UserAvatarBox />
-        <FormBox />
-        <SettingsButtonsBox />
+        <UserAvatarBox>
+          <UserCard />
+        </UserAvatarBox>
+        <SettingsButtonsBox>
+          <ChangePassButton />
+          <SingOutButton />
+        </SettingsButtonsBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

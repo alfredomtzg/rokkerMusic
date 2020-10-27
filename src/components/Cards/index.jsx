@@ -5,8 +5,12 @@ import {
   StyledSmallCard,
   StyledWideCard,
   StyledGenreCard,
+  StyledSearchRecommendation,
+  StyledArtistSearchCard,
+  StyledPlaylistSearchCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
+import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
 
 export const WideCard = () => {
   return (
@@ -68,5 +72,38 @@ export const GenreCard = () => {
     <StyledGenreCard>
       <p>Your playlist name</p>
     </StyledGenreCard>
+  );
+};
+
+export const SearchRecommendation = () => {
+  return (
+    <StyledSearchRecommendation>
+      <i className="ci-long_bottom_up" />
+      <h5>Autocomplete item</h5>
+    </StyledSearchRecommendation>
+  );
+};
+
+export const ArtistSearchCard = () => {
+  return (
+    <StyledArtistSearchCard>
+      <div>
+        <img src={ArtistAvatar} alt="Artist Avatar" />
+        <h6>Artist name</h6>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledArtistSearchCard>
+  );
+};
+
+export const PlaylistSearchCard = () => {
+  return (
+    <StyledPlaylistSearchCard>
+      <div>
+        <img src={Logo} alt="Playlist Cover" />
+        <h6>Playlist name</h6>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledPlaylistSearchCard>
   );
 };

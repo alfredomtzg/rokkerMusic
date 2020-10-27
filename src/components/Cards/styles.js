@@ -79,3 +79,39 @@ export const StyledGenreCard = styled(StyledMidCard)`
   height: 4.5rem;
   background-color: ${Colors.G600};
 `;
+
+export const StyledSearchRecommendation = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 1vh 0;
+
+  i {
+    margin-right: 4vw;
+    font-size: 2rem;
+  }
+`;
+
+export const StyledArtistSearchCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  div h6 {
+    margin-left: 1rem;
+  }
+
+  i {
+    font-size: 2.4rem;
+  }
+`;
+
+export const StyledPlaylistSearchCard = styled(StyledArtistSearchCard)`
+  img {
+    width: 3.9rem;
+  }
+`;
