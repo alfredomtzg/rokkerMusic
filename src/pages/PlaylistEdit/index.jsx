@@ -1,4 +1,10 @@
 import React from "react";
+import EditPlaylistForm from "../../components/FormEditPlaylist";
+import Header from "../../components/header";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import PlaylistContainer from "../../components/PlaylistContainer";
+import PlaylistItem from "../../components/PlaylistItem";
+import Footer from "../../components/Footer";
 import {
   PageContainer,
   MainContainer,
@@ -7,20 +13,36 @@ import {
   MiniPlayerAndNavContainer,
   PlaylistContentBox,
   TopBar,
+  FormBox,
 } from "../Globals/GlobalStyle";
-import { CancelSaveBox } from "../PlaylistsCreate/style";
-import { PlaylistsBox } from "../PlaylistsList/style";
 
 const PlaylistEdit = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
-        <CancelSaveBox />
-        <PlaylistsBox />
-        <PlaylistContentBox />
+        <FormBox>
+          <EditPlaylistForm />
+        </FormBox>
+        <PlaylistContentBox>
+          <PlaylistContainer>
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+          </PlaylistContainer>
+        </PlaylistContentBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

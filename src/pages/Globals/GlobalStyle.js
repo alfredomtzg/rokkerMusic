@@ -43,7 +43,7 @@ export const LoginOrSendButtonBox = styled.div`
 `;
 
 export const PlaylistContentBox = styled.section`
-  padding-bottom: 20vh;
+  padding-bottom: 3vh;
 `;
 
 export const FullPageCenterMsgBox = styled.div`

@@ -1,4 +1,8 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import Header from "../../components/header";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import PlaylistItem from "../../components/PlaylistItem";
 import {
   MainContainer,
   PageContainer,
@@ -10,14 +14,26 @@ import SearchResultsBox from "./style";
 const SearchResults = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <SearchBox />
-        <SearchResultsBox>{/* Songs */}</SearchResultsBox>
-        <SearchResultsBox>{/* Artists */}</SearchResultsBox>
-        <SearchResultsBox>{/* Playlists */}</SearchResultsBox>
+        <h3>Songs</h3>
+        <SearchResultsBox>
+          <PlaylistItem />
+          <PlaylistItem />
+          <PlaylistItem />
+        </SearchResultsBox>
+        <h3>Artists</h3>
+        <SearchResultsBox />
+        <h3>Playlists</h3>
+        <SearchResultsBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };
