@@ -101,10 +101,16 @@ export const StyledArtistSearchCard = styled.div`
   }
 
   div h6 {
-    margin-left: 4vw;
+    margin-left: 1rem;
   }
 
   i {
     font-size: 2.4rem;
+  }
+`;
+
+export const StyledPlaylistSearchCard = styled(StyledArtistSearchCard)`
+  img {
+    width: 3.9rem;
   }
 `;
