@@ -137,3 +137,14 @@ export const StyledNewPlaylistCard = styled.div`
 export const StyledMyFavoritesCard = styled(StyledNewPlaylistCard)``;
 
 export const StyledPlaylistCard = styled(StyledNewPlaylistCard)``;
+
+export const StyledPlaylistBigCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-top: 3vh;
+  }
+`;
+export const StyledFavoritesBigCard = styled(StyledPlaylistBigCard)``;
