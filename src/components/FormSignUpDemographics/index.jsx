@@ -8,7 +8,7 @@ import {
   SelectInput,
 } from "../Forms/dark-styles";
 
-export default function SignUpDemographic() {
+export default function SignUpDemographicForm() {
   // SignUp Values
   const [valuesSignUp, setValuesSignUp] = useState({
     country: "",
