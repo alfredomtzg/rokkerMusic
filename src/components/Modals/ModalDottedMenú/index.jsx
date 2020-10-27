@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Container, Button } from "./slyle";
+/*import {ModalDottedMenu} from "../components/Modals/ModalDottedMenú/index"; ruta de acceso en App.js */
 
 export const ModalDottedMenu = () => {
   const [showModal, setShowModal] = useState(false);
