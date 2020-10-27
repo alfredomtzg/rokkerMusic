@@ -83,6 +83,7 @@ export const StyledGenreCard = styled(StyledMidCard)`
 export const StyledSearchRecommendation = styled.div`
   display: flex;
   align-items: center;
+  margin: 1vh 0;
 
   i {
     margin-right: 4vw;

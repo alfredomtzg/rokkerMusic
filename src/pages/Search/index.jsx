@@ -9,6 +9,7 @@ import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
 import { SearchBox, SearchRecommendationBox } from "./style";
 import MinimizedPlayer from "../../components/minimizedPlayer";
 import Footer from "../../components/Footer";
+import { SearchRecommendation } from "../../components/Cards";
 
 const Search = () => {
   return (
@@ -22,10 +23,20 @@ const Search = () => {
         </SearchBox>
         <h3>Your last searches</h3>
         <SearchRecommendationBox>
-          {/* Your last searches */}
+          <SearchRecommendation />
+          <SearchRecommendation />
+          <SearchRecommendation />
+          <SearchRecommendation />
+          <SearchRecommendation />
         </SearchRecommendationBox>
         <h3>Trending</h3>
-        <SearchRecommendationBox>{/* Trending */}</SearchRecommendationBox>
+        <SearchRecommendationBox>
+          <SearchRecommendation />
+          <SearchRecommendation />
+          <SearchRecommendation />
+          <SearchRecommendation />
+          <SearchRecommendation />
+        </SearchRecommendationBox>
       </MainContainer>
       <MiniPlayerAndNavContainer>
         <MinimizedPlayer />
