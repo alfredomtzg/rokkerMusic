@@ -15,7 +15,7 @@ export const Button = styled.button`
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
-  background: #141414;
+  background: red;
   color: #fff;
   font-size: 24px;
   cursor: pointer;
@@ -23,7 +23,7 @@ export const Button = styled.button`
 const Background = styled.div`
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -34,20 +34,20 @@ const ModalWrapper = styled.div`
   width: 375px;
   height: 252px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 1);
-  background: #091e42;
-  color: #000;
+  background: #091e42;/*color de fondo modal */
+  color: #fff;/*color de close modal */
   display: grid;
   grid-template-rows: 1fr 1fr;
 
   border-radius: 10px;
 `;
 
-const ModalImg = styled.img`
+/* const ModalImg = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 10px 0 0 10px;
   background: #000;
-`;
+`; */
 
 const ModalContent = styled.div`
   display: flex;
@@ -55,12 +55,12 @@ const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   line-height: 1.8;
-  color: #141414;
+  color: #fff;/*color letra modal */
   p {
     margin-bottom: 1rem;
   }
   button {
-    padding: 10px 24px;
+    /* padding: 10px 24px; */
     background: #141414;
     color: #fff;
     border: none;
@@ -99,7 +99,7 @@ export const Modal = ({ showModal, setShowModal }) => {
     (e) => {
       if (e.key === "Escape" && showModal) {
         setShowModal(false);
-        console.log("I pressed");
+        
       }
     },
     [setShowModal, showModal]
@@ -117,7 +117,7 @@ export const Modal = ({ showModal, setShowModal }) => {
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <ModalContent>
-                <h1>MUSIC?</h1>
+                <h1>Rokker</h1>
                 <p>*****************************</p>
               </ModalContent>
               <CloseModalButton
