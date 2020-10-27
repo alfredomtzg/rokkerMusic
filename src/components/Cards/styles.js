@@ -79,3 +79,13 @@ export const StyledGenreCard = styled(StyledMidCard)`
   height: 4.5rem;
   background-color: ${Colors.G600};
 `;
+
+export const StyledSearchRecommendation = styled.div`
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: 4vw;
+    font-size: 2rem;
+  }
+`;

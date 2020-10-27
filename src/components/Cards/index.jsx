@@ -5,6 +5,7 @@ import {
   StyledSmallCard,
   StyledWideCard,
   StyledGenreCard,
+  StyledSearchRecommendation,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 
@@ -68,5 +69,14 @@ export const GenreCard = () => {
     <StyledGenreCard>
       <p>Your playlist name</p>
     </StyledGenreCard>
+  );
+};
+
+export const SearchRecommendation = () => {
+  return (
+    <StyledSearchRecommendation>
+      <i className="ci-long_bottom-up" />
+      <h5>Autocomplete item</h5>
+    </StyledSearchRecommendation>
   );
 };
