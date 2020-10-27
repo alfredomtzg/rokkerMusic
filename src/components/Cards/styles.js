@@ -89,3 +89,22 @@ export const StyledSearchRecommendation = styled.div`
     font-size: 2rem;
   }
 `;
+
+export const StyledArtistSearchCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  div h6 {
+    margin-left: 4vw;
+  }
+
+  i {
+    font-size: 2.4rem;
+  }
+`;
