@@ -7,6 +7,7 @@ import {
   StyledGenreCard,
   StyledSearchRecommendation,
   StyledArtistSearchCard,
+  StyledPlaylistSearchCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -92,5 +93,17 @@ export const ArtistSearchCard = () => {
       </div>
       <i className="ci-chevron_big_right" />
     </StyledArtistSearchCard>
+  );
+};
+
+export const PlaylistSearchCard = () => {
+  return (
+    <StyledPlaylistSearchCard>
+      <div>
+        <img src={Logo} alt="Playlist Cover" />
+        <h6>Playlist name</h6>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledPlaylistSearchCard>
   );
 };
