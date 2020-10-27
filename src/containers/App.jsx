@@ -1,12 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import SignUpEntryData from "../pages/SignUpEntryData";
+import SingUpPickAvatar from "../pages/SignUpPickAvatar";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <SignUpEntryData />
+      <SingUpPickAvatar />
     </div>
   );
 }
