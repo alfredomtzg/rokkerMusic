@@ -1,4 +1,5 @@
 import React from "react";
+import { ArtistSearchCard } from "../../components/Cards";
 import Footer from "../../components/Footer";
 import Header from "../../components/header";
 import MinimizedPlayer from "../../components/minimizedPlayer";
@@ -26,7 +27,12 @@ const SearchResults = () => {
           <PlaylistItem />
         </SearchResultsBox>
         <h3>Artists</h3>
-        <SearchResultsBox />
+        <SearchResultsBox>
+          <ArtistSearchCard />
+          <ArtistSearchCard />
+          <ArtistSearchCard />
+          <ArtistSearchCard />
+        </SearchResultsBox>
         <h3>Playlists</h3>
         <SearchResultsBox />
       </MainContainer>
