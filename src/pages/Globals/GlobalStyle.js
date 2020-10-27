@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../components/styles/globals";
 
-export const TopBar = styled.header`
-  display: flex;
-  justify-content: center;
-`;
+export const TopBar = styled.div``;
 
 export const LandingLogoBox = styled.figure`
   display: flex;
