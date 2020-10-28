@@ -154,3 +154,16 @@ export const StyledArtistProfileCard = styled(StyledPlaylistBigCard)`
     width: 10rem;
   }
 `;
+
+export const StyledQueueReturn = styled.header`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    position: absolute;
+    left: 5vw;
+    font-size: 2.4rem;
+  }
+`;
