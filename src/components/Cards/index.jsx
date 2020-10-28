@@ -125,7 +125,7 @@ export const NewPlaylistCard = () => {
   );
 };
 
-export const MyFavoritesCard = () => {
+export const FavoritesCard = () => {
   return (
     <StyledMyFavoritesCard>
       <div>
