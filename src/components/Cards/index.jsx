@@ -13,6 +13,7 @@ import {
   StyledPlaylistCard,
   StyledPlaylistBigCard,
   StyledFavoritesBigCard,
+  StyledArtistProfileCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -164,5 +165,14 @@ export const FavoritesBigCard = () => {
       <MidFavoriteCard />
       <h1>Playlist title</h1>
     </StyledFavoritesBigCard>
+  );
+};
+
+export const ArtistProfileCard = () => {
+  return (
+    <StyledArtistProfileCard>
+      <img src={ArtistAvatar} alt="" />
+      <h1>Artist name</h1>
+    </StyledArtistProfileCard>
   );
 };

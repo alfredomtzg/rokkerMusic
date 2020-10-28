@@ -148,3 +148,9 @@ export const StyledPlaylistBigCard = styled.div`
   }
 `;
 export const StyledFavoritesBigCard = styled(StyledPlaylistBigCard)``;
+
+export const StyledArtistProfileCard = styled(StyledPlaylistBigCard)`
+  img {
+    width: 10rem;
+  }
+`;
