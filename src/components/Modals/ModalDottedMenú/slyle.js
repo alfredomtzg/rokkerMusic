@@ -46,12 +46,18 @@ const ModalWrapper = styled.div`
   border-radius: 10px 0 0 10px;
   background: #000;
 `; */
-/*Primer division en grid */
+/*container para grid grid */
 const StyledModalContaines = styled.div`
  width:335px;
-height:204px;
-background:green;
+height:205px;
+background:white;
+border:1px solid white;
+display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 39px 10px 39px 39px 39px 39px;
+ 
 `;
+
 /* X de Close */
 const CloseModalButton = styled(MdClose)`
   color: #fff;/*color de la X del modal */
@@ -105,9 +111,9 @@ export const Modal = ({ showModal, setShowModal }) => {
         <Background onClick={closeModal} ref={modalRef}>
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
-              <StyledModalContaines>
-                <h1>Rokker</h1>
-              </StyledModalContaines>
+            <StyledModalContaines>
+
+            </StyledModalContaines> 
               <CloseModalButton
                 aria-label="Close modal"
                 onClick={() => setShowModal((prev) => !prev)}
