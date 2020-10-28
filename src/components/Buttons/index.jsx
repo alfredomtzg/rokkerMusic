@@ -12,7 +12,6 @@ import {
   StyledSingOutButton,
   StyledSaveButton,
   StyledPlayButton,
-  StyledImgPlayButton,
   StyledCancelButton,
   StyledTxtSaveButton,
   StyledEditButton,
@@ -101,7 +100,7 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
-      <StyledImgPlayButton className="ci-play_arrow" />
+      <i className="ci-play_arrow" />
       <h5>Play</h5>
     </StyledPlayButton>
   );

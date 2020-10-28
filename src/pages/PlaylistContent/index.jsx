@@ -19,6 +19,7 @@ import {
   PlaylistCardAndTitleBox,
   PlayButtonBox,
 } from "./style";
+import { PlaylistBigCard } from "../../components/Cards";
 
 const PlaylistContent = () => {
   return (
@@ -30,7 +31,9 @@ const PlaylistContent = () => {
         <EditPlaylistButtonBox>
           <EditButton />
         </EditPlaylistButtonBox>
-        <PlaylistCardAndTitleBox />
+        <PlaylistCardAndTitleBox>
+          <PlaylistBigCard />
+        </PlaylistCardAndTitleBox>
         <PlayButtonBox>
           <PlayButton />
         </PlayButtonBox>
