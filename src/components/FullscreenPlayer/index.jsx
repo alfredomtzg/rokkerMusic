@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -12,15 +12,19 @@ import {
   ProgressBar,
 } from "./style";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
+import { Context } from "../../utils/Context";
 
 const FullscreenPlayer = () => {
+  // stateGlobal
+  const { name } = useContext(Context);
+
   return (
     <div>
       <TopOptions>
         <i className="ci-chevron_big_down" />
         <div>
-          <h6>Played from playlist</h6>
-          <h5>My Playlist</h5>
+          <h6>Played from {name.playlistFrom}</h6>
+          <h5>{name.playlistName}</h5>
         </div>
         <i className="ci-more_vertical" />
       </TopOptions>
@@ -29,7 +33,7 @@ const FullscreenPlayer = () => {
       </SongCover>
       <SongTitleAndArtist>
         <h3>Sucker</h3>
-        <h4>Jonas Brothers</h4>
+        <h4> {name.artistName} </h4>
       </SongTitleAndArtist>
       <Timeline>
         <h5>2:54</h5>
