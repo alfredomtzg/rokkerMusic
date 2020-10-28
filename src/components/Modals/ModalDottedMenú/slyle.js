@@ -78,6 +78,7 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 
+// eslint-disable-next-line react/prop-types
 export const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
 
@@ -103,14 +104,15 @@ export const Modal = ({ showModal, setShowModal }) => {
       }
     },
     [setShowModal, showModal]
-  );
-
-  useEffect(() => {
-    document.addEventListener("keydown", keyPress);
-    return () => document.removeEventListener("keydown", keyPress);
-  }, [keyPress]);
-
-  return (
+    );
+    
+    useEffect(() => {
+      document.addEventListener("keydown", keyPress);
+      return () => document.removeEventListener("keydown", keyPress);
+    }, [keyPress]);
+    
+    return (
+      // eslint-disable-next-line react/jsx-filename-extension
     <>
       {showModal ? (
         <Background onClick={closeModal} ref={modalRef}>
