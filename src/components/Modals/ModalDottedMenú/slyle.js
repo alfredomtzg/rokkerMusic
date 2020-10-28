@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
+import { PlaylistSearchCard } from "../../Cards/index";
+import {Colors} from '../../styles/globals'
 
 export const StyledContainerModal = styled.div`
   display: flex;
@@ -11,62 +13,90 @@ export const StyledContainerModal = styled.div`
 `;
 
 export const Button = styled.button`
-  min-width: 100px;
-  padding: 16px 32px;
-  border-radius: 4px;
+  min-width: 10rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 0.4rem;
   border: none;
-  background: red;
-  color: #fff;
-  font-size: 24px;
+  background: ${Colors.G700};
+  color: ${Colors.G100};
+  font-size: 2.4rem;
   cursor: pointer;
 `;
-const Background = styled.div`
-  width: 100%;
-  height: 100%;
+
+export const Background = styled.div`
+  width: 100rem;
+  height: 100rem;
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+
 /*Contenedor Modal por dentro*/
-const ModalWrapper = styled.div`
-  width: 375px;
-  height: 252px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 1);
-  background: #091e42;/*color de fondo modal */
-  display:flex;
-  justify-content:center;
-  align-items:center;
+export const ModalWrapper = styled.div`
+  width: 37.5rem;
+  height: 25.2rem;
+  box-shadow: 0 0.5rem 1.6rem rgba(0, 0, 0, 1);
+  background: ${Colors.G700}; /*color de fondo modal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-/* const ModalImg = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  background: #000;
-`; */
 /*container para grid grid */
-const StyledModalContaines = styled.div`
- width:335px;
-height:205px;
-background:white;
-border:1px solid white;
-display: grid;
+export const StyledModalContaines = styled.div`
+  width: 33.5rem;
+  height: 20.5rem;
+/*border: 1px solid white;*/
+  display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 39px 10px 39px 39px 39px 39px;
- 
+  grid-template-rows: 3.9rem 1rem 3.9rem 3.9rem 3.9rem 3.9rem;
+  gap: 0.1rem 0rem;
+`;
+
+export const StyledButonSongTitle = styled.button`
+  background:${Colors.G700};
+  color:${Colors.G200};
+  outline: none;
+  border: none;
+  justify-self: stretch;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  &:active {
+    background: ${Colors.S700};
+  }
+`;
+
+export const StyledButonAddTQ = styled(StyledButonSongTitle)`
+  grid-column: 1/2;
+  grid-row: 3/4;
+`;
+
+export const StyledButonArtisProfile = styled(StyledButonSongTitle)` 
+  grid-column: 1/2;
+  grid-row: 4/5; 
+`;
+
+export const StyledButonPlaylist = styled(StyledButonSongTitle)` 
+  grid-column: 1/2;
+  grid-row: 5/6; 
+`;
+
+export const StyledButonAddRemove = styled(StyledButonSongTitle)`
+  grid-column: 1/2;
+  grid-row: 6/7;
 `;
 
 /* X de Close */
 const CloseModalButton = styled(MdClose)`
-  color: #fff;/*color de la X del modal */
+  color: ${Colors.G100}; /*color de la X del modal */
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 14px;
-  height: 14px;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
   padding: 0;
   z-index: 10;
 `;
@@ -93,27 +123,32 @@ export const Modal = ({ showModal, setShowModal }) => {
     (e) => {
       if (e.key === "Escape" && showModal) {
         setShowModal(false);
-        
       }
     },
     [setShowModal, showModal]
-    );
-    
-    useEffect(() => {
-      document.addEventListener("keydown", keyPress);
-      return () => document.removeEventListener("keydown", keyPress);
-    }, [keyPress]);
-    
-    return (
-      // eslint-disable-next-line react/jsx-filename-extension
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyPress);
+    return () => document.removeEventListener("keydown", keyPress);
+  }, [keyPress]);
+
+  return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <>
       {showModal ? (
         <Background onClick={closeModal} ref={modalRef}>
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
-            <StyledModalContaines>
-
-            </StyledModalContaines> 
+              <StyledModalContaines>
+                <StyledButonSongTitle>
+                  <PlaylistSearchCard />
+                </StyledButonSongTitle>
+                <StyledButonAddTQ />
+                <StyledButonArtisProfile />
+                <StyledButonPlaylist />
+                <StyledButonAddRemove />
+              </StyledModalContaines>
               <CloseModalButton
                 aria-label="Close modal"
                 onClick={() => setShowModal((prev) => !prev)}
