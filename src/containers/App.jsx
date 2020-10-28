@@ -1,12 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import PlaylistContent from "../pages/PlaylistContent";
+import { QueueReturn } from "../components/Cards";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <PlaylistContent />
+      <QueueReturn />
     </div>
   );
 }
