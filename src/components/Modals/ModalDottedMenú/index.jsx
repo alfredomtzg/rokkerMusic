@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Container, Button } from "./slyle";
+import { Modal, StyledContainerModal, Button } from "./slyle";
 
 // eslint-disable-next-line import/prefer-default-export
 export const ModalDottedMenu = () => {
@@ -11,10 +11,10 @@ export const ModalDottedMenu = () => {
     
     return (
         <>
-      <Container>
+      <StyledContainerModal>
         <Button onClick={openModal}>...</Button>
         <Modal showModal={showModal} setShowModal={setShowModal} />
-      </Container>
+      </StyledContainerModal>
     </>
   );
 };
