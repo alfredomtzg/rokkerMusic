@@ -14,6 +14,7 @@ import {
   StyledPlaylistBigCard,
   StyledFavoritesBigCard,
   StyledArtistProfileCard,
+  StyledQueueReturn,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -174,5 +175,14 @@ export const ArtistProfileCard = () => {
       <img src={ArtistAvatar} alt="" />
       <h1>Artist name</h1>
     </StyledArtistProfileCard>
+  );
+};
+
+export const QueueReturn = () => {
+  return (
+    <StyledQueueReturn>
+      <i className="ci-chevron_big_left" />
+      <h4>Queue</h4>
+    </StyledQueueReturn>
   );
 };

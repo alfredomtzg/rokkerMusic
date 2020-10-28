@@ -19,8 +19,9 @@ const PlaylistItem = () => {
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
-        <i className="ci-more_horizontal" />
         <i className="ci-heart_outline" />
+        <i className="ci-more_horizontal" />
+        <i className="ci-minus_circle" />
       </StyledIconsRight>
     </StyledPlaylistItem>
   );
