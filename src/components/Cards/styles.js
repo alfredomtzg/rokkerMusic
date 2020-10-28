@@ -115,3 +115,55 @@ export const StyledPlaylistSearchCard = styled(StyledArtistSearchCard)`
     width: 3.9rem;
   }
 `;
+
+export const StyledNewPlaylistCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  div h4 {
+    margin-left: 1rem;
+  }
+
+  i {
+    font-size: 4.2rem;
+  }
+`;
+export const StyledMyFavoritesCard = styled(StyledNewPlaylistCard)``;
+
+export const StyledPlaylistCard = styled(StyledNewPlaylistCard)``;
+
+export const StyledPlaylistBigCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-top: 3vh;
+  }
+`;
+export const StyledFavoritesBigCard = styled(StyledPlaylistBigCard)``;
+
+export const StyledArtistProfileCard = styled(StyledPlaylistBigCard)`
+  img {
+    width: 10rem;
+  }
+`;
+
+export const StyledQueueReturn = styled.header`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    position: absolute;
+    left: 5vw;
+    font-size: 2.4rem;
+  }
+`;

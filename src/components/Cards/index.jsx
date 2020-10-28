@@ -8,6 +8,13 @@ import {
   StyledSearchRecommendation,
   StyledArtistSearchCard,
   StyledPlaylistSearchCard,
+  StyledNewPlaylistCard,
+  StyledMyFavoritesCard,
+  StyledPlaylistCard,
+  StyledPlaylistBigCard,
+  StyledFavoritesBigCard,
+  StyledArtistProfileCard,
+  StyledQueueReturn,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -105,5 +112,77 @@ export const PlaylistSearchCard = () => {
       </div>
       <i className="ci-chevron_big_right" />
     </StyledPlaylistSearchCard>
+  );
+};
+
+export const NewPlaylistCard = () => {
+  return (
+    <StyledNewPlaylistCard>
+      <div>
+        <SmallPlusCard />
+        <h4>New Playlist</h4>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledNewPlaylistCard>
+  );
+};
+
+export const FavoritesCard = () => {
+  return (
+    <StyledMyFavoritesCard>
+      <div>
+        <SmallFavoriteCard />
+        <h4>Favorites</h4>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledMyFavoritesCard>
+  );
+};
+
+export const PlaylistCard = () => {
+  return (
+    <StyledPlaylistCard>
+      <div>
+        <SmallFilledCard />
+        <h4>Playlist title</h4>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledPlaylistCard>
+  );
+};
+
+export const PlaylistBigCard = () => {
+  return (
+    <StyledPlaylistBigCard>
+      <MidFilledCard />
+      <h1>Playlist title</h1>
+    </StyledPlaylistBigCard>
+  );
+};
+
+export const FavoritesBigCard = () => {
+  return (
+    <StyledFavoritesBigCard>
+      <MidFavoriteCard />
+      <h1>Playlist title</h1>
+    </StyledFavoritesBigCard>
+  );
+};
+
+export const ArtistProfileCard = () => {
+  return (
+    <StyledArtistProfileCard>
+      <img src={ArtistAvatar} alt="" />
+      <h1>Artist name</h1>
+    </StyledArtistProfileCard>
+  );
+};
+
+export const QueueReturn = () => {
+  return (
+    <StyledQueueReturn>
+      <i className="ci-chevron_big_left" />
+      <h4>Queue</h4>
+    </StyledQueueReturn>
   );
 };

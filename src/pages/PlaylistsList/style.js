@@ -7,9 +7,8 @@ export const YourPlaylistsBox = styled.section`
 `;
 
 export const NewAndFavoritesBox = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  gap: 2vh;
   margin-bottom: 5vh;
 `;
 
