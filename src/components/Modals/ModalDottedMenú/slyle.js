@@ -33,7 +33,7 @@ export const Background = styled.div`
   align-items: center;
 `;
 
-/*Contenedor Modal por dentro*/
+/* Contenedor Modal por dentro */
 export const ModalWrapper = styled.div`
   width: 37.5rem;
   height: 25.2rem;
@@ -44,7 +44,7 @@ export const ModalWrapper = styled.div`
   align-items: center;
 `;
 
-/*container para grid grid */
+/* container para grid grid */
 export const StyledModalContaines = styled.div`
   width: 33.5rem;
   height: 20.5rem;
