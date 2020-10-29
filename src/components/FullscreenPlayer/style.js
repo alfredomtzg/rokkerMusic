@@ -103,11 +103,15 @@ export const PrevButton = styled.button``;
 export const PlayPauseButton = styled.button`
   border: 1px solid transparent;
   background-color: ${Colors.G200};
+  &:focus {
+      outline:none;
+    }
 
   .ci-play_circle_filled,
   .ci-pause_circle_filled {
     font-size: 5rem;
     margin: 0 2vw;
+    
   }
 `;
 export const NextButton = styled.button``;
