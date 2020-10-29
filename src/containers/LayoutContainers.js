@@ -6,5 +6,5 @@ export const PageContainer = styled.div`
   background-color: ${(props) => (props.dark ? Colors.G700 : Colors.G100)};
 `;
 export const MainContainer = styled.div`
-  padding: 0 5vw;
+  padding: 0 5vw 12vh;
 `;

@@ -1,4 +1,10 @@
 import React from "react";
+import { EditButton, PlayButton } from "../../components/Buttons";
+import Header from "../../components/header";
+import PlaylistContainer from "../../components/PlaylistContainer";
+import PlaylistItem from "../../components/PlaylistItem";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
 import {
   MainContainer,
   PageContainer,
@@ -13,18 +19,38 @@ import {
   PlaylistCardAndTitleBox,
   PlayButtonBox,
 } from "./style";
+import { PlaylistBigCard } from "../../components/Cards";
 
 const PlaylistContent = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
-        <EditPlaylistButtonBox />
-        <PlaylistCardAndTitleBox />
-        <PlayButtonBox />
-        <PlaylistContentBox />
+        <EditPlaylistButtonBox>
+          <EditButton />
+        </EditPlaylistButtonBox>
+        <PlaylistCardAndTitleBox>
+          <PlaylistBigCard />
+        </PlaylistCardAndTitleBox>
+        <PlayButtonBox>
+          <PlayButton />
+        </PlayButtonBox>
+        <PlaylistContentBox>
+          <PlaylistContainer>
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+            <PlaylistItem />
+          </PlaylistContainer>
+        </PlaylistContentBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

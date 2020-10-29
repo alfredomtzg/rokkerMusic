@@ -1,5 +1,13 @@
 import React from "react";
 import {
+  FavoritesCard,
+  PlaylistCard,
+  NewPlaylistCard,
+} from "../../components/Cards";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
+import Header from "../../components/header";
+import {
   MainContainer,
   PageContainer,
 } from "../../containers/LayoutContainers";
@@ -9,15 +17,28 @@ import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
 const PlaylistList = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <YourPlaylistsBox>
           <h1>Your playlists</h1>
         </YourPlaylistsBox>
-        <NewAndFavoritesBox />
-        <PlaylistsBox />
+        <NewAndFavoritesBox>
+          <NewPlaylistCard />
+          <FavoritesCard />
+        </NewAndFavoritesBox>
+        <PlaylistsBox>
+          <PlaylistCard />
+          <PlaylistCard />
+          <PlaylistCard />
+          <PlaylistCard />
+        </PlaylistsBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

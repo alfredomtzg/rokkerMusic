@@ -1,19 +1,18 @@
 import React from "react";
+import ForgotPassForm from "../../components/FormForgotPassword";
+import Header from "../../components/header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  FormBox,
-  LoginOrSendButtonBox,
-  TopBar,
-  TopTextBox,
-} from "../Globals/GlobalStyle";
+import { FormBox, TopBar, TopTextBox } from "../Globals/GlobalStyle";
 
 const LoginForgotPassword = () => {
   return (
     <PageContainer dark>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <TopTextBox>
           <h2>Forgot your password?</h2>
@@ -22,8 +21,9 @@ const LoginForgotPassword = () => {
             and we will be sending you <br />a new one
           </h5>
         </TopTextBox>
-        <FormBox />
-        <LoginOrSendButtonBox />
+        <FormBox>
+          <ForgotPassForm />
+        </FormBox>
       </MainContainer>
     </PageContainer>
   );

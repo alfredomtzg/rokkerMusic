@@ -9,21 +9,55 @@ import {
   PlaylistContentBox,
 } from "../Globals/GlobalStyle";
 import { GreetingBox, FavoritesBox, RecommendPlaylistsBox } from "./style";
+import Header from "../../components/header";
+import { GenreCard, MidFilledCard, WideCard } from "../../components/Cards";
+import MinimizedPlayer from "../../components/minimizedPlayer";
+import Footer from "../../components/Footer";
+import PlaylistContainer from "../../components/PlaylistContainer";
+import PlaylistItem from "../../components/PlaylistItem";
 
 const Home = () => {
   return (
     <PageContainer>
-      <TopBar />
+      <TopBar>
+        <Header />
+      </TopBar>
       <MainContainer>
         <GreetingBox />
-        <FavoritesBox />
+        <FavoritesBox>
+          <WideCard />
+        </FavoritesBox>
         <h5>Recommended playlists</h5>
-        <RecommendPlaylistsBox />
+        <RecommendPlaylistsBox>
+          <MidFilledCard />
+          <MidFilledCard />
+          <MidFilledCard />
+          <MidFilledCard />
+          <MidFilledCard />
+          <MidFilledCard />
+          <MidFilledCard />
+        </RecommendPlaylistsBox>
         <h5>Playlists by genre</h5>
-        <RecommendPlaylistsBox />
-        <PlaylistContentBox />
+        <RecommendPlaylistsBox>
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+        </RecommendPlaylistsBox>
+        <PlaylistContentBox>
+          <PlaylistContainer>
+            <PlaylistItem />
+            <PlaylistItem />
+          </PlaylistContainer>
+        </PlaylistContentBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer />
+      <MiniPlayerAndNavContainer>
+        <MinimizedPlayer />
+        <Footer />
+      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

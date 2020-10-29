@@ -7,11 +7,11 @@ import {
   StyledNextButton,
   StyledImgGoogleButton,
   StyledSendButton,
+  StyledHomeButton,
   StyledChangePassButton,
   StyledSingOutButton,
   StyledSaveButton,
   StyledPlayButton,
-  StyledImgPlayButton,
   StyledCancelButton,
   StyledTxtSaveButton,
   StyledEditButton,
@@ -62,6 +62,13 @@ export const SendButton = () => {
     </StyledSendButton>
   );
 };
+export const HomeButton = () => {
+  return (
+    <StyledHomeButton>
+      <h5>Home</h5>
+    </StyledHomeButton>
+  );
+};
 export const ChangePassButton = () => {
   return (
     <StyledChangePassButton>
@@ -93,7 +100,7 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
-      <StyledImgPlayButton className="ci-play_arrow" />
+      <i className="ci-play_arrow" />
       <h5>Play</h5>
     </StyledPlayButton>
   );
