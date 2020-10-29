@@ -32,9 +32,10 @@ const FullscreenPlayer = () => {
         <img src={SongCoverImg} alt="Cover for the song" />
       </SongCover>
       <SongTitleAndArtist>
-        <h3>Sucker</h3>
+        <h3> {name.song}</h3>
         <h4> {name.artistName} </h4>
       </SongTitleAndArtist>
+
       <Timeline>
         <h5>2:54</h5>
         <div>
@@ -61,6 +62,12 @@ const FullscreenPlayer = () => {
           <i className="ci-list_check" />
         </PlayerBottomButtons>
       </PlayerMedia>
+      <audio controls>
+        <source src="horse.ogg" type="audio/ogg" />
+        <source src="horse.mp3" type="audio/mpeg" />
+        <track src="/media/examples/friday.vtt" />
+        Your browser does not support the audio element.
+      </audio>
     </div>
   );
 };

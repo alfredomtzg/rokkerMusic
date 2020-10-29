@@ -8,6 +8,7 @@ export const ContextProvider = ({ children }) => {
     playlistFrom: "Tu Biblioteca",
     playlistName: "Music App",
     artistName: "Jonas Brothers",
+    song: "Sucker",
   });
 
   // return Value
@@ -15,6 +16,7 @@ export const ContextProvider = ({ children }) => {
     <Context.Provider
       value={{
         name,
+        setName,
       }}
     >
       {children}
