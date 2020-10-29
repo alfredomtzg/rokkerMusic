@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import { MdClose } from "react-icons/md";
 import styled from "styled-components";
-import { PlaylistSearchCard } from "../../Cards/index";
+/* import { PlaylistSearchCard } from "../../Cards/index"; */
+import ButtonSongDark from '../SongDark/index'
 import ButtonAddToQueue from '../AddToQueue/index';
 import ButtonSeeArtistProfile from '../SeeArtistProfile/index'
 import ButtonAddToPlaylist from '../AddToPlaylist/index'
@@ -96,10 +97,10 @@ export const CloseModalButton = styled(MdClose)`
   color: ${Colors.G100}; /*color de la X del modal */
   cursor: pointer;
   position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
-  width: 1.8rem;
-  height: 1.8rem;
+  top: 2.8rem;
+  right: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   padding: 0;
   z-index: 10;
 `;
@@ -145,7 +146,8 @@ export const Modal = ({ showModal, setShowModal }) => {
             <ModalWrapper showModal={showModal}>
               <StyledModalContaines>
                 <StyledButonSongTitle>
-                  <PlaylistSearchCard />
+                 {/*  <PlaylistSearchCard /> */}
+                 <ButtonSongDark/>
                 </StyledButonSongTitle>
                 <StyledButonAddTQ>
                   <ButtonAddToQueue/>
