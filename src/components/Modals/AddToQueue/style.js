@@ -1,36 +1,38 @@
 import styled from "styled-components";
 import { Colors } from "../../styles/globals";
 
-const StyledContainer = styled.a`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  width: 33.5rem;
-  height: 3.9rem;
-  background: ${Colors.G700};
-  color: ${Colors.G100};
-  .ci-list_plus {
-    font-size: 2rem;
-    width: 2rem;
-    height: 1.3rem;
-    position: absolute;
-    left: 0.9rem;
-    top: 0.7rem;
-    bottom: 1.2rem;
-  }
-  h5 {
-      padding-left:5rem;
-  }
-  .ci-chevron_big_right {
-    font-size: 2rem;
-    width: 0.99rem;
-    height: 1.697rem;
-    padding-left: 15rem;
-    padding-bottom: 1rem;
-  }
-  &:active{
-      background:${Colors.S700}
-  }
+export const StyledContainer2 = styled.a`
+width:33.5rem;
+height:3.9rem;
+margin:0;
+padding:0;
+background:${Colors.G700};
+color:${Colors.G100};
+display : grid;
+grid-template-rows:1fr;
+grid-template-columns:3.1rem 28rem 2.4rem;
+&:active{
+    background:${Colors.S700};
+}
 `;
-export default StyledContainer;
+export const StyledFirstIcon=styled.i`
+grid-column:1/2;
+grid-row:1/2;
+justify-self:center;
+align-self:center;
+font-size:3rem;
+`;
+export const StyledName=styled.h5`
+grid-column:2/3;
+grid-row:1/2;
+padding-left:2rem;
+justify-self:start;
+align-self:center;
+`;
+export const StyledSecondIcon=styled.i`
+grid-column:3/4;
+grid-row:1/2;
+justify-self:center;
+align-self:center;
+font-size:3rem;
+`

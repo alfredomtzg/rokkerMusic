@@ -1,6 +1,6 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import ButtonAddTQ from '../components/Modals/AddToQueue/index'
+import ButtonAddToQueue from '../components/Modals/AddToQueue/index'
 import ButtonSeeAP from '../components/Modals/SeeArtistProfile/index'
 import ButtonAddToPlaylist from '../components/Modals/AddToPlaylist/index'
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <ButtonAddToPlaylist/>
-    
+      <ButtonAddToQueue/>
     </div>
   );
 }
