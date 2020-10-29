@@ -84,16 +84,6 @@ export const PlayerButtons = styled.div`
   div {
     display: flex;
     align-items: center;
-
-  }
-  .buttonPlay{
-      border: 1px solid transparent;
-      background-color: ${Colors.G200}
-    }
-
-  .ci-play_circle_filled, .ci-pause_circle_filled {
-    font-size: 5rem;
-    margin: 0 2vw;
   }
 
   .ci-heart_fill {
@@ -105,8 +95,20 @@ export const PlayerButtons = styled.div`
   }
 `;
 
-export const Audio = styled.audio`
-display:none;
-`
-
 export const PlayerBottomButtons = styled(PlayerButtons)``;
+
+export const ShuffleButton = styled.button``;
+export const RepeatButton = styled.button``;
+export const PrevButton = styled.button``;
+export const PlayPauseButton = styled.button`
+  border: 1px solid transparent;
+  background-color: ${Colors.G200};
+
+  .ci-play_circle_filled,
+  .ci-pause_circle_filled {
+    font-size: 5rem;
+    margin: 0 2vw;
+  }
+`;
+export const NextButton = styled.button``;
+export const HeartButton = styled.button``;

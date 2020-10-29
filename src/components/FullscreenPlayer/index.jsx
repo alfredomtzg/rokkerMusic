@@ -10,29 +10,39 @@ import {
   PlayerBottomButtons,
   TotalBar,
   ProgressBar,
+  ShuffleButton,
+  RepeatButton,
+  PrevButton,
+  PlayPauseButton,
+  NextButton,
+  HeartButton,
 } from "./style";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 import { Context } from "../../utils/Context";
 
 const FullscreenPlayer = () => {
-  const audio = new Audio(
-    "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+  const [audio] = useState(
+    new Audio(
+      "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+    )
   );
   // stateGlobal
   const { name } = useContext(Context);
   // hangle buttonBoolean
-  const [playPause, setPlayPause] = useState(true);
-  // Play or pause function
-  const audioPlayPause = () => {
-    if (audio.paused) {
-      audio.play();
-    }
-  };
-  console.log(audio.paused);
+  const [playPause, setPlayPause] = useState(false);
 
-  const hanglePlayPause = () => {
-    setPlayPause(!playPause);
-    audioPlayPause();
+  // Play or pause function
+  const handlePlayPause = () => {
+    console.log(playPause);
+    if (audio.paused) {
+      console.log("paused -> play");
+      audio.play();
+      setPlayPause(true);
+    } else {
+      console.log("play -> pause");
+      audio.pause();
+      setPlayPause(false);
+    }
   };
 
   return (
@@ -64,28 +74,26 @@ const FullscreenPlayer = () => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <i className="ci-shuffle" />
-            <i className="ci-repeat" />
+            <ShuffleButton className="ci-shuffle" />
+            <RepeatButton className="ci-repeat" />
           </div>
           <div>
-            <i className="ci-skip_previous" />
-            <button
-              className="buttonPlay"
+            <PrevButton className="ci-skip_previous" />
+            <PlayPauseButton
               type="button"
               onClick={() => {
-                hanglePlayPause();
+                handlePlayPause();
               }}
             >
-              {playPause ? (
+              {!playPause ? (
                 <i className="ci-play_circle_filled" />
               ) : (
                 <i className="ci-pause_circle_filled" />
               )}
-            </button>
-
-            <i className="ci-skip_next" />
+            </PlayPauseButton>
+            <NextButton className="ci-skip_next" />
           </div>
-          <i className="ci-heart_fill" />
+          <HeartButton className="ci-heart_fill" />
         </PlayerButtons>
         <PlayerBottomButtons>
           <i className="ci-list_plus" />
