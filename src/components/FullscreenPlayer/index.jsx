@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -17,6 +17,10 @@ import { Context } from "../../utils/Context";
 const FullscreenPlayer = () => {
   // stateGlobal
   const { name } = useContext(Context);
+  const [playPause, setPlayPause] = useState(true);
+  const hanglePlayPause = () => {
+    setPlayPause(!playPause);
+  };
 
   return (
     <div>
@@ -52,7 +56,19 @@ const FullscreenPlayer = () => {
           </div>
           <div>
             <i className="ci-skip_previous" />
-            <i className="ci-play_circle_filled" />
+            <button
+              type="button"
+              onClick={() => {
+                hanglePlayPause();
+              }}
+            >
+              {playPause ? (
+                <i className="ci-play_circle_filled" />
+              ) : (
+                <i className="ci-pause_circle_filled" />
+              )}
+            </button>
+
             <i className="ci-skip_next" />
           </div>
           <i className="ci-heart_fill" />
@@ -62,12 +78,12 @@ const FullscreenPlayer = () => {
           <i className="ci-list_check" />
         </PlayerBottomButtons>
       </PlayerMedia>
-      <audio controls>
+      {/* <audio controls>
         <source src="horse.ogg" type="audio/ogg" />
         <source src="horse.mp3" type="audio/mpeg" />
         <track src="/media/examples/friday.vtt" />
         Your browser does not support the audio element.
-      </audio>
+      </audio> */}
     </div>
   );
 };

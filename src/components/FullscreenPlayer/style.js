@@ -86,7 +86,7 @@ export const PlayerButtons = styled.div`
     align-items: center;
   }
 
-  .ci-play_circle_filled {
+  .ci-play_circle_filled, .ci-pause_circle_filled, button {
     font-size: 5rem;
     margin: 0 2vw;
   }
