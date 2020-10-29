@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "../pages/Home/index";
-import SignUpEntryData from "../pages/SignUpEntryData/index";
-import Login from "../pages/Login/index";
+import Home from "../pages/Home";
+import SignUpEntryData from "../pages/SignUpEntryData";
+import Login from "../pages/Login";
 import LoginForgotPassword from "../pages/LoginForgotPassword";
 import PlaylistList from "../pages/PlaylistsList";
 import Search from "../pages/Search";
