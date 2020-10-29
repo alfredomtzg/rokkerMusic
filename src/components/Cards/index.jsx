@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/fonts/coolicons.css";
+import { Link } from "react-router-dom";
 import {
   StyledMidCard,
   StyledSmallCard,
@@ -11,8 +12,10 @@ import Logo from "../../assets/images/logo-rokker.png";
 export const WideCard = () => {
   return (
     <StyledWideCard>
-      <i className="ci-heart_fill" />
-      <i className="ci-play_circle_filled black" />
+      <Link to="/playlist-content">
+        <i className="ci-heart_fill" />
+        <i className="ci-play_circle_filled black" />
+      </Link>
     </StyledWideCard>
   );
 };
@@ -20,9 +23,11 @@ export const WideCard = () => {
 export const MidFilledCard = () => {
   return (
     <StyledMidCard>
-      <img src={Logo} alt="" />
-      <p>Your playlist name</p>
-      <i className="ci-play_circle_filled" />
+      <Link to="/playlist-content">
+        <img src={Logo} alt="" />
+        <p>Your playlist name</p>
+        <i className="ci-play_circle_filled" />
+      </Link>
     </StyledMidCard>
   );
 };
@@ -65,8 +70,10 @@ export const SmallPlusCard = () => {
 
 export const GenreCard = () => {
   return (
-    <StyledGenreCard>
-      <p>Your playlist name</p>
-    </StyledGenreCard>
+    <Link to="/playlist-content">
+      <StyledGenreCard>
+        <p>Your playlist name</p>
+      </StyledGenreCard>
+    </Link>
   );
 };

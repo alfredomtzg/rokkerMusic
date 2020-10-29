@@ -1,13 +1,13 @@
 import React from "react";
 import SearchBar from "../../components/SearchBar";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
 import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
 import { SearchBox, SearchRecommendationBox } from "./style";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 
 const Search = () => {

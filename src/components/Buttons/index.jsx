@@ -23,6 +23,7 @@ import {
 
 import "../../assets/fonts/coolicons.css";
 import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
+import { Link } from "react-router-dom";
 
 export const FacebookButton = () => {
   return (
@@ -65,16 +66,20 @@ export const SendButton = () => {
 };
 export const HomeButton = () => {
   return (
-    <StyledHomeButton>
-      <h5>Home</h5>
-    </StyledHomeButton>
+    <Link to="/home">
+      <StyledHomeButton>
+        <h5>Home</h5>
+      </StyledHomeButton>
+    </Link>
   );
 };
 export const ChangePassButton = () => {
   return (
-    <StyledChangePassButton>
-      <h5>Change Password</h5>
-    </StyledChangePassButton>
+    <Link to="settings/change-password">
+      <StyledChangePassButton>
+        <h5>Change Password</h5>
+      </StyledChangePassButton>
+    </Link>
   );
 };
 export const SingOutButton = () => {

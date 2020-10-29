@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,
@@ -13,7 +13,7 @@ import {
 import { UserAvatarBox } from "../Settings/style";
 import Avatar from "../../assets/images/avatars/Alexander.svg";
 import NewPassForm from "../../components/FormChangePassword";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 
 const SettingsChangePassword = () => {

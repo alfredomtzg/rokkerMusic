@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import Header from "../../components/header";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import Header from "../../components/Header";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import PlaylistItem from "../../components/PlaylistItem";
 import {
   MainContainer,
