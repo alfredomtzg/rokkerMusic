@@ -1,14 +1,20 @@
 import React from "react";
-import StyledContainer from "./style";
+import {StyledContainer2,StyledFirstIcon,StyledName,StyledSecondIcon} from "./style";
 import "../../../assets/fonts/coolicons.css";
 
-const ButtonSeeAP = () => {
+const ButtonSeeArtistProfile = () => {
   return (
-    <StyledContainer>
-      <i className="ci-user_circle" />
-      <h5>See artist profile</h5>
-      <i className="ci-chevron_big_right" />
-    </StyledContainer>
+    <StyledContainer2>
+     <StyledFirstIcon>
+         <i className="ci-user_circle"/>
+     </StyledFirstIcon>
+     <StyledName>
+         <h5>See Artist Profile</h5>
+     </StyledName>
+     <StyledSecondIcon>
+         <i className="ci-chevron_big_right"/>
+     </StyledSecondIcon>
+    </StyledContainer2>
   );
 };
-export default ButtonSeeAP;
+export default ButtonSeeArtistProfile;
