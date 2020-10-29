@@ -11,6 +11,7 @@ export const ContextProvider = ({ children }) => {
     <Context.Provider
       value={{
         name,
+        setName,
       }}
     >
       {children}
