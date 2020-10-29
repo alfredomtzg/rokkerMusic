@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   StyledFacebookButton,
   StyledGoogleButton,
@@ -12,7 +13,6 @@ import {
   StyledSingOutButton,
   StyledSaveButton,
   StyledPlayButton,
-  StyledImgPlayButton,
   StyledCancelButton,
   StyledTxtSaveButton,
   StyledEditButton,
@@ -23,7 +23,6 @@ import {
 
 import "../../assets/fonts/coolicons.css";
 import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
-import { Link } from "react-router-dom";
 
 export const FacebookButton = () => {
   return (
@@ -106,7 +105,7 @@ export const SaveButton = () => {
 export const PlayButton = () => {
   return (
     <StyledPlayButton>
-      <StyledImgPlayButton className="ci-play_arrow" />
+      <i className="ci-play_arrow" />
       <h5>Play</h5>
     </StyledPlayButton>
   );

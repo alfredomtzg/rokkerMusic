@@ -36,4 +36,8 @@ export const StyledIconsRight = styled.div`
     padding-left: 1rem;
     font-size: 2.4rem;
   }
+
+  .ci-minus_circle {
+    color: ${Colors.R500};
+  }
 `;

@@ -89,14 +89,20 @@ export const StyledNextButton = styled(StyledLoginButton)`
 `;
 
 export const StyledSaveButton = styled(StyledNextButton)``;
-export const StyledPlayButton = styled(StyledNextButton)``;
+export const StyledPlayButton = styled(StyledNextButton)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-export const StyledImgPlayButton = styled.i`
-  font-size: 2.9rem;
-  color: ${Colors.G700};
-  position: absolute;
-  left: 0.5rem;
+  i {
+    position: absolute;
+    left: 0;
+    color: ${Colors.G700};
+    font-size: 2.4rem;
+  }
 `;
+
 /* Cancel/ TxtSave/ Edit */
 
 export const StyledButtonWhite = styled.button`

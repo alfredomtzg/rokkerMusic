@@ -96,6 +96,9 @@ export const SearchInput = styled.input`
   margin: 0;
   width: 80vw;
   height: 3rem;
+  color: ${Colors.G700};
+  font-family: "Source Sans Pro";
+  font-size: 1.5rem;
 
   &:focus {
     outline: none;

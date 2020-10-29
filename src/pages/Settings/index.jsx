@@ -9,6 +9,7 @@ import Header from "../../components/Header";
 import { ChangePassButton, SingOutButton } from "../../components/Buttons";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
+import UserCard from "../../components/UserCard";
 
 const Settings = () => {
   return (
@@ -17,7 +18,9 @@ const Settings = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <UserAvatarBox />
+        <UserAvatarBox>
+          <UserCard />
+        </UserAvatarBox>
         <SettingsButtonsBox>
           <ChangePassButton />
           <SingOutButton />

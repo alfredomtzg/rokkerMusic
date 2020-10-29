@@ -14,6 +14,7 @@ import {
   TopBar,
 } from "../Globals/GlobalStyle";
 import { ArtistBox, StatsBox } from "./style";
+import { ArtistProfileCard } from "../../components/Cards";
 
 const ArtistProfile = () => {
   return (
@@ -22,7 +23,9 @@ const ArtistProfile = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <ArtistBox />
+        <ArtistBox>
+          <ArtistProfileCard />
+        </ArtistBox>
         <PlaylistContentBox>
           <PlaylistContainer>
             <PlaylistItem />
