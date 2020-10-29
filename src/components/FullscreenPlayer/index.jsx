@@ -57,6 +57,7 @@ const FullscreenPlayer = () => {
           <div>
             <i className="ci-skip_previous" />
             <button
+              className="buttonPlay"
               type="button"
               onClick={() => {
                 hanglePlayPause();

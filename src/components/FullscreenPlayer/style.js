@@ -84,9 +84,14 @@ export const PlayerButtons = styled.div`
   div {
     display: flex;
     align-items: center;
-  }
 
-  .ci-play_circle_filled, .ci-pause_circle_filled, button {
+  }
+  .buttonPlay{
+      border: 1px solid transparent;
+      background-color: ${Colors.G200}
+    }
+
+  .ci-play_circle_filled, .ci-pause_circle_filled {
     font-size: 5rem;
     margin: 0 2vw;
   }
