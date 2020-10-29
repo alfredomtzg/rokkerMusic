@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   StyledFacebookButton,
   StyledGoogleButton,
@@ -64,16 +65,20 @@ export const SendButton = () => {
 };
 export const HomeButton = () => {
   return (
-    <StyledHomeButton>
-      <h5>Home</h5>
-    </StyledHomeButton>
+    <Link to="/home">
+      <StyledHomeButton>
+        <h5>Home</h5>
+      </StyledHomeButton>
+    </Link>
   );
 };
 export const ChangePassButton = () => {
   return (
-    <StyledChangePassButton>
-      <h5>Change Password</h5>
-    </StyledChangePassButton>
+    <Link to="settings/change-password">
+      <StyledChangePassButton>
+        <h5>Change Password</h5>
+      </StyledChangePassButton>
+    </Link>
   );
 };
 export const SingOutButton = () => {
