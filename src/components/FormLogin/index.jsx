@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { LoginButton } from "../Buttons";
 import { FormContainer, TextLabel, TextInput } from "../Forms/dark-styles";
 
@@ -47,8 +48,7 @@ export default function LoginForm() {
         onChange={handleChangeLogin}
       />
       <h6>Email or password incorrect. Please check and retry.</h6>
-      <a href="/">Forgot your password?</a>
-
+      <Link to="/forgot-password">Forgot your password?</Link>
       <div className="LoginBtn">
         <LoginButton type="submit" />
       </div>

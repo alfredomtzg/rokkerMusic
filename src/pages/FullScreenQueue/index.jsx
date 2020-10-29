@@ -6,7 +6,7 @@ import {
   MainContainer,
 } from "../../containers/LayoutContainers";
 import { MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 import { QueueBar, QueueList } from "./style";
 
