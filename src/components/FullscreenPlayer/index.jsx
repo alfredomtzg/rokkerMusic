@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-console */
+import React, { useContext, useState } from "react";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -10,17 +11,48 @@ import {
   PlayerBottomButtons,
   TotalBar,
   ProgressBar,
+  ShuffleButton,
+  RepeatButton,
+  PrevButton,
+  PlayPauseButton,
+  NextButton,
+  HeartButton,
 } from "./style";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
+import { Context } from "../../utils/Context";
 
 const FullscreenPlayer = () => {
+  const [audio] = useState(
+    new Audio(
+      "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+    )
+  );
+  // stateGlobal
+  const { name } = useContext(Context);
+  // hangle buttonBoolean
+  const [playPause, setPlayPause] = useState(false);
+
+  // Play or pause function
+  const handlePlayPause = () => {
+    console.log(playPause);
+    if (audio.paused) {
+      console.log("paused -> play");
+      audio.play();
+      setPlayPause(true);
+    } else {
+      console.log("play -> pause");
+      audio.pause();
+      setPlayPause(false);
+    }
+  };
+
   return (
     <div>
       <TopOptions>
         <i className="ci-chevron_big_down" />
         <div>
-          <h6>Played from playlist</h6>
-          <h5>My Playlist</h5>
+          <h6>Played from {name.playlistFrom}</h6>
+          <h5>{name.playlistName}</h5>
         </div>
         <i className="ci-more_vertical" />
       </TopOptions>
@@ -28,9 +60,10 @@ const FullscreenPlayer = () => {
         <img src={SongCoverImg} alt="Cover for the song" />
       </SongCover>
       <SongTitleAndArtist>
-        <h3>Sucker</h3>
-        <h4>Jonas Brothers</h4>
+        <h3> {name.song}</h3>
+        <h4> {name.artistName} </h4>
       </SongTitleAndArtist>
+
       <Timeline>
         <h5>2:54</h5>
         <div>
@@ -42,21 +75,44 @@ const FullscreenPlayer = () => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <i className="ci-shuffle" />
-            <i className="ci-repeat" />
+            <ShuffleButton className="ci-shuffle" />
+            <RepeatButton className="ci-repeat" />
           </div>
           <div>
-            <i className="ci-skip_previous" />
-            <i className="ci-play_circle_filled" />
-            <i className="ci-skip_next" />
+            <PrevButton className="ci-skip_previous" />
+            <PlayPauseButton
+              type="button"
+              onClick={() => {
+                handlePlayPause();
+              }}
+            >
+              {!playPause ? (
+                <i className="ci-play_circle_filled" />
+              ) : (
+                <i className="ci-pause_circle_filled" />
+              )}
+            </PlayPauseButton>
+            <NextButton className="ci-skip_next" />
           </div>
-          <i className="ci-heart_fill" />
+          <HeartButton className="ci-heart_fill" />
         </PlayerButtons>
         <PlayerBottomButtons>
           <i className="ci-list_plus" />
           <i className="ci-list_check" />
         </PlayerBottomButtons>
       </PlayerMedia>
+      {/* <audio controls>
+        <source
+          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+          type="audio/ogg"
+        />
+        <source
+          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+          type="audio/mpeg"
+        />
+        <track src="/media/examples/friday.vtt" />
+        Your browser does not support the audio element.
+      </audio> */}
     </div>
   );
 };
