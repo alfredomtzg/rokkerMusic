@@ -92,7 +92,7 @@ export const StyledButonAddRemove = styled(StyledButonSongTitle)`
 `;
 
 /* X de Close */
-const CloseModalButton = styled(MdClose)`
+export const CloseModalButton = styled(MdClose)`
   color: ${Colors.G100}; /*color de la X del modal */
   cursor: pointer;
   position: absolute;
