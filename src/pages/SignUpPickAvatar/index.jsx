@@ -5,8 +5,8 @@ import {
 } from "../../containers/LayoutContainers";
 import { TopBar, TopTextBox, NextButtonBox } from "../Globals/GlobalStyle";
 import { AvatarsGrid } from "./style";
-import Avatar from "../../assets/images/avatars/Arjun.svg";
-import Header from "../../components/header";
+import Avatar from "../../assets/images/avatars/Alexander.svg";
+import Header from "../../components/Header";
 import { NextButton } from "../../components/Buttons";
 
 const SingUpPickAvatar = () => {

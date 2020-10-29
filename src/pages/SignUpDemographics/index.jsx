@@ -1,6 +1,6 @@
 import React from "react";
 import SignUpDemographicForm from "../../components/FormSignUpDemographics";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,

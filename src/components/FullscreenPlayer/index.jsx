@@ -1,4 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
+/* eslint-disable no-console */
+import React, { useContext, useState } from "react";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
