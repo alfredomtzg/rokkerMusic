@@ -2,13 +2,12 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import { MdClose } from "react-icons/md";
 import styled from "styled-components";
-/* import { PlaylistSearchCard } from "../../Cards/index"; */
-import ButtonSongDark from '../SongDark/index'
-import ButtonAddToQueue from '../AddToQueue/index';
-import ButtonSeeArtistProfile from '../SeeArtistProfile/index'
-import ButtonAddToPlaylist from '../AddToPlaylist/index'
-import ButtonAddRemove from '../Add-Remove/index'
-import {Colors} from '../../styles/globals'
+import ButtonSongDark from "../SongDark/index";
+import ButtonAddToQueue from "../AddToQueue/index";
+import ButtonSeeArtistProfile from "../SeeArtistProfile/index";
+import ButtonAddToPlaylist from "../AddToPlaylist/index";
+import ButtonAddRemove from "../Add-Remove/index";
+import { Colors } from "../../styles/globals";
 
 export const StyledContainerModal = styled.div`
   display: flex;
@@ -60,8 +59,8 @@ export const StyledModalContaines = styled.div`
 `;
 
 export const StyledButonSongTitle = styled.a`
-  background:${Colors.G700};
-  color:${Colors.G200};
+  background: ${Colors.G700};
+  color: ${Colors.G200};
   outline: none;
   border: none;
   justify-self: stretch;
@@ -77,14 +76,14 @@ export const StyledButonAddTQ = styled(StyledButonSongTitle)`
   grid-row: 3/4;
 `;
 
-export const StyledButonArtisProfile = styled(StyledButonSongTitle)` 
+export const StyledButonArtisProfile = styled(StyledButonSongTitle)`
   grid-column: 1/2;
-  grid-row: 4/5; 
+  grid-row: 4/5;
 `;
 
-export const StyledButonPlaylist = styled(StyledButonSongTitle)` 
+export const StyledButonPlaylist = styled(StyledButonSongTitle)`
   grid-column: 1/2;
-  grid-row: 5/6; 
+  grid-row: 5/6;
 `;
 
 export const StyledButonAddRemove = styled(StyledButonSongTitle)`
@@ -146,15 +145,20 @@ export const Modal = ({ showModal, setShowModal }) => {
             <ModalWrapper showModal={showModal}>
               <StyledModalContaines>
                 <StyledButonSongTitle>
-                 {/*  <PlaylistSearchCard /> */}
-                 <ButtonSongDark/>
+                  <ButtonSongDark />
                 </StyledButonSongTitle>
                 <StyledButonAddTQ>
-                  <ButtonAddToQueue/>
+                  <ButtonAddToQueue />
                 </StyledButonAddTQ>
-                <StyledButonArtisProfile><ButtonSeeArtistProfile/></StyledButonArtisProfile>
-                <StyledButonPlaylist><ButtonAddToPlaylist/></StyledButonPlaylist>
-                <StyledButonAddRemove><ButtonAddRemove/></StyledButonAddRemove>
+                <StyledButonArtisProfile>
+                  <ButtonSeeArtistProfile />
+                </StyledButonArtisProfile>
+                <StyledButonPlaylist>
+                  <ButtonAddToPlaylist />
+                </StyledButonPlaylist>
+                <StyledButonAddRemove>
+                  <ButtonAddRemove />
+                </StyledButonAddRemove>
               </StyledModalContaines>
               <CloseModalButton
                 aria-label="Close modal"
