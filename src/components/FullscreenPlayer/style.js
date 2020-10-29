@@ -105,4 +105,8 @@ export const PlayerButtons = styled.div`
   }
 `;
 
+export const Audio = styled.audio`
+display:none;
+`
+
 export const PlayerBottomButtons = styled(PlayerButtons)``;

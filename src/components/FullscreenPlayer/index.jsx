@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -15,11 +15,24 @@ import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 import { Context } from "../../utils/Context";
 
 const FullscreenPlayer = () => {
+  const audio = new Audio(
+    "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+  );
   // stateGlobal
   const { name } = useContext(Context);
+  // hangle buttonBoolean
   const [playPause, setPlayPause] = useState(true);
+  // Play or pause function
+  const audioPlayPause = () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  };
+  console.log(audio.paused);
+
   const hanglePlayPause = () => {
     setPlayPause(!playPause);
+    audioPlayPause();
   };
 
   return (
@@ -80,8 +93,14 @@ const FullscreenPlayer = () => {
         </PlayerBottomButtons>
       </PlayerMedia>
       {/* <audio controls>
-        <source src="horse.ogg" type="audio/ogg" />
-        <source src="horse.mp3" type="audio/mpeg" />
+        <source
+          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+          type="audio/ogg"
+        />
+        <source
+          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+          type="audio/mpeg"
+        />
         <track src="/media/examples/friday.vtt" />
         Your browser does not support the audio element.
       </audio> */}
