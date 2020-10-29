@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, StyledContainerModal, Button } from "./style";
 
-const ModalDottedMenu = () => {
+const ModalAddToQueue = () => {
     const [showModal, setShowModal] = useState(false);
     
     const openModal = () => {
@@ -11,10 +11,10 @@ const ModalDottedMenu = () => {
     return (
         <>
       <StyledContainerModal>
-        <Button onClick={openModal}>...</Button>
+        <Button onClick={openModal}>?</Button>
         <Modal showModal={showModal} setShowModal={setShowModal} />
       </StyledContainerModal>
     </>
   );
 };
-export default ModalDottedMenu;
+export default ModalAddToQueue;

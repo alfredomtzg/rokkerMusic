@@ -40,7 +40,7 @@ export const Background = styled.div`
 /* Contenedor Modal por dentro */
 export const ModalWrapper = styled.div`
   width: 37.5rem;
-  height: 25.2rem;
+  height: 35.4rem;
   box-shadow: 0 0.5rem 1.6rem rgba(0, 0, 0, 1);
   background: ${Colors.G700}; /*color de fondo modal */
   display: flex;
