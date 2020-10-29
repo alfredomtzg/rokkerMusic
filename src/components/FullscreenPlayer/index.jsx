@@ -23,16 +23,20 @@ const FullscreenPlayer = () => {
   // hangle buttonBoolean
   const [playPause, setPlayPause] = useState(true);
   // Play or pause function
-  const audioPlayPause = () => {
-    if (audio.paused) {
-      audio.play();
-    }
-  };
+
   console.log(audio.paused);
 
-  const hanglePlayPause = () => {
+  const handlePlayPause = () => {
+    if (audio.paused) {
+      console.log("paused -> play");
+      audio.play();
+    } else {
+      console.log("play -> pause");
+      audio.pause();
+    }
+  };
+  const iconpauseplay = () => {
     setPlayPause(!playPause);
-    audioPlayPause();
   };
 
   return (
@@ -69,19 +73,29 @@ const FullscreenPlayer = () => {
           </div>
           <div>
             <i className="ci-skip_previous" />
-            <button
-              className="buttonPlay"
-              type="button"
-              onClick={() => {
-                hanglePlayPause();
-              }}
-            >
-              {playPause ? (
+            {playPause ? (
+              <button
+                className="buttonPlay"
+                type="button"
+                onClick={() => {
+                  handlePlayPause();
+                  iconpauseplay();
+                }}
+              >
                 <i className="ci-play_circle_filled" />
-              ) : (
+              </button>
+            ) : (
+              <button
+                className="buttonPlay"
+                type="button"
+                onClick={() => {
+                  handlePlayPause();
+                  iconpauseplay();
+                }}
+              >
                 <i className="ci-pause_circle_filled" />
-              )}
-            </button>
+              </button>
+            )}
 
             <i className="ci-skip_next" />
           </div>

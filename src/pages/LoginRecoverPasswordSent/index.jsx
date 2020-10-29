@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeButton } from "../../components/Buttons";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,

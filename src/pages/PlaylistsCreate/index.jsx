@@ -8,10 +8,10 @@ import {
   MiniPlayerAndNavContainer,
   FormBox,
 } from "../Globals/GlobalStyle";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import CreatePlaylistBox from "./style";
 import CreatePlaylistForm from "../../components/FormCreatePlaylist";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 
 const PlaylistsCreate = () => {
