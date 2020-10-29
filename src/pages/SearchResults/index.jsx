@@ -1,14 +1,9 @@
 import React from "react";
 import { ArtistSearchCard, PlaylistSearchCard } from "../../components/Cards";
 import Footer from "../../components/Footer";
-<<<<<<< HEAD
 import Header from "../../components/Header";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
-=======
-import Header from "../../components/header";
 import SearchBar from "../../components/SearchBar";
-import MinimizedPlayer from "../../components/minimizedPlayer";
->>>>>>> 35bcb5e809c381139379b02314e25d74291b59fe
 import PlaylistItem from "../../components/PlaylistItem";
 import {
   MainContainer,

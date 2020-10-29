@@ -16,6 +16,11 @@ import LoginRecoverPasswordSent from "../pages/LoginRecoverPasswordSent";
 import Page404 from "../pages/Page404";
 import Settings from "../pages/Settings";
 import SettingsChangePassword from "../pages/SettingsChangePassword";
+import FullscreenQueue from "../pages/FullScreenQueue";
+import PlaylistEdit from "../pages/PlaylistEdit";
+import PlaylistCreate from "../pages/PlaylistsCreate";
+import SearchResults from "../pages/SearchResults";
+import SettingSignOut from "../pages/SettingsSignOut";
 
 const Routes = () => {
   return (
@@ -24,7 +29,10 @@ const Routes = () => {
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/playlist" component={PlaylistList} />
+        <Route exact path="playlist/edit" component={PlaylistEdit} />
+        <Route exact path="playlist/create" component={PlaylistCreate} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/search/results" component={SearchResults} />
         <Route
           exact
           path="/playlist-content/:id_playlist"
@@ -47,11 +55,14 @@ const Routes = () => {
         <Route exact path="/artist/:id_artist" component={ArtistProfile} />
         <Route exact path="/player" component={FullscreenPlayerPage} />
         <Route exact path="/settings" component={Settings} />
+        <Route exact path="/signout" component={SettingSignOut} />
         <Route
           exact
           path="/settings/change-password"
           component={SettingsChangePassword}
         />
+        <Route exact path="/queue" component={FullscreenQueue} />
+
         <Route component={Page404} />
       </Switch>
     </BrowserRouter>
