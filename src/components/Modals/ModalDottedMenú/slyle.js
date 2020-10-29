@@ -3,6 +3,10 @@ import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 import { PlaylistSearchCard } from "../../Cards/index";
+import ButtonAddToQueue from '../AddToQueue/index';
+import ButtonSeeArtistProfile from '../SeeArtistProfile/index'
+import ButtonAddToPlaylist from '../AddToPlaylist/index'
+import ButtonAddRemove from '../Add-Remove/index'
 import {Colors} from '../../styles/globals'
 
 export const StyledContainerModal = styled.div`
@@ -48,14 +52,13 @@ export const ModalWrapper = styled.div`
 export const StyledModalContaines = styled.div`
   width: 33.5rem;
   height: 20.5rem;
-/*border: 1px solid white;*/
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3.9rem 1rem 3.9rem 3.9rem 3.9rem 3.9rem;
   gap: 0.1rem 0rem;
 `;
 
-export const StyledButonSongTitle = styled.button`
+export const StyledButonSongTitle = styled.a`
   background:${Colors.G700};
   color:${Colors.G200};
   outline: none;
@@ -144,10 +147,12 @@ export const Modal = ({ showModal, setShowModal }) => {
                 <StyledButonSongTitle>
                   <PlaylistSearchCard />
                 </StyledButonSongTitle>
-                <StyledButonAddTQ />
-                <StyledButonArtisProfile />
-                <StyledButonPlaylist />
-                <StyledButonAddRemove />
+                <StyledButonAddTQ>
+                  <ButtonAddToQueue/>
+                </StyledButonAddTQ>
+                <StyledButonArtisProfile><ButtonSeeArtistProfile/></StyledButonArtisProfile>
+                <StyledButonPlaylist><ButtonAddToPlaylist/></StyledButonPlaylist>
+                <StyledButonAddRemove><ButtonAddRemove/></StyledButonAddRemove>
               </StyledModalContaines>
               <CloseModalButton
                 aria-label="Close modal"
