@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import styled from "styled-components";
 import { MdClose } from "react-icons/md";
+import styled from "styled-components";
 import { PlaylistSearchCard } from "../../Cards/index";
 import ButtonAddToQueue from '../AddToQueue/index';
 import ButtonSeeArtistProfile from '../SeeArtistProfile/index'
