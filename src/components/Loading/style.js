@@ -22,20 +22,20 @@ export const Spinner = styled.div`
   margin: auto;
   box-sizing: border-box;
   background-clip: padding-box;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  border: 4px solid rgba(255, 255, 255, 0.1);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10rem;
+  border: 0.4rem solid rgba(255, 255, 255, 0.1);
   -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.5), #000000 90%);
   transform-origin: 50% 70%;
-  transform: perspective(200px) rotateX(66deg);
+  transform: perspective(20rem) rotateX(66deg);
   animation: spinner-wiggle 1.2s infinite;
 
   &:before,
   &:after {
     content: "";
     position: absolute;
-    margin: -4px;
+    margin: -0.4rem;
     box-sizing: inherit;
     width: inherit;
     height: inherit;
