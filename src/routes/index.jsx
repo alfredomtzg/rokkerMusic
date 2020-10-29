@@ -33,11 +33,7 @@ const Routes = () => {
         <Route exact path="playlist/create" component={PlaylistCreate} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/search/results" component={SearchResults} />
-        <Route
-          exact
-          path="/playlist-content/:id_playlist"
-          component={PlaylistContent}
-        />
+        <Route exact path="/playlist-content" component={PlaylistContent} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot-password" component={LoginForgotPassword} />
         <Route
@@ -52,7 +48,7 @@ const Routes = () => {
           path="/signup/demographic"
           component={SignUpDemographics}
         />
-        <Route exact path="/artist/:id_artist" component={ArtistProfile} />
+        <Route exact path="/artist" component={ArtistProfile} />
         <Route exact path="/player" component={FullscreenPlayerPage} />
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/signout" component={SettingSignOut} />
