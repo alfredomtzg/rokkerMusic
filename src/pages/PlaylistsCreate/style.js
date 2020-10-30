@@ -1,12 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const CancelSaveBox = styled.div`
+const CreatePlaylistBox = styled.section`
   display: flex;
   justify-content: center;
-  padding: 2vh 0 4vh;
-`
-export const CreatePlaylistBox = styled.section`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 4vh;
-`
+  margin: 4vh 0;
+`;
+
+export default CreatePlaylistBox;

@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Colors } from "../styles/globals";
 
-/*Const of buttons*/
+/* Const of buttons */
 export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
@@ -12,15 +12,18 @@ export const StyledButton = styled.button`
   outline: none;
   border: none;
   padding: 0;
+  cursor: pointer;
 `;
-/*Button particular characters*/
+
+/* Button particular characters */
 export const StyledFacebookButton = styled(StyledButton)`
   background: ${Colors.facebookInactive};
-  color: ${Colors.white};
+  color: ${Colors.G100};
   &:active {
     background: ${Colors.facebookActive};
   }
 `;
+
 export const StyledGoogleButton = styled(StyledButton)`
   justify-content: space-around;
   background: ${Colors.white};
@@ -30,11 +33,13 @@ export const StyledGoogleButton = styled(StyledButton)`
     background: ${Colors.G100};
   }
 `;
+
 export const StyledImgGoogleButton = styled.img`
   width: 3rem;
   height: 3rem;
   background-size: cover;
 `;
+
 export const StyledLoginButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};
@@ -42,6 +47,7 @@ export const StyledLoginButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
+
 export const StyledSignupButton = styled(StyledButton)`
   background: ${Colors.B400};
   color: ${Colors.G100};
@@ -57,6 +63,9 @@ export const StyledSendButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
+
+export const StyledHomeButton = styled(StyledSendButton)``;
+
 export const StyledChangePassButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};
@@ -64,6 +73,7 @@ export const StyledChangePassButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
+
 export const StyledSingOutButton = styled(StyledButton)`
   background: ${Colors.R400};
   color: ${Colors.G100};
@@ -71,17 +81,75 @@ export const StyledSingOutButton = styled(StyledButton)`
     background: ${Colors.R500};
   }
 `;
-/*Buttons Mid*/
+
+/* Buttons Mid */
 export const StyledNextButton = styled(StyledLoginButton)`
   width: 13.8rem;
   color: ${Colors.G100};
 `;
+
 export const StyledSaveButton = styled(StyledNextButton)``;
-export const StyledPlayButton = styled(StyledNextButton)``;
-export const StyledImgPlayButton = styled.img`
-  width: 1.1rem;
-  height: 1.4rem;
-  background-size:cover;
-  position: absolute;
-  left: 1rem;
+export const StyledPlayButton = styled(StyledNextButton)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    position: absolute;
+    left: 0;
+    color: ${Colors.G700};
+    font-size: 2.4rem;
+  }
+`;
+
+/* Cancel/ TxtSave/ Edit */
+
+export const StyledButtonWhite = styled.button`
+  background: ${Colors.G100};
+  color: ${Colors.B400};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  margin: 0;
+`;
+export const StyledCancelButton = styled(StyledButtonWhite)`
+  width: 5.1rem;
+  height: 2rem;
+  border: none;
+  overflow: visible;
+  &:active {
+    color: ${Colors.B500};
+  }
+`;
+export const StyledTxtSaveButton = styled(StyledCancelButton)`
+  width: 3.6rem;
+`;
+export const StyledEditButton = styled(StyledButtonWhite)`
+  width: 1.822rem;
+  height: 1.822rem;
+  border: none;
+  margin: 0;
+`;
+
+export const StyledSearchButton = styled(StyledButtonWhite)`
+  width: 1.822rem;
+  height: 1.822rem;
+  border: none;
+  margin: 0;
+  background-color: ${Colors.white};
+`;
+
+export const StyledDeletePlaylistButton = styled(StyledSearchButton)`
+  color: ${Colors.R500};
+`;
+
+export const StyledImgEditButton = styled.i`
+  font-size: 1.822rem;
+  &:active {
+    color: ${Colors.B500};
+  }
 `;

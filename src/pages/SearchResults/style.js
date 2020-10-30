@@ -1,5 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const SearchResultsBox = styled.div`
-  margin-bottom: 5vh;
-` 
+const SearchResultsBox = styled.div`
+  display: grid;
+  gap: 1vh;
+  margin: 2vh 0 5vh;
+`;
+
+export default SearchResultsBox;
