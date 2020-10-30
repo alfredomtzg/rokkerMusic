@@ -14,7 +14,7 @@ import { GenreCard, MidFilledCard, WideCard } from "../../components/Cards";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import PlaylistItem from "../../components/PlaylistItem";
+import { PlaylistItem } from "../../components/PlaylistItem";
 
 const Home = () => {
   return (

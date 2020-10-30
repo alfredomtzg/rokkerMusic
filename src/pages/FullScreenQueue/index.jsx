@@ -1,6 +1,6 @@
 import React from "react";
 import { QueueReturn } from "../../components/Cards";
-import PlaylistItem from "../../components/PlaylistItem";
+import { PlaylistItem } from "../../components/PlaylistItem";
 import {
   PageContainer,
   MainContainer,

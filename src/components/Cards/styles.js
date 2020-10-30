@@ -167,3 +167,41 @@ export const StyledQueueReturn = styled.header`
     font-size: 2.4rem;
   }
 `;
+
+export const StyledAddToQueue = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${Colors.G700};
+  color: ${Colors.G100};
+  height: 3.9rem;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  i {
+    font-size: 2.4rem;
+  }
+
+  .ci-list_plus {
+    margin-right: 1rem;
+  }
+`;
+
+export const StyledAddToPlaylist = styled(StyledAddToQueue)`
+  .ci-plus {
+    margin-right: 1rem;
+  }
+`;
+export const StyledSeeArtistProfile = styled(StyledAddToQueue)`
+  .ci-user_circle {
+    margin-right: 1rem;
+  }
+`;
+export const StyledAddRemoveFromFavorites = styled(StyledAddToQueue)`
+  .ci-heart_fill {
+    margin-right: 1rem;
+  }
+`;
