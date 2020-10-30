@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import styled from "styled-components";
 import { MdClose } from "react-icons/md";
-import { PlaylistSearchCard } from "../../Cards/index";
-import ButtonAddToQueue from '../AddToQueue/index';
-import ButtonSeeArtistProfile from '../SeeArtistProfile/index'
-import ButtonAddToPlaylist from '../AddToPlaylist/index'
-import ButtonAddRemove from '../Add-Remove/index'
-import {Colors} from '../../styles/globals'
+import styled from "styled-components";
+import ButtonSongDark from "../SongDark/index";
+import ButtonAddToQueue from "../AddToQueue/index";
+import ButtonSeeArtistProfile from "../SeeArtistProfile/index";
+import ButtonAddToPlaylist from "../AddToPlaylist/index";
+import ButtonAddRemove from "../Add-Remove/index";
+import { Colors } from "../../styles/globals";
 
 export const StyledContainerModal = styled.div`
   display: flex;
@@ -59,8 +59,8 @@ export const StyledModalContaines = styled.div`
 `;
 
 export const StyledButonSongTitle = styled.a`
-  background:${Colors.G700};
-  color:${Colors.G200};
+  background: ${Colors.G700};
+  color: ${Colors.G200};
   outline: none;
   border: none;
   justify-self: stretch;
@@ -76,14 +76,14 @@ export const StyledButonAddTQ = styled(StyledButonSongTitle)`
   grid-row: 3/4;
 `;
 
-export const StyledButonArtisProfile = styled(StyledButonSongTitle)` 
+export const StyledButonArtisProfile = styled(StyledButonSongTitle)`
   grid-column: 1/2;
-  grid-row: 4/5; 
+  grid-row: 4/5;
 `;
 
-export const StyledButonPlaylist = styled(StyledButonSongTitle)` 
+export const StyledButonPlaylist = styled(StyledButonSongTitle)`
   grid-column: 1/2;
-  grid-row: 5/6; 
+  grid-row: 5/6;
 `;
 
 export const StyledButonAddRemove = styled(StyledButonSongTitle)`
@@ -92,14 +92,14 @@ export const StyledButonAddRemove = styled(StyledButonSongTitle)`
 `;
 
 /* X de Close */
-const CloseModalButton = styled(MdClose)`
+export const CloseModalButton = styled(MdClose)`
   color: ${Colors.G100}; /*color de la X del modal */
   cursor: pointer;
   position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
-  width: 1.8rem;
-  height: 1.8rem;
+  top: 2.8rem;
+  right: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   padding: 0;
   z-index: 10;
 `;
@@ -113,7 +113,7 @@ export const Modal = ({ showModal, setShowModal }) => {
       duration: 250,
     },
     opacity: showModal ? 1 : 0,
-    transform: showModal ? `translateY(40%)` : `translateY(-100%)`,
+    transform: showModal ? `translateY(20%)` : `translateY(-100%)`,
   });
 
   const closeModal = (e) => {
@@ -144,15 +144,9 @@ export const Modal = ({ showModal, setShowModal }) => {
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
               <StyledModalContaines>
-                <StyledButonSongTitle>
-                  <PlaylistSearchCard />
-                </StyledButonSongTitle>
-                <StyledButonAddTQ>
-                  <ButtonAddToQueue/>
-                </StyledButonAddTQ>
-                <StyledButonArtisProfile><ButtonSeeArtistProfile/></StyledButonArtisProfile>
-                <StyledButonPlaylist><ButtonAddToPlaylist/></StyledButonPlaylist>
-                <StyledButonAddRemove><ButtonAddRemove/></StyledButonAddRemove>
+                
+                
+                
               </StyledModalContaines>
               <CloseModalButton
                 aria-label="Close modal"

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import { MdClose } from "react-icons/md";
 import styled from "styled-components";
-import ButtonSongDark from '../SongDark/index'
+import { MdClose } from "react-icons/md";
+import { PlaylistSearchCard } from "../../Cards/index";
 import ButtonAddToQueue from '../AddToQueue/index';
 import ButtonSeeArtistProfile from '../SeeArtistProfile/index'
 import ButtonAddToPlaylist from '../AddToPlaylist/index'
@@ -40,7 +40,7 @@ export const Background = styled.div`
 /* Contenedor Modal por dentro */
 export const ModalWrapper = styled.div`
   width: 37.5rem;
-  height: 25.2rem;
+  height: 35.4rem;
   box-shadow: 0 0.5rem 1.6rem rgba(0, 0, 0, 1);
   background: ${Colors.G700}; /*color de fondo modal */
   display: flex;
@@ -92,14 +92,14 @@ export const StyledButonAddRemove = styled(StyledButonSongTitle)`
 `;
 
 /* X de Close */
-export const CloseModalButton = styled(MdClose)`
+const CloseModalButton = styled(MdClose)`
   color: ${Colors.G100}; /*color de la X del modal */
   cursor: pointer;
   position: absolute;
-  top: 2.8rem;
-  right: 2.5rem;
-  width: 3rem;
-  height: 3rem;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
   padding: 0;
   z-index: 10;
 `;
@@ -145,7 +145,7 @@ export const Modal = ({ showModal, setShowModal }) => {
             <ModalWrapper showModal={showModal}>
               <StyledModalContaines>
                 <StyledButonSongTitle>
-                 <ButtonSongDark/>
+                  <PlaylistSearchCard />
                 </StyledButonSongTitle>
                 <StyledButonAddTQ>
                   <ButtonAddToQueue/>
