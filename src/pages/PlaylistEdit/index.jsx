@@ -3,7 +3,7 @@ import EditPlaylistForm from "../../components/FormEditPlaylist";
 import Header from "../../components/Header";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import PlaylistItem from "../../components/PlaylistItem";
+import { PlaylistItem } from "../../components/PlaylistItem";
 import Footer from "../../components/Footer";
 import {
   PageContainer,
