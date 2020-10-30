@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import PlaylistItem from "../../components/PlaylistItem";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import { PlaylistItem } from "../../components/PlaylistItem";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 import {
   PageContainer,

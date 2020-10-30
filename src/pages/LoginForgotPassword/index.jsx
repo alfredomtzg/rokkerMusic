@@ -1,6 +1,6 @@
 import React from "react";
 import ForgotPassForm from "../../components/FormForgotPassword";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,
