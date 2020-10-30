@@ -1,10 +1,10 @@
 import React from "react";
 import { ArtistSearchCard, PlaylistSearchCard } from "../../components/Cards";
 import Footer from "../../components/Footer";
-import Header from "../../components/header";
+import Header from "../../components/Header";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import SearchBar from "../../components/SearchBar";
-import MinimizedPlayer from "../../components/minimizedPlayer";
-import PlaylistItem from "../../components/PlaylistItem";
+import { PlaylistItem } from "../../components/PlaylistItem";
 import {
   MainContainer,
   PageContainer,

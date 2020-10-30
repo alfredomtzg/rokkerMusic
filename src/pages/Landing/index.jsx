@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   PageContainer,
   MainContainer,
@@ -24,7 +25,9 @@ const Landing = () => {
           <LandingLoginButtons>
             <FacebookButton />
             <GoogleButton />
-            <LoginButton />
+            <Link to="/login">
+              <LoginButton />
+            </Link>
           </LandingLoginButtons>
           <LandingSignUpButton>
             <SignupButton />

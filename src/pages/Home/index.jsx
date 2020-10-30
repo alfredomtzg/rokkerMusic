@@ -9,12 +9,12 @@ import {
   PlaylistContentBox,
 } from "../Globals/GlobalStyle";
 import { GreetingBox, FavoritesBox, RecommendPlaylistsBox } from "./style";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import { GenreCard, MidFilledCard, WideCard } from "../../components/Cards";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import PlaylistItem from "../../components/PlaylistItem";
+import { PlaylistItem } from "../../components/PlaylistItem";
 
 const Home = () => {
   return (

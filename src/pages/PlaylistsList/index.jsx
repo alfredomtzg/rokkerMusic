@@ -4,9 +4,9 @@ import {
   PlaylistCard,
   NewPlaylistCard,
 } from "../../components/Cards";
-import MinimizedPlayer from "../../components/minimizedPlayer";
+import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import {
   MainContainer,
   PageContainer,
