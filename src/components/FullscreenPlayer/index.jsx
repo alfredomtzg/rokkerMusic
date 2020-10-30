@@ -75,18 +75,6 @@ const FullscreenPlayer = (props) => {
           <i className="ci-list_check" />
         </PlayerBottomButtons>
       </PlayerMedia>
-      {/* <audio controls>
-        <source
-          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
-          type="audio/ogg"
-        />
-        <source
-          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
-          type="audio/mpeg"
-        />
-        <track src="/media/examples/friday.vtt" />
-        Your browser does not support the audio element.
-      </audio> */}
     </div>
   );
 };
