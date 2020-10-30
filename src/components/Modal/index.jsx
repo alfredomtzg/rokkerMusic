@@ -8,10 +8,10 @@ import {
   AddRemoveFromFavorites,
 } from "../Cards";
 
-const Modal = () => {
+const Modalok = () => {
   return (
     <StyledModal>
-      <button type="button">X</button>
+      {/* <button type="button">X</button> */}
       <PlaylistItemDark />
       <div>
         <AddToQueue />
@@ -23,4 +23,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default Modalok;
