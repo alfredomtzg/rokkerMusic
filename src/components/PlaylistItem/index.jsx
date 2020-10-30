@@ -1,6 +1,7 @@
 import React from "react";
 import {
   StyledPlaylistItem,
+  StyledPlaylistItemDark,
   StyledIconsLeft,
   StyledSongDescription,
   StyledIconsRight,
@@ -8,7 +9,7 @@ import {
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
-const PlaylistItem = () => {
+export const PlaylistItem = () => {
   return (
     <StyledPlaylistItem>
       <StyledIconsLeft>
@@ -27,4 +28,14 @@ const PlaylistItem = () => {
   );
 };
 
-export default PlaylistItem;
+export const PlaylistItemDark = () => {
+  return (
+    <StyledPlaylistItemDark>
+      <img src={Song} alt="Song Cover" />
+      <StyledSongDescription>
+        <h6>Song title</h6>
+        <p>Artist</p>
+      </StyledSongDescription>
+    </StyledPlaylistItemDark>
+  );
+};

@@ -2,7 +2,7 @@ import React from "react";
 import { EditButton, PlayButton } from "../../components/Buttons";
 import Header from "../../components/Header";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import PlaylistItem from "../../components/PlaylistItem";
+import { PlaylistItem } from "../../components/PlaylistItem";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 import {

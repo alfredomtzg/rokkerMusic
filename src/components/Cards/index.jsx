@@ -16,6 +16,10 @@ import {
   StyledFavoritesBigCard,
   StyledArtistProfileCard,
   StyledQueueReturn,
+  StyledAddToQueue,
+  StyledAddToPlaylist,
+  StyledSeeArtistProfile,
+  StyledAddRemoveFromFavorites,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
@@ -191,5 +195,53 @@ export const QueueReturn = () => {
       <i className="ci-chevron_big_left" />
       <h4>Queue</h4>
     </StyledQueueReturn>
+  );
+};
+
+export const AddToQueue = () => {
+  return (
+    <StyledAddToQueue>
+      <div>
+        <i className="ci-list_plus" />
+        <h5>Add to queue</h5>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledAddToQueue>
+  );
+};
+
+export const SeeArtistProfile = () => {
+  return (
+    <StyledSeeArtistProfile>
+      <div>
+        <i className="ci-user_circle" />
+        <h5>See Artist Profile</h5>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledSeeArtistProfile>
+  );
+};
+
+export const AddToPlaylist = () => {
+  return (
+    <StyledAddToPlaylist>
+      <div>
+        <i className="ci-plus" />
+        <h5>Add to Playlist</h5>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledAddToPlaylist>
+  );
+};
+
+export const AddRemoveFromFavorites = () => {
+  return (
+    <StyledAddRemoveFromFavorites>
+      <div>
+        <i className="ci-heart_fill" />
+        <h5>Add/Remove from favorites</h5>
+      </div>
+      <i className="ci-chevron_big_right" />
+    </StyledAddRemoveFromFavorites>
   );
 };
