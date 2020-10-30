@@ -6,6 +6,14 @@ export const StyledPlaylistItem = styled.div`
   justify-content: space-between;
   height: 3.9rem;
   background-color: ${Colors.G100};
+
+  button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: none;
+    background-color: ${Colors.G100};
+  }
 `;
 
 export const StyledPlaylistItemDark = styled.div`
