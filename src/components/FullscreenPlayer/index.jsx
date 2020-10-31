@@ -29,13 +29,15 @@ const FullscreenPlayer = (props) => {
     togglePlay,
     nextSong,
     previousSong,
-    queue,
-    setQueue,
   } = props;
   return (
     <>
       <TopOptions>
-        <button className="minimizePlayer" onClick={minimizePlayer} type="button">
+        <button
+          className="minimizePlayer"
+          onClick={minimizePlayer}
+          type="button"
+        >
           <i className="ci-chevron_big_down" />
         </button>
         <div>
@@ -63,8 +65,12 @@ const FullscreenPlayer = (props) => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <ShuffleButton className="ci-shuffle" />
-            <RepeatButton className="ci-repeat" />
+            <ShuffleButton>
+              <i className="ci-shuffle" />
+            </ShuffleButton>
+            <RepeatButton>
+              <i className="ci-repeat" />
+            </RepeatButton>
           </div>
           <div>
             <PrevButton onClick={() => previousSong()}>
@@ -81,7 +87,9 @@ const FullscreenPlayer = (props) => {
               <i className="ci-skip_next" />
             </NextButton>
           </div>
-          <HeartButton className="ci-heart_fill" />
+          <HeartButton>
+            <i className="ci-heart_fill" />
+          </HeartButton>
         </PlayerButtons>
         <PlayerBottomButtons>
           <i className="ci-list_plus" />

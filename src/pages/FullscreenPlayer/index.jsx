@@ -7,33 +7,32 @@ import FullscreenPlayer from "../../components/FullscreenPlayer";
 import { Context } from "../../utils/Context";
 
 const FullscreenPlayerPage = (props) => {
+  const audioRef = useRef();
   const {
     songData,
     queue,
-    setQueue,
     setSongData,
     playerStatus,
     setPlayerStatus,
+    autoplay,
+    setAutoplay,
+    track,
+    setTrack,
   } = useContext(Context);
-
-  const audioRef = useRef();
 
   useEffect(() => {
     audioRef.current.src = songData.songURL;
-    console.log(`audioref.corrunt :${audioRef.current}`);
-    console.log(`audioRef.current.paused: ${audioRef.current.paused}`);
-    console.log(`playerStatus: ${playerStatus}`);
   }, [songData.songURL]);
 
   const togglePlay = () => {
     if (audioRef.current.paused) {
-      console.log("pause -> play");
       audioRef.current.play();
       setPlayerStatus("play");
+      setAutoplay(true);
     } else {
-      console.log("play -> pause");
       audioRef.current.pause();
       setPlayerStatus("pause");
+      setAutoplay(false);
     }
   };
 
@@ -41,32 +40,68 @@ const FullscreenPlayerPage = (props) => {
     if (!audioRef.current.paused) {
       togglePlay();
     }
-    setSongData({
-      songTitle: "One More Time",
-      artistName: "Daft Punk",
-      songURL:
-        "https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3",
-      playlistName: "Favorites",
-      playlistFrom: "Top 20",
-    });
+    if (track < queue.length - 1) {
+      setSongData({
+        ...songData,
+        songTitle: `${queue[track + 1].title}`,
+        songURL: `${queue[track + 1].preview}`,
+      });
+      setAutoplay(true);
+      setTrack(track + 1);
+      setPlayerStatus("play");
+    } else {
+      setSongData({
+        ...songData,
+        songTitle: `${queue[0].title}`,
+        songURL: `${queue[0].preview}`,
+      });
+      setTrack(0);
+    }
   };
 
   const previousSong = () => {
     if (!audioRef.current.paused) {
       togglePlay();
     }
-    setSongData({
-      songTitle: "Harder, Better, Faster, Stronger",
-      songURL:
-        "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3",
-      artistName: "Daft Punk",
-      playlistName: "Favorites",
-      playlistFrom: "Top 20",
-    });
+    if (track > 0) {
+      setSongData({
+        ...songData,
+        songTitle: `${queue[track - 1].title}`,
+        songURL: `${queue[track - 1].preview}`,
+      });
+      setAutoplay(true);
+      setTrack(track - 1);
+      setPlayerStatus("play");
+    }
   };
+  const list = queue.map((item, index) => {
+    return (
+      <div key={item.id}>
+        <ul>
+          {item.title}
+          <button
+            type="button"
+            onClick={() => {
+              setAutoplay(true);
+              setPlayerStatus("play");
+              setSongData({
+                ...songData,
+                songTitle: `${item.title}`,
+                songURL: `${item.preview}`,
+              });
+              setTrack(index);
+            }}
+          >
+            play
+          </button>
+        </ul>
+      </div>
+    );
+  });
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
+      <audio ref={audioRef} autoPlay={autoplay} />
       {/* {queue.map((item) => {
         return (
           <div key={item.id}>
@@ -87,13 +122,14 @@ const FullscreenPlayerPage = (props) => {
       })} */}
       <audio ref={audioRef} />
       <FullscreenPlayer
-        minimizePlayer = {props.minimizePlayer}
+        minimizePlayer={props.minimizePlayer}
         songData={songData}
         playerStatus={playerStatus}
         togglePlay={togglePlay}
         nextSong={nextSong}
         previousSong={previousSong}
       />
+      {list}
     </PlayerContainer>,
     document.getElementById("player")
   );
