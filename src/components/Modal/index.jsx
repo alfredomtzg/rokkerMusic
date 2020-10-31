@@ -1,6 +1,8 @@
 import React from "react";
+import ReactDOM from "react-dom";
+// eslint-disable-next-line import/no-cycle
 import { PlaylistItemDark } from "../PlaylistItem";
-import StyledModal from "./style";
+import { StyledModal, StyledModalContainer } from "./style";
 import {
   AddToQueue,
   SeeArtistProfile,
@@ -8,18 +10,27 @@ import {
   AddRemoveFromFavorites,
 } from "../Cards";
 
-const Modal = () => {
-  return (
-    <StyledModal>
-      <button type="button">X</button>
-      <PlaylistItemDark />
-      <div>
-        <AddToQueue />
-        <SeeArtistProfile />
-        <AddToPlaylist />
-        <AddRemoveFromFavorites />
-      </div>
-    </StyledModal>
+const Modal = (props) => {
+  if (!props.modalOn) {
+    return null;
+  }
+
+  return ReactDOM.createPortal(
+    <StyledModalContainer>
+      <StyledModal>
+        <button onClick={props.closeModal} type="button">
+          x
+        </button>
+        <PlaylistItemDark />
+        <div>
+          <AddToQueue />
+          <SeeArtistProfile />
+          <AddToPlaylist />
+          <AddRemoveFromFavorites />
+        </div>
+      </StyledModal>
+    </StyledModalContainer>,
+    document.getElementById("modal")
   );
 };
 

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+// eslint-disable-next-line import/no-cycle
+import Modal from "../Modal";
 import {
   StyledPlaylistItem,
   StyledPlaylistItemDark,
@@ -10,6 +12,16 @@ import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
 export const PlaylistItem = () => {
+  const [modalOn, setModalOn] = useState(false);
+
+  const openModal = () => {
+    setModalOn(true);
+  };
+
+  const closeModal = () => {
+    setModalOn(false);
+  };
+
   return (
     <StyledPlaylistItem>
       <StyledIconsLeft>
@@ -20,10 +32,17 @@ export const PlaylistItem = () => {
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
-        <i className="ci-heart_outline" />
-        <i className="ci-more_horizontal" />
-        <i className="ci-minus_circle" />
-      </StyledIconsRight>
+        <button type="button">
+          <i className="ci-heart_outline" />
+        </button>
+        <button onClick={openModal} type="button">
+          <i className="ci-more_horizontal" />
+        </button>
+        <button type="button">
+          <i className="ci-minus_circle" />
+        </button>
+      </StyledIconsRight>      
+      <Modal modalOn={modalOn} closeModal={closeModal}/>
     </StyledPlaylistItem>
   );
 };
