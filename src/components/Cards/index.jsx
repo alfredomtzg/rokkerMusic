@@ -35,12 +35,13 @@ export const WideCard = () => {
   );
 };
 
-export const MidFilledCard = () => {
+export const MidFilledCard = (props) => {
+  const { album, img, title } = props;
   return (
     <StyledMidCard>
       <Link to="/playlist-content">
-        <img src={Logo} alt="" />
-        <p>Your playlist name</p>
+        <img src={img} alt={title} />
+        <p>{album}</p>
         <i className="ci-play_circle_filled" />
       </Link>
     </StyledMidCard>
