@@ -1,19 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../styles/globals";
 
-export const StyledMinimizedPlayerContainer = styled.button`
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: none;
-  border: none;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
 export const StyledMinimizedPlayer = styled.div`
   display: flex;
   align-items: center;
@@ -22,6 +9,18 @@ export const StyledMinimizedPlayer = styled.div`
   padding: 0 2rem;
   color: ${Colors.G100};
   background: ${Colors.B500};
+
+  .maximizePlayer {
+    background-color: transparent;
+    color: ${Colors.G100};
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    &focus {
+      outline: none;
+    }
+  }
 `;
 
 export const StyledIconsLeft = styled.div`

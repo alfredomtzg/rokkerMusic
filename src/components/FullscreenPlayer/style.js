@@ -17,6 +17,17 @@ export const TopOptions = styled.div`
   i {
     font-size: 2.4rem;
   }
+
+  .minimizePlayer {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    &focus {
+      outline: none;
+    }
+  }
 `;
 
 export const SongCover = styled.div`

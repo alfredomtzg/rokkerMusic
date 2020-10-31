@@ -23,6 +23,7 @@ import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
   const {
+    minimizePlayer,
     songData,
     playerStatus,
     togglePlay,
@@ -34,7 +35,9 @@ const FullscreenPlayer = (props) => {
   return (
     <>
       <TopOptions>
-        <i className="ci-chevron_big_down" />
+        <button className="minimizePlayer" onClick={minimizePlayer} type="button">
+          <i className="ci-chevron_big_down" />
+        </button>
         <div>
           <h6>Played from</h6>
           <h5>{songData.playlistName}</h5>
