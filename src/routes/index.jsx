@@ -21,6 +21,7 @@ import PlaylistEdit from "../pages/PlaylistEdit";
 import PlaylistCreate from "../pages/PlaylistsCreate";
 import SearchResults from "../pages/SearchResults";
 import SettingSignOut from "../pages/SettingsSignOut";
+import SettingsStats from "../pages/SettingsStats";
 
 const Routes = () => {
   return (
@@ -51,6 +52,7 @@ const Routes = () => {
         <Route exact path="/artist" component={ArtistProfile} />
         <Route exact path="/player" component={FullscreenPlayerPage} />
         <Route exact path="/settings" component={Settings} />
+        <Route exact path="/settings/stats" component={SettingsStats} />
         <Route exact path="/signout" component={SettingSignOut} />
         <Route
           exact
@@ -58,7 +60,6 @@ const Routes = () => {
           component={SettingsChangePassword}
         />
         <Route exact path="/queue" component={FullscreenQueue} />
-
         <Route component={Page404} />
       </Switch>
     </BrowserRouter>
