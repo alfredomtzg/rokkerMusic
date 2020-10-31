@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     font-size: 10px;
-    background-color: ${Colors.G700};
+    background-color: ${Colors.G100};
   }
 
   body{

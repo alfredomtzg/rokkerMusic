@@ -22,20 +22,24 @@ export const TopOptions = styled.div`
 export const SongCover = styled.div`
   display: flex;
   justify-content: center;
-  margin: 7vh 0;
+  margin: 2vh 0;
+
+  img {
+    width: 50vw;
+  }
 `;
 
 export const SongTitleAndArtist = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6vh 0;
+  margin: 2vh 0;
 
-  h3 {
+  h4 {
     color: ${Colors.G700};
   }
 
-  h4 {
+  h5 {
     color: ${Colors.G600};
   }
 `;
@@ -43,7 +47,7 @@ export const SongTitleAndArtist = styled.div`
 export const Timeline = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 7vh 9vw 0;
+  margin: 3vh 9vw 0;
   color: ${Colors.G600};
 
   div {
@@ -104,14 +108,13 @@ export const PlayPauseButton = styled.button`
   border: 1px solid transparent;
   background-color: ${Colors.G200};
   &:focus {
-      outline:none;
-    }
+    outline: none;
+  }
 
   .ci-play_circle_filled,
   .ci-pause_circle_filled {
     font-size: 5rem;
     margin: 0 2vw;
-    
   }
 `;
 export const NextButton = styled.button``;
