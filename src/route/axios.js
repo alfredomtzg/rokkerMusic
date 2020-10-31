@@ -7,9 +7,9 @@ export const API = axios.create({
 
 // create end points
 // Post Album
-export const postAlbum = 'album';
+export const getAlbum = 'album';
 // Get Album
-export const getAlbum = 'album/:albumid'
+export const getAlbumId = 'album/:albumid'
 
 
 // get signUp
