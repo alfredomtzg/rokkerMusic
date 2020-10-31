@@ -1,13 +1,17 @@
+/* eslint-disable no-console */
 // import react
 import React, { useState } from "react";
+// Data
+import album from "./data";
 // create functional component for context provider and export it
 export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
+  const [queue, setQueue] = useState(album.tracks.data);
+  console.log(queue);
   const [songData, setSongData] = useState({
-    songTitle: "Harder, Better, Faster, Stronger",
-    songURL:
-      "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3",
+    songTitle: `${queue[3].title}`,
+    songURL: `${queue[3].preview}`,
     artistName: "Daft Punk",
     playlistName: "Favorites",
     playlistFrom: "Top 20",
@@ -21,6 +25,8 @@ export const ContextProvider = ({ children }) => {
         setSongData,
         playerStatus,
         setPlayerStatus,
+        queue,
+        setQueue,
       }}
     >
       {children}

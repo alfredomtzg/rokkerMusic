@@ -22,7 +22,15 @@ import {
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
-  const { songData, playerStatus, togglePlay, nextSong, previousSong } = props;
+  const {
+    songData,
+    playerStatus,
+    togglePlay,
+    nextSong,
+    previousSong,
+    queue,
+    setQueue,
+  } = props;
   return (
     <>
       <TopOptions>

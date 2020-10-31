@@ -1,22 +1,27 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-console */
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { PageContainer } from "../../containers/LayoutContainers";
 import FullscreenPlayer from "../../components/FullscreenPlayer";
 import { Context } from "../../utils/Context";
 
 const FullscreenPlayerPage = () => {
-  const { songData, setSongData, playerStatus, setPlayerStatus } = useContext(
-    Context
-  );
+  const {
+    songData,
+    queue,
+    setQueue,
+    setSongData,
+    playerStatus,
+    setPlayerStatus,
+  } = useContext(Context);
 
   const audioRef = useRef();
 
   useEffect(() => {
     audioRef.current.src = songData.songURL;
-    console.log(audioRef.current);
-    console.log(audioRef.current.paused);
-    console.log(playerStatus);
+    console.log(`audioref.corrunt :${audioRef.current}`);
+    console.log(`audioRef.current.paused: ${audioRef.current.paused}`);
+    console.log(`playerStatus: ${playerStatus}`);
   }, [songData.songURL]);
 
   const togglePlay = () => {
@@ -40,6 +45,8 @@ const FullscreenPlayerPage = () => {
       artistName: "Daft Punk",
       songURL:
         "https://cdns-preview-e.dzcdn.net/stream/c-e77d23e0c8ed7567a507a6d1b6a9ca1b-9.mp3",
+      playlistName: "Favorites",
+      playlistFrom: "Top 20",
     });
   };
 
@@ -59,6 +66,24 @@ const FullscreenPlayerPage = () => {
 
   return (
     <PageContainer>
+      {/* {queue.map((item) => {
+        return (
+          <div key={item.id}>
+            <ul>
+              {item.title}
+
+              <button
+                type="button"
+                onClick={() => {
+                  console.log("hola");
+                }}
+              >
+                play
+              </button>
+            </ul>
+          </div>
+        );
+      })} */}
       <audio ref={audioRef} />
       <FullscreenPlayer
         songData={songData}
