@@ -22,7 +22,7 @@ import {
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
-  const { songData, playerStatus, togglePlay, nextSong } = props;
+  const { songData, playerStatus, togglePlay, nextSong, previousSong } = props;
   return (
     <>
       <TopOptions>
@@ -56,7 +56,9 @@ const FullscreenPlayer = (props) => {
             <RepeatButton className="ci-repeat" />
           </div>
           <div>
-            <PrevButton className="ci-skip_previous" />
+            <PrevButton onClick={() => previousSong()}>
+              <i className="ci-skip_previous" />
+            </PrevButton>
             <PlayPauseButton type="button" onClick={togglePlay}>
               {playerStatus === "pause" ? (
                 <i className="ci-play_circle_filled" />

@@ -1,20 +1,15 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-console */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { PageContainer } from "../../containers/LayoutContainers";
 import FullscreenPlayer from "../../components/FullscreenPlayer";
+import { Context } from "../../utils/Context";
 
 const FullscreenPlayerPage = () => {
-  const [songData, setSongData] = useState({
-    songTitle: "Harder, Better, Faster, Stronger",
-    songURL:
-      "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3",
-    artistName: "Daft Punk",
-    playlistName: "Favorites",
-    playlistFrom: "Top 20",
-  });
+  const { songData, setSongData, playerStatus, setPlayerStatus } = useContext(
+    Context
+  );
 
-  const [playerStatus, setPlayerStatus] = useState("pause");
   const audioRef = useRef();
 
   useEffect(() => {
@@ -48,6 +43,20 @@ const FullscreenPlayerPage = () => {
     });
   };
 
+  const previousSong = () => {
+    if (!audioRef.current.paused) {
+      togglePlay();
+    }
+    setSongData({
+      songTitle: "Harder, Better, Faster, Stronger",
+      songURL:
+        "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3",
+      artistName: "Daft Punk",
+      playlistName: "Favorites",
+      playlistFrom: "Top 20",
+    });
+  };
+
   return (
     <PageContainer>
       <audio ref={audioRef} />
@@ -56,6 +65,7 @@ const FullscreenPlayerPage = () => {
         playerStatus={playerStatus}
         togglePlay={togglePlay}
         nextSong={nextSong}
+        previousSong={previousSong}
       />
     </PageContainer>
   );
