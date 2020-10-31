@@ -8,17 +8,16 @@ export const StyledModal = styled.div`
   padding: 2rem;
   background-color: ${Colors.G700};
   display: block;
-  
-  h5 {
-    color: ${Colors.G100};
-    margin: 2rem 0 2rem 0;
-  }
-  .playlistQueue {
-    display: grid;
-    overflow: scroll;
+  overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
-}
+  h5 {
+      color: ${Colors.G100};
+      margin: 2rem 0 2rem 0;
+   }
+  .playlistQueue {
+      display: grid;
+  }
   }
   .buttonClose {
     position: absolute;

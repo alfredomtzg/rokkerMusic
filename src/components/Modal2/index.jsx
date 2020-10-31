@@ -37,6 +37,16 @@ const Modal2 = (props) => {
           <PlaylistTitle />
           <PlaylistTitle />
           <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
         </div>
       </StyledModal>
     </StyledModalContainer>,
