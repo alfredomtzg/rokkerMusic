@@ -29,17 +29,28 @@ const Modal = (props) => {
   return ReactDOM.createPortal(
     <StyledModalContainer>
       <StyledModal>
-        <button onClick={props.closeModal} type="button">
+        <button
+          className="buttonClose"
+          onClick={props.closeModal}
+          type="button"
+        >
           x
         </button>
         <PlaylistItemDark />
         <div>
-          <AddToQueue />
-          <SeeArtistProfile />
-          <button onClick={openModal} type="button">
+          <button className="buttonItem" type="button">
+            <AddToQueue />
+          </button>
+          <button className="buttonItem" type="button">
+            <SeeArtistProfile />
+          </button>
+
+          <button className="buttonItem" onClick={openModal} type="button">
             <AddToPlaylist />
           </button>
-          <AddRemoveFromFavorites />
+          <button className="buttonItem" type="button">
+            <AddRemoveFromFavorites />
+          </button>
         </div>
       </StyledModal>
       <Modal2 modalOn={modalOn} closeModal={closeModal} />,

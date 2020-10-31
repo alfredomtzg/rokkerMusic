@@ -10,7 +10,7 @@ export const StyledModal = styled.div`
   padding: 2rem;
   background-color: ${Colors.G700};
 
-  button {
+  .buttonClose {
     position: absolute;
     right: 1rem;
     top: 1rem;
@@ -18,6 +18,17 @@ export const StyledModal = styled.div`
     background-color: ${Colors.G700};
     border: none;
     font-size: 2.4rem;
+  }
+  .buttonItem{
+    width:100%;
+    display:block;
+    border:none;
+    background-color:none;
+    padding:0;
+    margin:0;
+    &:focus{
+      outline:none;
+    }
   }
 `;
 export const StyledModalContainer = styled.div`

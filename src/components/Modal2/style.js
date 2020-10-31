@@ -7,12 +7,20 @@ export const StyledModal = styled.div`
   width: 100vw;
   padding: 2rem;
   background-color: ${Colors.G700};
-  overflow:scroll ;
-h5{
+  display: block;
+  
+  h5 {
     color: ${Colors.G100};
-margin: 2rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
+  }
+  .playlistQueue {
+    display: grid;
+    overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
 }
-  button {
+  }
+  .buttonClose {
     position: absolute;
     right: 1rem;
     top: 1rem;
@@ -20,7 +28,6 @@ margin: 2rem 0 2rem 0;
     background-color: ${Colors.G700};
     border: none;
     font-size: 2.4rem;
-    
   }
 `;
 export const StyledModalContainer = styled.div`
@@ -32,5 +39,4 @@ export const StyledModalContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: flex-end;
-  
 `;

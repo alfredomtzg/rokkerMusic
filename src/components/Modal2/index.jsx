@@ -14,12 +14,21 @@ const Modal2 = (props) => {
   return ReactDOM.createPortal(
     <StyledModalContainer>
       <StyledModal>
-        <button onClick={props.closeModal} type="button">
+        <button className="buttonClose" onClick={props.closeModal} type="button">
           x
         </button>
         <PlaylistItemDark />
         <h5>Add to</h5>
-        <div>
+        <div className="playlistQueue">
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
+          <PlaylistTitle />
           <PlaylistTitle />
           <PlaylistTitle />
           <PlaylistTitle />
