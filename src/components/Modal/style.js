@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { Colors } from "../styles/globals";
 
-const StyledModal = styled.div`
+export const StyledModal = styled.div`
+  position: relative;
   display: grid;
   gap: 3vh;
   height: 38vh;
+  width: 100vw;
   padding: 2rem;
   background-color: ${Colors.G700};
 
@@ -12,7 +14,20 @@ const StyledModal = styled.div`
     position: absolute;
     right: 1rem;
     top: 1rem;
+    color: ${Colors.G100};
+    background-color: ${Colors.G700};
+    border: none;
+    font-size: 2.4rem;
   }
 `;
+export const StyledModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 
-export default StyledModal;
+  display: flex;
+  align-items: flex-end;
+`;
