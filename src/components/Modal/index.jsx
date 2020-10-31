@@ -36,11 +36,9 @@ const Modal = (props) => {
         <div>
           <AddToQueue />
           <SeeArtistProfile />
-          {/*      <button onClick={openModal} type="button">
- 
-          </button> */}
-          <AddToPlaylist />
-
+          <button onClick={openModal} type="button">
+            <AddToPlaylist />
+          </button>
           <AddRemoveFromFavorites />
         </div>
       </StyledModal>
