@@ -55,14 +55,6 @@ const Home = () => {
         </FavoritesBox>
         <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
-          {albumList.map((item) => {
-            <MidFilledCard
-              key={item._id}
-              title={item.title}
-              img={item.cover_img}
-            />;
-          })}
-
           <MidFilledCard />
         </RecommendPlaylistsBox>
         <h5>Albums</h5>
