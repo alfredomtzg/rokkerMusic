@@ -5,10 +5,22 @@ export const UserAvatarBox = styled.div`
 `;
 
 export const SettingsButtonsBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: 1vh;
   height: 16vh;
-  padding: 2vh 0;
+  margin: 2vh 0 20vh;
+
+  button {
+    display: flex;
+    justify-self: center;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+
+    &focus {
+      background-color: transparent;
+    }
+  }
 `;

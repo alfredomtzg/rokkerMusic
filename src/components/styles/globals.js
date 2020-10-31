@@ -26,6 +26,11 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${Colors.G100};
   }
 
+  a {
+    text-decoration: none;
+    color: ${Colors.G100};
+  }
+
   body{
     margin:0;
   }

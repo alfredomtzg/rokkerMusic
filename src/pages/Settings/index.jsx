@@ -6,7 +6,11 @@ import {
 import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
 import { UserAvatarBox, SettingsButtonsBox } from "./style";
 import Header from "../../components/Header";
-import { ChangePassButton, SingOutButton } from "../../components/Buttons";
+import {
+  ChangePassButton,
+  SingOutButton,
+  StatsButton,
+} from "../../components/Buttons";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
 import UserCard from "../../components/UserCard";
@@ -23,6 +27,7 @@ const Settings = () => {
         </UserAvatarBox>
         <SettingsButtonsBox>
           <ChangePassButton />
+          <StatsButton />
           <SingOutButton />
         </SettingsButtonsBox>
       </MainContainer>
