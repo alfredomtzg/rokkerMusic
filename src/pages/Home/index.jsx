@@ -17,7 +17,7 @@ import Footer from "../../components/Footer";
 import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
 
-import { API, postAlbum } from "../../route/axios";
+import { API, getAlbum } from "../../route/axios";
 
 const Home = () => {
   const [albumList, setAlbumList] = useState([]);
@@ -25,7 +25,7 @@ const Home = () => {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZjliN2M5ZmExZjNmODAwMTcyOGE4MGYiLCJuYW1lIjoiQ2FybG9zIiwiZW1haWwiOiJpbmcuY2FnbkBnbWFpbC5jb20iLCJzY29wZXMiOlsic2lnbl9pbjphdXRoIiwic2lnbl91cDphdXRoIiwic2lnbl9wcm92aWRlcjphdXRoIiwicmVhZDphbGJ1bSIsInJlYWQ6YXJ0aXN0IiwicmVhZDpnZW5kZXIiLCJyZWFkOnRyYWNrIiwicmVhZDp1c2VyIiwidXBkYXRlOnVzZXIiXSwiaWF0IjoxNjA0MTc2NTcyLCJleHAiOjE2MDQxNzgzNzJ9.nlszhZU5bVMaL0pD1VCUO21xfkvqpG_KKRaRGFQZ-04";
 
   const bringAlbums = async () => {
-    await API.get(postAlbum, { headers: { token: TOKEN } })
+    await API.get(getAlbum, { headers: { token: TOKEN } })
       .then((res) => {
         console.log(res);
         console.log(res.data.body);
@@ -53,10 +53,7 @@ const Home = () => {
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
-        <h5>Recommended playlists</h5>
-        <RecommendPlaylistsBox>
-          <MidFilledCard />
-        </RecommendPlaylistsBox>
+
         <h5>Albums</h5>
         <RecommendPlaylistsBox>
           <GenreCard />
@@ -66,6 +63,19 @@ const Home = () => {
           <GenreCard />
           <GenreCard />
           <GenreCard />
+        </RecommendPlaylistsBox>
+        <h5>Recommended playlists</h5>
+        <RecommendPlaylistsBox>
+          {albumList.map((item, id) => {
+            return (
+              <MidFilledCard
+                key={item._id}
+                album={item.title}
+                img={item.cover_img}
+                title={item.title}
+              />
+            );
+          })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
           <PlaylistContainer>
