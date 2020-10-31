@@ -11,14 +11,16 @@ export const StyledModal = styled.div`
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
+  }
+
   h5 {
-      color: ${Colors.G100};
-      margin: 2rem 0 2rem 0;
-   }
+    color: ${Colors.G100};
+    margin: 2rem 0 2rem 0;
+  }
   .playlistQueue {
-      display: grid;
+    display: grid;
   }
-  }
+
   .buttonClose {
     position: absolute;
     right: 1rem;
