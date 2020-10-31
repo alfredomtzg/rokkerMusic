@@ -10,21 +10,7 @@ import {
   AddRemoveFromFavorites,
 } from "../Cards";
 
-<<<<<<< HEAD
-const ModalCard = () => {
-  return (
-    <StyledModal>
-      {/* <button type="button">X</button> */}
-      <PlaylistItemDark />
-      <div>
-        <AddToQueue/>
-        <SeeArtistProfile />
-        <AddToPlaylist />
-        <AddRemoveFromFavorites />
-      </div>
-    </StyledModal>
-=======
-const Modal = (props) => {
+const ModalCard = (props) => {
   if (!props.modalOn) {
     return null;
   }
@@ -45,7 +31,6 @@ const Modal = (props) => {
       </StyledModal>
     </StyledModalContainer>,
     document.getElementById("modal")
->>>>>>> 0d03fd04cf49d0d5674d8af3d45b2b0475451059
   );
 };
 
