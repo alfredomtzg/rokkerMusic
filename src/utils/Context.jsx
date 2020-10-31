@@ -8,15 +8,17 @@ export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
   const [queue, setQueue] = useState(album.tracks.data);
-  console.log(queue);
+  const [track, setTrack] = useState(0);
+
   const [songData, setSongData] = useState({
-    songTitle: `${queue[3].title}`,
-    songURL: `${queue[3].preview}`,
+    songTitle: `${queue[track].title}`,
+    songURL: `${queue[track].preview}`,
     artistName: "Daft Punk",
     playlistName: "Favorites",
     playlistFrom: "Top 20",
   });
   const [playerStatus, setPlayerStatus] = useState("pause");
+  const [autoplay, setAutoplay] = useState(false);
   // return Value
   return (
     <Context.Provider
@@ -27,6 +29,10 @@ export const ContextProvider = ({ children }) => {
         setPlayerStatus,
         queue,
         setQueue,
+        autoplay,
+        setAutoplay,
+        track,
+        setTrack,
       }}
     >
       {children}
