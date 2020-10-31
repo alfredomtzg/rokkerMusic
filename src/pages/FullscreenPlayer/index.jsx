@@ -18,11 +18,9 @@ const FullscreenPlayerPage = () => {
     track,
     setTrack,
   } = useContext(Context);
-  console.log(`track global: ${track}`);
+
   useEffect(() => {
     audioRef.current.src = songData.songURL;
-
-    console.log(`playerStatus: ${playerStatus}`);
   }, [songData.songURL]);
 
   const togglePlay = () => {
@@ -83,7 +81,6 @@ const FullscreenPlayerPage = () => {
           <button
             type="button"
             onClick={() => {
-              console.log(item.title);
               setAutoplay(true);
               setPlayerStatus("play");
               setSongData({
@@ -92,7 +89,6 @@ const FullscreenPlayerPage = () => {
                 songURL: `${item.preview}`,
               });
               setTrack(index);
-              console.log(index);
             }}
           >
             play
