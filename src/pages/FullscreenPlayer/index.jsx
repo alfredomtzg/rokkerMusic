@@ -102,25 +102,6 @@ const FullscreenPlayerPage = (props) => {
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
       <audio ref={audioRef} autoPlay={autoplay} />
-      {/* {queue.map((item) => {
-        return (
-          <div key={item.id}>
-            <ul>
-              {item.title}
-
-              <button
-                type="button"
-                onClick={() => {
-                  console.log("hola");
-                }}
-              >
-                play
-              </button>
-            </ul>
-          </div>
-        );
-      })} */}
-      <audio ref={audioRef} />
       <FullscreenPlayer
         minimizePlayer={props.minimizePlayer}
         songData={songData}
