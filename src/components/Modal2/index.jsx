@@ -50,7 +50,7 @@ const Modal2 = (props) => {
         </div>
       </StyledModal>
     </StyledModalContainer>,
-    document.getElementById("modalSH")
+    document.getElementById("modalPlaylist")
   );
 };
 
