@@ -1,20 +1,23 @@
-import React, { useState } from "react";
-import { Modal, StyledContainerModal, Button } from "./style";
+import React from "react";
+import {
+  StyledOpenModal,
+  StyledModalDialog,
+  StyledModalDialog2,
+  StyledClose,
+} from "./style";
+import ModalCard from "../../Modal/index";
 
-const ModalAddToQueue = () => {
-    const [showModal, setShowModal] = useState(false);
-    
-    const openModal = () => {
-        setShowModal((prev) => !prev);
-    };
-    
-    return (
-        <>
-      <StyledContainerModal>
-        <Button onClick={openModal}>?</Button>
-        <Modal showModal={showModal} setShowModal={setShowModal} />
-      </StyledContainerModal>
+const ModalAddTQ = () => {
+  return (
+    <>
+       <StyledOpenModal href="#openM">OOOOOOOOOO</StyledOpenModal> 
+       <StyledModalDialog id="openM">
+        <StyledModalDialog2>
+          <StyledClose href="#">X</StyledClose>
+          <ModalCard />
+        </StyledModalDialog2>
+      </StyledModalDialog>
     </>
   );
 };
-export default ModalAddToQueue;
+export default ModalAddTQ;

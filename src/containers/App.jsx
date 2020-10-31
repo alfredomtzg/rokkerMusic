@@ -2,14 +2,18 @@ import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
 /* import Routes from "../routes";
  */
-import Modal from '../components/Modals/borrar/index'
+ import ModalDotted from '../components/Modals/ModalDottedMenú/index'
+ import ModalAddTQ from '../components/Modals/ModalAddToQueue-Playlist/index'
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
     {/*   <Routes /> */}
-    <Modal/>
+      <ModalDotted/>
+      <h5>rt</h5>
+      <ModalAddTQ/>
+    
     </div>
   );
 }
