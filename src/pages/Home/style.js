@@ -14,5 +14,6 @@ export const RecommendPlaylistsBox = styled.section`
   gap: 3vw;
   grid-auto-flow: column;
   margin: 3vh 0;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
 `;
