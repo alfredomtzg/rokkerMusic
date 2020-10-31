@@ -37,7 +37,7 @@ const Home = () => {
           <MidFilledCard />
           <MidFilledCard />
         </RecommendPlaylistsBox>
-        <h5>Playlists by genre</h5>
+        <h5>Albums</h5>
         <RecommendPlaylistsBox>
           <GenreCard />
           <GenreCard />

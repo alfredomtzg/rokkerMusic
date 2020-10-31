@@ -5,6 +5,7 @@ export const StyledMinimizedPlayerContainer = styled.button`
   display: block;
   width: 100%;
   padding: 0;
+  margin: 0;
   background-color: none;
   border: none;
 
