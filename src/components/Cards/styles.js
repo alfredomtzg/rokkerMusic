@@ -175,7 +175,9 @@ export const StyledAddToQueue = styled.div`
   background-color: ${Colors.G700};
   color: ${Colors.G100};
   height: 3.9rem;
-
+  &:active {
+    background-color: ${Colors.S700};
+  }
   div {
     display: flex;
     align-items: center;

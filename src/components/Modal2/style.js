@@ -3,12 +3,23 @@ import { Colors } from "../styles/globals";
 
 export const StyledModal = styled.div`
   position: relative;
-  display: grid;
-  gap: 3vh;
   height: 38vh;
   width: 100vw;
   padding: 2rem;
   background-color: ${Colors.G700};
+  display: block;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  h5 {
+    color: ${Colors.G100};
+    margin: 2rem 0 2rem 0;
+  }
+  .playlistQueue {
+    display: grid;
+  }
 
   .buttonClose {
     position: absolute;
@@ -19,17 +30,6 @@ export const StyledModal = styled.div`
     border: none;
     font-size: 2.4rem;
   }
-  .buttonItem{
-    width:100%;
-    display:block;
-    border:none;
-    background-color:none;
-    padding:0;
-    margin:0;
-    &:focus{
-      outline:none;
-    }
-  }
 `;
 export const StyledModalContainer = styled.div`
   position: fixed;
@@ -38,7 +38,6 @@ export const StyledModalContainer = styled.div`
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-
   display: flex;
   align-items: flex-end;
 `;
