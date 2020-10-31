@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { Colors } from "../styles/globals";
 
+export const StyledMinimizedPlayerContainer = styled.button`
+  display: block;
+  width: 100%;
+  padding: 0;
+  background-color: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
 export const StyledMinimizedPlayer = styled.div`
   display: flex;
   align-items: center;
@@ -31,6 +43,7 @@ export const StyledIconsRight = styled.div`
 export const StyledSongDescription = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   h6,
   p {
