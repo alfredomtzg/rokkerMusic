@@ -1,12 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import {PlaylistItem} from "../components/PlaylistItem/index";
+import Routes from "../routes";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <PlaylistItem />
+      <Routes />
     </div>
   );
 }
