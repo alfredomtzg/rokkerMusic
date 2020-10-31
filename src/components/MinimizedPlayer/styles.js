@@ -9,6 +9,18 @@ export const StyledMinimizedPlayer = styled.div`
   padding: 0 2rem;
   color: ${Colors.G100};
   background: ${Colors.B500};
+
+  .maximizePlayer {
+    background-color: transparent;
+    color: ${Colors.G100};
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    &focus {
+      outline: none;
+    }
+  }
 `;
 
 export const StyledIconsLeft = styled.div`
@@ -31,6 +43,7 @@ export const StyledIconsRight = styled.div`
 export const StyledSongDescription = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   h6,
   p {

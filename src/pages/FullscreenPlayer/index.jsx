@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-console */
 import React, { useContext, useEffect, useRef } from "react";
-import { PageContainer } from "../../containers/LayoutContainers";
+import ReactDOM from "react-dom";
+import { PlayerContainer } from "../../containers/LayoutContainers";
 import FullscreenPlayer from "../../components/FullscreenPlayer";
 import { Context } from "../../utils/Context";
 
-const FullscreenPlayerPage = () => {
+const FullscreenPlayerPage = (props) => {
   const audioRef = useRef();
   const {
     songData,
@@ -98,10 +99,30 @@ const FullscreenPlayerPage = () => {
     );
   });
 
-  return (
-    <PageContainer>
+  return ReactDOM.createPortal(
+    <PlayerContainer playerDisplay={props.playerDisplay}>
       <audio ref={audioRef} autoPlay={autoplay} />
+      {/* {queue.map((item) => {
+        return (
+          <div key={item.id}>
+            <ul>
+              {item.title}
+
+              <button
+                type="button"
+                onClick={() => {
+                  console.log("hola");
+                }}
+              >
+                play
+              </button>
+            </ul>
+          </div>
+        );
+      })} */}
+      <audio ref={audioRef} />
       <FullscreenPlayer
+        minimizePlayer={props.minimizePlayer}
         songData={songData}
         playerStatus={playerStatus}
         togglePlay={togglePlay}
@@ -109,7 +130,8 @@ const FullscreenPlayerPage = () => {
         previousSong={previousSong}
       />
       {list}
-    </PageContainer>
+    </PlayerContainer>,
+    document.getElementById("player")
   );
 };
 
