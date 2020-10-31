@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
+// eslint-disable-next-line import/no-cycle
+import Modal2 from "../Modal2/index";
 // eslint-disable-next-line import/no-cycle
 import { PlaylistItemDark } from "../PlaylistItem";
 import { StyledModal, StyledModalContainer } from "./style";
@@ -10,7 +12,16 @@ import {
   AddRemoveFromFavorites,
 } from "../Cards";
 
-const ModalCard = (props) => {
+const Modal = (props) => {
+  const [modalOn, setModalOn] = useState(false);
+
+  const openModal = () => {
+    setModalOn(true);
+  };
+  const closeModal = () => {
+    setModalOn(false);
+  };
+
   if (!props.modalOn) {
     return null;
   }
@@ -25,13 +36,18 @@ const ModalCard = (props) => {
         <div>
           <AddToQueue />
           <SeeArtistProfile />
+          {/*      <button onClick={openModal} type="button">
+ 
+          </button> */}
           <AddToPlaylist />
+
           <AddRemoveFromFavorites />
         </div>
       </StyledModal>
+      <Modal2 modalOn={modalOn} closeModal={closeModal} />,
     </StyledModalContainer>,
     document.getElementById("modal")
   );
 };
 
-export default ModalCard;
+export default Modal;

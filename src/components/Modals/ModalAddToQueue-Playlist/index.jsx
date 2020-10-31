@@ -5,7 +5,6 @@ import {
   StyledModalDialog2,
   StyledClose,
 } from "./style";
-import ModalCard from "../../Modal/index";
 
 const ModalAddTQ = () => {
   return (
@@ -14,7 +13,7 @@ const ModalAddTQ = () => {
        <StyledModalDialog id="openM">
         <StyledModalDialog2>
           <StyledClose href="#">X</StyledClose>
-          <ModalCard />
+          <h1>modal de prueba</h1>         
         </StyledModalDialog2>
       </StyledModalDialog>
     </>
