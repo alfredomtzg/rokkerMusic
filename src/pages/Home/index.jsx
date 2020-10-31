@@ -37,10 +37,9 @@ const Home = () => {
   };
 
   useEffect(() => {
-    bringAlbums();
-    // return () => {
-    //   cleanup;
-    // };
+    if (albumList.length <= 0) {
+      bringAlbums();
+    }
   }, []);
 
   return (
@@ -54,7 +53,7 @@ const Home = () => {
           <WideCard />
         </FavoritesBox>
 
-        <h5>Albums</h5>
+        <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
           <GenreCard />
           <GenreCard />
@@ -64,13 +63,12 @@ const Home = () => {
           <GenreCard />
           <GenreCard />
         </RecommendPlaylistsBox>
-        <h5>Recommended playlists</h5>
+        <h5>Albums</h5>
         <RecommendPlaylistsBox>
-          {albumList.map((item, id) => {
+          {albumList.map((item) => {
             return (
               <MidFilledCard
                 key={item._id}
-                album={item.title}
                 img={item.cover_img}
                 title={item.title}
               />
