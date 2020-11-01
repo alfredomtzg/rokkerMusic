@@ -14,8 +14,8 @@ import { Context } from "../../utils/Context";
 const MinimizedPlayer = () => {
   const { songData, playerStatus } = useContext(Context);
   const [player, setPlayer] = useState("off");
-  const [miniplay, setMiniplay] = useState("off");
-  const [miniplayNext, setMiniplayNext] = useState("off");
+  const [miniplay, setMiniplay] = useState("blocked");
+  const [miniplayNext, setMiniplayNext] = useState("blocked");
 
   const maximizePlayer = () => {
     setPlayer("on");
@@ -25,18 +25,22 @@ const MinimizedPlayer = () => {
     setPlayer("off");
   };
   const toggleMiniplay = () => {
-    if (miniplay === "off") {
+    if (miniplay === "blocked") {
       setMiniplay("on");
-    } else {
+    } else if (miniplay === "on") {
       setMiniplay("off");
+    } else {
+      setMiniplay("on");
     }
   };
 
   const toggleMiniplayNext = () => {
-    if (miniplayNext === "off") {
+    if (miniplayNext === "blocked") {
       setMiniplayNext("on");
-    } else {
+    } else if (miniplayNext === "on") {
       setMiniplayNext("off");
+    } else {
+      setMiniplay("on");
     }
   };
 
