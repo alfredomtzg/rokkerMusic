@@ -30,8 +30,8 @@ const Routes = () => {
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/playlist" component={PlaylistList} />
-        <Route exact path="playlist/edit" component={PlaylistEdit} />
-        <Route exact path="playlist/create" component={PlaylistCreate} />
+        <Route exact path="/playlist/edit" component={PlaylistEdit} />
+        <Route exact path="/playlist/create" component={PlaylistCreate} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/search/results" component={SearchResults} />
         <Route exact path="/playlist-content" component={PlaylistContent} />
