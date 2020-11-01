@@ -28,8 +28,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    text-decoration: none;
-    color: ${Colors.G100};
+    color: inherit;
+    text-decoration:none;
   }
 
   body{
