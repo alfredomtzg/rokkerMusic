@@ -30,7 +30,9 @@ const Landing = () => {
             </Link>
           </LandingLoginButtons>
           <LandingSignUpButton>
-            <SignupButton />
+            <Link to="/signup">
+              <SignupButton />
+            </Link>
           </LandingSignUpButton>
         </MainLanding>
       </MainContainer>

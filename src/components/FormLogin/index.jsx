@@ -48,7 +48,9 @@ export default function LoginForm() {
         onChange={handleChangeLogin}
       />
       <h6>Email or password incorrect. Please check and retry.</h6>
-      <Link to="/forgot-password">Forgot your password?</Link>
+      <Link to="/forgot-password">
+        <h5>Forgot your password?</h5>
+      </Link>
       <div className="LoginBtn">
         <LoginButton type="submit" />
       </div>

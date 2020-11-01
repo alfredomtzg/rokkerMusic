@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
-import React from "react";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -19,34 +20,56 @@ import {
   NextButton,
   HeartButton,
 } from "./style";
+import Modal from "../Modal";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
   const {
+    minimizePlayer,
     songData,
     playerStatus,
     togglePlay,
     nextSong,
     previousSong,
-    queue,
-    setQueue,
   } = props;
+
+  const openQueue = () => {
+    minimizePlayer();
+    props.history.push("/queue");
+  };
+
+  const [modalOn, setModalOn] = useState(false);
+  const openModal = () => {
+    setModalOn(true);
+  };
+  const closeModal = () => {
+    setModalOn(false);
+  };
+
   return (
     <>
       <TopOptions>
-        <i className="ci-chevron_big_down" />
+        <button
+          className="minimizePlayer"
+          onClick={minimizePlayer}
+          type="button"
+        >
+          <i className="ci-chevron_big_down" />
+        </button>
         <div>
-          <h6>Played from {songData.playlistFrom}</h6>
+          <h6>Played from</h6>
           <h5>{songData.playlistName}</h5>
         </div>
-        <i className="ci-more_vertical" />
+        <button onClick={openModal} type="button">
+          <i className="ci-more_vertical" />
+        </button>
       </TopOptions>
       <SongCover>
         <img src={SongCoverImg} alt="Cover for the song" />
       </SongCover>
       <SongTitleAndArtist>
-        <h3> {songData.songTitle}</h3>
-        <h4> {songData.artistName} </h4>
+        <h4> {songData.songTitle}</h4>
+        <h5> {songData.artistName} </h5>
       </SongTitleAndArtist>
 
       <Timeline>
@@ -60,8 +83,9 @@ const FullscreenPlayer = (props) => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <ShuffleButton className="ci-shuffle" />
-            <RepeatButton className="ci-repeat" />
+            <RepeatButton>
+              <i className="ci-repeat" />
+            </RepeatButton>
           </div>
           <div>
             <PrevButton onClick={() => previousSong()}>
@@ -78,15 +102,22 @@ const FullscreenPlayer = (props) => {
               <i className="ci-skip_next" />
             </NextButton>
           </div>
-          <HeartButton className="ci-heart_fill" />
+          <HeartButton>
+            <i className="ci-heart_fill" />
+          </HeartButton>
         </PlayerButtons>
         <PlayerBottomButtons>
-          <i className="ci-list_plus" />
-          <i className="ci-list_check" />
+          <ShuffleButton>
+            <i className="ci-shuffle" />
+          </ShuffleButton>
+          <button type="button" onClick={openQueue}>
+            <i className="ci-list_check" />
+          </button>
         </PlayerBottomButtons>
       </PlayerMedia>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
     </>
   );
 };
 
-export default FullscreenPlayer;
+export default withRouter(FullscreenPlayer);

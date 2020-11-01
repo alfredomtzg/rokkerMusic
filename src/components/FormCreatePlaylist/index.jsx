@@ -7,12 +7,13 @@ import {
   TextInput,
   TextAreaInput,
 } from "../Forms/light-styles";
+import { API, PlayList, TOKEN } from "../../route/axios";
 
 export default function CreatePlaylistForm() {
   // CreatePlaylist Values
   const [valuesCreatePlaylist, setValuesCreatePlaylist] = useState({
-    playlistTitle: "",
-    playlistDescription: "",
+    name: "",
+    description: "",
   });
   // function handleChange to CreatePlaylist
   const handleChangeCreatePlaylist = (event) => {
@@ -22,10 +23,28 @@ export default function CreatePlaylistForm() {
     });
   };
 
+  // Create a new PlayList whit axios
+  const createNewPlayList = async () => {
+    await API.post(PlayList, valuesCreatePlaylist, {
+      headers: { Authorization: `Bearer ${TOKEN}` },
+    })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setValuesCreatePlaylist({
+          name: "",
+          description: "",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   // Function HandleSubmitCreatePlaylist
   const handleSubmitCreatePlaylist = (event) => {
     event.preventDefault();
-    console.log(valuesCreatePlaylist);
+    createNewPlayList();
   };
 
   return (
@@ -34,10 +53,9 @@ export default function CreatePlaylistForm() {
         <h4>Title</h4>
       </TextLabel>
       <TextInput
-        id="playlistTitle"
         type="text"
-        name="playlistTitle"
-        value={valuesCreatePlaylist.playlistTitle}
+        name="name"
+        value={valuesCreatePlaylist.name}
         onChange={handleChangeCreatePlaylist}
       />
       <h6>The playlist must have a title</h6>
@@ -46,11 +64,10 @@ export default function CreatePlaylistForm() {
         <h4>Description</h4>
       </TextLabel>
       <TextAreaInput
-        id="playlistDescription"
         type="text"
-        name="playlistDescription"
+        name="description"
         maxLength="120"
-        value={valuesCreatePlaylist.playlistDescription}
+        value={valuesCreatePlaylist.description}
         onChange={handleChangeCreatePlaylist}
       />
       <h6>120 characters only</h6>
