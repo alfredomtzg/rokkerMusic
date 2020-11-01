@@ -32,7 +32,7 @@ const Routes = () => {
       <MiniPlayerAndNavContainer />
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route exact path="/activate" component={Activation} />
+        <Route exact path="/activate/:id" component={Activation} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/playlist" component={PlaylistList} />
         <Route exact path="/playlist/edit" component={PlaylistEdit} />
