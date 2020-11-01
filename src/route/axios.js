@@ -6,7 +6,7 @@ export const API = axios.create({
 })
 // TOKEN
 export const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZjliN2M5ZmExZjNmODAwMTcyOGE4MGYiLCJuYW1lIjoiQ2FybG9zIiwiZW1haWwiOiJpbmcuY2FnbkBnbWFpbC5jb20iLCJzY29wZXMiOlsic2lnbl9pbjphdXRoIiwic2lnbl91cDphdXRoIiwic2lnbl9wcm92aWRlcjphdXRoIiwicmVhZDphbGJ1bSIsInJlYWQ6YXJ0aXN0IiwicmVhZDpnZW5kZXIiLCJyZWFkOnRyYWNrIiwicmVhZDp1c2VyIiwidXBkYXRlOnVzZXIiXSwiaWF0IjoxNjA0MTc2NTcyLCJleHAiOjE2MDQxNzgzNzJ9.nlszhZU5bVMaL0pD1VCUO21xfkvqpG_KKRaRGFQZ-04";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Zjk0ZWEwNTFjMWM0ZDgwOGE3MjQzYzIiLCJuYW1lIjoiQ0FSTE9TIiwiZW1haWwiOiJjZ3V6bWFuQGV4cHJlc3NpbmdlbmllcmlhLmNvbSIsInNjb3BlcyI6WyJzaWduX2luOmF1dGgiLCJzaWduX3VwOmF1dGgiLCJzaWduX3Byb3ZpZGVyOmF1dGgiLCJyZWFkOmFsYnVtIiwicmVhZDphcnRpc3QiLCJyZWFkOmdlbmRlciIsInJlYWQ6dHJhY2siLCJyZWFkOnVzZXIiLCJ1cGRhdGU6dXNlciIsInJlYWQ6c2VhcmNoSGlzdG9yeSIsImNyZWF0ZTpwbGF5bGlzdHMiLCJ1cGRhdGU6cGxheWxpc3RzIiwiZGVsZXRlOnBsYXlsaXN0cyIsInJlYWQ6cGxheWxpc3RzIl0sImlhdCI6MTYwNDIwNTYwNCwiZXhwIjoxNjA0MjA3NDA0fQ.Ve8nWJHEl4d6e2TdPG0e-wKm1426Dm7iYUWmiL02SK0";
 
 // create end points
 // Post Album
@@ -14,7 +14,7 @@ export const getAlbum = 'album';
 // Get Album
 export const getAlbumId = 'album/:albumid'
 // Create a new play list
-export const newPlayList = 'playlist'
+export const PlayList = 'playlist'
 
 // get signUp
 export const signUp = '';

@@ -22,7 +22,7 @@ const Home = () => {
   const [albumList, setAlbumList] = useState([]);
 
   const bringAlbums = async () => {
-    await API.get(getAlbum, { headers: { token: TOKEN } })
+    await API.get(getAlbum, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((res) => {
         console.log(res);
         console.log(res.data.body);

@@ -152,12 +152,13 @@ export const FavoritesCard = () => {
   );
 };
 
-export const PlaylistCard = () => {
+export const PlaylistCard = (props) => {
+  const { PlayListTitle } = props;
   return (
     <StyledPlaylistCard>
       <div>
         <SmallFilledCard />
-        <h4>Playlist title</h4>
+        <h4>{PlayListTitle}</h4>
       </div>
       <i className="ci-chevron_big_right" />
     </StyledPlaylistCard>
