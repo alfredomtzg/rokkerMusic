@@ -16,7 +16,8 @@ import {
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
-export const PlaylistItem = () => {
+export const PlaylistItem = (props) => {
+  const { title, artist } = props;
   const [modalOn, setModalOn] = useState(false);
 
   const openModal = () => {
@@ -32,8 +33,8 @@ export const PlaylistItem = () => {
       <StyledIconsLeft>
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription>
-          <h6>Song title</h6>
-          <p>Artist</p>
+          <h6> {title}</h6>
+          <p>{artist}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
