@@ -8,9 +8,10 @@ export const LandingLogoBox = styled.figure`
   justify-self: center;
   align-self: flex-end;
   margin: 0;
+  min-height: 20vh;
 
   img {
-    width: 12vh;
+    width: 100px;
   }
 `;
 

@@ -25,7 +25,7 @@ export const StyledFacebookButton = styled(StyledButton)`
 
   i {
     font-size: 3.5rem;
-    margin-right: 1vw;
+    margin-right: 3vw;
   }
 `;
 
@@ -35,7 +35,7 @@ export const StyledGoogleButton = styled(StyledButton)`
 
   img {
     width: 3rem;
-    margin-right: 1vw;
+    margin-right: 3vw;
   }
 
   &:active {
