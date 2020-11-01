@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../assets/fonts/coolicons.css";
 import {
@@ -25,6 +25,7 @@ import {
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
 import UserAvatar from "../../assets/images/avatars/Eliot.svg";
+import { Context } from "../../utils/Context";
 
 export const WideCard = () => {
   return (
@@ -43,7 +44,6 @@ export const MidFilledCard = (props) => {
     <StyledMidCard>
       <Link to="/playlist-content">
         <img src={item?.cover_img} alt={item?.title} />
-
         <i className="ci-play_circle_filled" />
       </Link>
     </StyledMidCard>
@@ -167,10 +167,12 @@ export const PlaylistCard = (props) => {
 };
 
 export const PlaylistBigCard = () => {
+  const { albumContent } = useContext(Context);
   return (
     <StyledPlaylistBigCard>
-      <MidFilledCard />
-      <h1>Playlist title</h1>
+      <MidFilledCard item={albumContent} />
+      <h1> {albumContent.title} </h1>
+      <small> {albumContent.year} </small>
     </StyledPlaylistBigCard>
   );
 };

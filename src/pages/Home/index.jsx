@@ -107,7 +107,7 @@ const Home = () => {
                   console.log(item);
                 }}
               >
-                <MidFilledCard item={item} />;
+                <MidFilledCard item={item} />
               </div>
             );
           })}
