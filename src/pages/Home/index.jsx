@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-console */
+import React, { useEffect, useState } from "react";
 import {
   MainContainer,
   PageContainer,
@@ -16,7 +17,29 @@ import Footer from "../../components/Footer";
 import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
 
+import { API, getAlbum, TOKEN } from "../../route/axios";
+
 const Home = () => {
+  const [albumList, setAlbumList] = useState([]);
+
+  const bringAlbums = async () => {
+    await API.get(getAlbum, { headers: { token: TOKEN } })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data.body);
+        setAlbumList(res.data.body);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    if (albumList.length <= 0) {
+      bringAlbums();
+    }
+  }, []);
+
   return (
     <PageContainer>
       <TopBar>
@@ -27,25 +50,28 @@ const Home = () => {
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
+
         <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
-          <MidFilledCard />
-          <MidFilledCard />
-          <MidFilledCard />
-          <MidFilledCard />
-          <MidFilledCard />
-          <MidFilledCard />
-          <MidFilledCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
         </RecommendPlaylistsBox>
-        <h5>Playlists by genre</h5>
+        <h5>Albums</h5>
         <RecommendPlaylistsBox>
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
+          {albumList.map((item) => {
+            return (
+              <MidFilledCard
+                key={item._id}
+                img={item.cover_img}
+                title={item.title}
+              />
+            );
+          })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
           <PlaylistContainer>

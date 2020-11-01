@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
-import React, { useContext, useState } from "react";
+import React from "react";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -19,40 +20,29 @@ import {
   HeartButton,
 } from "./style";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
-import { Context } from "../../utils/Context";
 
-const FullscreenPlayer = () => {
-  const [audio] = useState(
-    new Audio(
-      "https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
-    )
-  );
-  // stateGlobal
-  const { name } = useContext(Context);
-  // hangle buttonBoolean
-  const [playPause, setPlayPause] = useState(false);
-
-  // Play or pause function
-  const handlePlayPause = () => {
-    console.log(playPause);
-    if (audio.paused) {
-      console.log("paused -> play");
-      audio.play();
-      setPlayPause(true);
-    } else {
-      console.log("play -> pause");
-      audio.pause();
-      setPlayPause(false);
-    }
-  };
-
+const FullscreenPlayer = (props) => {
+  const {
+    minimizePlayer,
+    songData,
+    playerStatus,
+    togglePlay,
+    nextSong,
+    previousSong,
+  } = props;
   return (
-    <div>
+    <>
       <TopOptions>
-        <i className="ci-chevron_big_down" />
+        <button
+          className="minimizePlayer"
+          onClick={minimizePlayer}
+          type="button"
+        >
+          <i className="ci-chevron_big_down" />
+        </button>
         <div>
-          <h6>Played from {name.playlistFrom}</h6>
-          <h5>{name.playlistName}</h5>
+          <h6>Played from</h6>
+          <h5>{songData.playlistName}</h5>
         </div>
         <i className="ci-more_vertical" />
       </TopOptions>
@@ -60,8 +50,8 @@ const FullscreenPlayer = () => {
         <img src={SongCoverImg} alt="Cover for the song" />
       </SongCover>
       <SongTitleAndArtist>
-        <h3> {name.song}</h3>
-        <h4> {name.artistName} </h4>
+        <h4> {songData.songTitle}</h4>
+        <h5> {songData.artistName} </h5>
       </SongTitleAndArtist>
 
       <Timeline>
@@ -75,45 +65,38 @@ const FullscreenPlayer = () => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <ShuffleButton className="ci-shuffle" />
-            <RepeatButton className="ci-repeat" />
+            <ShuffleButton>
+              <i className="ci-shuffle" />
+            </ShuffleButton>
+            <RepeatButton>
+              <i className="ci-repeat" />
+            </RepeatButton>
           </div>
           <div>
-            <PrevButton className="ci-skip_previous" />
-            <PlayPauseButton
-              type="button"
-              onClick={() => {
-                handlePlayPause();
-              }}
-            >
-              {!playPause ? (
+            <PrevButton onClick={() => previousSong()}>
+              <i className="ci-skip_previous" />
+            </PrevButton>
+            <PlayPauseButton type="button" onClick={togglePlay}>
+              {playerStatus === "pause" ? (
                 <i className="ci-play_circle_filled" />
               ) : (
                 <i className="ci-pause_circle_filled" />
               )}
             </PlayPauseButton>
-            <NextButton className="ci-skip_next" />
+            <NextButton onClick={nextSong}>
+              <i className="ci-skip_next" />
+            </NextButton>
           </div>
-          <HeartButton className="ci-heart_fill" />
+          <HeartButton>
+            <i className="ci-heart_fill" />
+          </HeartButton>
         </PlayerButtons>
         <PlayerBottomButtons>
           <i className="ci-list_plus" />
           <i className="ci-list_check" />
         </PlayerBottomButtons>
       </PlayerMedia>
-      {/* <audio controls>
-        <source
-          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
-          type="audio/ogg"
-        />
-        <source
-          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
-          type="audio/mpeg"
-        />
-        <track src="/media/examples/friday.vtt" />
-        Your browser does not support the audio element.
-      </audio> */}
-    </div>
+    </>
   );
 };
 

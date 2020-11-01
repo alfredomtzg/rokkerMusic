@@ -74,13 +74,8 @@ export const StyledChangePassButton = styled(StyledButton)`
   }
 `;
 
-export const StyledSingOutButton = styled(StyledButton)`
-  background: ${Colors.R400};
-  color: ${Colors.G100};
-  &:active {
-    background: ${Colors.R500};
-  }
-`;
+export const StyledStatsButton = styled(StyledChangePassButton)``;
+export const StyledSingOutButton = styled(StyledChangePassButton)``;
 
 /* Buttons Mid */
 export const StyledNextButton = styled(StyledLoginButton)`

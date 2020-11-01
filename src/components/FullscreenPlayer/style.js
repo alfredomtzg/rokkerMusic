@@ -17,25 +17,40 @@ export const TopOptions = styled.div`
   i {
     font-size: 2.4rem;
   }
+
+  .minimizePlayer {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    &focus {
+      outline: none;
+    }
+  }
 `;
 
 export const SongCover = styled.div`
   display: flex;
   justify-content: center;
-  margin: 7vh 0;
+  margin: 2vh 0;
+
+  img {
+    width: 50vw;
+  }
 `;
 
 export const SongTitleAndArtist = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6vh 0;
+  margin: 2vh 0;
 
-  h3 {
+  h4 {
     color: ${Colors.G700};
   }
 
-  h4 {
+  h5 {
     color: ${Colors.G600};
   }
 `;
@@ -43,7 +58,7 @@ export const SongTitleAndArtist = styled.div`
 export const Timeline = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 7vh 9vw 0;
+  margin: 3vh 9vw 0;
   color: ${Colors.G600};
 
   div {
@@ -97,22 +112,36 @@ export const PlayerButtons = styled.div`
 
 export const PlayerBottomButtons = styled(PlayerButtons)``;
 
-export const ShuffleButton = styled.button``;
-export const RepeatButton = styled.button``;
-export const PrevButton = styled.button``;
-export const PlayPauseButton = styled.button`
+export const Button = styled.button`
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  &focus {
+    outline: none;
+  }
+
+  i {
+    font-size: 2.4rem;
+  }
+`;
+
+export const ShuffleButton = styled(Button)``;
+export const RepeatButton = styled(Button)``;
+export const PrevButton = styled(Button)``;
+export const PlayPauseButton = styled(Button)`
   border: 1px solid transparent;
   background-color: ${Colors.G200};
   &:focus {
-      outline:none;
-    }
+    outline: none;
+  }
 
   .ci-play_circle_filled,
   .ci-pause_circle_filled {
     font-size: 5rem;
     margin: 0 2vw;
-    
   }
 `;
-export const NextButton = styled.button``;
-export const HeartButton = styled.button``;
+export const NextButton = styled(Button)``;
+export const HeartButton = styled(Button)``;
