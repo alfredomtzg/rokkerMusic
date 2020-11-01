@@ -6,18 +6,13 @@ export const StyledPlaylistItem = styled.div`
   justify-content: space-between;
   height: 3.9rem;
   background-color: ${Colors.G100};
-`;
 
-export const StyledPlaylistItemDark = styled.div`
-  display: flex;
-  height: 3.9rem;
-  background-color: ${Colors.G700};
-  color: ${Colors.G100};
-
-  img {
-    width: 3.9rem;
-    height: 3.9rem;
-    padding-right: 1rem;
+  button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: none;
+    background-color: ${Colors.G100};
   }
 `;
 
@@ -54,3 +49,7 @@ export const StyledIconsRight = styled.div`
     color: ${Colors.R500};
   }
 `;
+
+export const HeartButton = styled.button``;
+export const DotsButton = styled.button``;
+export const DeleteButton = styled.button``;

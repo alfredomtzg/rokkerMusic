@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Activation from "../pages/Activation";
 import Home from "../pages/Home";
 import SignUpEntryData from "../pages/SignUpEntryData";
 import Login from "../pages/Login";
@@ -21,16 +22,21 @@ import PlaylistEdit from "../pages/PlaylistEdit";
 import PlaylistCreate from "../pages/PlaylistsCreate";
 import SearchResults from "../pages/SearchResults";
 import SettingSignOut from "../pages/SettingsSignOut";
+import SettingsStats from "../pages/SettingsStats";
+import MiniPlayerAndNavContainer from "../containers/MiniPlayerAndNavContainer";
+import SignUpCheckEmail from "../pages/SignUpCheckEmail";
 
 const Routes = () => {
   return (
     <BrowserRouter>
+      <MiniPlayerAndNavContainer />
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/activate/:id" component={Activation} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/playlist" component={PlaylistList} />
-        <Route exact path="playlist/edit" component={PlaylistEdit} />
-        <Route exact path="playlist/create" component={PlaylistCreate} />
+        <Route exact path="/playlist/edit" component={PlaylistEdit} />
+        <Route exact path="/playlist/create" component={PlaylistCreate} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/search/results" component={SearchResults} />
         <Route exact path="/playlist-content" component={PlaylistContent} />
@@ -48,9 +54,11 @@ const Routes = () => {
           path="/signup/demographic"
           component={SignUpDemographics}
         />
+        <Route exact path="/signup/check" component={SignUpCheckEmail} />
         <Route exact path="/artist" component={ArtistProfile} />
         <Route exact path="/player" component={FullscreenPlayerPage} />
         <Route exact path="/settings" component={Settings} />
+        <Route exact path="/settings/stats" component={SettingsStats} />
         <Route exact path="/signout" component={SettingSignOut} />
         <Route
           exact
@@ -58,7 +66,6 @@ const Routes = () => {
           component={SettingsChangePassword}
         />
         <Route exact path="/queue" component={FullscreenQueue} />
-
         <Route component={Page404} />
       </Switch>
     </BrowserRouter>

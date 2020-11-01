@@ -6,10 +6,10 @@ import {
   StyledSignupButton,
   StyledLoginButton,
   StyledNextButton,
-  StyledImgGoogleButton,
   StyledSendButton,
   StyledHomeButton,
   StyledChangePassButton,
+  StyledStatsButton,
   StyledSingOutButton,
   StyledSaveButton,
   StyledPlayButton,
@@ -22,11 +22,11 @@ import {
 } from "./style";
 
 import "../../assets/fonts/coolicons.css";
-import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
 
 export const FacebookButton = () => {
   return (
     <StyledFacebookButton>
+      <i className="ci-facebook" />
       <h5>Login with Facebook</h5>
     </StyledFacebookButton>
   );
@@ -35,8 +35,11 @@ export const FacebookButton = () => {
 export const GoogleButton = () => {
   return (
     <StyledGoogleButton>
-      <StyledImgGoogleButton src={logoG} />
-      <span>Sign in with Google</span>
+      <img
+        src="https://img.icons8.com/color/452/google-logo.png"
+        alt="google logo"
+      />
+      <h5>Sign in with Google</h5>
     </StyledGoogleButton>
   );
 };
@@ -65,29 +68,43 @@ export const SendButton = () => {
 };
 export const HomeButton = () => {
   return (
-    <Link to="/home">
-      <StyledHomeButton>
+    <StyledHomeButton>
+      <Link to="/home">
         <h5>Home</h5>
-      </StyledHomeButton>
-    </Link>
+      </Link>
+    </StyledHomeButton>
   );
 };
 export const ChangePassButton = () => {
   return (
-    <Link to="settings/change-password">
-      <StyledChangePassButton>
+    <StyledChangePassButton>
+      <Link to="settings/change-password">
         <h5>Change Password</h5>
-      </StyledChangePassButton>
-    </Link>
+      </Link>
+    </StyledChangePassButton>
   );
 };
+
+export const StatsButton = () => {
+  return (
+    <StyledStatsButton>
+      <Link to="settings/stats">
+        <h5>Stats</h5>
+      </Link>
+    </StyledStatsButton>
+  );
+};
+
 export const SingOutButton = () => {
   return (
     <StyledSingOutButton>
-      <h5>Sign Out</h5>
+      <Link to="/signout">
+        <h5>Sign Out</h5>
+      </Link>
     </StyledSingOutButton>
   );
 };
+
 export const NextButton = () => {
   return (
     <StyledNextButton>
@@ -128,7 +145,9 @@ export const EditButton = () => {
   return (
     <StyledEditButton>
       <StyledImgEditButton>
-        <i className="ci-edit" />
+        <Link to="/playlist/edit">
+          <i className="ci-edit" />
+        </Link>
       </StyledImgEditButton>
     </StyledEditButton>
   );

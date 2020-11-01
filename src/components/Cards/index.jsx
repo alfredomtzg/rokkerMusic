@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../assets/fonts/coolicons.css";
 import {
@@ -20,9 +20,12 @@ import {
   StyledAddToPlaylist,
   StyledSeeArtistProfile,
   StyledAddRemoveFromFavorites,
+  StyledGreetingsCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
+import UserAvatar from "../../assets/images/avatars/Eliot.svg";
+import { Context } from "../../utils/Context";
 
 export const WideCard = () => {
   return (
@@ -35,12 +38,12 @@ export const WideCard = () => {
   );
 };
 
-export const MidFilledCard = () => {
+export const MidFilledCard = (props) => {
+  const { item } = props;
   return (
     <StyledMidCard>
       <Link to="/playlist-content">
-        <img src={Logo} alt="" />
-        <p>Your playlist name</p>
+        <img src={item?.cover_img} alt={item?.title} />
         <i className="ci-play_circle_filled" />
       </Link>
     </StyledMidCard>
@@ -150,12 +153,13 @@ export const FavoritesCard = () => {
   );
 };
 
-export const PlaylistCard = () => {
+export const PlaylistCard = (props) => {
+  const { PlayListTitle } = props;
   return (
     <StyledPlaylistCard>
       <div>
         <SmallFilledCard />
-        <h4>Playlist title</h4>
+        <h4>{PlayListTitle}</h4>
       </div>
       <i className="ci-chevron_big_right" />
     </StyledPlaylistCard>
@@ -163,10 +167,12 @@ export const PlaylistCard = () => {
 };
 
 export const PlaylistBigCard = () => {
+  const { albumContent } = useContext(Context);
   return (
     <StyledPlaylistBigCard>
-      <MidFilledCard />
-      <h1>Playlist title</h1>
+      <MidFilledCard item={albumContent} />
+      <h1> {albumContent.title} </h1>
+      <small> {albumContent.year} </small>
     </StyledPlaylistBigCard>
   );
 };
@@ -192,7 +198,6 @@ export const ArtistProfileCard = () => {
 export const QueueReturn = () => {
   return (
     <StyledQueueReturn>
-      <i className="ci-chevron_big_left" />
       <h4>Queue</h4>
     </StyledQueueReturn>
   );
@@ -243,5 +248,16 @@ export const AddRemoveFromFavorites = () => {
       </div>
       <i className="ci-chevron_big_right" />
     </StyledAddRemoveFromFavorites>
+  );
+};
+
+export const GreetingsCard = () => {
+  return (
+    <StyledGreetingsCard>
+      <h2>Hello, Mike!</h2>
+      <Link to="/settings">
+        <img src={UserAvatar} alt="user avatar" />
+      </Link>
+    </StyledGreetingsCard>
   );
 };

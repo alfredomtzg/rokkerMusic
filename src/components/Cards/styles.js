@@ -175,7 +175,9 @@ export const StyledAddToQueue = styled.div`
   background-color: ${Colors.G700};
   color: ${Colors.G100};
   height: 3.9rem;
-
+  &:active {
+    background-color: ${Colors.S700};
+  }
   div {
     display: flex;
     align-items: center;
@@ -204,4 +206,10 @@ export const StyledAddRemoveFromFavorites = styled(StyledAddToQueue)`
   .ci-heart_fill {
     margin-right: 1rem;
   }
+`;
+
+export const StyledGreetingsCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
 `;

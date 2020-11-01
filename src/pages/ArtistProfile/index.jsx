@@ -2,14 +2,11 @@ import React from "react";
 import Header from "../../components/Header";
 import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
 import {
-  MiniPlayerAndNavContainer,
   PlaylistContentBox,
   TopBar,
 } from "../Globals/GlobalStyle";
@@ -38,10 +35,6 @@ const ArtistProfile = () => {
         <h4>Stats</h4>
         <StatsBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

@@ -6,6 +6,7 @@ export const Colors = {
   white: "#ffffff",
   R500: "#F51E38",
   R400: "#FF5A6E",
+  R300: "#FF7283",
   B400: "#6A57F1",
   B500: "#3E2AD1",
   G100: "#FAFBFC",
@@ -23,7 +24,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     font-size: 10px;
-    background-color: ${Colors.G700};
+    background-color: ${Colors.G100};
+  }
+
+  a {
+    color: inherit;
+    text-decoration:none;
   }
 
   body{

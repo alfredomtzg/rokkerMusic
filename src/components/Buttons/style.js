@@ -17,18 +17,27 @@ export const StyledButton = styled.button`
 
 /* Button particular characters */
 export const StyledFacebookButton = styled(StyledButton)`
-  background: ${Colors.facebookInactive};
-  color: ${Colors.G100};
+  background: ${Colors.white};
+  color: ${Colors.facebookActive};
   &:active {
-    background: ${Colors.facebookActive};
+    background: ${Colors.G100};
+  }
+
+  i {
+    font-size: 3.5rem;
+    margin-right: 2rem;
   }
 `;
 
 export const StyledGoogleButton = styled(StyledButton)`
-  justify-content: space-around;
   background: ${Colors.white};
-  border: 0.05rem solid ${Colors.G400};
-  color: ${Colors.G600};
+  color: ${Colors.G700};
+
+  img {
+    width: 3rem;
+    margin-right: 2rem;
+  }
+
   &:active {
     background: ${Colors.G100};
   }
@@ -74,13 +83,8 @@ export const StyledChangePassButton = styled(StyledButton)`
   }
 `;
 
-export const StyledSingOutButton = styled(StyledButton)`
-  background: ${Colors.R400};
-  color: ${Colors.G100};
-  &:active {
-    background: ${Colors.R500};
-  }
-`;
+export const StyledStatsButton = styled(StyledChangePassButton)``;
+export const StyledSingOutButton = styled(StyledChangePassButton)``;
 
 /* Buttons Mid */
 export const StyledNextButton = styled(StyledLoginButton)`
@@ -133,6 +137,11 @@ export const StyledEditButton = styled(StyledButtonWhite)`
   height: 1.822rem;
   border: none;
   margin: 0;
+
+  i {
+    color: ${Colors.B500};
+    font-size: 3rem;
+  }
 `;
 
 export const StyledSearchButton = styled(StyledButtonWhite)`
