@@ -43,24 +43,23 @@ const MinimizedPlayer = () => {
   return (
     <StyledMinimizedPlayer>
       <StyledIconsLeft>
+        <PlayPauseButton onClick={() => toggleMiniplay()} type="button">
+          {playerStatus === "pause" ? (
+            <i className="ci-play_arrow" />
+          ) : (
+            <i className="ci-pause_circle_outline" />
+          )}
+        </PlayPauseButton>
         <button
           className="maximizePlayer"
           onClick={maximizePlayer}
           type="button"
         >
-          <i className="ci-chevron_big_up" />
+          <StyledSongDescription>
+            <h6>{songData.songTitle}</h6>
+            <p>{songData.artistName}</p>
+          </StyledSongDescription>
         </button>
-        <PlayPauseButton onClick={() => toggleMiniplay()} type="button">
-          {playerStatus === "pause" ? (
-            <i className="ci-play_circle_filled" />
-          ) : (
-            <i className="ci-pause_circle_filled" />
-          )}
-        </PlayPauseButton>
-        <StyledSongDescription>
-          <h6>{songData.songTitle}</h6>
-          <p>{songData.artistName}</p>
-        </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
         <i className="ci-heart_outline" />
