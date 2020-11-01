@@ -46,9 +46,8 @@ const Home = () => {
   const list = queue.map((item, index) => {
     return (
       <div key={item.id}>
-        <PlaylistItem />
+        <PlaylistItem title={item.title} />
         <ul>
-          {item.title}
           <button
             type="button"
             onClick={() => {
