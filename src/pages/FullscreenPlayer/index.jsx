@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-console */
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { PlayerContainer } from "../../containers/LayoutContainers";
 import FullscreenPlayer from "../../components/FullscreenPlayer";
@@ -83,6 +83,36 @@ const FullscreenPlayerPage = (props) => {
     }
   };
 
+  const getTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    const convertTime = `0${minutes}:${seconds <= 9 ? 0 : ""}${seconds}`;
+    return convertTime;
+  };
+
+  const [currentTime, setCurrentTime] = useState(0);
+  useEffect(() => {
+    const time = setInterval(() => {
+      setCurrentTime(getTime(audioRef.current.currentTime));
+    }, 500);
+    return () => clearInterval(time);
+  }, []);
+
+  const [songDuration, setSongDuration] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration)
+      setSongDuration(getTime(audioRef.current.duration));
+  });
+
+  const [progressBar, setProgressBar] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration) {
+      setProgressBar(
+        (audioRef.current.currentTime / audioRef.current.duration) * 50
+      );
+    }
+  });
+
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
       <audio ref={audioRef} autoPlay={autoplay} />
@@ -93,6 +123,9 @@ const FullscreenPlayerPage = (props) => {
         togglePlay={togglePlay}
         nextSong={nextSong}
         previousSong={previousSong}
+        currentTime={currentTime}
+        songDuration={songDuration}
+        progressBar={progressBar}
       />
     </PlayerContainer>,
     document.getElementById("player")

@@ -31,6 +31,9 @@ const FullscreenPlayer = (props) => {
     togglePlay,
     nextSong,
     previousSong,
+    currentTime,
+    songDuration,
+    progressBar,
   } = props;
 
   const openQueue = () => {
@@ -73,12 +76,12 @@ const FullscreenPlayer = (props) => {
       </SongTitleAndArtist>
 
       <Timeline>
-        <h5>2:54</h5>
+        <h5>{currentTime}</h5>
         <div>
           <TotalBar />
-          <ProgressBar />
+          <ProgressBar progressBar={progressBar} />
         </div>
-        <h5>03:29</h5>
+        <h5>{songDuration}</h5>
       </Timeline>
       <PlayerMedia>
         <PlayerButtons>
