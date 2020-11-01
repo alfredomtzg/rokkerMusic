@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // eslint-disable-next-line import/no-cycle
-import { PlaylistItemDark } from "../PlaylistItem";
+import PlaylistItemDark from "../PlaylistItemDark";
 import { StyledModal, StyledModalContainer } from "./style";
 import PlaylistTitle from "../PlayListTitle/index";
 
 const Modal2 = (props) => {
-    
   if (!props.modalOn) {
     return null;
   }
@@ -14,7 +13,11 @@ const Modal2 = (props) => {
   return ReactDOM.createPortal(
     <StyledModalContainer>
       <StyledModal>
-        <button className="buttonClose" onClick={props.closeModal} type="button">
+        <button
+          className="buttonClose"
+          onClick={props.closeModal}
+          type="button"
+        >
           x
         </button>
         <PlaylistItemDark />
