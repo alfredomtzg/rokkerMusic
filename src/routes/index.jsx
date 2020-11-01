@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Activation from "../pages/Activation";
 import Home from "../pages/Home";
 import SignUpEntryData from "../pages/SignUpEntryData";
 import Login from "../pages/Login";
@@ -31,6 +32,7 @@ const Routes = () => {
       <MiniPlayerAndNavContainer />
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/activate" component={Activation} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/playlist" component={PlaylistList} />
         <Route exact path="/playlist/edit" component={PlaylistEdit} />
