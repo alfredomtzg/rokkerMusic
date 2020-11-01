@@ -90,11 +90,15 @@ const FullscreenPlayerPage = (props) => {
   };
 
   useEffect(() => {
-    nextSong();
+    if(props.miniplayNext !== "blocked"){
+      nextSong();
+    }
   }, [props.miniplayNext]);
 
   useEffect(() => {
-    togglePlay();
+    if (props.miniplay !== "blocked") {
+      togglePlay();
+    }
   }, [props.miniplay]);
 
   const previousSong = () => {
