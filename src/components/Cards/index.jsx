@@ -195,7 +195,6 @@ export const ArtistProfileCard = () => {
 export const QueueReturn = () => {
   return (
     <StyledQueueReturn>
-      <i className="ci-chevron_big_left" />
       <h4>Queue</h4>
     </StyledQueueReturn>
   );
