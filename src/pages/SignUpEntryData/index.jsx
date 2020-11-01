@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useContext, useState } from "react";
+import { Context } from "../../utils/Context";
+import { API, signUp } from "../../route/axios";
 import Header from "../../components/Header";
 import {
   PageContainer,
@@ -8,12 +9,15 @@ import {
 import { TopBar, TopTextBox, FormBox } from "../Globals/GlobalStyle";
 import SignUpEntryDataForm from "../../components/FormSignUp";
 import SignUpPickAvatar from "../SignUpPickAvatar";
+import StyledNextButton from "./style";
 
-const SignUpEntryData = () => {
+const SignUpEntryData = (props) => {
+  const { setError } = useContext(Context);
   const [page, setPage] = useState(true);
   // SignUp Values
   const [valuesSignUp, setValuesSignUp] = useState({
     name: "",
+    lastname: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -23,46 +27,32 @@ const SignUpEntryData = () => {
     avatarPath: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // const user = {
-    //   name: valuesSignUp.name,
-    //   lastname: "default",
-    //   email: valuesSignUp.email,
-    //   password: valuesSignUp.password,
-    //   country: valuesSignUp.country,
-    //   age: valuesSignUp.age,
-    //   gender: valuesSignUp.gender,
-    //   avatarPath: valuesSignUp.avatarUrl,
-    //   isAdmin: false,
-    //   isActive: true,
-    // };
-
-    axios({
-      method: "post",
-      url: "https://rokker-music-app-test.herokuapp.com/api/auth/sign-up",
-      data: {
-        name: valuesSignUp.name,
-        lastname: "default",
-        email: valuesSignUp.email,
-        password: valuesSignUp.password,
-        country: valuesSignUp.country,
-        age: valuesSignUp.age,
-        gender: valuesSignUp.gender,
-        avatarPath: valuesSignUp.avatarPath,
-      },
-    }).then((resp) => {
-      console.log(resp);
-    });
-  };
-
   // function handleChange to SignUp
-  const handleChangeLogin = (event) => {
+  const handleChangeCreateUser = (event) => {
     setValuesSignUp({
       ...valuesSignUp,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const createNewUser = async () => {
+    await API.post(signUp, valuesSignUp)
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        props.history.push("/signup/check");
+      })
+      .catch((e) => {
+        console.log(e.body);
+        setError(true);
+        setPage(true);
+        props.history.push("/signup");
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createNewUser();
   };
 
   const changePage = () => {
@@ -83,27 +73,25 @@ const SignUpEntryData = () => {
           <FormBox>
             <SignUpEntryDataForm
               valuesSignUp={valuesSignUp}
-              handleChangeLogin={handleChangeLogin}
+              handleChangeCreateUser={handleChangeCreateUser}
               changePage={changePage}
             />
           </FormBox>
-          <button type="button" onClick={changePage}>
+          <StyledNextButton type="button" onClick={changePage}>
             Next
-          </button>
+          </StyledNextButton>
         </MainContainer>
       </PageContainer>
     );
   }
   return (
-    <div>
+    <PageContainer dark>
       <SignUpPickAvatar
         valuesSignUp={valuesSignUp}
-        handleChangeLogin={handleChangeLogin}
+        handleChangeCreateUser={handleChangeCreateUser}
+        handleSubmit={handleSubmit}
       />
-      <button type="submit" onClick={handleSubmit}>
-        Enviar
-      </button>
-    </div>
+    </PageContainer>
   );
 };
 

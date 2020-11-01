@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  padding: 0 5vw 12vh;
+  padding: 0 5vw 5vh;
 `;
 
 export const PlayerContainer = styled.div`

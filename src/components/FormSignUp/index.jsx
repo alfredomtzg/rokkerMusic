@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../../utils/Context";
 import {
   FormContainer,
   TextLabel,
@@ -8,29 +9,64 @@ import {
 } from "../Forms/dark-styles";
 
 export default function SignUpEntryDataForm(props) {
-  // SignUp Values
-  const [valuesSignUp, setValuesSignUp] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    country: "",
-    age: "",
-    gender: "",
-  });
-  // function handleChange to SignUp
-  // const handleChangeLogin = (event) => {
-  //   setValuesSignUp({
-  //     ...valuesSignUp,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
+  const { error } = useContext(Context);
+  const [wrongPassword, setWrongPassword] = useState(false);
+  const [inputName, setInputName] = useState(false);
+  const [inputLastName, setInputLastName] = useState(false);
+  const [inputAge, setInputAge] = useState(false);
+  const [inputGender, setInputGender] = useState(false);
 
-  // Function HandleSubmitLogin
   const handleSubmitLogin = (event) => {
     event.preventDefault();
-    console.log(valuesSignUp);
   };
+
+  const validateInputGender = () => {
+    if (props.valuesSignUp.gender === "") {
+      setInputGender(true);
+    } else {
+      setInputGender(false);
+    }
+  };
+
+  const validateInputAge = () => {
+    if (props.valuesSignUp.age === "") {
+      setInputAge(true);
+    } else {
+      setInputAge(false);
+    }
+  };
+
+  const validateInputName = () => {
+    if (props.valuesSignUp.name.length < 3) {
+      setInputName(true);
+    } else {
+      setInputName(false);
+    }
+  };
+
+  const validateInputLastName = () => {
+    if (props.valuesSignUp.lastname.length < 3) {
+      setInputLastName(true);
+    } else {
+      setInputLastName(false);
+    }
+  };
+
+  const validatePassword = () => {
+    if (props.valuesSignUp.password !== props.valuesSignUp.confirmPassword) {
+      setWrongPassword(true);
+    } else {
+      setWrongPassword(false);
+    }
+  };
+
+  useEffect(() => {
+    validatePassword();
+    validateInputName();
+    validateInputLastName();
+    validateInputAge();
+    validateInputGender();
+  });
 
   return (
     <FormContainer onSubmit={handleSubmitLogin}>
@@ -41,33 +77,47 @@ export default function SignUpEntryDataForm(props) {
         id="name"
         name="name"
         value={props.valuesSignUp.name}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       />
-      <h6>Please, give us your name</h6>
+      {inputName ? <h6>Please, give us your name</h6> : null}
+
+      <TextLabel htmlFor="lastname">
+        <h4>Last Name</h4>
+      </TextLabel>
+      <TextInput
+        id="lastname"
+        name="lastname"
+        value={props.valuesSignUp.lastname}
+        onChange={props.handleChangeCreateUser}
+      />
+      {inputLastName ? <h6>Please, give us your last name</h6> : null}
 
       <TextLabel htmlFor="email">
         <h4>E-mail</h4>
       </TextLabel>
       <TextInput
+        required
         id="email"
         name="email"
         autoComplete="current-email"
         value={props.valuesSignUp.email}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       />
-      <h6>This email has already been registered</h6>
+      {error ? <h6>This email has already been registered</h6> : null}
 
       <TextLabel htmlFor="password">
         <h4>Password</h4>
       </TextLabel>
       <TextInput
+        required
         id="password"
         type="password"
         name="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
         value={props.valuesSignUp.password}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       />
-      <h6>Must have 5 or more characters, no symbols. [A-Z/0-9]</h6>
 
       <TextLabel htmlFor="confirm-password">
         <h4>Confirm password</h4>
@@ -77,9 +127,9 @@ export default function SignUpEntryDataForm(props) {
         type="password"
         name="confirmPassword"
         value={props.valuesSignUp.confirmPassword}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       />
-      <h6>Password does not match</h6>
+      {wrongPassword ? <h6>Password does not match</h6> : null}
 
       <TextLabel htmlFor="country">
         <h4>Where are you from?</h4>
@@ -88,7 +138,7 @@ export default function SignUpEntryDataForm(props) {
         id="country"
         name="country"
         value={props.valuesSignUp.country}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       >
         <option defaultValue value="choose">
           Choose Your Country
@@ -104,7 +154,7 @@ export default function SignUpEntryDataForm(props) {
         id="gender"
         name="gender"
         value={props.valuesSignUp.gender}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       >
         <option defaultValue value="choose">
           Choose Your Gender
@@ -113,8 +163,7 @@ export default function SignUpEntryDataForm(props) {
         <option value="female">Female</option>
         <option value="other">Other</option>
       </SelectInput>
-
-      <h6>We are all inclusive, please pick one</h6>
+      {inputGender ? <h6>We are all inclusive, please pick one</h6> : null}
 
       <TextLabel htmlFor="age">
         <h4>How young are you?</h4>
@@ -123,13 +172,9 @@ export default function SignUpEntryDataForm(props) {
         id="age"
         name="age"
         value={props.valuesSignUp.age}
-        onChange={props.handleChangeLogin}
+        onChange={props.handleChangeCreateUser}
       />
-      <h6>Does not matter how young, please tell me</h6>
-
-      {/* <div className="NextBtn">
-        <NextButton type="button" onClick={props.changePage} />
-      </div> */}
+      {inputAge ? <h6>Only accept numbers</h6> : null}
     </FormContainer>
   );
 }
