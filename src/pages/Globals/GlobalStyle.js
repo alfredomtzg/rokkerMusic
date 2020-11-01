@@ -52,9 +52,3 @@ export const FullPageCenterMsgBox = styled.div`
   height: 90vh;
   color: ${Colors.G100};
 `;
-
-export const MiniPlayerAndNavContainer = styled.footer`
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-`;

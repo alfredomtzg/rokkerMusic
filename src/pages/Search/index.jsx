@@ -5,10 +5,8 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
+import { TopBar } from "../Globals/GlobalStyle";
 import { SearchBox, SearchRecommendationBox } from "./style";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 import { SearchRecommendation } from "../../components/Cards";
 
 const Search = () => {
@@ -38,10 +36,6 @@ const Search = () => {
           <SearchRecommendation />
         </SearchRecommendationBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };
