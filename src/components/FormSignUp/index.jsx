@@ -88,12 +88,7 @@ export default function SignUpEntryDataForm(props) {
     }
   };
 
-  // const validateEmail = () => {
-  //   if(regexEmailValidation)
-  // }
-
   useEffect(() => {
-    console.log(passwordValidation);
     validationInputEmail();
     validatePassword();
     validateConfirmPassword();
