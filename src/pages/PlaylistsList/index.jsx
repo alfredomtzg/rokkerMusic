@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FavoritesCard,
   PlaylistCard,
@@ -13,8 +13,25 @@ import {
 } from "../../containers/LayoutContainers";
 import { MiniPlayerAndNavContainer, TopBar } from "../Globals/GlobalStyle";
 import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
+import { API, PlayList } from "../../route/axios";
 
 const PlaylistList = () => {
+  const [playListUser, usePlayListUser] = useState([]);
+
+  // bring the song list whit axios
+  const bringPlayList = async () => {
+    await API.get(PlayList, valuesCreatePlaylist, {
+      headers: { token: TOKEN },
+    })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        usePlayListUser(res.data.body);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <PageContainer>
       <TopBar>
@@ -29,8 +46,10 @@ const PlaylistList = () => {
           <FavoritesCard />
         </NewAndFavoritesBox>
         <PlaylistsBox>
-          <PlaylistCard />
-          <PlaylistCard />
+          {playListUser.map((item, index) => {
+            return <PlaylistCard PlayListTitle={"Titulo playlist"} />;
+          })}
+
           <PlaylistCard />
           <PlaylistCard />
         </PlaylistsBox>
