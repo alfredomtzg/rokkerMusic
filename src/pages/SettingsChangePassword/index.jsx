@@ -6,15 +6,12 @@ import {
 } from "../../containers/LayoutContainers";
 import {
   TopBar,
-  MiniPlayerAndNavContainer,
   FormBox,
   NextButtonBox,
 } from "../Globals/GlobalStyle";
 import UserAvatarBox from "./style";
 import Avatar from "../../assets/images/avatars/Alexander.svg";
 import NewPassForm from "../../components/FormChangePassword";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 
 const SettingsChangePassword = () => {
   return (
@@ -31,10 +28,6 @@ const SettingsChangePassword = () => {
         </FormBox>
         <NextButtonBox />
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

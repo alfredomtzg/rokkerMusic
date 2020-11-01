@@ -5,9 +5,6 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 import { QueueBar, QueueList } from "./style";
 
 const FullScreenQueue = () => {
@@ -32,10 +29,6 @@ const FullScreenQueue = () => {
           <PlaylistItem />
         </QueueList>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

@@ -7,11 +7,19 @@ export const MainLanding = styled.main`
 `;
 
 export const LandingLoginButtons = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: 1vh;
   padding: 7vh 0;
+
+  button {
+    display: flex;
+    justify-self: center;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const LandingSignUpButton = styled.section`

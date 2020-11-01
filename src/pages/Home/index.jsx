@@ -4,16 +4,10 @@ import {
   MainContainer,
   PageContainer,
 } from "../../containers/LayoutContainers";
-import {
-  MiniPlayerAndNavContainer,
-  TopBar,
-  PlaylistContentBox,
-} from "../Globals/GlobalStyle";
+import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
 import { GreetingBox, FavoritesBox, RecommendPlaylistsBox } from "./style";
 import Header from "../../components/Header";
 import { GenreCard, MidFilledCard, WideCard } from "../../components/Cards";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
 
@@ -80,10 +74,6 @@ const Home = () => {
           </PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

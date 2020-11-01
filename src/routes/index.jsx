@@ -22,10 +22,12 @@ import PlaylistCreate from "../pages/PlaylistsCreate";
 import SearchResults from "../pages/SearchResults";
 import SettingSignOut from "../pages/SettingsSignOut";
 import SettingsStats from "../pages/SettingsStats";
+import MiniPlayerAndNavContainer from "../containers/MiniPlayerAndNavContainer";
 
 const Routes = () => {
   return (
     <BrowserRouter>
+      <MiniPlayerAndNavContainer />
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />

@@ -14,7 +14,7 @@ export const getAlbum = 'album';
 // Get Album
 export const getAlbumId = 'album/:albumid'
 // Create a new play list
-export const newPlayList = 'playlist'
+export const PlayList = 'playlist'
 
 // get signUp
 export const signUp = '';
