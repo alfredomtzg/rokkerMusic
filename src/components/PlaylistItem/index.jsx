@@ -11,7 +11,8 @@ import {
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
-export const PlaylistItem = () => {
+export const PlaylistItem = (props) => {
+  const {} = props;
   const [modalOn, setModalOn] = useState(false);
 
   const openModal = () => {
@@ -41,8 +42,8 @@ export const PlaylistItem = () => {
         <button type="button">
           <i className="ci-minus_circle" />
         </button>
-      </StyledIconsRight>      
-      <Modal modalOn={modalOn} closeModal={closeModal}/>
+      </StyledIconsRight>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
     </StyledPlaylistItem>
   );
 };
