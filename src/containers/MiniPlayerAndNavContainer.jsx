@@ -84,12 +84,6 @@ const MiniPlayerAndNavContainer = (props) => {
         setDisplay("off");
         break;
     }
-    if (props.location.pathname === "/home") {
-      setDisplay("on");
-    }
-    if (props.location.pathname === "/signout") {
-      setDisplay("off");
-    }
   }, [props.location.pathname]);
 
   return (
