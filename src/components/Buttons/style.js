@@ -137,6 +137,11 @@ export const StyledEditButton = styled(StyledButtonWhite)`
   height: 1.822rem;
   border: none;
   margin: 0;
+
+  i {
+    color: ${Colors.B500};
+    font-size: 3rem;
+  }
 `;
 
 export const StyledSearchButton = styled(StyledButtonWhite)`

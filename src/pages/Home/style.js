@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-export const GreetingBox = styled.section`
+export const FavoritesBox = styled.section`
   display: flex;
   justify-content: center;
-`;
-
-export const FavoritesBox = styled(GreetingBox)`
   margin: 5vh 0;
 `;
 

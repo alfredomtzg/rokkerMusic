@@ -23,6 +23,7 @@ import SearchResults from "../pages/SearchResults";
 import SettingSignOut from "../pages/SettingsSignOut";
 import SettingsStats from "../pages/SettingsStats";
 import MiniPlayerAndNavContainer from "../containers/MiniPlayerAndNavContainer";
+import SignUpCheckEmail from "../pages/SignUpCheckEmail";
 
 const Routes = () => {
   return (
@@ -51,6 +52,7 @@ const Routes = () => {
           path="/signup/demographic"
           component={SignUpDemographics}
         />
+        <Route exact path="/signup/check" component={SignUpCheckEmail} />
         <Route exact path="/artist" component={ArtistProfile} />
         <Route exact path="/player" component={FullscreenPlayerPage} />
         <Route exact path="/settings" component={Settings} />

@@ -98,7 +98,9 @@ export const StatsButton = () => {
 export const SingOutButton = () => {
   return (
     <StyledSingOutButton>
-      <h5>Sign Out</h5>
+      <Link to="/signout">
+        <h5>Sign Out</h5>
+      </Link>
     </StyledSingOutButton>
   );
 };
@@ -143,7 +145,9 @@ export const EditButton = () => {
   return (
     <StyledEditButton>
       <StyledImgEditButton>
-        <i className="ci-edit" />
+        <Link to="/playlist/edit">
+          <i className="ci-edit" />
+        </Link>
       </StyledImgEditButton>
     </StyledEditButton>
   );
