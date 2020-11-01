@@ -6,6 +6,8 @@ import {
   StyledIconsLeft,
   StyledIconsRight,
   StyledSongDescription,
+  PlayPauseButton,
+  PlayNext,
 } from "./styles";
 import { Context } from "../../utils/Context";
 
@@ -48,13 +50,13 @@ const MinimizedPlayer = () => {
         >
           <i className="ci-chevron_big_up" />
         </button>
-        <button onClick={() => toggleMiniplay()} type="button">
+        <PlayPauseButton onClick={() => toggleMiniplay()} type="button">
           {playerStatus === "pause" ? (
             <i className="ci-play_circle_filled" />
           ) : (
             <i className="ci-pause_circle_filled" />
           )}
-        </button>
+        </PlayPauseButton>
         <StyledSongDescription>
           <h6>{songData.songTitle}</h6>
           <p>{songData.artistName}</p>
@@ -62,14 +64,14 @@ const MinimizedPlayer = () => {
       </StyledIconsLeft>
       <StyledIconsRight>
         <i className="ci-heart_outline" />
-        <button
+        <PlayNext
           type="button"
           onClick={() => {
             toggleMiniplayNext();
           }}
         >
           <i className="ci-skip_next" />
-        </button>
+        </PlayNext>
       </StyledIconsRight>
       <FullscreenPlayerPage
         miniplayNext={miniplayNext}
