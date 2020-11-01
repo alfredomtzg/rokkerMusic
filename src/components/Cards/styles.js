@@ -207,3 +207,9 @@ export const StyledAddRemoveFromFavorites = styled(StyledAddToQueue)`
     margin-right: 1rem;
   }
 `;
+
+export const StyledGreetingsCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+`;

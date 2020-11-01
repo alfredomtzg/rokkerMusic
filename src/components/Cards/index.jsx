@@ -20,9 +20,11 @@ import {
   StyledAddToPlaylist,
   StyledSeeArtistProfile,
   StyledAddRemoveFromFavorites,
+  StyledGreetingsCard,
 } from "./styles";
 import Logo from "../../assets/images/logo-rokker.png";
 import ArtistAvatar from "../../assets/images/avatars/Beepboop.svg";
+import UserAvatar from "../../assets/images/avatars/Eliot.svg";
 
 export const WideCard = () => {
   return (
@@ -193,7 +195,6 @@ export const ArtistProfileCard = () => {
 export const QueueReturn = () => {
   return (
     <StyledQueueReturn>
-      <i className="ci-chevron_big_left" />
       <h4>Queue</h4>
     </StyledQueueReturn>
   );
@@ -244,5 +245,16 @@ export const AddRemoveFromFavorites = () => {
       </div>
       <i className="ci-chevron_big_right" />
     </StyledAddRemoveFromFavorites>
+  );
+};
+
+export const GreetingsCard = () => {
+  return (
+    <StyledGreetingsCard>
+      <h2>Hello, Mike!</h2>
+      <Link to="/settings">
+        <img src={UserAvatar} alt="user avatar" />
+      </Link>
+    </StyledGreetingsCard>
   );
 };

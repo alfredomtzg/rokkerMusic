@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-console */
-import React from "react";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import "../../assets/fonts/coolicons.css";
 import {
   TopOptions,
@@ -19,6 +20,7 @@ import {
   NextButton,
   HeartButton,
 } from "./style";
+import Modal from "../Modal";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
@@ -30,6 +32,20 @@ const FullscreenPlayer = (props) => {
     nextSong,
     previousSong,
   } = props;
+
+  const openQueue = () => {
+    minimizePlayer();
+    props.history.push("/queue");
+  };
+
+  const [modalOn, setModalOn] = useState(false);
+  const openModal = () => {
+    setModalOn(true);
+  };
+  const closeModal = () => {
+    setModalOn(false);
+  };
+
   return (
     <>
       <TopOptions>
@@ -44,7 +60,9 @@ const FullscreenPlayer = (props) => {
           <h6>Played from</h6>
           <h5>{songData.playlistName}</h5>
         </div>
-        <i className="ci-more_vertical" />
+        <button onClick={openModal} type="button">
+          <i className="ci-more_vertical" />
+        </button>
       </TopOptions>
       <SongCover>
         <img src={SongCoverImg} alt="Cover for the song" />
@@ -93,11 +111,14 @@ const FullscreenPlayer = (props) => {
         </PlayerButtons>
         <PlayerBottomButtons>
           <i className="ci-list_plus" />
-          <i className="ci-list_check" />
+          <button type="button" onClick={openQueue}>
+            <i className="ci-list_check" />
+          </button>
         </PlayerBottomButtons>
       </PlayerMedia>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
     </>
   );
 };
 
-export default FullscreenPlayer;
+export default withRouter(FullscreenPlayer);

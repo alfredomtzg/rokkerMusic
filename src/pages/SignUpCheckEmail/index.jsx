@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { LoginButton } from "../../components/Buttons";
 import { PageContainer } from "../../containers/LayoutContainers";
 import {
   FullPageCenterMsgBox,
   LoginOrSendButtonBox,
 } from "../Globals/GlobalStyle";
-import { LoginButton } from "../../components/Buttons";
 
-const SettingsSignOut = () => {
+const SignUpCheckEmail = () => {
   return (
     <PageContainer dark>
       <FullPageCenterMsgBox>
-        <h1>Rokk you soon!</h1>
+        <h1>Rokk It!!!</h1>
+        <h3>Please check your email</h3>
         <LoginOrSendButtonBox>
-          <Link to="/">
+          <Link to="/login">
             <LoginButton />
           </Link>
         </LoginOrSendButtonBox>
@@ -22,4 +23,4 @@ const SettingsSignOut = () => {
   );
 };
 
-export default SettingsSignOut;
+export default SignUpCheckEmail;
