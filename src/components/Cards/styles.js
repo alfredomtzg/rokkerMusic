@@ -211,5 +211,5 @@ export const StyledAddRemoveFromFavorites = styled(StyledAddToQueue)`
 export const StyledGreetingsCard = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 2vh;  
+  margin-top: 2vh;
 `;

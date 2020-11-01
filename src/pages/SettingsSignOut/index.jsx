@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PageContainer } from "../../containers/LayoutContainers";
 import {
   FullPageCenterMsgBox,
   LoginOrSendButtonBox,
 } from "../Globals/GlobalStyle";
-import { HomeButton } from "../../components/Buttons";
+import { LoginButton } from "../../components/Buttons";
 
 const SettingsSignOut = () => {
   return (
@@ -12,7 +13,9 @@ const SettingsSignOut = () => {
       <FullPageCenterMsgBox>
         <h1>Rokk you soon!</h1>
         <LoginOrSendButtonBox>
-          <HomeButton />
+          <Link to="/">
+            <LoginButton />
+          </Link>
         </LoginOrSendButtonBox>
       </FullPageCenterMsgBox>
     </PageContainer>
