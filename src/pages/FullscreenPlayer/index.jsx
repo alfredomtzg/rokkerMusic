@@ -74,30 +74,6 @@ const FullscreenPlayerPage = (props) => {
       setPlayerStatus("play");
     }
   };
-  const list = queue.map((item, index) => {
-    return (
-      <div key={item.id}>
-        <ul>
-          {item.title}
-          <button
-            type="button"
-            onClick={() => {
-              setAutoplay(true);
-              setPlayerStatus("play");
-              setSongData({
-                ...songData,
-                songTitle: `${item.title}`,
-                songURL: `${item.preview}`,
-              });
-              setTrack(index);
-            }}
-          >
-            play
-          </button>
-        </ul>
-      </div>
-    );
-  });
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
@@ -110,7 +86,6 @@ const FullscreenPlayerPage = (props) => {
         nextSong={nextSong}
         previousSong={previousSong}
       />
-      {list}
     </PlayerContainer>,
     document.getElementById("player")
   );
