@@ -78,7 +78,7 @@ export const TotalBar = styled.div`
 export const ProgressBar = styled.div`
   position: absolute;
   height: 1vh;
-  width: 40vw;
+  width: ${(props) => `${props.progressBar}vw`};
   background-color: ${Colors.R500};
 `;
 

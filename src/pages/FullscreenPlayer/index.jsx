@@ -94,10 +94,24 @@ const FullscreenPlayerPage = (props) => {
   useEffect(() => {
     const time = setInterval(() => {
       setCurrentTime(getTime(audioRef.current.currentTime));
-      console.log(currentTime);
-    }, 1000);
+    }, 500);
     return () => clearInterval(time);
-  }, [currentTime]);
+  }, []);
+
+  const [songDuration, setSongDuration] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration)
+      setSongDuration(getTime(audioRef.current.duration));
+  });
+
+  const [progressBar, setProgressBar] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration) {
+      setProgressBar(
+        (audioRef.current.currentTime / audioRef.current.duration) * 50
+      );
+    }
+  });
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
@@ -110,6 +124,8 @@ const FullscreenPlayerPage = (props) => {
         nextSong={nextSong}
         previousSong={previousSong}
         currentTime={currentTime}
+        songDuration={songDuration}
+        progressBar={progressBar}
       />
     </PlayerContainer>,
     document.getElementById("player")
