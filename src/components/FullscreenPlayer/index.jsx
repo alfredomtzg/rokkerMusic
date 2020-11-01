@@ -49,6 +49,24 @@ const FullscreenPlayer = (props) => {
     setModalOn(false);
   };
 
+  const [bucle, setBucle] = useState("off");
+  const handleBucle = () => {
+    if (bucle === "off") {
+      setBucle("on");
+    } else {
+      setBucle("off");
+    }
+  };
+
+  const [shuffle, setShuffle] = useState("off");
+  const handleShuffle = () => {
+    if (shuffle === "off") {
+      setShuffle("on");
+    } else {
+      setShuffle("off");
+    }
+  };
+
   return (
     <>
       <TopOptions>
@@ -86,7 +104,7 @@ const FullscreenPlayer = (props) => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <RepeatButton>
+            <RepeatButton onClick={() => handleBucle()} bucle={bucle}>
               <i className="ci-repeat" />
             </RepeatButton>
           </div>
@@ -110,7 +128,7 @@ const FullscreenPlayer = (props) => {
           </HeartButton>
         </PlayerButtons>
         <PlayerBottomButtons>
-          <ShuffleButton>
+          <ShuffleButton onClick={() => handleShuffle()} shuffle={shuffle}>
             <i className="ci-shuffle" />
           </ShuffleButton>
           <button type="button" onClick={openQueue}>
