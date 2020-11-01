@@ -26,7 +26,7 @@ export default function CreatePlaylistForm() {
   // Create a new PlayList whit axios
   const createNewPlayList = async () => {
     await API.post(PlayList, valuesCreatePlaylist, {
-      headers: { token: TOKEN },
+      headers: { Authorization: `Bearer ${TOKEN}` },
     })
       .then((res) => {
         console.log(res);

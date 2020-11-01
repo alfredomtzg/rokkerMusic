@@ -19,7 +19,7 @@ const PlaylistList = () => {
 
   // bring the song list whit axios
   const bringPlayList = async () => {
-    await API.get(PlayList, { headers: { token: TOKEN } })
+    await API.get(PlayList, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((res) => {
         setPlayListUser(res.data.body);
         console.log(res.data.body);
