@@ -101,14 +101,6 @@ export const PlayerButtons = styled.div`
     display: flex;
     align-items: center;
   }
-
-  .ci-heart_fill {
-    margin-left: 3.4rem;
-  }
-
-  .ci-shuffle {
-    margin-right: 1rem;
-  }
 `;
 
 export const PlayerBottomButtons = styled(PlayerButtons)`
