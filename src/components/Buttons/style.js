@@ -17,18 +17,27 @@ export const StyledButton = styled.button`
 
 /* Button particular characters */
 export const StyledFacebookButton = styled(StyledButton)`
-  background: ${Colors.facebookInactive};
-  color: ${Colors.G100};
+  background: ${Colors.white};
+  color: ${Colors.facebookActive};
   &:active {
-    background: ${Colors.facebookActive};
+    background: ${Colors.G100};
+  }
+
+  i {
+    font-size: 3.5rem;
+    margin-right: 1vw;
   }
 `;
 
 export const StyledGoogleButton = styled(StyledButton)`
-  justify-content: space-around;
   background: ${Colors.white};
-  border: 0.05rem solid ${Colors.G400};
-  color: ${Colors.G600};
+  color: ${Colors.G700};
+
+  img {
+    width: 3rem;
+    margin-right: 1vw;
+  }
+
   &:active {
     background: ${Colors.G100};
   }
