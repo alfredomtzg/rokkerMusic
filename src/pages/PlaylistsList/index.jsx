@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable no-console */
+import React, { useState, useEffect } from "react";
 import {
   FavoritesCard,
   PlaylistCard,
@@ -13,25 +14,27 @@ import {
 } from "../../containers/LayoutContainers";
 import { MiniPlayerAndNavContainer, TopBar } from "../Globals/GlobalStyle";
 import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
-import { API, PlayList } from "../../route/axios";
+import { API, PlayList, TOKEN } from "../../route/axios";
 
 const PlaylistList = () => {
-  const [playListUser, usePlayListUser] = useState([]);
+  const [playListUser, setPlayListUser] = useState([]);
 
   // bring the song list whit axios
   const bringPlayList = async () => {
-    await API.get(PlayList, valuesCreatePlaylist, {
-      headers: { token: TOKEN },
-    })
+    await API.get(PlayList, { headers: { token: TOKEN } })
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        usePlayListUser(res.data.body);
+        setPlayListUser(res.data.body);
+        console.log(res.data.body);
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    bringPlayList();
+  }, []);
+
   return (
     <PageContainer>
       <TopBar>
@@ -46,12 +49,9 @@ const PlaylistList = () => {
           <FavoritesCard />
         </NewAndFavoritesBox>
         <PlaylistsBox>
-          {playListUser.map((item, index) => {
-            return <PlaylistCard PlayListTitle={"Titulo playlist"} />;
+          {playListUser.map((item) => {
+            return <PlaylistCard key={item._id} PlayListTitle={item.name} />;
           })}
-
-          <PlaylistCard />
-          <PlaylistCard />
         </PlaylistsBox>
       </MainContainer>
       <MiniPlayerAndNavContainer>
