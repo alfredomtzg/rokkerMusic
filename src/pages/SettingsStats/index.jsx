@@ -4,12 +4,10 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
+import { TopBar } from "../Globals/GlobalStyle";
 import { UserAvatarBox } from "../Settings/style";
 import Header from "../../components/Header";
 import { StatsBox } from "./style";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 
 const SettingsStats = () => {
   return (
@@ -27,10 +25,6 @@ const SettingsStats = () => {
           src="https://datastudio.google.com/embed/reporting/fd663400-4bc9-4269-b06e-6031b26447a7/page/I1hmB"
         />
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

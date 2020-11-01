@@ -5,14 +5,11 @@ import {
 } from "../../containers/LayoutContainers";
 import {
   TopBar,
-  MiniPlayerAndNavContainer,
   FormBox,
 } from "../Globals/GlobalStyle";
 import Header from "../../components/Header";
 import CreatePlaylistBox from "./style";
 import CreatePlaylistForm from "../../components/FormCreatePlaylist";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 
 const PlaylistsCreate = () => {
   return (
@@ -28,10 +25,6 @@ const PlaylistsCreate = () => {
           <CreatePlaylistForm />
         </FormBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

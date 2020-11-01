@@ -4,14 +4,12 @@ import {
   PlaylistCard,
   NewPlaylistCard,
 } from "../../components/Cards";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import {
   MainContainer,
   PageContainer,
 } from "../../containers/LayoutContainers";
-import { MiniPlayerAndNavContainer, TopBar } from "../Globals/GlobalStyle";
+import { TopBar } from "../Globals/GlobalStyle";
 import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
 
 const PlaylistList = () => {
@@ -35,10 +33,6 @@ const PlaylistList = () => {
           <PlaylistCard />
         </PlaylistsBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

@@ -20,3 +20,10 @@ export const PlayerContainer = styled.div`
   height: 100%;
   background-color: ${Colors.G100};
 `;
+
+export const StyledMiniPlayerAndNavContainer = styled.footer`
+  display: ${(props) => (props.display === "off" ? "none" : "relative")};
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+`;

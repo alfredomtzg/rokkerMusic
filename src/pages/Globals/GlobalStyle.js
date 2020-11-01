@@ -8,9 +8,10 @@ export const LandingLogoBox = styled.figure`
   justify-self: center;
   align-self: flex-end;
   margin: 0;
+  min-height: 20vh;
 
   img {
-    width: 12vh;
+    width: 100px;
   }
 `;
 
@@ -50,10 +51,4 @@ export const FullPageCenterMsgBox = styled.div`
   justify-content: center;
   height: 90vh;
   color: ${Colors.G100};
-`;
-
-export const MiniPlayerAndNavContainer = styled.footer`
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
 `;

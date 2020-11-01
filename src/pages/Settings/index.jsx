@@ -3,7 +3,7 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
+import { TopBar } from "../Globals/GlobalStyle";
 import { UserAvatarBox, SettingsButtonsBox } from "./style";
 import Header from "../../components/Header";
 import {
@@ -11,8 +11,6 @@ import {
   SingOutButton,
   StatsButton,
 } from "../../components/Buttons";
-import MinimizedPlayer from "../../components/MinimizedPlayer";
-import Footer from "../../components/Footer";
 import UserCard from "../../components/UserCard";
 
 const Settings = () => {
@@ -31,10 +29,6 @@ const Settings = () => {
           <SingOutButton />
         </SettingsButtonsBox>
       </MainContainer>
-      <MiniPlayerAndNavContainer>
-        <MinimizedPlayer />
-        <Footer />
-      </MiniPlayerAndNavContainer>
     </PageContainer>
   );
 };

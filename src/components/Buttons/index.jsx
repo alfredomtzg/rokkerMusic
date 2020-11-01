@@ -6,7 +6,6 @@ import {
   StyledSignupButton,
   StyledLoginButton,
   StyledNextButton,
-  StyledImgGoogleButton,
   StyledSendButton,
   StyledHomeButton,
   StyledChangePassButton,
@@ -23,11 +22,11 @@ import {
 } from "./style";
 
 import "../../assets/fonts/coolicons.css";
-import logoG from "../../assets/fonts/icons/btn_google_light_normal_ios.svg";
 
 export const FacebookButton = () => {
   return (
     <StyledFacebookButton>
+      <i className="ci-facebook" />
       <h5>Login with Facebook</h5>
     </StyledFacebookButton>
   );
@@ -36,8 +35,11 @@ export const FacebookButton = () => {
 export const GoogleButton = () => {
   return (
     <StyledGoogleButton>
-      <StyledImgGoogleButton src={logoG} />
-      <span>Sign in with Google</span>
+      <img
+        src="https://img.icons8.com/color/452/google-logo.png"
+        alt="google logo"
+      />
+      <h5>Sign in with Google</h5>
     </StyledGoogleButton>
   );
 };
