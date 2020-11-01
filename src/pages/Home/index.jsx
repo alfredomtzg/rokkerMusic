@@ -27,26 +27,30 @@ const Home = () => {
     setPlayerStatus,
     setAutoplay,
     setTrack,
+    albumList,
+    setAlbumList,
+    setAlbumContent,
   } = useContext(Context);
-  const [albumList, setAlbumList] = useState([]);
 
   const bringAlbums = async () => {
-    await API.get(getAlbum, { headers: { Authorization: `Bearer ${TOKEN}` } })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data.body);
-        setAlbumList(res.data.body);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (albumList.length <= 0) {
+      await API.get(getAlbum, { headers: { Authorization: `Bearer ${TOKEN}` } })
+        .then((res) => {
+          console.log(res);
+          console.log(res.data.body.albums);
+          setAlbumList(res.data.body.albums);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   useEffect(() => {
-    if (albumList.length <= 0) {
-      bringAlbums();
-    }
+    bringAlbums();
   }, []);
+
+  console.log(albumList.length);
 
   const list = queue.map((item, index) => {
     return (
@@ -95,11 +99,16 @@ const Home = () => {
         <RecommendPlaylistsBox>
           {albumList.map((item) => {
             return (
-              <MidFilledCard
+              <div
                 key={item._id}
-                img={item.cover_img}
-                title={item.title}
-              />
+                role="presentation"
+                onClick={() => {
+                  setAlbumContent(item);
+                  console.log(item);
+                }}
+              >
+                <MidFilledCard item={item} />
+              </div>
             );
           })}
         </RecommendPlaylistsBox>

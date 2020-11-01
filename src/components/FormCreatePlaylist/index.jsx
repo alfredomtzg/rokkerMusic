@@ -9,12 +9,15 @@ import {
 } from "../Forms/light-styles";
 import { API, PlayList, TOKEN } from "../../route/axios";
 
-export default function CreatePlaylistForm() {
+export default function CreatePlaylistForm(props) {
+  const { history } = props;
   // CreatePlaylist Values
   const [valuesCreatePlaylist, setValuesCreatePlaylist] = useState({
     name: "",
     description: "",
   });
+  // error messange
+  const [error, setError] = useState(false);
   // function handleChange to CreatePlaylist
   const handleChangeCreatePlaylist = (event) => {
     setValuesCreatePlaylist({
@@ -35,9 +38,11 @@ export default function CreatePlaylistForm() {
           name: "",
           description: "",
         });
+        setError(false);
+        history.push("/home");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -58,7 +63,7 @@ export default function CreatePlaylistForm() {
         value={valuesCreatePlaylist.name}
         onChange={handleChangeCreatePlaylist}
       />
-      <h6>The playlist must have a title</h6>
+      {error ? <h6>The playlist must have a title</h6> : null}
 
       <TextLabel htmlFor="playlistDescription">
         <h4>Description</h4>
@@ -70,7 +75,7 @@ export default function CreatePlaylistForm() {
         value={valuesCreatePlaylist.description}
         onChange={handleChangeCreatePlaylist}
       />
-      <h6>120 characters only</h6>
+      <small>120 characters only</small>
 
       <div className="SaveBtn">
         <SaveButton type="submit" />
