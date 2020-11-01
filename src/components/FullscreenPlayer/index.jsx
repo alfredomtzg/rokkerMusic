@@ -83,9 +83,6 @@ const FullscreenPlayer = (props) => {
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <ShuffleButton>
-              <i className="ci-shuffle" />
-            </ShuffleButton>
             <RepeatButton>
               <i className="ci-repeat" />
             </RepeatButton>
@@ -110,7 +107,9 @@ const FullscreenPlayer = (props) => {
           </HeartButton>
         </PlayerButtons>
         <PlayerBottomButtons>
-          <i className="ci-list_plus" />
+          <ShuffleButton>
+            <i className="ci-shuffle" />
+          </ShuffleButton>
           <button type="button" onClick={openQueue}>
             <i className="ci-list_check" />
           </button>
