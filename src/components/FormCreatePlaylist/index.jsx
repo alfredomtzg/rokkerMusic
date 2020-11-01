@@ -7,7 +7,7 @@ import {
   TextInput,
   TextAreaInput,
 } from "../Forms/light-styles";
-import { API, newPlayList } from "../../route/axios";
+import { API, newPlayList, TOKEN } from "../../route/axios";
 
 export default function CreatePlaylistForm() {
   // CreatePlaylist Values
@@ -27,7 +27,18 @@ export default function CreatePlaylistForm() {
   const createNewPlayList = async () => {
     await API.post(newPlayList, valuesCreatePlaylist, {
       headers: { token: TOKEN },
-    });
+    })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setValuesCreatePlaylist({
+          name: "",
+          description: "",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   // Function HandleSubmitCreatePlaylist
