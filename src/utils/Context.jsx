@@ -20,6 +20,8 @@ export const ContextProvider = ({ children }) => {
   const [playerStatus, setPlayerStatus] = useState("pause");
   const [autoplay, setAutoplay] = useState(false);
   const [albumList, setAlbumList] = useState([]);
+  // playlis Content
+  const [albumContent, setAlbumContent] = useState({});
   // return Value
   return (
     <Context.Provider
@@ -36,6 +38,8 @@ export const ContextProvider = ({ children }) => {
         setTrack,
         albumList,
         setAlbumList,
+        albumContent,
+        setAlbumContent,
       }}
     >
       {children}

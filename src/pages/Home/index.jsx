@@ -29,6 +29,7 @@ const Home = () => {
     setTrack,
     albumList,
     setAlbumList,
+    setAlbumContent,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -98,11 +99,16 @@ const Home = () => {
         <RecommendPlaylistsBox>
           {albumList.map((item) => {
             return (
-              <MidFilledCard
+              <div
                 key={item._id}
-                img={item.cover_img}
-                title={item.title}
-              />
+                role="presentation"
+                onClick={() => {
+                  setAlbumContent(item);
+                  console.log(item);
+                }}
+              >
+                <MidFilledCard item={item} />;
+              </div>
             );
           })}
         </RecommendPlaylistsBox>
