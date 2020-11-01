@@ -5,9 +5,14 @@ import {
   PageContainer,
 } from "../../containers/LayoutContainers";
 import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
-import { GreetingBox, FavoritesBox, RecommendPlaylistsBox } from "./style";
+import { FavoritesBox, RecommendPlaylistsBox } from "./style";
 import Header from "../../components/Header";
-import { GenreCard, MidFilledCard, WideCard } from "../../components/Cards";
+import {
+  GenreCard,
+  MidFilledCard,
+  WideCard,
+  GreetingsCard,
+} from "../../components/Cards";
 import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
 
@@ -40,11 +45,10 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingBox />
+        <GreetingsCard />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
-
         <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
           <GenreCard />

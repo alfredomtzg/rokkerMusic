@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FavoritesCard,
   PlaylistCard,
@@ -23,7 +24,9 @@ const PlaylistList = () => {
           <h1>Your playlists</h1>
         </YourPlaylistsBox>
         <NewAndFavoritesBox>
-          <NewPlaylistCard />
+          <Link to="/playlist/create">
+            <NewPlaylistCard />
+          </Link>
           <FavoritesCard />
         </NewAndFavoritesBox>
         <PlaylistsBox>
