@@ -24,6 +24,36 @@ const FullscreenPlayerPage = (props) => {
     audioRef.current.src = songData.songURL;
   }, [songData.songURL]);
 
+  const getTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    const convertTime = `0${minutes}:${seconds <= 9 ? 0 : ""}${seconds}`;
+    return convertTime;
+  };
+
+  const [currentTime, setCurrentTime] = useState(0);
+  useEffect(() => {
+    const time = setInterval(() => {
+      setCurrentTime(getTime(audioRef.current.currentTime));
+    }, 500);
+    return () => clearInterval(time);
+  }, []);
+
+  const [songDuration, setSongDuration] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration)
+      setSongDuration(getTime(audioRef.current.duration));
+  });
+
+  const [progressBar, setProgressBar] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration) {
+      setProgressBar(
+        (audioRef.current.currentTime / audioRef.current.duration) * 50
+      );
+    }
+  });
+
   const togglePlay = () => {
     if (audioRef.current.paused) {
       audioRef.current.play();
@@ -68,6 +98,10 @@ const FullscreenPlayerPage = (props) => {
   }, [props.miniplay]);
 
   const previousSong = () => {
+    if (progressBar >= 2) {
+      audioRef.current.currentTime = 0;
+      return setCurrentTime("00:00");
+    }
     if (!audioRef.current.paused) {
       togglePlay();
     }
@@ -82,36 +116,6 @@ const FullscreenPlayerPage = (props) => {
       setPlayerStatus("play");
     }
   };
-
-  const getTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    const convertTime = `0${minutes}:${seconds <= 9 ? 0 : ""}${seconds}`;
-    return convertTime;
-  };
-
-  const [currentTime, setCurrentTime] = useState(0);
-  useEffect(() => {
-    const time = setInterval(() => {
-      setCurrentTime(getTime(audioRef.current.currentTime));
-    }, 500);
-    return () => clearInterval(time);
-  }, []);
-
-  const [songDuration, setSongDuration] = useState(0);
-  useEffect(() => {
-    if (audioRef.current.duration)
-      setSongDuration(getTime(audioRef.current.duration));
-  });
-
-  const [progressBar, setProgressBar] = useState(0);
-  useEffect(() => {
-    if (audioRef.current.duration) {
-      setProgressBar(
-        (audioRef.current.currentTime / audioRef.current.duration) * 50
-      );
-    }
-  });
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
