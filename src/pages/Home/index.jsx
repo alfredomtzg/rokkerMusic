@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   MainContainer,
   PageContainer,
@@ -17,8 +17,17 @@ import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
 
 import { API, getAlbum, TOKEN } from "../../route/axios";
+import { Context } from "../../utils/Context";
 
 const Home = () => {
+  const {
+    songData,
+    queue,
+    setSongData,
+    setPlayerStatus,
+    setAutoplay,
+    setTrack,
+  } = useContext(Context);
   const [albumList, setAlbumList] = useState([]);
 
   const bringAlbums = async () => {
@@ -38,6 +47,29 @@ const Home = () => {
       bringAlbums();
     }
   }, []);
+
+  const list = queue.map((item, index) => {
+    return (
+      <div key={item.id}>
+        <PlaylistItem title={item.title} artist="Daft Punk" />
+        <button
+          type="button"
+          onClick={() => {
+            setAutoplay(true);
+            setPlayerStatus("play");
+            setSongData({
+              ...songData,
+              songTitle: `${item.title}`,
+              songURL: `${item.preview}`,
+            });
+            setTrack(index);
+          }}
+        >
+          play
+        </button>
+      </div>
+    );
+  });
 
   return (
     <PageContainer>
@@ -72,10 +104,7 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>
-            <PlaylistItem />
-            <PlaylistItem />
-          </PlaylistContainer>
+          <PlaylistContainer>{list}</PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>

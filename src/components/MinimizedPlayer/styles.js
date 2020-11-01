@@ -34,6 +34,7 @@ export const StyledIconsLeft = styled.div`
 `;
 
 export const StyledIconsRight = styled.div`
+display:flex;
   i {
     padding: 1rem;
     font-size: 2.4rem;
@@ -48,5 +49,36 @@ export const StyledSongDescription = styled.div`
   h6,
   p {
     margin: 0;
+  }
+`;
+
+export const PlayPauseButton = styled.button`
+  border: 1px solid transparent;
+  background-color: transparent;
+  color:${Colors.G100};
+  
+  &:focus {
+    outline: none;
+  }
+
+  .ci-play_circle_filled,
+  .ci-pause_circle_filled {
+    font-size: 4rem;
+    margin: 0 ;
+    padding-right: 1rem;
+  }
+`;
+export const PlayNext = styled.button`
+  border: 1px solid transparent;
+  background-color: transparent;
+  color:${Colors.G100};
+  
+  &:focus {
+    outline: none;
+  }
+  .ci-skip_next {
+    font-size: 3rem;
+    margin:  0 ;
+    padding-right: .5rem;
   }
 `;
