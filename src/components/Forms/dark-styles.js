@@ -11,7 +11,7 @@ export const FormContainer = styled.form`
 
   h6 {
     margin-bottom: 1vh;
-    color: ${Colors.R500};
+    color: ${Colors.R300};
   }
 
   div {
