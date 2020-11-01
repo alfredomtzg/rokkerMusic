@@ -20,6 +20,7 @@ import {
   NextButton,
   HeartButton,
 } from "./style";
+import Modal from "../Modal";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
@@ -37,6 +38,14 @@ const FullscreenPlayer = (props) => {
     props.history.push("/queue");
   };
 
+  const [modalOn, setModalOn] = useState(false);
+  const openModal = () => {
+    setModalOn(true);
+  };
+  const closeModal = () => {
+    setModalOn(false);
+  };
+
   return (
     <>
       <TopOptions>
@@ -51,7 +60,7 @@ const FullscreenPlayer = (props) => {
           <h6>Played from</h6>
           <h5>{songData.playlistName}</h5>
         </div>
-        <button type="button">
+        <button onClick={openModal} type="button">
           <i className="ci-more_vertical" />
         </button>
       </TopOptions>
@@ -107,6 +116,7 @@ const FullscreenPlayer = (props) => {
           </button>
         </PlayerBottomButtons>
       </PlayerMedia>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
     </>
   );
 };
