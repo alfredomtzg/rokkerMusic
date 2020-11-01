@@ -1,21 +1,17 @@
 import React from "react";
+import userAvatar from "../../assets/images/avatars/Alexander.svg";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
 import { TopBar, MiniPlayerAndNavContainer } from "../Globals/GlobalStyle";
-import { UserAvatarBox, SettingsButtonsBox } from "./style";
+import { UserAvatarBox } from "../Settings/style";
 import Header from "../../components/Header";
-import {
-  ChangePassButton,
-  SingOutButton,
-  StatsButton,
-} from "../../components/Buttons";
+import { StatsBox } from "./style";
 import MinimizedPlayer from "../../components/MinimizedPlayer";
 import Footer from "../../components/Footer";
-import UserCard from "../../components/UserCard";
 
-const Settings = () => {
+const SettingsStats = () => {
   return (
     <PageContainer>
       <TopBar>
@@ -23,13 +19,13 @@ const Settings = () => {
       </TopBar>
       <MainContainer>
         <UserAvatarBox>
-          <UserCard />
+          <img src={userAvatar} alt="user avatar" />
         </UserAvatarBox>
-        <SettingsButtonsBox>
-          <ChangePassButton />
-          <StatsButton />
-          <SingOutButton />
-        </SettingsButtonsBox>
+        <h3>Stats</h3>
+        <StatsBox
+          title="myStats"
+          src="https://datastudio.google.com/embed/reporting/fd663400-4bc9-4269-b06e-6031b26447a7/page/I1hmB"
+        />
       </MainContainer>
       <MiniPlayerAndNavContainer>
         <MinimizedPlayer />
@@ -39,4 +35,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default SettingsStats;

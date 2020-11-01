@@ -10,6 +10,7 @@ import {
   StyledSendButton,
   StyledHomeButton,
   StyledChangePassButton,
+  StyledStatsButton,
   StyledSingOutButton,
   StyledSaveButton,
   StyledPlayButton,
@@ -65,22 +66,33 @@ export const SendButton = () => {
 };
 export const HomeButton = () => {
   return (
-    <Link to="/home">
-      <StyledHomeButton>
+    <StyledHomeButton>
+      <Link to="/home">
         <h5>Home</h5>
-      </StyledHomeButton>
-    </Link>
+      </Link>
+    </StyledHomeButton>
   );
 };
 export const ChangePassButton = () => {
   return (
-    <Link to="settings/change-password">
-      <StyledChangePassButton>
+    <StyledChangePassButton>
+      <Link to="settings/change-password">
         <h5>Change Password</h5>
-      </StyledChangePassButton>
-    </Link>
+      </Link>
+    </StyledChangePassButton>
   );
 };
+
+export const StatsButton = () => {
+  return (
+    <StyledStatsButton>
+      <Link to="settings/stats">
+        <h5>Stats</h5>
+      </Link>
+    </StyledStatsButton>
+  );
+};
+
 export const SingOutButton = () => {
   return (
     <StyledSingOutButton>
@@ -88,6 +100,7 @@ export const SingOutButton = () => {
     </StyledSingOutButton>
   );
 };
+
 export const NextButton = () => {
   return (
     <StyledNextButton>
