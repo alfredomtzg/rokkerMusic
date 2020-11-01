@@ -20,6 +20,7 @@ import {
   NextButton,
   HeartButton,
 } from "./style";
+import Modal from "../Modal";
 import SongCoverImg from "../../assets/images/SongCoverFullPlayer.svg";
 
 const FullscreenPlayer = (props) => {
@@ -30,11 +31,22 @@ const FullscreenPlayer = (props) => {
     togglePlay,
     nextSong,
     previousSong,
+    currentTime,
+    songDuration,
+    progressBar,
   } = props;
 
   const openQueue = () => {
     minimizePlayer();
     props.history.push("/queue");
+  };
+
+  const [modalOn, setModalOn] = useState(false);
+  const openModal = () => {
+    setModalOn(true);
+  };
+  const closeModal = () => {
+    setModalOn(false);
   };
 
   return (
@@ -51,7 +63,7 @@ const FullscreenPlayer = (props) => {
           <h6>Played from</h6>
           <h5>{songData.playlistName}</h5>
         </div>
-        <button type="button">
+        <button onClick={openModal} type="button">
           <i className="ci-more_vertical" />
         </button>
       </TopOptions>
@@ -64,19 +76,16 @@ const FullscreenPlayer = (props) => {
       </SongTitleAndArtist>
 
       <Timeline>
-        <h5>2:54</h5>
+        <h5>{currentTime}</h5>
         <div>
           <TotalBar />
-          <ProgressBar />
+          <ProgressBar progressBar={progressBar} />
         </div>
-        <h5>03:29</h5>
+        <h5>{songDuration}</h5>
       </Timeline>
       <PlayerMedia>
         <PlayerButtons>
           <div>
-            <ShuffleButton>
-              <i className="ci-shuffle" />
-            </ShuffleButton>
             <RepeatButton>
               <i className="ci-repeat" />
             </RepeatButton>
@@ -101,12 +110,15 @@ const FullscreenPlayer = (props) => {
           </HeartButton>
         </PlayerButtons>
         <PlayerBottomButtons>
-          <i className="ci-list_plus" />
+          <ShuffleButton>
+            <i className="ci-shuffle" />
+          </ShuffleButton>
           <button type="button" onClick={openQueue}>
             <i className="ci-list_check" />
           </button>
         </PlayerBottomButtons>
       </PlayerMedia>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
     </>
   );
 };

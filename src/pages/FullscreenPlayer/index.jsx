@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-console */
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { PlayerContainer } from "../../containers/LayoutContainers";
 import FullscreenPlayer from "../../components/FullscreenPlayer";
@@ -23,6 +23,36 @@ const FullscreenPlayerPage = (props) => {
   useEffect(() => {
     audioRef.current.src = songData.songURL;
   }, [songData.songURL]);
+
+  const getTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    const convertTime = `0${minutes}:${seconds <= 9 ? 0 : ""}${seconds}`;
+    return convertTime;
+  };
+
+  const [currentTime, setCurrentTime] = useState(0);
+  useEffect(() => {
+    const time = setInterval(() => {
+      setCurrentTime(getTime(audioRef.current.currentTime));
+    }, 500);
+    return () => clearInterval(time);
+  }, []);
+
+  const [songDuration, setSongDuration] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration)
+      setSongDuration(getTime(audioRef.current.duration));
+  });
+
+  const [progressBar, setProgressBar] = useState(0);
+  useEffect(() => {
+    if (audioRef.current.duration) {
+      setProgressBar(
+        (audioRef.current.currentTime / audioRef.current.duration) * 50
+      );
+    }
+  });
 
   const togglePlay = () => {
     if (audioRef.current.paused) {
@@ -59,7 +89,19 @@ const FullscreenPlayerPage = (props) => {
     }
   };
 
+  useEffect(() => {
+    nextSong();
+  }, [props.miniplayNext]);
+
+  useEffect(() => {
+    togglePlay();
+  }, [props.miniplay]);
+
   const previousSong = () => {
+    if (progressBar >= 2) {
+      audioRef.current.currentTime = 0;
+      return setCurrentTime("00:00");
+    }
     if (!audioRef.current.paused) {
       togglePlay();
     }
@@ -74,30 +116,6 @@ const FullscreenPlayerPage = (props) => {
       setPlayerStatus("play");
     }
   };
-  const list = queue.map((item, index) => {
-    return (
-      <div key={item.id}>
-        <ul>
-          {item.title}
-          <button
-            type="button"
-            onClick={() => {
-              setAutoplay(true);
-              setPlayerStatus("play");
-              setSongData({
-                ...songData,
-                songTitle: `${item.title}`,
-                songURL: `${item.preview}`,
-              });
-              setTrack(index);
-            }}
-          >
-            play
-          </button>
-        </ul>
-      </div>
-    );
-  });
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
@@ -109,8 +127,10 @@ const FullscreenPlayerPage = (props) => {
         togglePlay={togglePlay}
         nextSong={nextSong}
         previousSong={previousSong}
+        currentTime={currentTime}
+        songDuration={songDuration}
+        progressBar={progressBar}
       />
-      {list}
     </PlayerContainer>,
     document.getElementById("player")
   );

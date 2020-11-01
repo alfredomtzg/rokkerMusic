@@ -78,7 +78,7 @@ export const TotalBar = styled.div`
 export const ProgressBar = styled.div`
   position: absolute;
   height: 1vh;
-  width: 40vw;
+  width: ${(props) => `${props.progressBar}vw`};
   background-color: ${Colors.R500};
 `;
 
@@ -100,14 +100,6 @@ export const PlayerButtons = styled.div`
   div {
     display: flex;
     align-items: center;
-  }
-
-  .ci-heart_fill {
-    margin-left: 3.4rem;
-  }
-
-  .ci-shuffle {
-    margin-right: 1rem;
   }
 `;
 

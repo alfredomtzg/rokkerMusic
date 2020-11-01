@@ -1,17 +1,23 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 // eslint-disable-next-line import/no-cycle
 import Modal from "../Modal";
 import {
   StyledPlaylistItem,
-  StyledPlaylistItemDark,
   StyledIconsLeft,
   StyledSongDescription,
   StyledIconsRight,
+  HeartButton,
+  DotsButton,
+  DeleteButton,
 } from "./styles";
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
-export const PlaylistItem = () => {
+export const PlaylistItem = (props) => {
+  const { title, artist } = props;
   const [modalOn, setModalOn] = useState(false);
 
   const openModal = () => {
@@ -27,34 +33,24 @@ export const PlaylistItem = () => {
       <StyledIconsLeft>
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription>
-          <h6>Song title</h6>
-          <p>Artist</p>
+          <h6> {title}</h6>
+          <p>{artist}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
-        <button type="button">
+        <HeartButton type="button">
           <i className="ci-heart_outline" />
-        </button>
-        <button onClick={openModal} type="button">
+        </HeartButton>
+        <DotsButton onClick={openModal} type="button">
           <i className="ci-more_horizontal" />
-        </button>
-        <button type="button">
+        </DotsButton>
+        <DeleteButton type="button">
           <i className="ci-minus_circle" />
-        </button>
-      </StyledIconsRight>      
-      <Modal modalOn={modalOn} closeModal={closeModal}/>
+        </DeleteButton>
+      </StyledIconsRight>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
     </StyledPlaylistItem>
   );
 };
 
-export const PlaylistItemDark = () => {
-  return (
-    <StyledPlaylistItemDark>
-      <img src={Song} alt="Song Cover" />
-      <StyledSongDescription>
-        <h6>Song title</h6>
-        <p>Artist</p>
-      </StyledSongDescription>
-    </StyledPlaylistItemDark>
-  );
-};
+export default withRouter(PlaylistItem);
