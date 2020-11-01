@@ -11,13 +11,34 @@ import {
 export default function SignUpEntryDataForm(props) {
   const { error } = useContext(Context);
   const [wrongPassword, setWrongPassword] = useState(false);
+  const [emailValidation, setEmailValidation] = useState(false);
+  const [passwordValidation, setPasswordValidation] = useState(false);
   const [inputName, setInputName] = useState(false);
   const [inputLastName, setInputLastName] = useState(false);
   const [inputAge, setInputAge] = useState(false);
   const [inputGender, setInputGender] = useState(false);
 
+  const regexEmail = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/g;
+  const regexPassword = /^(?=.[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+  const regexAge = /^[0-9]*$/;
+
+  //Test validation for the regex
+  const regexEmailValidation = regexEmail.test(props.valuesSignUp.email);
+  const regexPasswordValidation = regexPassword.test(
+    props.valuesSignUp.password
+  );
+  const regexAgeValidation = regexAge.test(props.valuesSignUp.age);
+
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+  };
+
+  const validationInputEmail = () => {
+    if (regexEmailValidation) {
+      setEmailValidation(true);
+    } else {
+      setEmailValidation(false);
+    }
   };
 
   const validateInputGender = () => {
@@ -29,7 +50,7 @@ export default function SignUpEntryDataForm(props) {
   };
 
   const validateInputAge = () => {
-    if (props.valuesSignUp.age === "") {
+    if (regexAgeValidation) {
       setInputAge(true);
     } else {
       setInputAge(false);
@@ -43,7 +64,6 @@ export default function SignUpEntryDataForm(props) {
       setInputName(false);
     }
   };
-
   const validateInputLastName = () => {
     if (props.valuesSignUp.lastname.length < 3) {
       setInputLastName(true);
@@ -53,6 +73,14 @@ export default function SignUpEntryDataForm(props) {
   };
 
   const validatePassword = () => {
+    if (regexPasswordValidation) {
+      setPasswordValidation(true);
+    } else {
+      setPasswordValidation(false);
+    }
+  };
+
+  const validateConfirmPassword = () => {
     if (props.valuesSignUp.password !== props.valuesSignUp.confirmPassword) {
       setWrongPassword(true);
     } else {
@@ -60,8 +88,15 @@ export default function SignUpEntryDataForm(props) {
     }
   };
 
+  // const validateEmail = () => {
+  //   if(regexEmailValidation)
+  // }
+
   useEffect(() => {
+    console.log(passwordValidation);
+    validationInputEmail();
     validatePassword();
+    validateConfirmPassword();
     validateInputName();
     validateInputLastName();
     validateInputAge();
@@ -103,7 +138,9 @@ export default function SignUpEntryDataForm(props) {
         value={props.valuesSignUp.email}
         onChange={props.handleChangeCreateUser}
       />
-      {error ? <h6>This email has already been registered</h6> : null}
+      {emailValidation || error ? null : (
+        <h6>This email is invalid or has already been registered</h6>
+      )}
 
       <TextLabel htmlFor="password">
         <h4>Password</h4>
@@ -113,16 +150,22 @@ export default function SignUpEntryDataForm(props) {
         id="password"
         type="password"
         name="password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
         value={props.valuesSignUp.password}
         onChange={props.handleChangeCreateUser}
       />
+      {passwordValidation ? null : (
+        <h6>
+          Must contain at least one number and one uppercase and lowercase
+          letter, and at least 5 or more characters
+        </h6>
+      )}
 
       <TextLabel htmlFor="confirm-password">
         <h4>Confirm password</h4>
       </TextLabel>
       <TextInput
+        required
         id="confirm-password"
         type="password"
         name="confirmPassword"
@@ -174,7 +217,7 @@ export default function SignUpEntryDataForm(props) {
         value={props.valuesSignUp.age}
         onChange={props.handleChangeCreateUser}
       />
-      {inputAge ? <h6>Only accept numbers</h6> : null}
+      {inputAge ? null : <h6>Only accept numbers</h6>}
     </FormContainer>
   );
 }
