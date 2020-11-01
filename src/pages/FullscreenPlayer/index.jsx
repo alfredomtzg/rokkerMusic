@@ -59,6 +59,14 @@ const FullscreenPlayerPage = (props) => {
     }
   };
 
+  useEffect(() => {
+    nextSong();
+  }, [props.miniplayNext]);
+
+  useEffect(() => {
+    togglePlay();
+  }, [props.miniplay]);
+
   const previousSong = () => {
     if (!audioRef.current.paused) {
       togglePlay();
