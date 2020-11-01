@@ -36,8 +36,8 @@ const Home = () => {
       await API.get(getAlbum, { headers: { Authorization: `Bearer ${TOKEN}` } })
         .then((res) => {
           console.log(res);
-          console.log(res.data.body);
-          setAlbumList(res.data.body);
+          console.log(res.data.body.albums);
+          setAlbumList(res.data.body.albums);
         })
         .catch((error) => {
           console.log(error);
@@ -50,6 +50,7 @@ const Home = () => {
   }, []);
 
   console.log(albumList.length);
+
   const list = queue.map((item, index) => {
     return (
       <div key={item.id}>
