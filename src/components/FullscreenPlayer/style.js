@@ -18,6 +18,7 @@ export const TopOptions = styled.div`
     font-size: 2.4rem;
   }
 
+  button,
   .minimizePlayer {
     background-color: transparent;
     margin: 0;
@@ -110,7 +111,15 @@ export const PlayerButtons = styled.div`
   }
 `;
 
-export const PlayerBottomButtons = styled(PlayerButtons)``;
+export const PlayerBottomButtons = styled(PlayerButtons)`
+  button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 2.4rem;
+  }
+`;
 
 export const Button = styled.button`
   background-color: transparent;
