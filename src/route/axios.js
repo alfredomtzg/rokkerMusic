@@ -10,7 +10,8 @@ export const API = axios.create({
 export const getAlbum = 'album';
 // Get Album
 export const getAlbumId = 'album/:albumid'
-
+// Create a new play list
+export const newPlayList = 'playlist'
 
 // get signUp
 export const signUp = '';
