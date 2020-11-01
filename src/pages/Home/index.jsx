@@ -46,7 +46,7 @@ const Home = () => {
   const list = queue.map((item, index) => {
     return (
       <div key={item.id}>
-        <PlaylistItem title={item.title} />
+        <PlaylistItem title={item.title} artist={item.artistName} />
         <ul>
           <button
             type="button"
