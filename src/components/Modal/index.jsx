@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 // eslint-disable-next-line import/no-cycle
 import Modal2 from "../Modal2/index";
-// eslint-disable-next-line import/no-cycle
-import { PlaylistItemDark } from "../PlaylistItem";
+import PlaylistItemDark from "../PlaylistItemDark";
 import { StyledModal, StyledModalContainer } from "./style";
 import {
   AddToQueue,
