@@ -19,11 +19,8 @@ const Home = () => {
     songData,
     queue,
     setSongData,
-    playerStatus,
     setPlayerStatus,
-    autoplay,
     setAutoplay,
-    track,
     setTrack,
   } = useContext(Context);
   const [albumList, setAlbumList] = useState([]);
@@ -49,6 +46,7 @@ const Home = () => {
   const list = queue.map((item, index) => {
     return (
       <div key={item.id}>
+        <PlaylistItem />
         <ul>
           {item.title}
           <button
@@ -108,7 +106,6 @@ const Home = () => {
           <PlaylistContainer>
             {list}
 
-            <PlaylistItem />
             <PlaylistItem />
           </PlaylistContainer>
         </PlaylistContentBox>
