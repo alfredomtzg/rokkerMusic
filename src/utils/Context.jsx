@@ -37,15 +37,12 @@ export const ContextProvider = ({ children }) => {
         setAutoplay,
         track,
         setTrack,
-<<<<<<< HEAD
-        error,
-        setError,
-=======
         albumList,
         setAlbumList,
         albumContent,
         setAlbumContent,
->>>>>>> 74237655b900c4850442d5ef7329d8f643e67e79
+        error,
+        setError,
       }}
     >
       {children}
