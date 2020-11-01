@@ -9,6 +9,7 @@ export const Context = React.createContext();
 export const ContextProvider = ({ children }) => {
   const [queue, setQueue] = useState(album.tracks.data);
   const [track, setTrack] = useState(0);
+  const [error, setError] = useState(false);
 
   const [songData, setSongData] = useState({
     songTitle: `${queue[track].title}`,
@@ -40,6 +41,8 @@ export const ContextProvider = ({ children }) => {
         setAlbumList,
         albumContent,
         setAlbumContent,
+        error,
+        setError,
       }}
     >
       {children}
