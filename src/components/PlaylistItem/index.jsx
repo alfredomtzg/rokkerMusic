@@ -29,7 +29,7 @@ export const PlaylistItem = (props) => {
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription>
           <h6> {title}</h6>
-          <p>Artist</p>
+          <p>{artist}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>

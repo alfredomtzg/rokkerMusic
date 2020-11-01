@@ -46,24 +46,22 @@ const Home = () => {
   const list = queue.map((item, index) => {
     return (
       <div key={item.id}>
-        <PlaylistItem title={item.title} artist={item.artistName} />
-        <ul>
-          <button
-            type="button"
-            onClick={() => {
-              setAutoplay(true);
-              setPlayerStatus("play");
-              setSongData({
-                ...songData,
-                songTitle: `${item.title}`,
-                songURL: `${item.preview}`,
-              });
-              setTrack(index);
-            }}
-          >
-            play
-          </button>
-        </ul>
+        <PlaylistItem title={item.title} artist="Daft Punk" />
+        <button
+          type="button"
+          onClick={() => {
+            setAutoplay(true);
+            setPlayerStatus("play");
+            setSongData({
+              ...songData,
+              songTitle: `${item.title}`,
+              songURL: `${item.preview}`,
+            });
+            setTrack(index);
+          }}
+        >
+          play
+        </button>
       </div>
     );
   });
@@ -102,11 +100,7 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>
-            {list}
-
-            <PlaylistItem />
-          </PlaylistContainer>
+          <PlaylistContainer>{list}</PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>
