@@ -80,6 +80,9 @@ const MiniPlayerAndNavContainer = (props) => {
       case "/queue":
         setDisplay("on");
         break;
+      case "/admin":
+        setDisplay("on");
+        break;
       default:
         setDisplay("off");
         break;
