@@ -23,12 +23,12 @@ export default function LoginForm() {
   };
 
   // Login user
-
   const token = Buffer.from(
     `${valuesLogin.username}:${valuesLogin.password}`,
     "utf8"
   ).toString("base64");
 
+  // Login whit axios
   const login = async () => {
     const response = await API.post(signIn, ApiKey, {
       headers: {
@@ -38,7 +38,10 @@ export default function LoginForm() {
     console.log(response);
     setUser(response.data.body);
     if (response.data.error === false) {
+      // redirection to home
       history.push("/home");
+    } else {
+      setError(true);
     }
   };
 
