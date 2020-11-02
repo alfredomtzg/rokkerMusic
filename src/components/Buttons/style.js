@@ -171,7 +171,11 @@ export const StyledHeartButton = styled.button`
   }
 `;
 
-export const StyledDotsButton = styled.button``;
+export const StyledDotsButton = styled.button`
+  &:active {
+    color: ${Colors.R500};
+  }
+`;
 export const StyledDeleteButton = styled.button``;
 export const StyledRemoveQueueButton = styled.button`
   i {

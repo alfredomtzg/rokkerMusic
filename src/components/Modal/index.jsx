@@ -14,10 +14,10 @@ import {
 const Modal = (props) => {
   const [modalOn, setModalOn] = useState(false);
 
-  const openModal = () => {
+  const openModal2 = () => {
     setModalOn(true);
   };
-  const closeModal = () => {
+  const closeModal2 = () => {
     setModalOn(false);
   };
 
@@ -44,7 +44,7 @@ const Modal = (props) => {
             <SeeArtistProfile />
           </button>
 
-          <button className="buttonItem" onClick={openModal} type="button">
+          <button className="buttonItem" onClick={openModal2} type="button">
             <AddToPlaylist />
           </button>
           <button className="buttonItem" type="button">
@@ -52,7 +52,7 @@ const Modal = (props) => {
           </button>
         </div>
       </StyledModal>
-      <Modal2 modalOn={modalOn} closeModal={closeModal} />,
+      <Modal2 modalOn={modalOn} closeModal={closeModal2} />,
     </StyledModalContainer>,
     document.getElementById("modal")
   );

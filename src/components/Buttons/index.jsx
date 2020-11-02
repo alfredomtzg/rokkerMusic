@@ -24,9 +24,8 @@ import {
   StyledDeleteButton,
   StyledRemoveQueueButton,
 } from "./style";
-
-import "../../assets/fonts/coolicons.css";
 import Modal from "../Modal";
+import "../../assets/fonts/coolicons.css";
 
 export const FacebookButton = () => {
   return (
@@ -199,10 +198,12 @@ export const DotsButton = () => {
   };
 
   return (
-    <StyledDotsButton onClick={openModal} type="button">
-      <i className="ci-more_horizontal" />
+    <>
+      <StyledDotsButton type="button" onClick={openModal}>
+        <i className="ci-more_horizontal" />
+      </StyledDotsButton>
       <Modal modalOn={modalOn} closeModal={closeModal} />
-    </StyledDotsButton>
+    </>
   );
 };
 

@@ -20,6 +20,7 @@ import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
 export const PlaylistHeartDotsSong = (props) => {
   // const { title, artist } = props;
+
   return (
     <StyledPlaylistItem>
       <StyledIconsLeft>
