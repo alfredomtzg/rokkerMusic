@@ -5,6 +5,7 @@ import Avatar from "../../assets/images/avatars/Alexander.svg";
 
 export default function UserCard() {
   // Values Profile
+  // eslint-disable-next-line no-unused-vars
   const [valuesProfile, setValuesProfile] = useState({
     name: "Mike Riise",
     email: "mike@rokker.com",
