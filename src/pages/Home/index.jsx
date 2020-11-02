@@ -73,7 +73,7 @@ const Home = () => {
         title={item.title}
         index={index}
         URL={item.preview}
-        genre={item.genres}
+        genre={item.genres[0]}
         artist="Daft Punk"
       />
     );
