@@ -1,6 +1,6 @@
 import React from "react";
 import { QueueReturn } from "../../components/Cards";
-import { PlaylistItem } from "../../components/PlaylistItem";
+import { PlaylistRemoveQueueSong } from "../../components/PlaylistItem";
 import {
   PageContainer,
   MainContainer,
@@ -15,18 +15,18 @@ const FullScreenQueue = () => {
       </QueueBar>
       <MainContainer>
         <QueueList>
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
+          <PlaylistRemoveQueueSong />
         </QueueList>
       </MainContainer>
     </PageContainer>

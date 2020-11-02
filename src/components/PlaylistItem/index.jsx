@@ -1,56 +1,72 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import React from "react";
 // eslint-disable-next-line import/no-cycle
-import Modal from "../Modal";
+
 import {
   StyledPlaylistItem,
   StyledIconsLeft,
   StyledSongDescription,
   StyledIconsRight,
+} from "./styles";
+import {
   HeartButton,
   DotsButton,
   DeleteButton,
-} from "./styles";
+  RemoveQueueButton,
+} from "../Buttons";
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
 
-export const PlaylistItem = (props) => {
-  const { title, artist } = props;
-  const [modalOn, setModalOn] = useState(false);
-
-  const openModal = () => {
-    setModalOn(true);
-  };
-
-  const closeModal = () => {
-    setModalOn(false);
-  };
-
+export const PlaylistHeartDotsSong = (props) => {
+  // const { title, artist } = props;
   return (
     <StyledPlaylistItem>
       <StyledIconsLeft>
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription>
-          <h6> {title}</h6>
-          <p>{artist}</p>
+          <h6>{props.title}</h6>
+          <p>{props.artist}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>
-        <HeartButton type="button">
-          <i className="ci-heart_outline" />
-        </HeartButton>
-        <DotsButton onClick={openModal} type="button">
-          <i className="ci-more_horizontal" />
-        </DotsButton>
-        <DeleteButton type="button">
-          <i className="ci-minus_circle" />
-        </DeleteButton>
+        <HeartButton />
+        <DotsButton />
       </StyledIconsRight>
-      <Modal modalOn={modalOn} closeModal={closeModal} />
     </StyledPlaylistItem>
   );
 };
 
-export default withRouter(PlaylistItem);
+export const PlaylistDeleteSong = (props) => {
+  return (
+    <StyledPlaylistItem>
+      <StyledIconsLeft>
+        <img src={Song} alt="Song Cover" />
+        <StyledSongDescription>
+          <h6>{props.title}</h6>
+          <p>{props.artist}</p>
+        </StyledSongDescription>
+      </StyledIconsLeft>
+      <StyledIconsRight>
+        <DeleteButton />
+      </StyledIconsRight>
+    </StyledPlaylistItem>
+  );
+};
+
+export const PlaylistRemoveQueueSong = (props) => {
+  return (
+    <StyledPlaylistItem>
+      <StyledIconsLeft>
+        <img src={Song} alt="Song Cover" />
+        <StyledSongDescription>
+          <h6>{props.title}</h6>
+          <p>{props.artist}</p>
+        </StyledSongDescription>
+      </StyledIconsLeft>
+      <StyledIconsRight>
+        <RemoveQueueButton />
+      </StyledIconsRight>
+    </StyledPlaylistItem>
+  );
+};

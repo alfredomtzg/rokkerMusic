@@ -14,7 +14,7 @@ import {
   GreetingsCard,
 } from "../../components/Cards";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistItem } from "../../components/PlaylistItem";
+import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
 
 import { API, getAlbum, TOKEN } from "../../route/axios";
 import { Context } from "../../utils/Context";
@@ -55,7 +55,7 @@ const Home = () => {
   const list = queue.map((item, index) => {
     return (
       <div key={item.id}>
-        <PlaylistItem title={item.title} artist="Daft Punk" />
+        <PlaylistHeartDotsSong title={item.title} artist="Daft Punk" />
         <button
           type="button"
           onClick={() => {

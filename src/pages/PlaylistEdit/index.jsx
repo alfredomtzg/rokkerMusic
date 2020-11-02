@@ -2,16 +2,12 @@ import React from "react";
 import EditPlaylistForm from "../../components/FormEditPlaylist";
 import Header from "../../components/Header";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistItem } from "../../components/PlaylistItem";
+import { PlaylistDeleteSong } from "../../components/PlaylistItem";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  PlaylistContentBox,
-  TopBar,
-  FormBox,
-} from "../Globals/GlobalStyle";
+import { PlaylistContentBox, TopBar, FormBox } from "../Globals/GlobalStyle";
 
 const PlaylistEdit = () => {
   return (
@@ -25,14 +21,14 @@ const PlaylistEdit = () => {
         </FormBox>
         <PlaylistContentBox>
           <PlaylistContainer>
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
+            <PlaylistDeleteSong />
           </PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
