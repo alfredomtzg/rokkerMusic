@@ -84,7 +84,7 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard />
+        <GreetingsCard user={user} />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>

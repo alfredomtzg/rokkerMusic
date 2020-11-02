@@ -251,10 +251,11 @@ export const AddRemoveFromFavorites = () => {
   );
 };
 
-export const GreetingsCard = () => {
+export const GreetingsCard = (props) => {
+  const { user } = props;
   return (
     <StyledGreetingsCard>
-      <h2>Hello, Mike!</h2>
+      <h2>Hello, {user.name}!</h2>
       <Link to="/settings">
         <img src={UserAvatar} alt="user avatar" />
       </Link>
