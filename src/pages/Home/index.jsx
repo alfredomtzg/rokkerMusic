@@ -5,7 +5,7 @@ import {
   PageContainer,
 } from "../../containers/LayoutContainers";
 import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
-import { FavoritesBox, RecommendPlaylistsBox, SongCard } from "./style";
+import { FavoritesBox, RecommendPlaylistsBox } from "./style";
 import Header from "../../components/Header";
 import {
   GenreCard,
@@ -21,12 +21,7 @@ import { Context } from "../../utils/Context";
 
 const Home = () => {
   const {
-    songData,
     queue,
-    setSongData,
-    setPlayerStatus,
-    setAutoplay,
-    setTrack,
     albumList,
     setAlbumList,
     setAlbumContent,
@@ -57,22 +52,13 @@ const Home = () => {
 
   const list = queue.map((item, index) => {
     return (
-      <SongCard
+      <PlaylistHeartDotsSong
         key={item.id}
-        type="SongCard"
-        onClick={() => {
-          setAutoplay(true);
-          setPlayerStatus("play");
-          setSongData({
-            ...songData,
-            songTitle: `${item.title}`,
-            songURL: `${item.preview}`,
-          });
-          setTrack(index);
-        }}
-      >
-        <PlaylistHeartDotsSong title={item.title} artist="Daft Punk" />
-      </SongCard>
+        title={item.title}
+        index={index}
+        URL={item.preview}
+        artist="Daft Punk"
+      />
     );
   });
 

@@ -15,9 +15,4 @@ export const RecommendPlaylistsBox = styled.section`
   overflow-y: hidden;
 `;
 
-export const SongCard = styled.div`
-  margin: 1vh 0;
-  &:hover {
-    cursor: pointer;
-  }
-`;
+
