@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 // Data
 import album from "./data";
+// import Axios
+import { API, PlayList } from "../route/axios";
 // create functional component for context provider and export it
 export const Context = React.createContext();
 
@@ -26,6 +28,23 @@ export const ContextProvider = ({ children }) => {
 
   // USER
   const [user, setUser] = useState({});
+
+  // playlist user
+  const [playListUser, setPlayListUser] = useState([]);
+  // bring the song list whit axios
+  const bringPlayList = async () => {
+    await API.get(PlayList, {
+      headers: { Authorization: `Bearer ${user.token}` },
+    })
+      .then((res) => {
+        setPlayListUser(res.data.body);
+        console.log(res.data.body);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   // return Value
   return (
     <Context.Provider
@@ -48,6 +67,9 @@ export const ContextProvider = ({ children }) => {
         setError,
         user,
         setUser,
+        playListUser,
+        setPlayListUser,
+        bringPlayList,
       }}
     >
       {children}

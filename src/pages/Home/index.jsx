@@ -31,6 +31,7 @@ const Home = () => {
     setAlbumList,
     setAlbumContent,
     user,
+    bringPlayList,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -42,6 +43,7 @@ const Home = () => {
           console.log(res);
           console.log(res.data.body.albums);
           setAlbumList(res.data.body.albums);
+          bringPlayList();
         })
         .catch((error) => {
           console.log(error);
