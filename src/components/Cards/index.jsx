@@ -86,11 +86,12 @@ export const SmallPlusCard = () => {
   );
 };
 
-export const GenreCard = () => {
+export const GenreCard = (props) => {
+  const { title } = props;
   return (
     <Link to="/playlist-content">
       <StyledGenreCard>
-        <p>Your playlist name</p>
+        <p> {title} </p>
       </StyledGenreCard>
     </Link>
   );
@@ -251,10 +252,11 @@ export const AddRemoveFromFavorites = () => {
   );
 };
 
-export const GreetingsCard = () => {
+export const GreetingsCard = (props) => {
+  const { user } = props;
   return (
     <StyledGreetingsCard>
-      <h2>Hello, Mike!</h2>
+      <h2>Hello, {user.name}!</h2>
       <Link to="/settings">
         <img src={UserAvatar} alt="user avatar" />
       </Link>

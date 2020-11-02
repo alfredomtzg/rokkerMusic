@@ -162,3 +162,24 @@ export const StyledImgEditButton = styled.i`
     color: ${Colors.B500};
   }
 `;
+
+// --------------------------------------------Styles for buttons in song cards
+
+export const StyledHeartButton = styled.button`
+  &:active {
+    color: ${Colors.R500};
+  }
+`;
+
+export const StyledDotsButton = styled.button`
+  &:active {
+    color: ${Colors.R500};
+  }
+`;
+export const StyledDeleteButton = styled.button``;
+export const StyledRemoveQueueButton = styled.button`
+  i {
+    color: ${Colors.R500};
+    font-size: 2.4rem;
+  }
+`;

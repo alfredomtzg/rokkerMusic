@@ -6,6 +6,7 @@ export const StyledPlaylistItem = styled.div`
   justify-content: space-between;
   height: 3.9rem;
   background-color: ${Colors.G100};
+  margin: 1vh 0;
 
   button {
     margin: 0;
@@ -49,7 +50,3 @@ export const StyledIconsRight = styled.div`
     color: ${Colors.R500};
   }
 `;
-
-export const HeartButton = styled.button``;
-export const DotsButton = styled.button``;
-export const DeleteButton = styled.button``;

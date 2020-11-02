@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   StyledFacebookButton,
@@ -19,8 +19,12 @@ import {
   StyledImgEditButton,
   StyledSearchButton,
   StyledDeletePlaylistButton,
+  StyledHeartButton,
+  StyledDotsButton,
+  StyledDeleteButton,
+  StyledRemoveQueueButton,
 } from "./style";
-
+import Modal from "../Modal";
 import "../../assets/fonts/coolicons.css";
 
 export const FacebookButton = () => {
@@ -168,5 +172,55 @@ export const DeletePlaylistButton = () => {
         <i className="ci-trash_full" />
       </StyledImgEditButton>
     </StyledDeletePlaylistButton>
+  );
+};
+
+// --------------------------------------------------------Buttons for song cards
+
+export const HeartButton = () => {
+  const addToFavorites = async () => {};
+  return (
+    <StyledHeartButton type="button" onClick={addToFavorites}>
+      <i className="ci-heart_outline" />
+    </StyledHeartButton>
+  );
+};
+
+export const DotsButton = () => {
+  const [modalOn, setModalOn] = useState(false);
+
+  const openModal = () => {
+    setModalOn(true);
+  };
+
+  const closeModal = () => {
+    setModalOn(false);
+  };
+
+  return (
+    <>
+      <StyledDotsButton type="button" onClick={openModal}>
+        <i className="ci-more_horizontal" />
+      </StyledDotsButton>
+      <Modal modalOn={modalOn} closeModal={closeModal} />
+    </>
+  );
+};
+
+export const DeleteButton = () => {
+  const removeFromPlaylist = async () => {};
+  return (
+    <StyledDeleteButton type="button" onClick={removeFromPlaylist}>
+      <i className="ci-minus_circle" />
+    </StyledDeleteButton>
+  );
+};
+
+export const RemoveQueueButton = () => {
+  const removeFromQueue = async () => {};
+  return (
+    <StyledRemoveQueueButton onClick={removeFromQueue}>
+      <i className="ci-minus" />
+    </StyledRemoveQueueButton>
   );
 };

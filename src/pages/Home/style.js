@@ -14,3 +14,5 @@ export const RecommendPlaylistsBox = styled.section`
   overflow-x: scroll;
   overflow-y: hidden;
 `;
+
+
