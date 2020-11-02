@@ -17,26 +17,7 @@ import { API, PlayList } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 const PlaylistList = () => {
-  const { user } = useContext(Context);
-  const [playListUser, setPlayListUser] = useState([]);
-
-  // bring the song list whit axios
-  const bringPlayList = async () => {
-    await API.get(PlayList, {
-      headers: { Authorization: `Bearer ${user.token}` },
-    })
-      .then((res) => {
-        setPlayListUser(res.data.body);
-        console.log(res.data.body);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    bringPlayList();
-  }, []);
+  const { playListUser } = useContext(Context);
 
   return (
     <PageContainer>

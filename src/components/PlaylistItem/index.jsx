@@ -48,7 +48,7 @@ export const PlaylistHeartDotsSong = (props) => {
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription onClick={startPlay}>
           <h6>{props.title}</h6>
-          <p>{props.artist}</p>
+          <p>{props.genre}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>

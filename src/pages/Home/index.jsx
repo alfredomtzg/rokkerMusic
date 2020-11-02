@@ -22,10 +22,13 @@ import { Context } from "../../utils/Context";
 const Home = () => {
   const {
     queue,
+    bringPlayList,
     albumList,
     setAlbumList,
     setAlbumContent,
     user,
+    playListUser,
+    setQueue,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -37,14 +40,27 @@ const Home = () => {
           console.log(res);
           console.log(res.data.body.albums);
           setAlbumList(res.data.body.albums);
+          bringPlayList();
         })
         .catch((error) => {
           console.log(error);
         });
     }
   };
+  const bringTracks = async () => {
+    try {
+      const response = await API.get(`/track`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      console.log(response);
+      setQueue(response.data.body.tracks);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
+    bringTracks();
     bringAlbums();
   }, []);
 
@@ -57,6 +73,7 @@ const Home = () => {
         title={item.title}
         index={index}
         URL={item.preview}
+        genre={item.genres}
         artist="Daft Punk"
       />
     );
@@ -68,19 +85,15 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard />
+        <GreetingsCard user={user} />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
         <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
+          {playListUser.map((item) => {
+            return <GenreCard key={item._id} title={item.name} />;
+          })}
         </RecommendPlaylistsBox>
         <h5>Albums</h5>
         <RecommendPlaylistsBox>
