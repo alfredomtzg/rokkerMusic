@@ -2,20 +2,19 @@
 // import react
 import React, { useState } from "react";
 // Data
-import album from "./data";
 // import Axios
 import { API, PlayList } from "../route/axios";
 // create functional component for context provider and export it
 export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
-  const [queue, setQueue] = useState(album.tracks.data);
+  const [queue, setQueue] = useState([]);
   const [track, setTrack] = useState(0);
   const [error, setError] = useState(false);
 
   const [songData, setSongData] = useState({
-    songTitle: `${queue[track].title}`,
-    songURL: `${queue[track].preview}`,
+    songTitle: `${queue[track]?.title}`,
+    songURL: `${queue[track]?.preview}`,
     artistName: "Daft Punk",
     playlistName: "Favorites",
     playlistFrom: "Top 20",
