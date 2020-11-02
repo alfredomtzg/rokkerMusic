@@ -20,13 +20,9 @@ import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 const Home = () => {
-  const {
-    queue,
-    albumList,
-    setAlbumList,
-    setAlbumContent,
-    user,
-  } = useContext(Context);
+  const { queue, albumList, setAlbumList, setAlbumContent, user } = useContext(
+    Context
+  );
 
   const bringAlbums = async () => {
     if (albumList.length <= 0) {
@@ -57,6 +53,7 @@ const Home = () => {
         title={item.title}
         index={index}
         URL={item.preview}
+        genre={item.genres}
         artist="Daft Punk"
       />
     );
