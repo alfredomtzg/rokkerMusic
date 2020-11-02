@@ -43,7 +43,7 @@ const FullscreenPlayerPage = (props) => {
   useEffect(() => {
     if (audioRef.current.duration)
       setSongDuration(getTime(audioRef.current.duration));
-  });
+  }, []);
 
   const [progressBar, setProgressBar] = useState(0);
   useEffect(() => {
@@ -52,7 +52,7 @@ const FullscreenPlayerPage = (props) => {
         (audioRef.current.currentTime / audioRef.current.duration) * 50
       );
     }
-  });
+  }, []);
 
   const togglePlay = () => {
     if (audioRef.current.paused) {
@@ -90,7 +90,7 @@ const FullscreenPlayerPage = (props) => {
   };
 
   useEffect(() => {
-    if(props.miniplayNext !== "blocked"){
+    if (props.miniplayNext !== "blocked") {
       nextSong();
     }
   }, [props.miniplayNext]);
