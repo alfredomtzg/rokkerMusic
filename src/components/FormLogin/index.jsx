@@ -7,8 +7,12 @@ import { API, signIn, ApiKey } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 export default function LoginForm() {
+  // history to redirect
   const history = useHistory();
+  // bring context data
   const { setUser } = useContext(Context);
+  // error
+  const [error, setError] = useState(false);
   // Login Values
   const [valuesLogin, setValuesLogin] = useState({
     username: "",
@@ -23,30 +27,38 @@ export default function LoginForm() {
   };
 
   // Login user
-
   const token = Buffer.from(
     `${valuesLogin.username}:${valuesLogin.password}`,
     "utf8"
   ).toString("base64");
 
+  // Login whit axios
   const login = async () => {
-    const response = await API.post(signIn, ApiKey, {
-      headers: {
-        Authorization: `Basic ${token}`,
-      },
-    });
-    console.log(response);
-    setUser(response.data.body);
-    if (response.data.error === false) {
-      history.push("/home");
+    try {
+      const response = await API.post(signIn, ApiKey, {
+        headers: {
+          Authorization: `Basic ${token}`,
+        },
+      });
+      console.log(response);
+      // keep data user
+      setUser(response.data.body);
+      if (response.data.error === false) {
+        // redirect to home
+        history.push("/home");
+      }
+    } catch (err) {
+      console.error(err);
+
+      setError(true);
     }
   };
 
   // Function HandleSubmitLogin
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+    // call Login function
     login();
-    console.log(valuesLogin);
   };
 
   return (
@@ -72,7 +84,9 @@ export default function LoginForm() {
         value={valuesLogin.password}
         onChange={handleChangeLogin}
       />
-      <h6>Email or password incorrect. Please check and retry.</h6>
+      {error ? (
+        <h6>Email or password incorrect. Please check and retry.</h6>
+      ) : null}
       <Link to="/forgot-password">
         <h5>Forgot your password?</h5>
       </Link>
