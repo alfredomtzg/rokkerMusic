@@ -21,12 +21,7 @@ import { Context } from "../../utils/Context";
 
 const Home = () => {
   const {
-    songData,
     queue,
-    setSongData,
-    setPlayerStatus,
-    setAutoplay,
-    setTrack,
     albumList,
     setAlbumList,
     setAlbumContent,
@@ -57,24 +52,13 @@ const Home = () => {
 
   const list = queue.map((item, index) => {
     return (
-      <div key={item.id}>
-        <PlaylistHeartDotsSong title={item.title} artist="Daft Punk" />
-        <button
-          type="button"
-          onClick={() => {
-            setAutoplay(true);
-            setPlayerStatus("play");
-            setSongData({
-              ...songData,
-              songTitle: `${item.title}`,
-              songURL: `${item.preview}`,
-            });
-            setTrack(index);
-          }}
-        >
-          play
-        </button>
-      </div>
+      <PlaylistHeartDotsSong
+        key={item.id}
+        title={item.title}
+        index={index}
+        URL={item.preview}
+        artist="Daft Punk"
+      />
     );
   });
 
