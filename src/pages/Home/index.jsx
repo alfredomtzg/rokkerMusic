@@ -23,6 +23,7 @@ const Home = () => {
   const {
     songData,
     queue,
+    setQueue,
     setSongData,
     setPlayerStatus,
     setAutoplay,
@@ -32,6 +33,7 @@ const Home = () => {
     setAlbumContent,
     user,
     bringPlayList,
+    playListUser,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -50,8 +52,18 @@ const Home = () => {
         });
     }
   };
+  const bringTracks = async () => {
+    try {
+      const response = await API.get(`/track`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      console.log(response);
+      setQueue(response.data.body.tracks);
+    } catch (error) {}
+  };
 
   useEffect(() => {
+    bringTracks();
     bringAlbums();
   }, []);
 
@@ -59,8 +71,8 @@ const Home = () => {
 
   const list = queue.map((item, index) => {
     return (
-      <div key={item.id}>
-        <PlaylistHeartDotsSong title={item.title} artist="Daft Punk" />
+      <div key={item._id}>
+        <PlaylistHeartDotsSong title={item.title} artist="artista" />
         <button
           type="button"
           onClick={() => {
@@ -69,8 +81,9 @@ const Home = () => {
             setSongData({
               ...songData,
               songTitle: `${item.title}`,
-              songURL: `${item.preview}`,
+              songURL: `${item.url}`,
             });
+            console.log(item._id);
             setTrack(index);
           }}
         >
