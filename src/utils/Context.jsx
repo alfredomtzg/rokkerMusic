@@ -15,7 +15,7 @@ export const ContextProvider = ({ children }) => {
   const [songData, setSongData] = useState({
     songTitle: `${queue[track]?.title}`,
     songURL: `${queue[track]?.preview}`,
-    artistName: "Daft Punk",
+    artistName: "",
     playlistName: "Favorites",
     playlistFrom: "Top 20",
   });
