@@ -2,7 +2,7 @@ import React from "react";
 import { EditButton, PlayButton } from "../../components/Buttons";
 import Header from "../../components/Header";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistItem } from "../../components/PlaylistItem";
+import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
 import {
   MainContainer,
   PageContainer,
@@ -33,11 +33,11 @@ const PlaylistContent = () => {
         </PlayButtonBox>
         <PlaylistContentBox>
           <PlaylistContainer>
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
           </PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>

@@ -1,15 +1,12 @@
 import React from "react";
 import Header from "../../components/Header";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistItem } from "../../components/PlaylistItem";
+import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  PlaylistContentBox,
-  TopBar,
-} from "../Globals/GlobalStyle";
+import { PlaylistContentBox, TopBar } from "../Globals/GlobalStyle";
 import { ArtistBox, StatsBox } from "./style";
 import { ArtistProfileCard } from "../../components/Cards";
 
@@ -25,11 +22,11 @@ const ArtistProfile = () => {
         </ArtistBox>
         <PlaylistContentBox>
           <PlaylistContainer>
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
-            <PlaylistItem />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
+            <PlaylistHeartDotsSong />
           </PlaylistContainer>
         </PlaylistContentBox>
         <h4>Stats</h4>

@@ -2,7 +2,7 @@ import React from "react";
 import { ArtistSearchCard, PlaylistSearchCard } from "../../components/Cards";
 import Header from "../../components/Header";
 import SearchBar from "../../components/SearchBar";
-import { PlaylistItem } from "../../components/PlaylistItem";
+import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
 import {
   MainContainer,
   PageContainer,
@@ -23,9 +23,9 @@ const SearchResults = () => {
         </SearchBox>
         <h3>Songs</h3>
         <SearchResultsBox>
-          <PlaylistItem />
-          <PlaylistItem />
-          <PlaylistItem />
+          <PlaylistHeartDotsSong />
+          <PlaylistHeartDotsSong />
+          <PlaylistHeartDotsSong />
         </SearchResultsBox>
         <h3>Artists</h3>
         <SearchResultsBox>
