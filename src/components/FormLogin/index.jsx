@@ -7,7 +7,9 @@ import { API, signIn, ApiKey } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 export default function LoginForm() {
+  // history to redirect
   const history = useHistory();
+  // bring context data
   const { setUser } = useContext(Context);
   // Login Values
   const [valuesLogin, setValuesLogin] = useState({
@@ -38,9 +40,10 @@ export default function LoginForm() {
     console.log(response);
     setUser(response.data.body);
     if (response.data.error === false) {
-      // redirection to home
+      // redirect to home
       history.push("/home");
     } else {
+      // return error
       setError(true);
     }
   };
