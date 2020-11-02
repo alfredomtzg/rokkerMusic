@@ -80,7 +80,9 @@ export default function LoginForm() {
         value={valuesLogin.password}
         onChange={handleChangeLogin}
       />
-      <h6>Email or password incorrect. Please check and retry.</h6>
+      {error ? (
+        <h6>Email or password incorrect. Please check and retry.</h6>
+      ) : null}
       <Link to="/forgot-password">
         <h5>Forgot your password?</h5>
       </Link>
