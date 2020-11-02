@@ -55,7 +55,6 @@ export default function LoginForm() {
     event.preventDefault();
     // call Login function
     login();
-    console.log(valuesLogin);
   };
 
   return (
