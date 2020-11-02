@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useContext } from "react";
 // eslint-disable-next-line import/no-cycle
 
 import {
@@ -15,13 +15,35 @@ import {
   DeleteButton,
   RemoveQueueButton,
 } from "../Buttons";
+
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
+import { Context } from "../../utils/Context";
 
 export const PlaylistHeartDotsSong = (props) => {
   // const { title, artist } = props;
+
+  const {
+    songData,
+    setSongData,
+    setPlayerStatus,
+    setAutoplay,
+    setTrack,
+  } = useContext(Context);
+
+  const startPlay = () => {
+    setAutoplay(true);
+    setPlayerStatus("play");
+    setSongData({
+      ...songData,
+      songTitle: `${props.title}`,
+      songURL: `${props.URL}`,
+    });
+    setTrack(props.index);
+  };
+
   return (
-    <StyledPlaylistItem>
+    <StyledPlaylistItem onClick={startPlay}>
       <StyledIconsLeft>
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription>

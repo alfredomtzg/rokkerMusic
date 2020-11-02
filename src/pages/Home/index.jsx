@@ -21,13 +21,15 @@ import { Context } from "../../utils/Context";
 
 const Home = () => {
   const {
-    songData,
     queue,
+<<<<<<< HEAD
     setQueue,
     setSongData,
     setPlayerStatus,
     setAutoplay,
     setTrack,
+=======
+>>>>>>> 35fc9bb9578bca85a740e39be35a56c834a88e97
     albumList,
     setAlbumList,
     setAlbumContent,
@@ -69,6 +71,23 @@ const Home = () => {
     bringAlbums();
   }, []);
 
+<<<<<<< HEAD
+=======
+  console.log(albumList.length);
+
+  const list = queue.map((item, index) => {
+    return (
+      <PlaylistHeartDotsSong
+        key={item.id}
+        title={item.title}
+        index={index}
+        URL={item.preview}
+        artist="Daft Punk"
+      />
+    );
+  });
+
+>>>>>>> 35fc9bb9578bca85a740e39be35a56c834a88e97
   return (
     <PageContainer>
       <TopBar>
