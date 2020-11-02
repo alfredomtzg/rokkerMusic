@@ -43,10 +43,10 @@ export const PlaylistHeartDotsSong = (props) => {
   };
 
   return (
-    <StyledPlaylistItem onClick={startPlay}>
+    <StyledPlaylistItem>
       <StyledIconsLeft>
         <img src={Song} alt="Song Cover" />
-        <StyledSongDescription>
+        <StyledSongDescription onClick={startPlay}>
           <h6>{props.title}</h6>
           <p>{props.artist}</p>
         </StyledSongDescription>
