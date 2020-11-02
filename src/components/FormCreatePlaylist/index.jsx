@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { SaveButton } from "../Buttons";
 import {
   FormContainer,
@@ -7,10 +8,12 @@ import {
   TextInput,
   TextAreaInput,
 } from "../Forms/light-styles";
-import { API, PlayList, TOKEN } from "../../route/axios";
+import { API, PlayList } from "../../route/axios";
+import { Context } from "../../utils/Context";
 
-export default function CreatePlaylistForm(props) {
-  const { history } = props;
+export default function CreatePlaylistForm() {
+  const { user } = useContext(Context);
+  const history = useHistory();
   // CreatePlaylist Values
   const [valuesCreatePlaylist, setValuesCreatePlaylist] = useState({
     name: "",
@@ -29,7 +32,7 @@ export default function CreatePlaylistForm(props) {
   // Create a new PlayList whit axios
   const createNewPlayList = async () => {
     await API.post(PlayList, valuesCreatePlaylist, {
-      headers: { Authorization: `Bearer ${TOKEN}` },
+      headers: { Authorization: `Bearer ${user.token}` },
     })
       .then((res) => {
         console.log(res);

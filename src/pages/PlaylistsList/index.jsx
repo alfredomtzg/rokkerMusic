@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   FavoritesCard,
@@ -13,14 +13,18 @@ import {
 } from "../../containers/LayoutContainers";
 import { TopBar } from "../Globals/GlobalStyle";
 import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
-import { API, PlayList, TOKEN } from "../../route/axios";
+import { API, PlayList } from "../../route/axios";
+import { Context } from "../../utils/Context";
 
 const PlaylistList = () => {
+  const { user } = useContext(Context);
   const [playListUser, setPlayListUser] = useState([]);
 
   // bring the song list whit axios
   const bringPlayList = async () => {
-    await API.get(PlayList, { headers: { Authorization: `Bearer ${TOKEN}` } })
+    await API.get(PlayList, {
+      headers: { Authorization: `Bearer ${user.token}` },
+    })
       .then((res) => {
         setPlayListUser(res.data.body);
         console.log(res.data.body);
