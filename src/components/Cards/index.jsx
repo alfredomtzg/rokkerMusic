@@ -86,11 +86,12 @@ export const SmallPlusCard = () => {
   );
 };
 
-export const GenreCard = () => {
+export const GenreCard = (props) => {
+  const { title } = props;
   return (
     <Link to="/playlist-content">
       <StyledGenreCard>
-        <p>Your playlist name</p>
+        <p> {title} </p>
       </StyledGenreCard>
     </Link>
   );

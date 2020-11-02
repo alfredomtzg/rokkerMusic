@@ -59,15 +59,15 @@ const Home = () => {
       });
       console.log(response);
       setQueue(response.data.body.tracks);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     bringTracks();
     bringAlbums();
   }, []);
-
-  console.log(albumList.length);
 
   return (
     <PageContainer>
@@ -81,13 +81,9 @@ const Home = () => {
         </FavoritesBox>
         <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
+          {playListUser.map((item) => {
+            return <GenreCard key={item._id} title={item.name} />;
+          })}
         </RecommendPlaylistsBox>
         <h5>Albums</h5>
         <RecommendPlaylistsBox>
