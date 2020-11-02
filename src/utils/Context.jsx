@@ -23,6 +23,9 @@ export const ContextProvider = ({ children }) => {
   const [albumList, setAlbumList] = useState([]);
   // playlis Content
   const [albumContent, setAlbumContent] = useState({});
+
+  // USER
+  const [user, setUser] = useState({});
   // return Value
   return (
     <Context.Provider
@@ -43,6 +46,8 @@ export const ContextProvider = ({ children }) => {
         setAlbumContent,
         error,
         setError,
+        user,
+        setUser,
       }}
     >
       {children}
