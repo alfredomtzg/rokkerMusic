@@ -49,7 +49,7 @@ export default function LoginForm() {
       }
     } catch (err) {
       console.error(err);
-
+      // show error
       setError(true);
     }
   };
