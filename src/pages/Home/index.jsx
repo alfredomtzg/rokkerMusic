@@ -69,30 +69,6 @@ const Home = () => {
 
   console.log(albumList.length);
 
-  const list = queue.map((item, index) => {
-    return (
-      <div key={item._id}>
-        <PlaylistHeartDotsSong title={item.title} artist="artista" />
-        <button
-          type="button"
-          onClick={() => {
-            setAutoplay(true);
-            setPlayerStatus("play");
-            setSongData({
-              ...songData,
-              songTitle: `${item.title}`,
-              songURL: `${item.url}`,
-            });
-            console.log(item._id);
-            setTrack(index);
-          }}
-        >
-          play
-        </button>
-      </div>
-    );
-  });
-
   return (
     <PageContainer>
       <TopBar>
@@ -131,7 +107,31 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>{list}</PlaylistContainer>
+          <PlaylistContainer>
+            {queue.map((item, index) => {
+              return (
+                <div key={item._id}>
+                  <PlaylistHeartDotsSong title={item.title} artist="artista" />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAutoplay(true);
+                      setPlayerStatus("play");
+                      setSongData({
+                        ...songData,
+                        songTitle: `${item.title}`,
+                        songURL: `${item.url}`,
+                      });
+                      console.log(item._id);
+                      setTrack(index);
+                    }}
+                  >
+                    play
+                  </button>
+                </div>
+              );
+            })}
+          </PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>
