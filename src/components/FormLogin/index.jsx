@@ -1,13 +1,17 @@
 /* eslint-disable no-console */
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { LoginButton } from "../Buttons";
 import { FormContainer, TextLabel, TextInput } from "../Forms/dark-styles";
+import { API, signIn, ApiKey } from "../../route/axios";
+import { Context } from "../../utils/Context";
 
 export default function LoginForm() {
+  const history = useHistory();
+  const { setUser } = useContext(Context);
   // Login Values
   const [valuesLogin, setValuesLogin] = useState({
-    email: "",
+    username: "",
     password: "",
   });
   // function handleChange to Login
@@ -18,9 +22,30 @@ export default function LoginForm() {
     });
   };
 
+  // Login user
+
+  const token = Buffer.from(
+    `${valuesLogin.username}:${valuesLogin.password}`,
+    "utf8"
+  ).toString("base64");
+
+  const login = async () => {
+    const response = await API.post(signIn, ApiKey, {
+      headers: {
+        Authorization: `Basic ${token}`,
+      },
+    });
+    console.log(response);
+    setUser(response.data.body);
+    if (response.data.error === false) {
+      history.push("/home");
+    }
+  };
+
   // Function HandleSubmitLogin
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+    login();
     console.log(valuesLogin);
   };
 
@@ -30,10 +55,10 @@ export default function LoginForm() {
         <h4>E-mail</h4>
       </TextLabel>
       <TextInput
-        id="email"
-        name="email"
+        id="username"
+        name="username"
         autoComplete="current-email"
-        value={valuesLogin.email}
+        value={valuesLogin.username}
         onChange={handleChangeLogin}
       />
 
