@@ -50,6 +50,3 @@ export const StyledIconsRight = styled.div`
   }
 `;
 
-export const HeartButton = styled.button``;
-export const DotsButton = styled.button``;
-export const DeleteButton = styled.button``;
