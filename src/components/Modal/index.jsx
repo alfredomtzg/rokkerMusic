@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 // eslint-disable-next-line import/no-cycle
 import Modal2 from "../Modal2/index";
 import PlaylistItemDark from "../PlaylistItemDark";
@@ -41,7 +42,9 @@ const Modal = (props) => {
             <AddToQueue />
           </button>
           <button className="buttonItem" type="button">
-            <SeeArtistProfile />
+            <Link to="/artist">
+              <SeeArtistProfile />
+            </Link>
           </button>
 
           <button className="buttonItem" onClick={openModal2} type="button">

@@ -22,18 +22,13 @@ import { Context } from "../../utils/Context";
 const Home = () => {
   const {
     queue,
-    setSongData,
+    bringPlayList,
     albumList,
-    setPlayerStatus,
-    setAutoplay,
     setAlbumList,
-    setTrack,
-    songData,
-    setQueue,
     setAlbumContent,
     user,
-    bringPlayList,
     playListUser,
+    setQueue,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -69,6 +64,21 @@ const Home = () => {
     bringAlbums();
   }, []);
 
+  console.log(albumList.length);
+
+  const list = queue.map((item, index) => {
+    return (
+      <PlaylistHeartDotsSong
+        key={item.id}
+        title={item.title}
+        index={index}
+        URL={item.preview}
+        genre={item.genres}
+        artist="Daft Punk"
+      />
+    );
+  });
+
   return (
     <PageContainer>
       <TopBar>
@@ -103,32 +113,7 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>
-            {queue.map((item, index) => {
-              return (
-                <div key={item._id}>
-                  <PlaylistHeartDotsSong title={item.title} artist="artista" />
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setAutoplay(true);
-                      setPlayerStatus("play");
-                      setSongData({
-                        ...songData,
-                        songTitle: `${item.title}`,
-                        songURL: `${item.url}`,
-                        artistName: `${item.genres[0]}`,
-                      });
-                      console.log(item._id);
-                      setTrack(index);
-                    }}
-                  >
-                    play
-                  </button>
-                </div>
-              );
-            })}
-          </PlaylistContainer>
+          <PlaylistContainer>{list}</PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>
