@@ -34,18 +34,22 @@ export default function LoginForm() {
 
   // Login whit axios
   const login = async () => {
-    const response = await API.post(signIn, ApiKey, {
-      headers: {
-        Authorization: `Basic ${token}`,
-      },
-    });
-    console.log(response);
-    setUser(response.data.body);
-    if (response.data.error === false) {
-      // redirect to home
-      history.push("/home");
-    } else {
-      // return error
+    try {
+      const response = await API.post(signIn, ApiKey, {
+        headers: {
+          Authorization: `Basic ${token}`,
+        },
+      });
+      console.log(response);
+      // keep data user
+      setUser(response.data.body);
+      if (response.data.error === false) {
+        // redirect to home
+        history.push("/home");
+      }
+    } catch (err) {
+      console.error(err);
+
       setError(true);
     }
   };
