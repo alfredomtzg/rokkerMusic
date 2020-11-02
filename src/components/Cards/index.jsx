@@ -43,7 +43,7 @@ export const MidFilledCard = (props) => {
   return (
     <StyledMidCard>
       <Link to="/playlist-content">
-        <img src={item?.cover_img} alt={item?.title} />
+        <img src={item.cover_img} alt={item.title} />
         <i className="ci-play_circle_filled" />
       </Link>
     </StyledMidCard>
