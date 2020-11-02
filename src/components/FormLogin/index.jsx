@@ -11,6 +11,8 @@ export default function LoginForm() {
   const history = useHistory();
   // bring context data
   const { setUser } = useContext(Context);
+  // error
+  const [error, setError] = useState(false);
   // Login Values
   const [valuesLogin, setValuesLogin] = useState({
     username: "",
@@ -51,6 +53,7 @@ export default function LoginForm() {
   // Function HandleSubmitLogin
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+    // call Login function
     login();
     console.log(valuesLogin);
   };
