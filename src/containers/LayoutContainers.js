@@ -26,4 +26,5 @@ export const StyledMiniPlayerAndNavContainer = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100vw;
+  z-index: 4;
 `;
