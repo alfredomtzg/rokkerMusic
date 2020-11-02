@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import {
   MainContainer,
   PageContainer,
@@ -16,7 +16,7 @@ import {
 import PlaylistContainer from "../../components/PlaylistContainer";
 import { PlaylistItem } from "../../components/PlaylistItem";
 
-import { API, getAlbum, TOKEN } from "../../route/axios";
+import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 const Home = () => {
@@ -30,11 +30,14 @@ const Home = () => {
     albumList,
     setAlbumList,
     setAlbumContent,
+    user,
   } = useContext(Context);
 
   const bringAlbums = async () => {
     if (albumList.length <= 0) {
-      await API.get(getAlbum, { headers: { Authorization: `Bearer ${TOKEN}` } })
+      await API.get(getAlbum, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      })
         .then((res) => {
           console.log(res);
           console.log(res.data.body.albums);

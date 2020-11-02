@@ -128,8 +128,17 @@ export const Button = styled.button`
   }
 `;
 
-export const ShuffleButton = styled(Button)``;
-export const RepeatButton = styled(Button)``;
+export const ShuffleButton = styled(Button)`
+  i {
+    color: ${(props) => (props.shuffle === "on" ? Colors.R500 : Colors.G700)};
+  }
+`;
+
+export const RepeatButton = styled(Button)`
+  i {
+    color: ${(props) => (props.bucle === "on" ? Colors.R500 : Colors.G700)};
+  }
+`;
 export const PrevButton = styled(Button)``;
 export const PlayPauseButton = styled(Button)`
   border: 1px solid transparent;
@@ -145,4 +154,10 @@ export const PlayPauseButton = styled(Button)`
   }
 `;
 export const NextButton = styled(Button)``;
-export const HeartButton = styled(Button)``;
+export const HeartButton = styled(Button)`
+  &:active {
+    i {
+      color: ${Colors.R500};
+    }
+  }
+`;
