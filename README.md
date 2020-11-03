@@ -55,7 +55,7 @@ Rokker is a music web application designed as mobile first.
 1. **GET /api/component:** returns all the component registers. In case it involves private data, it must be filtered according to the user which makes the call.
 2. **GET /api/component/:key**: returns the component by key or id received.
 3. **POST /api/component:** creates the component using the information received within the body.
-4. **PUT /api/component/:key:** updates the component, choosing which one according to the key element received within the body.
+4. **PUT /api/component/:key** updates the component, choosing which one according to the key element received within the body.
 5. **DELETE /api/component/:key** deletes a register in the list accoording the component type.
 
 The last part is an abstraction of a CRUD model, using a generic component called "Component". This abstraction mus be applied to the header's model.
