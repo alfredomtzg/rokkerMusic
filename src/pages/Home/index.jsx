@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useEffect, useContext } from "react";
 import {
@@ -85,7 +86,7 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard user={user} />
+        <GreetingsCard user={user.name} />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>

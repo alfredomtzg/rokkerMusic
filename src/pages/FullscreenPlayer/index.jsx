@@ -77,7 +77,7 @@ const FullscreenPlayerPage = (props) => {
       setSongData({
         ...songData,
         songTitle: `${queue[track + 1].title}`,
-        songURL: `${queue[track + 1].preview}`,
+        songURL: `${queue[track + 1].url}`,
       });
       setAutoplay(true);
       setTrack(track + 1);
@@ -87,7 +87,7 @@ const FullscreenPlayerPage = (props) => {
       setSongData({
         ...songData,
         songTitle: `${queue[0]?.title}`,
-        songURL: `${queue[0]?.preview}`,
+        songURL: `${queue[0]?.url}`,
       });
       setTrack(0);
     }
