@@ -21,8 +21,6 @@ import Song from "../../assets/images/SongCoverFullPlayer.svg";
 import { Context } from "../../utils/Context";
 
 export const PlaylistHeartDotsSong = (props) => {
-  // const { title, artist } = props;
-
   const {
     songData,
     setSongData,
@@ -43,7 +41,7 @@ export const PlaylistHeartDotsSong = (props) => {
   };
 
   return (
-    <StyledPlaylistItem>
+    <StyledPlaylistItem key={props.key}>
       <StyledIconsLeft>
         <img src={Song} alt="Song Cover" />
         <StyledSongDescription onClick={startPlay}>

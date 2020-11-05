@@ -40,11 +40,13 @@ const Home = () => {
           console.log(res);
           console.log(res.data.body.albums);
           setAlbumList(res.data.body.albums);
-          bringPlayList();
         })
         .catch((error) => {
           console.log(error);
         });
+    }
+    if (playListUser.length <= 0) {
+      bringPlayList();
     }
   };
   const bringTracks = async () => {
@@ -69,7 +71,7 @@ const Home = () => {
   const list = queue.map((item, index) => {
     return (
       <PlaylistHeartDotsSong
-        key={item.id}
+        key={item._id}
         title={item.title}
         index={index}
         URL={item.url}

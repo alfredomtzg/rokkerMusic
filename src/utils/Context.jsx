@@ -13,7 +13,7 @@ export const ContextProvider = ({ children }) => {
   const [error, setError] = useState(false);
 
   const [songData, setSongData] = useState({
-    songTitle: `${queue[track]?.title}`,
+    songTitle: `Last Song`,
     songURL: `${queue[track]?.preview}`,
     artistName: "",
     playlistName: "Favorites",
