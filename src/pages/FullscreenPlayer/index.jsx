@@ -67,10 +67,13 @@ const FullscreenPlayerPage = (props) => {
   };
 
   const nextSong = () => {
+    console.log("next song");
     if (!audioRef.current.paused) {
       togglePlay();
+      console.log("dio play la primera vez");
     }
     if (track < queue.length - 1) {
+      console.log(`tracks < queue.length true: ${track}`);
       setSongData({
         ...songData,
         songTitle: `${queue[track + 1].title}`,
@@ -80,10 +83,11 @@ const FullscreenPlayerPage = (props) => {
       setTrack(track + 1);
       setPlayerStatus("play");
     } else {
+      console.log(`tracks < queue.length false: ${track}`);
       setSongData({
         ...songData,
-        songTitle: `${queue[0].title}`,
-        songURL: `${queue[0].preview}`,
+        songTitle: `${queue[0]?.title}`,
+        songURL: `${queue[0]?.preview}`,
       });
       setTrack(0);
     }
@@ -115,6 +119,7 @@ const FullscreenPlayerPage = (props) => {
         songTitle: `${queue[track - 1].title}`,
         songURL: `${queue[track - 1].preview}`,
       });
+      console.log(songData);
       setAutoplay(true);
       setTrack(track - 1);
       setPlayerStatus("play");

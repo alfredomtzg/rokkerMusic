@@ -54,7 +54,7 @@ const Home = () => {
       const response = await API.get(`/track`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
-      console.log(response);
+      console.log(response.data.body.tracks);
       setQueue(response.data.body.tracks);
     } catch (error) {
       console.log(error);
@@ -65,8 +65,6 @@ const Home = () => {
     bringTracks();
     bringAlbums();
   }, []);
-
-  console.log(albumList.length);
 
   const list = queue.map((item, index) => {
     return (
