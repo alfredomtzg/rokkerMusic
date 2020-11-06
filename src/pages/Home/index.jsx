@@ -21,16 +21,14 @@ import { Context } from "../../utils/Context";
 
 const Home = () => {
   const {
-    songData,
     queue,
-    setSongData,
-    setPlayerStatus,
-    setAutoplay,
-    setTrack,
+    bringPlayList,
     albumList,
     setAlbumList,
     setAlbumContent,
     user,
+    playListUser,
+    setQueue,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -42,14 +40,27 @@ const Home = () => {
           console.log(res);
           console.log(res.data.body.albums);
           setAlbumList(res.data.body.albums);
+          bringPlayList();
         })
         .catch((error) => {
           console.log(error);
         });
     }
   };
+  const bringTracks = async () => {
+    try {
+      const response = await API.get(`/track`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      console.log(response);
+      setQueue(response.data.body.tracks);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
+    bringTracks();
     bringAlbums();
   }, []);
 
@@ -57,24 +68,14 @@ const Home = () => {
 
   const list = queue.map((item, index) => {
     return (
-      <div key={item.id}>
-        <PlaylistHeartDotsSong title={item.title} artist="Daft Punk" />
-        <button
-          type="button"
-          onClick={() => {
-            setAutoplay(true);
-            setPlayerStatus("play");
-            setSongData({
-              ...songData,
-              songTitle: `${item.title}`,
-              songURL: `${item.preview}`,
-            });
-            setTrack(index);
-          }}
-        >
-          play
-        </button>
-      </div>
+      <PlaylistHeartDotsSong
+        key={item.id}
+        title={item.title}
+        index={index}
+        URL={item.url}
+        genre={item.genres[0]}
+        artist="Daft Punk"
+      />
     );
   });
 
@@ -84,19 +85,15 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard />
+        <GreetingsCard user={user} />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
         <h5>Recommended playlists</h5>
         <RecommendPlaylistsBox>
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard />
+          {playListUser.map((item) => {
+            return <GenreCard key={item._id} title={item.name} />;
+          })}
         </RecommendPlaylistsBox>
         <h5>Albums</h5>
         <RecommendPlaylistsBox>

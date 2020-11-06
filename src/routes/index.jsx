@@ -25,6 +25,7 @@ import SettingSignOut from "../pages/SettingsSignOut";
 import SettingsStats from "../pages/SettingsStats";
 import MiniPlayerAndNavContainer from "../containers/MiniPlayerAndNavContainer";
 import SignUpCheckEmail from "../pages/SignUpCheckEmail";
+import AdminStats from "../pages/AdminStats";
 
 const Routes = () => {
   return (
@@ -66,6 +67,7 @@ const Routes = () => {
           component={SettingsChangePassword}
         />
         <Route exact path="/queue" component={FullscreenQueue} />
+        <Route exact path="/admin" component={AdminStats} />
         <Route component={Page404} />
       </Switch>
     </BrowserRouter>

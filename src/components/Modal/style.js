@@ -19,15 +19,15 @@ export const StyledModal = styled.div`
     border: none;
     font-size: 2.4rem;
   }
-  .buttonItem{
-    width:100%;
-    display:block;
-    border:none;
-    background-color:none;
-    padding:0;
-    margin:0;
-    &:focus{
-      outline:none;
+  .buttonItem {
+    width: 100%;
+    display: block;
+    border: none;
+    background-color: none;
+    padding: 0;
+    margin: 0;
+    &:focus {
+      outline: none;
     }
   }
 `;
@@ -38,7 +38,7 @@ export const StyledModalContainer = styled.div`
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-
+  z-index: 5;
   display: flex;
   align-items: flex-end;
 `;
