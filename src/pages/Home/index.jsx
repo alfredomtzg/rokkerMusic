@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useEffect, useContext } from "react";
 import {
@@ -40,11 +41,13 @@ const Home = () => {
           console.log(res);
           console.log(res.data.body.albums);
           setAlbumList(res.data.body.albums);
-          bringPlayList();
         })
         .catch((error) => {
           console.log(error);
         });
+    }
+    if (playListUser.length <= 0) {
+      bringPlayList();
     }
   };
   const bringTracks = async () => {
@@ -52,7 +55,7 @@ const Home = () => {
       const response = await API.get(`/track`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
-      console.log(response);
+      console.log(response.data.body.tracks);
       setQueue(response.data.body.tracks);
     } catch (error) {
       console.log(error);
@@ -64,12 +67,10 @@ const Home = () => {
     bringAlbums();
   }, []);
 
-  console.log(albumList.length);
-
   const list = queue.map((item, index) => {
     return (
       <PlaylistHeartDotsSong
-        key={item.id}
+        key={item._id}
         title={item.title}
         index={index}
         URL={item.url}
@@ -85,7 +86,7 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard user={user} />
+        <GreetingsCard user={user.name} />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
