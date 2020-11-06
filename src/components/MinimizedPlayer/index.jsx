@@ -36,15 +36,11 @@ const MinimizedPlayer = () => {
   };
 
   const toggleMiniplayNext = () => {
-    console.log(`miniplay next toggle: ${miniplayNext}`);
     if (miniplayNext === "blocked") {
-      console.log(`miniplayNext === "blocked" : ${miniplayNext}`);
       setMiniplayNext("on");
     } else if (miniplayNext === "on") {
-      console.log(`miniplayNext === "on" : ${miniplayNext}`);
       setMiniplayNext("off");
     } else {
-      console.log(`ultima condional del miniplayer" : ${miniplayNext}`);
       setMiniplayNext("on");
     }
   };
