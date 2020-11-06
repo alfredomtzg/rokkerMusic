@@ -1,22 +1,14 @@
 import React from "react";
 import { HomeButton } from "../../components/Buttons";
-import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  LoginOrSendButtonBox,
-  TopBar,
-  TopTextBox,
-} from "../Globals/GlobalStyle";
+import { LoginOrSendButtonBox, TopTextBox } from "../Globals/GlobalStyle";
 
 const LoginRecoverPasswordSent = () => {
   return (
     <PageContainer dark>
-      <TopBar>
-        <Header />
-      </TopBar>
       <MainContainer>
         <TopTextBox>
           <h2>Nice!</h2>
