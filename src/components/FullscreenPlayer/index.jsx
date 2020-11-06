@@ -112,14 +112,23 @@ const FullscreenPlayer = (props) => {
             <PrevButton onClick={() => previousSong()}>
               <i className="ci-skip_previous" />
             </PrevButton>
-            <PlayPauseButton type="button" onClick={togglePlay}>
+            <PlayPauseButton
+              type="button"
+              onClick={() => {
+                togglePlay();
+              }}
+            >
               {playerStatus === "pause" ? (
                 <i className="ci-play_circle_filled" />
               ) : (
                 <i className="ci-pause_circle_filled" />
               )}
             </PlayPauseButton>
-            <NextButton onClick={nextSong}>
+            <NextButton
+              onClick={() => {
+                nextSong();
+              }}
+            >
               <i className="ci-skip_next" />
             </NextButton>
           </div>

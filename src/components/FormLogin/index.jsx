@@ -67,6 +67,7 @@ export default function LoginForm() {
         <h4>E-mail</h4>
       </TextLabel>
       <TextInput
+        autoFocus
         id="username"
         name="username"
         autoComplete="current-email"
