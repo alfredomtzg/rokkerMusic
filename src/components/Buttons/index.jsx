@@ -70,13 +70,24 @@ export const SendButton = () => {
     </StyledSendButton>
   );
 };
-export const HomeButton = () => {
+export const HomeButton = (props) => {
+  const { login } = props;
   return (
-    <StyledHomeButton>
-      <Link to="/home">
-        <h5>Home</h5>
-      </Link>
-    </StyledHomeButton>
+    <>
+      {login ? (
+        <Link to="/">
+          <StyledHomeButton>
+            <h5>Login</h5>
+          </StyledHomeButton>
+        </Link>
+      ) : (
+        <StyledHomeButton>
+          <Link to="/home">
+            <h5>Home</h5>
+          </Link>
+        </StyledHomeButton>
+      )}
+    </>
   );
 };
 export const ChangePassButton = () => {
