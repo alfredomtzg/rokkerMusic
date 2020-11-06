@@ -4,12 +4,7 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  TopBar,
-  TopTextBox,
-  LoginOrSendButtonBox,
-} from "../Globals/GlobalStyle";
-import Header from "../../components/Header";
+import { TopTextBox, LoginOrSendButtonBox } from "../Globals/GlobalStyle";
 import { LoginButton } from "../../components/Buttons";
 import { API, auth } from "../../route/axios";
 
@@ -36,9 +31,6 @@ const Activation = () => {
 
   return (
     <PageContainer dark>
-      <TopBar>
-        <Header />
-      </TopBar>
       {active ? (
         <MainContainer>
           <TopTextBox>

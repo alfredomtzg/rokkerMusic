@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../../utils/Context";
 import { API, signUp } from "../../route/axios";
-import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, TopTextBox, FormBox } from "../Globals/GlobalStyle";
+import { TopTextBox, FormBox } from "../Globals/GlobalStyle";
 import SignUpEntryDataForm from "../../components/FormSignUp";
 import SignUpPickAvatar from "../SignUpPickAvatar";
 import StyledNextButton from "./style";
@@ -62,9 +61,6 @@ const SignUpEntryData = (props) => {
   if (page) {
     return (
       <PageContainer dark>
-        <TopBar>
-          <Header />
-        </TopBar>
         <MainContainer>
           <TopTextBox>
             <h2>Welcome!</h2>

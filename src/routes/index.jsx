@@ -32,15 +32,7 @@ const Routes = () => {
     <BrowserRouter>
       <MiniPlayerAndNavContainer />
       <Switch>
-        <Route exact path="/" component={Landing} />
         <Route exact path="/activate/:id" component={Activation} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/playlist" component={PlaylistList} />
-        <Route exact path="/playlist/edit" component={PlaylistEdit} />
-        <Route exact path="/playlist/create" component={PlaylistCreate} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/search/results" component={SearchResults} />
-        <Route exact path="/playlist-content" component={PlaylistContent} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot-password" component={LoginForgotPassword} />
         <Route
@@ -48,19 +40,28 @@ const Routes = () => {
           path="/recover-password"
           component={LoginRecoverPasswordSent}
         />
-        <Route exact path="/signup" component={SignUpEntryData} />
-        <Route exact path="/signup/avatar" component={SingUpPickAvatar} />
         <Route
           exact
           path="/signup/demographic"
           component={SignUpDemographics}
         />
         <Route exact path="/signup/check" component={SignUpCheckEmail} />
+        <Route exact path="/signout" component={SettingSignOut} />
+        <Route exact path="/signup" component={SignUpEntryData} />
+        <Route exact path="/signup/avatar" component={SingUpPickAvatar} />
+
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/playlist" component={PlaylistList} />
+        <Route exact path="/playlist/edit" component={PlaylistEdit} />
+        <Route exact path="/playlist/create" component={PlaylistCreate} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/search/results" component={SearchResults} />
+        <Route exact path="/playlist-content" component={PlaylistContent} />
         <Route exact path="/artist" component={ArtistProfile} />
         <Route exact path="/player" component={FullscreenPlayerPage} />
         <Route exact path="/settings" component={Settings} />
         <Route exact path="/settings/stats" component={SettingsStats} />
-        <Route exact path="/signout" component={SettingSignOut} />
         <Route
           exact
           path="/settings/change-password"
