@@ -86,7 +86,7 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard user={user.name} />
+        <GreetingsCard user={user.name} urlImage={user.avatarPath} />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
