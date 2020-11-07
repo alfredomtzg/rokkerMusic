@@ -44,10 +44,14 @@ export const ContextProvider = ({ children }) => {
       });
   };
 
+  const [isAuth, setIsAuth] = useState(false);
+
   // return Value
   return (
     <Context.Provider
       value={{
+        isAuth,
+        setIsAuth,
         songData,
         setSongData,
         playerStatus,

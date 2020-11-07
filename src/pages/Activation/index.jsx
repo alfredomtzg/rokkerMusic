@@ -5,15 +5,12 @@ import {
   MainContainer,
 } from "../../containers/LayoutContainers";
 import { TopTextBox, LoginOrSendButtonBox } from "../Globals/GlobalStyle";
-import { LoginButton } from "../../components/Buttons";
+import { LoginButton, HomeButton } from "../../components/Buttons";
 import { API, auth } from "../../route/axios";
 
 const Activation = () => {
   const { id } = useParams();
   const history = useHistory();
-
-  console.log(id);
-  console.log(`history : ${history}`);
 
   const [active, setActive] = useState(false);
 
@@ -50,7 +47,7 @@ const Activation = () => {
           </TopTextBox>
           <LoginOrSendButtonBox>
             <Link to="/">
-              <button type="button">Back</button>
+              <HomeButton login="true" />
             </Link>
           </LoginOrSendButtonBox>
         </MainContainer>
