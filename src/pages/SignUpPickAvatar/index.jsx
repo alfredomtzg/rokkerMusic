@@ -4,7 +4,13 @@ import {
   MainContainer,
 } from "../../containers/LayoutContainers";
 import { TopBar, TopTextBox } from "../Globals/GlobalStyle";
-import { StyledForm, StyledSendButton } from "./style";
+import {
+  StyledForm,
+  StyledSendButton,
+  StyledInput,
+  StyledLabel,
+  StyledContainer,
+} from "./style";
 import Header from "../../components/Header";
 
 const SingUpPickAvatar = (props) => {
@@ -58,104 +64,122 @@ const SingUpPickAvatar = (props) => {
           <h5>Pick your avatar</h5>
         </TopTextBox>
         <StyledForm action="">
-          <label htmlFor="avatar1">
-            <img src={avatar.avatar1.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            id="avatar1"
-            type="radio"
-            name="avatarPath"
-            value={avatar.avatar1.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar1">
+              <img src={avatar.avatar1.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              id="avatar1"
+              type="radio"
+              name="avatarPath"
+              value={avatar.avatar1.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar2">
-            <img src={avatar.avatar2.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar2"
-            name="avatarPath"
-            value={avatar.avatar2.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar2">
+              <img src={avatar.avatar2.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar2"
+              name="avatarPath"
+              value={avatar.avatar2.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar3">
-            <img src={avatar.avatar3.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar3"
-            name="avatarPath"
-            value={avatar.avatar3.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar3">
+              <img src={avatar.avatar3.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar3"
+              name="avatarPath"
+              value={avatar.avatar3.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar4">
-            <img src={avatar.avatar4.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar4"
-            name="avatarPath"
-            value={avatar.avatar4.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar4">
+              <img src={avatar.avatar4.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar4"
+              name="avatarPath"
+              value={avatar.avatar4.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar5">
-            <img src={avatar.avatar5.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar5"
-            name="avatarPath"
-            value={avatar.avatar5.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar5">
+              <img src={avatar.avatar5.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar5"
+              name="avatarPath"
+              value={avatar.avatar5.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar6">
-            <img src={avatar.avatar6.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar6"
-            name="avatarPath"
-            value={avatar.avatar6.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar6">
+              <img src={avatar.avatar6.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar6"
+              name="avatarPath"
+              value={avatar.avatar6.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar7">
-            <img src={avatar.avatar7.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar7"
-            name="avatarPath"
-            value={avatar.avatar7.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar7">
+              <img src={avatar.avatar7.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar7"
+              name="avatarPath"
+              value={avatar.avatar7.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar8">
-            <img src={avatar.avatar8.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar8"
-            name="avatarPath"
-            value={avatar.avatar8.avatarUrl}
-            onChange={props.handleChangeCreateUser}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar8">
+              <img src={avatar.avatar8.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar8"
+              name="avatarPath"
+              value={avatar.avatar8.avatarUrl}
+              onChange={props.handleChangeCreateUser}
+            />
+          </StyledContainer>
 
-          <label htmlFor="avatar9">
-            <img src={avatar.avatar9.avatarUrl} alt="avatar" />
-          </label>
-          <input
-            type="radio"
-            id="avatar9"
-            name="avatarPath"
-            value={avatar.avatar9.avatarUrl}
-            onChange={props.handleChangeLogin}
-          />
+          <StyledContainer>
+            <StyledLabel htmlFor="avatar9">
+              <img src={avatar.avatar9.avatarUrl} alt="avatar" />
+            </StyledLabel>
+            <StyledInput
+              type="radio"
+              id="avatar9"
+              name="avatarPath"
+              value={avatar.avatar9.avatarUrl}
+              onChange={props.handleChangeLogin}
+            />
+          </StyledContainer>
         </StyledForm>
       </MainContainer>
       <StyledSendButton type="submit" onClick={props.handleSubmit}>
