@@ -3,7 +3,7 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, TopTextBox } from "../Globals/GlobalStyle";
+import { TopTextBox } from "../Globals/GlobalStyle";
 import {
   StyledForm,
   StyledSendButton,
@@ -11,7 +11,6 @@ import {
   StyledLabel,
   StyledContainer,
 } from "./style";
-import Header from "../../components/Header";
 
 const SingUpPickAvatar = (props) => {
   const avatar = {
@@ -55,12 +54,9 @@ const SingUpPickAvatar = (props) => {
 
   return (
     <PageContainer dark>
-      <TopBar>
-        <Header />
-      </TopBar>
       <MainContainer>
         <TopTextBox>
-          <h2>Welcome {props.valuesSignUp.name}</h2>
+          <h2>Welcome {props.valuesSignUp?.name}</h2>
           <h5>Pick your avatar</h5>
         </TopTextBox>
         <StyledForm action="">

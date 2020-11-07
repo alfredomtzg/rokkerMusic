@@ -12,7 +12,7 @@ import {
 import { Context } from "../../utils/Context";
 
 const MinimizedPlayer = () => {
-  const { songData, playerStatus } = useContext(Context);
+  const { songData, playerStatus, setAutoplay } = useContext(Context);
   const [player, setPlayer] = useState("off");
   const [miniplay, setMiniplay] = useState("blocked");
   const [miniplayNext, setMiniplayNext] = useState("blocked");
@@ -24,6 +24,7 @@ const MinimizedPlayer = () => {
   const minimizePlayer = () => {
     setPlayer("off");
   };
+
   const toggleMiniplay = () => {
     if (miniplay === "blocked") {
       setMiniplay("on");
@@ -40,7 +41,7 @@ const MinimizedPlayer = () => {
     } else if (miniplayNext === "on") {
       setMiniplayNext("off");
     } else {
-      setMiniplay("on");
+      setMiniplayNext("on");
     }
   };
 
@@ -71,14 +72,16 @@ const MinimizedPlayer = () => {
           type="button"
           onClick={() => {
             toggleMiniplayNext();
+            console.log(`click miniplayer next`);
+            setAutoplay(true);
           }}
         >
           <i className="ci-skip_next" />
         </PlayNext>
       </StyledIconsRight>
       <FullscreenPlayerPage
-        miniplayNext={miniplayNext}
         miniplay={miniplay}
+        miniplayNext={miniplayNext}
         playerDisplay={player}
         minimizePlayer={minimizePlayer}
       />

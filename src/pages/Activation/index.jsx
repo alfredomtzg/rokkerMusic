@@ -4,21 +4,13 @@ import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import {
-  TopBar,
-  TopTextBox,
-  LoginOrSendButtonBox,
-} from "../Globals/GlobalStyle";
-import Header from "../../components/Header";
-import { LoginButton } from "../../components/Buttons";
+import { TopTextBox, LoginOrSendButtonBox } from "../Globals/GlobalStyle";
+import { LoginButton, HomeButton } from "../../components/Buttons";
 import { API, auth } from "../../route/axios";
 
 const Activation = () => {
   const { id } = useParams();
   const history = useHistory();
-
-  console.log(id);
-  console.log(`history : ${history}`);
 
   const [active, setActive] = useState(false);
 
@@ -36,9 +28,6 @@ const Activation = () => {
 
   return (
     <PageContainer dark>
-      <TopBar>
-        <Header />
-      </TopBar>
       {active ? (
         <MainContainer>
           <TopTextBox>
@@ -58,7 +47,7 @@ const Activation = () => {
           </TopTextBox>
           <LoginOrSendButtonBox>
             <Link to="/">
-              <button type="button">Back</button>
+              <HomeButton login="true" />
             </Link>
           </LoginOrSendButtonBox>
         </MainContainer>

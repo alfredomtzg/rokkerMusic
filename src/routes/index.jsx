@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Activation from "../pages/Activation";
 import Home from "../pages/Home";
 import SignUpEntryData from "../pages/SignUpEntryData";
@@ -26,51 +26,70 @@ import SettingsStats from "../pages/SettingsStats";
 import MiniPlayerAndNavContainer from "../containers/MiniPlayerAndNavContainer";
 import SignUpCheckEmail from "../pages/SignUpCheckEmail";
 import AdminStats from "../pages/AdminStats";
+import NotRegisteredUser from "../pages/NotRegisteredUser";
+import { Context } from "../utils/Context";
+
+const UserLogged = ({ children }) => {
+  // const { isAuth } = useContext(Context);
+  return children({ isAuth: true });
+};
 
 const Routes = () => {
+  const { isAuth } = useContext(Context);
+
   return (
-    <BrowserRouter>
-      <MiniPlayerAndNavContainer />
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/activate/:id" component={Activation} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/playlist" component={PlaylistList} />
-        <Route exact path="/playlist/edit" component={PlaylistEdit} />
-        <Route exact path="/playlist/create" component={PlaylistCreate} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/search/results" component={SearchResults} />
-        <Route exact path="/playlist-content" component={PlaylistContent} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/forgot-password" component={LoginForgotPassword} />
-        <Route
-          exact
-          path="/recover-password"
-          component={LoginRecoverPasswordSent}
-        />
-        <Route exact path="/signup" component={SignUpEntryData} />
-        <Route exact path="/signup/avatar" component={SingUpPickAvatar} />
-        <Route
-          exact
-          path="/signup/demographic"
-          component={SignUpDemographics}
-        />
-        <Route exact path="/signup/check" component={SignUpCheckEmail} />
-        <Route exact path="/artist" component={ArtistProfile} />
-        <Route exact path="/player" component={FullscreenPlayerPage} />
-        <Route exact path="/settings" component={Settings} />
-        <Route exact path="/settings/stats" component={SettingsStats} />
-        <Route exact path="/signout" component={SettingSignOut} />
-        <Route
-          exact
-          path="/settings/change-password"
-          component={SettingsChangePassword}
-        />
-        <Route exact path="/queue" component={FullscreenQueue} />
-        <Route exact path="/admin" component={AdminStats} />
-        <Route component={Page404} />
-      </Switch>
-    </BrowserRouter>
+    <Router>
+      {isAuth ? <MiniPlayerAndNavContainer /> : null}
+      {isAuth ? (
+        <Switch>
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/playlist" component={PlaylistList} />
+          <Route exact path="/playlist/edit" component={PlaylistEdit} />
+          <Route exact path="/playlist/create" component={PlaylistCreate} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/search/results" component={SearchResults} />
+          <Route exact path="/playlist-content" component={PlaylistContent} />
+          <Route exact path="/artist" component={ArtistProfile} />
+          <Route exact path="/player" component={FullscreenPlayerPage} />
+          <Route exact path="/settings" component={Settings} />
+          <Route exact path="/settings/stats" component={SettingsStats} />
+          <Route
+            exact
+            path="/settings/change-password"
+            component={SettingsChangePassword}
+          />
+          <Route exact path="/queue" component={FullscreenQueue} />
+          <Route exact path="/admin" component={AdminStats} />
+          <Route component={Page404} />
+        </Switch>
+      ) : (
+        <Switch>
+          <Route exact path="/activate/:id" component={Activation} />
+          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/forgot-password"
+            component={LoginForgotPassword}
+          />
+          <Route
+            exact
+            path="/recover-password"
+            component={LoginRecoverPasswordSent}
+          />
+          <Route
+            exact
+            path="/signup/demographic"
+            component={SignUpDemographics}
+          />
+          <Route exact path="/signup/check" component={SignUpCheckEmail} />
+          <Route exact path="/signout" component={SettingSignOut} />
+          <Route exact path="/signup" component={SignUpEntryData} />
+          <Route exact path="/signup/avatar" component={SingUpPickAvatar} />
+          <Route exact path="/" component={Landing} />
+          <Route component={NotRegisteredUser} />
+        </Switch>
+      )}
+    </Router>
   );
 };
 

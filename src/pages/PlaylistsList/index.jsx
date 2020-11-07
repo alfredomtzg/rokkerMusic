@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   FavoritesCard,
@@ -13,7 +13,6 @@ import {
 } from "../../containers/LayoutContainers";
 import { TopBar } from "../Globals/GlobalStyle";
 import { YourPlaylistsBox, NewAndFavoritesBox, PlaylistsBox } from "./style";
-import { API, PlayList } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 const PlaylistList = () => {
