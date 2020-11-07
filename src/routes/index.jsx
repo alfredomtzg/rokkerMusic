@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Activation from "../pages/Activation";
 import Home from "../pages/Home";
@@ -27,15 +27,16 @@ import MiniPlayerAndNavContainer from "../containers/MiniPlayerAndNavContainer";
 import SignUpCheckEmail from "../pages/SignUpCheckEmail";
 import AdminStats from "../pages/AdminStats";
 import NotRegisteredUser from "../pages/NotRegisteredUser";
+import { Context } from "../utils/Context";
 
 const UserLogged = ({ children }) => {
-  return children({ isAuth: false });
+  const { isAuth } = useContext(Context);
+  return children({ isAuth });
 };
 
 const Routes = () => {
   return (
     <Router>
-      {/* <MiniPlayerAndNavContainer /> */}
       <Switch>
         <Route exact path="/activate/:id" component={Activation} />
         <Route exact path="/login" component={Login} />
@@ -59,6 +60,7 @@ const Routes = () => {
           {({ isAuth }) =>
             isAuth ? (
               <Switch>
+                <MiniPlayerAndNavContainer />
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/playlist" component={PlaylistList} />
                 <Route exact path="/playlist/edit" component={PlaylistEdit} />
