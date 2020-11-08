@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../utils/Context";
+import Loading from "../../components/Loading"
 import {
   PageContainer,
   MainContainer,
@@ -13,6 +15,7 @@ import {
 } from "./style";
 
 const SingUpPickAvatar = (props) => {
+  const { isLoading } = useContext(Context);
   const avatar = {
     avatar1: {
       avatarUrl:
@@ -51,7 +54,11 @@ const SingUpPickAvatar = (props) => {
         "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456330.png",
     },
   };
-
+  if(isLoading === true) {
+    return(
+      <Loading />
+    )
+  }
   return (
     <PageContainer dark>
       <MainContainer>

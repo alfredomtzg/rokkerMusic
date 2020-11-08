@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../../utils/Context";
 import { API, signUp } from "../../route/axios";
 import {
@@ -11,7 +11,7 @@ import SignUpPickAvatar from "../SignUpPickAvatar";
 import StyledNextButton from "./style";
 
 const SignUpEntryData = (props) => {
-  const { setError } = useContext(Context);
+  const { setError, setIsLoading } = useContext(Context);
   const [page, setPage] = useState(true);
   // SignUp Values
   const [valuesSignUp, setValuesSignUp] = useState({
@@ -35,14 +35,17 @@ const SignUpEntryData = (props) => {
   };
 
   const createNewUser = async () => {
+    setIsLoading(true);
     await API.post(signUp, valuesSignUp)
       .then((res) => {
         console.log(res);
         console.log(res.data);
+        setIsLoading(false);
         props.history.push("/signup/check");
       })
       .catch((e) => {
         console.log(e.body);
+        setIsLoading(false);
         setError(true);
         setPage(true);
         props.history.push("/signup");
@@ -57,6 +60,7 @@ const SignUpEntryData = (props) => {
   const changePage = () => {
     setPage(false);
   };
+
 
   if (page) {
     return (

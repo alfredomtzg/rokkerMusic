@@ -46,6 +46,9 @@ export const ContextProvider = ({ children }) => {
 
   const [isAuth, setIsAuth] = useState(false);
 
+  //Loading
+  const [isLoading, setIsLoading] = useState(false);
+
   // return Value
   return (
     <Context.Provider
@@ -73,6 +76,8 @@ export const ContextProvider = ({ children }) => {
         playListUser,
         setPlayListUser,
         bringPlayList,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}
