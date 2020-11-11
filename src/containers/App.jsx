@@ -1,12 +1,12 @@
 import React from "react";
 import { GlobalStyle } from "../components/styles/globals";
-import Routes from "../routes";
+import Loading from "../components/Loading/index";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes />
+      <Loading />
     </>
   );
 }

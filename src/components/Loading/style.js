@@ -17,6 +17,7 @@ export const spinnerFade = keyframes`
   }
 `;
 
+
 export const Spinner = styled.div`
   position: relative;
   margin: auto;
@@ -26,7 +27,7 @@ export const Spinner = styled.div`
   height: 20rem;
   border-radius: 10rem;
   border: 0.4rem solid rgba(255, 255, 255, 0.1);
-  -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.5), #000000 90%);
+  --webkit-mask: linear-gradient(rgba(0, 0, 0, 0.5), #000000 90%);
   transform-origin: 50% 70%;
   transform: perspective(20rem) rotateX(66deg);
   animation: spinner-wiggle 1.2s infinite;
@@ -54,5 +55,10 @@ export const Spinner = styled.div`
   &:after {
     border-top-color: #f0db75;
     animation-delay: 0.3s;
+  }
+  h2{
+  position:absolute;
+  top:10rem;
+  left:4rem;
   }
 `;

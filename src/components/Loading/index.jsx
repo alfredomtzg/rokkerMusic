@@ -1,10 +1,12 @@
 import React from "react";
-import { Spinner } from "./style";
+import { Spinner, Name } from "./style";
 
 const Loading = () => {
   return (
     <div>
-      <Spinner />
+      <Spinner>
+        <h2>Loading</h2>
+        </Spinner>
     </div>
   );
 };
