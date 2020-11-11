@@ -1,13 +1,13 @@
 import React from "react";
-import { Spinner, Name } from "./style";
+import { ContainerSpinner, Spinner } from "./style";
 
 const Loading = () => {
   return (
-    <div>
+    <ContainerSpinner>
       <Spinner>
         <h2>Loading</h2>
         </Spinner>
-    </div>
+    </ContainerSpinner>
   );
 };
 export default Loading;

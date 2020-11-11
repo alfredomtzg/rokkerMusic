@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Colors } from "../styles/globals";
 
 export const spinnerSpin = keyframes`
  100% {
@@ -16,7 +17,14 @@ export const spinnerFade = keyframes`
     opacity: .1;
   }
 `;
-
+export const ContainerSpinner = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${Colors.G700};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Spinner = styled.div`
   position: relative;
@@ -56,9 +64,10 @@ export const Spinner = styled.div`
     border-top-color: #f0db75;
     animation-delay: 0.3s;
   }
-  h2{
-  position:absolute;
-  top:10rem;
-  left:4rem;
+  h2 {
+    color: ${Colors.white};
+    position: absolute;
+    top: 10rem;
+    left: 4rem;
   }
 `;
