@@ -67,14 +67,15 @@ const FullscreenPlayerPage = (props) => {
   };
 
   const nextSong = () => {
-    if (!audioRef.current.paused) {
-      togglePlay();
-    }
+    // if (!audioRef.current.paused) {
+    togglePlay();
+
+    // }
     if (track < queue.length - 1) {
       setSongData({
         ...songData,
         songTitle: `${queue[track + 1].title}`,
-        songURL: `${queue[track + 1].preview}`,
+        songURL: `${queue[track + 1].url}`,
       });
       setAutoplay(true);
       setTrack(track + 1);
@@ -82,8 +83,8 @@ const FullscreenPlayerPage = (props) => {
     } else {
       setSongData({
         ...songData,
-        songTitle: `${queue[0].title}`,
-        songURL: `${queue[0].preview}`,
+        songTitle: `${queue[0]?.title}`,
+        songURL: `${queue[0]?.url}`,
       });
       setTrack(0);
     }
@@ -113,8 +114,9 @@ const FullscreenPlayerPage = (props) => {
       setSongData({
         ...songData,
         songTitle: `${queue[track - 1].title}`,
-        songURL: `${queue[track - 1].preview}`,
+        songURL: `${queue[track - 1].url}`,
       });
+      console.log(songData);
       setAutoplay(true);
       setTrack(track - 1);
       setPlayerStatus("play");

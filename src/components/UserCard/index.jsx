@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { UserCardContainer, ImgContainer } from "./style";
 import { TextLabel, TextInput, FormContainer } from "../Forms/light-styles";
 import Avatar from "../../assets/images/avatars/Alexander.svg";
+import { Context } from "../../utils/Context";
 
 export default function UserCard() {
+  const { user } = useContext(Context);
+
   // Values Profile
   // eslint-disable-next-line no-unused-vars
   const [valuesProfile, setValuesProfile] = useState({
-    name: "Mike Riise",
-    email: "mike@rokker.com",
+    name: `${user.name}`,
+    email: `${user.email}`,
   });
 
   return (

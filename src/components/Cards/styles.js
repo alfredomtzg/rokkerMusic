@@ -212,4 +212,7 @@ export const StyledGreetingsCard = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 2vh;
+  img {
+    width: 10rem;
+  }
 `;

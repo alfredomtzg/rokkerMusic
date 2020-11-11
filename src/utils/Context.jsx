@@ -13,9 +13,9 @@ export const ContextProvider = ({ children }) => {
   const [error, setError] = useState(false);
 
   const [songData, setSongData] = useState({
-    songTitle: `${queue[track]?.title}`,
-    songURL: `${queue[track]?.preview}`,
-    artistName: "",
+    songTitle: `Volví a Nacer`,
+    songURL: `https://p.scdn.co/mp3-preview/563fd2df2c05a0e68a053808877f5409c12507f1?cid=82f8b011b4fb41a3a841ede2dd73edf0`,
+    artistName: "Salsa",
     playlistName: "Favorites",
     playlistFrom: "Top 20",
   });
@@ -44,10 +44,14 @@ export const ContextProvider = ({ children }) => {
       });
   };
 
+  const [isAuth, setIsAuth] = useState(false);
+
   // return Value
   return (
     <Context.Provider
       value={{
+        isAuth,
+        setIsAuth,
         songData,
         setSongData,
         playerStatus,

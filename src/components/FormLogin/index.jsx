@@ -10,7 +10,7 @@ export default function LoginForm() {
   // history to redirect
   const history = useHistory();
   // bring context data
-  const { setUser } = useContext(Context);
+  const { setUser, setIsAuth } = useContext(Context);
   // error
   const [error, setError] = useState(false);
   // Login Values
@@ -44,6 +44,8 @@ export default function LoginForm() {
       // keep data user
       setUser(response.data.body);
       if (response.data.error === false) {
+        // userRegister
+        setIsAuth(true);
         // redirect to home
         history.push("/home");
       }
@@ -67,6 +69,7 @@ export default function LoginForm() {
         <h4>E-mail</h4>
       </TextLabel>
       <TextInput
+        autoFocus
         id="username"
         name="username"
         autoComplete="current-email"

@@ -1,21 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import SignUpDemographicForm from "../../components/FormSignUpDemographics";
-import Header from "../../components/Header";
 import {
   PageContainer,
   MainContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, TopTextBox, FormBox } from "../Globals/GlobalStyle";
+import { TopTextBox, FormBox } from "../Globals/GlobalStyle";
+import { Context } from "../../utils/Context";
 
 const SignUpDemographics = () => {
+  const { user } = useContext(Context);
   return (
     <PageContainer dark>
-      <TopBar>
-        <Header />
-      </TopBar>
       <MainContainer dark>
         <TopTextBox>
-          <h2>And Mike,</h2>
+          <h2>And {user?.name},</h2>
           <h5>So we can serve you better</h5>
         </TopTextBox>
         <FormBox>
