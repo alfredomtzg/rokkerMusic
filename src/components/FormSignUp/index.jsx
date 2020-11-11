@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React, { useContext, useEffect, useState } from "react";
+import { StyledNextButton } from "../../pages/SignUpEntryData/style";
 import { Context } from "../../utils/Context";
 import {
   FormContainer,
@@ -9,7 +10,7 @@ import {
 } from "../Forms/dark-styles";
 
 export default function SignUpEntryDataForm(props) {
-  const { valuesSignUp, handleChangeCreateUser } = props;
+  const { valuesSignUp, handleChangeCreateUser, changePage } = props;
 
   const { error } = useContext(Context);
   const [wrongPassword, setWrongPassword] = useState(false);
@@ -31,6 +32,7 @@ export default function SignUpEntryDataForm(props) {
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+    changePage();
   };
 
   const validationInputEmail = () => {
@@ -104,6 +106,7 @@ export default function SignUpEntryDataForm(props) {
         <h4>Name</h4>
       </TextLabel>
       <TextInput
+        required
         id="name"
         name="name"
         value={valuesSignUp.name}
@@ -173,12 +176,13 @@ export default function SignUpEntryDataForm(props) {
         <h4>Where are you from?</h4>
       </TextLabel>
       <SelectInput
+        required
         id="country"
         name="country"
         value={valuesSignUp.country}
         onChange={handleChangeCreateUser}
       >
-        <option defaultValue value="choose">
+        <option defaultValue value="">
           Choose Your Country
         </option>
         <option value="Colombia">Colombia</option>
@@ -189,12 +193,13 @@ export default function SignUpEntryDataForm(props) {
         <h4>Which one defines you best?</h4>
       </TextLabel>
       <SelectInput
+        required
         id="gender"
         name="gender"
         value={valuesSignUp.gender}
         onChange={handleChangeCreateUser}
       >
-        <option defaultValue value="choose">
+        <option defaultValue value="">
           Choose Your Gender
         </option>
         <option value="male">Male</option>
@@ -207,12 +212,14 @@ export default function SignUpEntryDataForm(props) {
         <h4>How young are you?</h4>
       </TextLabel>
       <TextInput
+        required
         id="age"
         name="age"
         value={valuesSignUp.age}
         onChange={handleChangeCreateUser}
       />
       {inputAge ? null : <h6>Only accept numbers</h6>}
+      <StyledNextButton type="submit">Next</StyledNextButton>
     </FormContainer>
   );
 }
