@@ -8,11 +8,7 @@ import {
 import { TopTextBox, FormBox } from "../Globals/GlobalStyle";
 import SignUpEntryDataForm from "../../components/FormSignUp";
 import SignUpPickAvatar from "../SignUpPickAvatar";
-import {
-  StyledNextButton,
-  StyledSignUpSubtitle,
-  StyledSignUpTitle,
-} from "./style";
+import { StyledSignUpSubtitle, StyledSignUpTitle } from "./style";
 
 const SignUpEntryData = (props) => {
   const { setError, setIsLoading } = useContext(Context);
