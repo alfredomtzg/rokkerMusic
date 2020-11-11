@@ -80,9 +80,6 @@ const SignUpEntryData = (props) => {
               changePage={changePage}
             />
           </FormBox>
-          {/* <StyledNextButton type="button" onClick={changePage}>
-            Next
-          </StyledNextButton> */}
         </MainContainer>
       </PageContainer>
     );
