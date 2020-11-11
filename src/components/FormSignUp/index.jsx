@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useContext, useEffect, useState } from "react";
-import { StyledNextButton } from "../../pages/SignUpEntryData/style";
+import StyledNextButton from "./style";
 import { Context } from "../../utils/Context";
 import {
   FormContainer,

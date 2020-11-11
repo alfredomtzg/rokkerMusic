@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../../utils/Context";
-import Loading from "../../components/Loading"
+import Loading from "../../components/Loading";
 import {
   PageContainer,
   MainContainer,
@@ -15,6 +15,7 @@ import {
 } from "./style";
 
 const SingUpPickAvatar = (props) => {
+  const { valuesSignUp, handleChangeCreateUser, handleSubmit } = props;
   const { isLoading } = useContext(Context);
   const avatar = {
     avatar1: {
@@ -54,16 +55,14 @@ const SingUpPickAvatar = (props) => {
         "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456330.png",
     },
   };
-  if(isLoading === true) {
-    return(
-      <Loading />
-    )
+  if (isLoading === true) {
+    return <Loading />;
   }
   return (
     <PageContainer dark>
       <MainContainer>
         <TopTextBox>
-          <h2>Welcome {props.valuesSignUp?.name}</h2>
+          <h2>Welcome {valuesSignUp?.name}</h2>
           <h5>Pick your avatar</h5>
         </TopTextBox>
         <StyledForm action="">
@@ -76,7 +75,7 @@ const SingUpPickAvatar = (props) => {
               type="radio"
               name="avatarPath"
               value={avatar.avatar1.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -89,7 +88,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar2"
               name="avatarPath"
               value={avatar.avatar2.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -102,7 +101,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar3"
               name="avatarPath"
               value={avatar.avatar3.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -115,7 +114,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar4"
               name="avatarPath"
               value={avatar.avatar4.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -128,7 +127,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar5"
               name="avatarPath"
               value={avatar.avatar5.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -141,7 +140,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar6"
               name="avatarPath"
               value={avatar.avatar6.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -154,7 +153,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar7"
               name="avatarPath"
               value={avatar.avatar7.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -167,7 +166,7 @@ const SingUpPickAvatar = (props) => {
               id="avatar8"
               name="avatarPath"
               value={avatar.avatar8.avatarUrl}
-              onChange={props.handleChangeCreateUser}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
 
@@ -180,13 +179,13 @@ const SingUpPickAvatar = (props) => {
               id="avatar9"
               name="avatarPath"
               value={avatar.avatar9.avatarUrl}
-              onChange={props.handleChangeLogin}
+              onChange={handleChangeCreateUser}
             />
           </StyledContainer>
         </StyledForm>
       </MainContainer>
-      <StyledSendButton type="submit" onClick={props.handleSubmit}>
-        send
+      <StyledSendButton type="submit" onClick={handleSubmit}>
+        Send
       </StyledSendButton>
     </PageContainer>
   );
