@@ -20,4 +20,8 @@ const StyledNextButton = styled.button`
     background: ${Colors.R500};
   }
 `;
-export default StyledNextButton;
+
+const StyledSignUpTitle = styled.h2``;
+const StyledSignUpSubtitle = styled.h5``;
+
+export { StyledNextButton, StyledSignUpTitle, StyledSignUpSubtitle };

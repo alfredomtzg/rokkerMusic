@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../../utils/Context";
 import { API, signUp } from "../../route/axios";
 import {
@@ -8,7 +8,11 @@ import {
 import { TopTextBox, FormBox } from "../Globals/GlobalStyle";
 import SignUpEntryDataForm from "../../components/FormSignUp";
 import SignUpPickAvatar from "../SignUpPickAvatar";
-import StyledNextButton from "./style";
+import {
+  StyledNextButton,
+  StyledSignUpSubtitle,
+  StyledSignUpTitle,
+} from "./style";
 
 const SignUpEntryData = (props) => {
   const { setError, setIsLoading } = useContext(Context);
@@ -61,14 +65,13 @@ const SignUpEntryData = (props) => {
     setPage(false);
   };
 
-
   if (page) {
     return (
       <PageContainer dark>
         <MainContainer>
           <TopTextBox>
-            <h2>Welcome!</h2>
-            <h5>Ready to rock with us?</h5>
+            <StyledSignUpTitle>Welcome!</StyledSignUpTitle>
+            <StyledSignUpSubtitle>Ready to rock with us?</StyledSignUpSubtitle>
           </TopTextBox>
           <FormBox>
             <SignUpEntryDataForm
