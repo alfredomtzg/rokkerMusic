@@ -9,6 +9,8 @@ export const AvatarsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5vw;
+  max-width: 60rem;
+  margin: 0 auto;
 
   img {
     width: 10rem;
