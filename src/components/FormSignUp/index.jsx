@@ -38,8 +38,10 @@ export default function SignUpEntryDataForm(props) {
   const validationInputEmail = () => {
     if (regexEmailValidation) {
       setEmailValidation(true);
+      document.getElementById("next").disabled = false;
     } else {
       setEmailValidation(false);
+      document.getElementById("next").disabled = true;
     }
   };
 
@@ -112,7 +114,9 @@ export default function SignUpEntryDataForm(props) {
         value={valuesSignUp.name}
         onChange={handleChangeCreateUser}
       />
-      {inputName ? <h6>Please, give us your name</h6> : null}
+      {inputName ? (
+        <h6>Please, give us your name at least 3 characters.</h6>
+      ) : null}
 
       <TextLabel htmlFor="lastname">
         <h4>Last Name</h4>
@@ -123,7 +127,9 @@ export default function SignUpEntryDataForm(props) {
         value={valuesSignUp.lastname}
         onChange={handleChangeCreateUser}
       />
-      {inputLastName ? <h6>Please, give us your last name</h6> : null}
+      {inputLastName ? (
+        <h6>Please, give us your last name at least 3 characters</h6>
+      ) : null}
 
       <TextLabel htmlFor="email">
         <h4>E-mail</h4>
@@ -219,7 +225,9 @@ export default function SignUpEntryDataForm(props) {
         onChange={handleChangeCreateUser}
       />
       {inputAge ? null : <h6>Only accept numbers</h6>}
-      <StyledNextButton type="submit">Next</StyledNextButton>
+      <StyledNextButton type="submit" id="next">
+        Next
+      </StyledNextButton>
     </FormContainer>
   );
 }

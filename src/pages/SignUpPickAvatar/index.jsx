@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../../utils/Context";
 import Loading from "../../components/Loading";
 import {
@@ -17,6 +17,13 @@ import {
 const SingUpPickAvatar = (props) => {
   const { valuesSignUp, handleChangeCreateUser, handleSubmit } = props;
   const { isLoading } = useContext(Context);
+  const validateAvatar = () => {
+    if (valuesSignUp.avatarPath === "") {
+      document.getElementById("send").disabled = true;
+    } else {
+      document.getElementById("send").disabled = false;
+    }
+  };
   const avatar = {
     avatar1: {
       avatarUrl:
@@ -55,6 +62,9 @@ const SingUpPickAvatar = (props) => {
         "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456330.png",
     },
   };
+  useEffect(() => {
+    validateAvatar();
+  }, [valuesSignUp.avatarPath]);
   if (isLoading === true) {
     return <Loading />;
   }
@@ -184,7 +194,7 @@ const SingUpPickAvatar = (props) => {
           </StyledContainer>
         </StyledForm>
       </MainContainer>
-      <StyledSendButton type="submit" onClick={handleSubmit}>
+      <StyledSendButton type="submit" id="send" onClick={handleSubmit}>
         Send
       </StyledSendButton>
     </PageContainer>
