@@ -89,9 +89,8 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>
-            <PlaylistLogic />
-          </PlaylistContainer>
+          {/* Playlist Top */}
+          <PlaylistContainer />
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>
