@@ -123,6 +123,14 @@ const FullscreenPlayerPage = (props) => {
     }
   };
 
+  useEffect(() => {
+    // end song?
+    console.log(`Se termino la canción? :${audioRef.current.ended}`);
+    if (audioRef.current.ended) {
+      nextSong();
+    }
+  }, [audioRef.current?.ended]);
+
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
       <audio ref={audioRef} autoPlay={autoplay} />
