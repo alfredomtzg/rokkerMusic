@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from "react";
 
 import StyledPlaylistContainer from "./styles";
 
-import { API } from "../../route/axios";
+import { API, tracks } from "../../route/axios";
 import { Context } from "../../utils/Context";
 import { PlaylistHeartDotsSong } from "../PlaylistItem";
 
@@ -25,10 +25,10 @@ const PlaylistContainer = () => {
   // bring top20
   const bringTracks = async () => {
     try {
-      const response = await API.get(`/track`, {
+      const response = await API.get(`${tracks}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
-      console.log(response.data.body.tracks);
+
       setQueue([...response.data.body.tracks]);
     } catch (error) {
       console.log(error);
@@ -37,7 +37,6 @@ const PlaylistContainer = () => {
 
   // Play song
   const startPlay = (title, url, index) => {
-    console.log("si paso la función por props");
     setAutoplay(true);
     setPlayerStatus("play");
     setSongData({

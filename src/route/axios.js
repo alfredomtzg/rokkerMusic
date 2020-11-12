@@ -25,3 +25,5 @@ export const signUp = "auth/sign-up";
 export const signIn = '/auth/sign-in';
 // get List Top 20
 
+// get tracks
+export const tracks = 'track'

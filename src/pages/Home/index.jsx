@@ -17,7 +17,7 @@ import {
   GreetingsCard,
 } from "../../components/Cards";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import PlaylistLogic from "../../components/PlaylistLogic";
+
 // Global state
 import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
