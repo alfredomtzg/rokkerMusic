@@ -1,12 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useEffect, useContext } from "react";
+// style
+import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
+import { FavoritesBox, RecommendPlaylistsBox } from "./style";
 import {
   MainContainer,
   PageContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
-import { FavoritesBox, RecommendPlaylistsBox } from "./style";
+// Components
 import Header from "../../components/Header";
 import {
   GenreCard,
@@ -15,21 +17,19 @@ import {
   GreetingsCard,
 } from "../../components/Cards";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
-
+import PlaylistLogic from "../../components/PlaylistLogic";
+// Global state
 import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 const Home = () => {
   const {
-    queue,
     bringPlayList,
     albumList,
     setAlbumList,
     setAlbumContent,
     user,
     playListUser,
-    setQueue,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -50,35 +50,10 @@ const Home = () => {
       bringPlayList();
     }
   };
-  const bringTracks = async () => {
-    try {
-      const response = await API.get(`/track`, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      console.log(response.data.body.tracks);
-      setQueue(response.data.body.tracks);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
-    bringTracks();
     bringAlbums();
   }, []);
-
-  const list = queue.map((item, index) => {
-    return (
-      <PlaylistHeartDotsSong
-        key={item._id}
-        title={item.title}
-        index={index}
-        URL={item.url}
-        genre={item.genres[0]}
-        artist="Daft Punk"
-      />
-    );
-  });
 
   return (
     <PageContainer>
@@ -114,7 +89,9 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>{list}</PlaylistContainer>
+          <PlaylistContainer>
+            <PlaylistLogic />
+          </PlaylistContainer>
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>
