@@ -29,7 +29,9 @@ const PlaylistContainer = () => {
         headers: { Authorization: `Bearer ${user.token}` },
       });
 
-      setQueue([...response.data.body.tracks]);
+      setQueue(
+        [...response.data.body.tracks].filter((item) => item.url !== null)
+      );
     } catch (error) {
       console.log(error);
     }
