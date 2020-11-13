@@ -8,6 +8,10 @@ import { Context } from "../../utils/Context";
 
 const FullscreenPlayerPage = (props) => {
   const audioRef = useRef();
+  const audioTrack = audioRef.audioTracks;
+
+  console.log(`Soy el audio ref : ${audioTrack}`);
+
   const {
     songData,
     queue,
