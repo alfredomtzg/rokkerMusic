@@ -41,13 +41,15 @@ const PlaylistContainer = () => {
   };
 
   // Play song
-  const startPlay = (title, url, index) => {
+  const startPlay = (title, url, index, artist_Name, album_Image) => {
     setAutoplay(true);
     setPlayerStatus("play");
     setSongData({
       ...songData,
       songTitle: `${title}`,
       songURL: `${url}`,
+      artistName: `${artist_Name}`,
+      album_Image: `${album_Image}`,
     });
     setTrack(index);
   };
@@ -68,8 +70,8 @@ const PlaylistContainer = () => {
             title={item.trackId.title}
             index={index}
             url={item.trackId.url}
-            genre={item.trackId.genres[0]}
-            artist="Daft Punk"
+            artist_Name={item.trackId.artist_Name}
+            album_Image={item.trackId.album_Image}
             startPlay={startPlay}
           />
         );

@@ -60,6 +60,7 @@ const Routes = () => {
           />
           <Route exact path="/queue" component={FullscreenQueue} />
           <Route exact path="/admin" component={AdminStats} />
+          <Route exact path="/signout" component={SettingSignOut} />
           <Route component={Page404} />
         </Switch>
       ) : (

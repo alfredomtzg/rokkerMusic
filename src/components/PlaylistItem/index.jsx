@@ -23,16 +23,19 @@ export const PlaylistHeartDotsSong = ({
   title,
   index,
   url,
-  genre,
+  artist_Name,
   startPlay,
+  album_Image,
 }) => {
   return (
     <StyledPlaylistItem>
       <StyledIconsLeft>
-        <img src={Song} alt="Song Cover" />
-        <StyledSongDescription onClick={() => startPlay(title, url, index)}>
+        <img src={album_Image} alt="Song Cover" />
+        <StyledSongDescription
+          onClick={() => startPlay(title, url, index, artist_Name, album_Image)}
+        >
           <h6>{title}</h6>
-          <p>{genre}</p>
+          <p>{artist_Name}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>

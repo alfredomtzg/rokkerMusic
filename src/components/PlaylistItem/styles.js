@@ -7,6 +7,7 @@ export const StyledPlaylistItem = styled.div`
   height: 3.9rem;
   background-color: ${Colors.G100};
   margin: 1vh 0;
+  
 
   button {
     margin: 0;
@@ -19,17 +20,23 @@ export const StyledPlaylistItem = styled.div`
 
 export const StyledIconsLeft = styled.div`
   display: flex;
+  :hover{
+    transform: scale(1.05);
+  }
 
   img {
     width: 3.9rem;
     height: 3.9rem;
     padding-right: 1rem;
   }
+ 
 `;
 
 export const StyledSongDescription = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+ 
 
   h6,
   p {
