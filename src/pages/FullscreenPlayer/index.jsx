@@ -8,6 +8,10 @@ import { Context } from "../../utils/Context";
 
 const FullscreenPlayerPage = (props) => {
   const audioRef = useRef();
+  // const audioTrack = audioRef.audioTracks;
+
+  // console.log(`Soy el audio ref : ${{ audioTrack }}`);
+
   const {
     songData,
     queue,
@@ -122,6 +126,14 @@ const FullscreenPlayerPage = (props) => {
       setPlayerStatus("play");
     }
   };
+
+  useEffect(() => {
+    // end song?
+    console.log(`Se termino la canción? :${audioRef.current.ended}`);
+    if (audioRef.current.ended) {
+      nextSong();
+    }
+  }, [audioRef.current?.ended]);
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>

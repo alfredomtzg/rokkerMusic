@@ -19,6 +19,7 @@ export const PlayerContainer = styled.div`
   left: 0;
   height: 100%;
   background-color: ${Colors.G100};
+  z-index: 5;
 `;
 
 export const StyledMiniPlayerAndNavContainer = styled.footer`
