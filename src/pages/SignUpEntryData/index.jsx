@@ -8,10 +8,10 @@ import {
 import { TopTextBox, FormBox } from "../Globals/GlobalStyle";
 import SignUpEntryDataForm from "../../components/FormSignUp";
 import SignUpPickAvatar from "../SignUpPickAvatar";
-import StyledNextButton from "./style";
+import { StyledSignUpSubtitle, StyledSignUpTitle } from "./style";
 
 const SignUpEntryData = (props) => {
-  const { setError } = useContext(Context);
+  const { setError, setIsLoading } = useContext(Context);
   const [page, setPage] = useState(true);
   // SignUp Values
   const [valuesSignUp, setValuesSignUp] = useState({
@@ -35,14 +35,17 @@ const SignUpEntryData = (props) => {
   };
 
   const createNewUser = async () => {
+    setIsLoading(true);
     await API.post(signUp, valuesSignUp)
       .then((res) => {
         console.log(res);
         console.log(res.data);
+        setIsLoading(false);
         props.history.push("/signup/check");
       })
       .catch((e) => {
         console.log(e.body);
+        setIsLoading(false);
         setError(true);
         setPage(true);
         props.history.push("/signup");
@@ -63,8 +66,8 @@ const SignUpEntryData = (props) => {
       <PageContainer dark>
         <MainContainer>
           <TopTextBox>
-            <h2>Welcome!</h2>
-            <h5>Ready to rock with us?</h5>
+            <StyledSignUpTitle>Welcome!</StyledSignUpTitle>
+            <StyledSignUpSubtitle>Ready to rock with us?</StyledSignUpSubtitle>
           </TopTextBox>
           <FormBox>
             <SignUpEntryDataForm
@@ -73,9 +76,6 @@ const SignUpEntryData = (props) => {
               changePage={changePage}
             />
           </FormBox>
-          <StyledNextButton type="button" onClick={changePage}>
-            Next
-          </StyledNextButton>
         </MainContainer>
       </PageContainer>
     );

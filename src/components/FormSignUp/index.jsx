@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React, { useContext, useEffect, useState } from "react";
+import StyledNextButton from "./style";
 import { Context } from "../../utils/Context";
 import {
   FormContainer,
@@ -9,6 +10,8 @@ import {
 } from "../Forms/dark-styles";
 
 export default function SignUpEntryDataForm(props) {
+  const { valuesSignUp, handleChangeCreateUser, changePage } = props;
+
   const { error } = useContext(Context);
   const [wrongPassword, setWrongPassword] = useState(false);
   const [emailValidation, setEmailValidation] = useState(false);
@@ -22,27 +25,28 @@ export default function SignUpEntryDataForm(props) {
   const regexPassword = /^(?=.[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
   const regexAge = /^[0-9]*$/;
 
-  //Test validation for the regex
-  const regexEmailValidation = regexEmail.test(props.valuesSignUp.email);
-  const regexPasswordValidation = regexPassword.test(
-    props.valuesSignUp.password
-  );
-  const regexAgeValidation = regexAge.test(props.valuesSignUp.age);
+  // Test validation for the regex
+  const regexEmailValidation = regexEmail.test(valuesSignUp.email);
+  const regexPasswordValidation = regexPassword.test(valuesSignUp.password);
+  const regexAgeValidation = regexAge.test(valuesSignUp.age);
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
+    changePage();
   };
 
   const validationInputEmail = () => {
     if (regexEmailValidation) {
       setEmailValidation(true);
+      document.getElementById("next").disabled = false;
     } else {
       setEmailValidation(false);
+      document.getElementById("next").disabled = true;
     }
   };
 
   const validateInputGender = () => {
-    if (props.valuesSignUp.gender === "") {
+    if (valuesSignUp.gender === "") {
       setInputGender(true);
     } else {
       setInputGender(false);
@@ -58,14 +62,14 @@ export default function SignUpEntryDataForm(props) {
   };
 
   const validateInputName = () => {
-    if (props.valuesSignUp.name.length < 3) {
+    if (valuesSignUp.name.length < 3) {
       setInputName(true);
     } else {
       setInputName(false);
     }
   };
   const validateInputLastName = () => {
-    if (props.valuesSignUp.lastname.length < 3) {
+    if (valuesSignUp.lastname.length < 3) {
       setInputLastName(true);
     } else {
       setInputLastName(false);
@@ -81,7 +85,7 @@ export default function SignUpEntryDataForm(props) {
   };
 
   const validateConfirmPassword = () => {
-    if (props.valuesSignUp.password !== props.valuesSignUp.confirmPassword) {
+    if (valuesSignUp.password !== valuesSignUp.confirmPassword) {
       setWrongPassword(true);
     } else {
       setWrongPassword(false);
@@ -104,12 +108,15 @@ export default function SignUpEntryDataForm(props) {
         <h4>Name</h4>
       </TextLabel>
       <TextInput
+        required
         id="name"
         name="name"
-        value={props.valuesSignUp.name}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.name}
+        onChange={handleChangeCreateUser}
       />
-      {inputName ? <h6>Please, give us your name</h6> : null}
+      {inputName ? (
+        <h6>Please, give us your name at least 3 characters.</h6>
+      ) : null}
 
       <TextLabel htmlFor="lastname">
         <h4>Last Name</h4>
@@ -117,10 +124,12 @@ export default function SignUpEntryDataForm(props) {
       <TextInput
         id="lastname"
         name="lastname"
-        value={props.valuesSignUp.lastname}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.lastname}
+        onChange={handleChangeCreateUser}
       />
-      {inputLastName ? <h6>Please, give us your last name</h6> : null}
+      {inputLastName ? (
+        <h6>Please, give us your last name at least 3 characters</h6>
+      ) : null}
 
       <TextLabel htmlFor="email">
         <h4>E-mail</h4>
@@ -130,8 +139,8 @@ export default function SignUpEntryDataForm(props) {
         id="email"
         name="email"
         autoComplete="current-email"
-        value={props.valuesSignUp.email}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.email}
+        onChange={handleChangeCreateUser}
       />
       {emailValidation || error ? null : (
         <h6>This email is invalid or has already been registered</h6>
@@ -146,8 +155,8 @@ export default function SignUpEntryDataForm(props) {
         type="password"
         name="password"
         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-        value={props.valuesSignUp.password}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.password}
+        onChange={handleChangeCreateUser}
       />
       {passwordValidation ? null : (
         <h6>
@@ -164,8 +173,8 @@ export default function SignUpEntryDataForm(props) {
         id="confirm-password"
         type="password"
         name="confirmPassword"
-        value={props.valuesSignUp.confirmPassword}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.confirmPassword}
+        onChange={handleChangeCreateUser}
       />
       {wrongPassword ? <h6>Password does not match</h6> : null}
 
@@ -173,12 +182,13 @@ export default function SignUpEntryDataForm(props) {
         <h4>Where are you from?</h4>
       </TextLabel>
       <SelectInput
+        required
         id="country"
         name="country"
-        value={props.valuesSignUp.country}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.country}
+        onChange={handleChangeCreateUser}
       >
-        <option defaultValue value="choose">
+        <option defaultValue value="">
           Choose Your Country
         </option>
         <option value="Colombia">Colombia</option>
@@ -189,12 +199,13 @@ export default function SignUpEntryDataForm(props) {
         <h4>Which one defines you best?</h4>
       </TextLabel>
       <SelectInput
+        required
         id="gender"
         name="gender"
-        value={props.valuesSignUp.gender}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.gender}
+        onChange={handleChangeCreateUser}
       >
-        <option defaultValue value="choose">
+        <option defaultValue value="">
           Choose Your Gender
         </option>
         <option value="male">Male</option>
@@ -207,12 +218,16 @@ export default function SignUpEntryDataForm(props) {
         <h4>How young are you?</h4>
       </TextLabel>
       <TextInput
+        required
         id="age"
         name="age"
-        value={props.valuesSignUp.age}
-        onChange={props.handleChangeCreateUser}
+        value={valuesSignUp.age}
+        onChange={handleChangeCreateUser}
       />
       {inputAge ? null : <h6>Only accept numbers</h6>}
+      <StyledNextButton type="submit" id="next">
+        Next
+      </StyledNextButton>
     </FormContainer>
   );
 }
