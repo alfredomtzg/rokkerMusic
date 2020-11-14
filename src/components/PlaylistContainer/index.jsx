@@ -25,12 +25,15 @@ const PlaylistContainer = () => {
   // bring top20
   const bringTracks = async () => {
     try {
-      const response = await API.get(`${tracks}`, {
+      const response = await API.get(`playlist/general/top20`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
-
+      console.log(`------------------------ `);
+      console.log(response.data.body[0].tracks);
       setQueue(
-        [...response.data.body.tracks].filter((item) => item.url !== null)
+        [...response.data.body[0].tracks].filter(
+          (item) => item.trackId.url !== null
+        )
       );
     } catch (error) {
       console.log(error);
@@ -61,11 +64,11 @@ const PlaylistContainer = () => {
       {queue.map((item, index) => {
         return (
           <PlaylistHeartDotsSong
-            key={item._id}
-            title={item.title}
+            key={item.trackId._id}
+            title={item.trackId.title}
             index={index}
-            url={item.url}
-            genre={item.genres[0]}
+            url={item.trackId.url}
+            genre={item.trackId.genres[0]}
             artist="Daft Punk"
             startPlay={startPlay}
           />
