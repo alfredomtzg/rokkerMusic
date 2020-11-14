@@ -32,6 +32,8 @@ const Home = () => {
     setQueue,
     queue,
     playListUser,
+    queuePlaylist,
+    setQueuePlaylist,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -61,7 +63,7 @@ const Home = () => {
       });
       console.log(`------------------------ `);
       console.log(response.data.body[0].tracks);
-      setQueue(
+      setQueuePlaylist(
         [...response.data.body[0].tracks].filter(
           (item) => item.trackId.url !== null
         )
@@ -72,9 +74,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (queue.length === 0) {
-      bringTracks();
-    }
+    bringTracks();
   }, []);
 
   useEffect(() => {

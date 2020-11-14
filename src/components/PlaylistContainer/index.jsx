@@ -14,6 +14,8 @@ const PlaylistContainer = () => {
   const {
     user,
     setQueue,
+    queuePlaylist,
+    setQueuePlaylist,
     queue,
     songData,
     setSongData,
@@ -39,8 +41,7 @@ const PlaylistContainer = () => {
   return (
     <StyledPlaylistContainer>
       <h4>Top 20</h4>
-      {queue.map((item, index, arr) => {
-        console.log(arr);
+      {queuePlaylist.map((item, index, arr) => {
         return (
           <PlaylistHeartDotsSong
             key={item.trackId._id}
@@ -50,6 +51,7 @@ const PlaylistContainer = () => {
             artist_Name={item.trackId.artist_Name}
             album_Image={item.trackId.album_Image}
             startPlay={startPlay}
+            arr={arr}
           />
         );
       })}
