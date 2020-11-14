@@ -16,7 +16,7 @@ export const getAlbum = "album";
 // Get Album
 export const getAlbumId = "album/:albumid";
 // Create a new play list
-export const PlayList = 'playlist'
+export const PlayList = 'https://rokker-music-app-test.herokuapp.com/api/playlist'
 // autenticaón
 export const auth = '/auth/activate/'
 // get signUp

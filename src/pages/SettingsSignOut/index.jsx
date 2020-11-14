@@ -12,9 +12,6 @@ const SettingsSignOut = () => {
     <PageContainer dark>
       <FullPageCenterMsgBox>
         <h1>Rokk you soon!</h1>
-        <LoginOrSendButtonBox>
-          <HomeButton login />
-        </LoginOrSendButtonBox>
       </FullPageCenterMsgBox>
     </PageContainer>
   );

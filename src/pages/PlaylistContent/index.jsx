@@ -16,6 +16,7 @@ import { PlaylistBigCard } from "../../components/Cards";
 import { Context } from "../../utils/Context";
 // Axios
 import { API } from "../../route/axios";
+import Axios from "axios";
 
 const PlaylistContent = () => {
   const {
@@ -27,9 +28,9 @@ const PlaylistContent = () => {
   } = useContext(Context);
   const bringAlbumById = async () => {
     try {
-      const response = await API.get(`track/album/${albumContent._id}`, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
+      const response = await Axios.get(
+        `https://rokker-music-app-test.herokuapp.com/api/track/album/${albumContent._id}`
+      );
       console.log(`------------------------ `);
 
       console.log(response.data.body[0].tracks);
