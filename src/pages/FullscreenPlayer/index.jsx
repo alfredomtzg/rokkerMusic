@@ -60,6 +60,9 @@ const FullscreenPlayerPage = (props) => {
 
   const togglePlay = () => {
     if (audioRef.current.paused) {
+      audioRef.current.volume = 0.2;
+      console.log(`-----vol ${audioRef.current.volume}`);
+
       audioRef.current.play();
       setPlayerStatus("play");
       setAutoplay(true);
@@ -146,7 +149,7 @@ const FullscreenPlayerPage = (props) => {
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
-      <audio ref={audioRef} autoPlay={autoplay} />
+      <audio ref={audioRef} autoPlay={autoplay} id="audioVolumen" />
       <FullscreenPlayer
         minimizePlayer={props.minimizePlayer}
         songData={songData}
