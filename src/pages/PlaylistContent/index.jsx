@@ -18,7 +18,13 @@ import { Context } from "../../utils/Context";
 import { API } from "../../route/axios";
 
 const PlaylistContent = () => {
-  const { albumContent, user, setQueue } = useContext(Context);
+  const {
+    albumContent,
+    user,
+    setQueue,
+    queuePlaylist,
+    setQueuePlaylist,
+  } = useContext(Context);
   const bringAlbumById = async () => {
     try {
       const response = await API.get(`track/album/${albumContent._id}`, {
@@ -27,7 +33,7 @@ const PlaylistContent = () => {
       console.log(`------------------------ `);
 
       console.log(response.data.body[0].tracks);
-      setQueue(
+      setQueuePlaylist(
         [...response.data.body[0].tracks].filter((item) => item.url !== null)
       );
     } catch (error) {

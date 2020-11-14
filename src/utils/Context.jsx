@@ -10,6 +10,7 @@ export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
   const [queue, setQueue] = useState([]);
+  const [queuePlaylist, setQueuePlaylist] = useState([]);
   const [track, setTrack] = useState(0);
   const [error, setError] = useState(false);
 
@@ -80,6 +81,8 @@ export const ContextProvider = ({ children }) => {
         bringPlayList,
         isLoading,
         setIsLoading,
+        queuePlaylist,
+        setQueuePlaylist,
       }}
     >
       {children}
