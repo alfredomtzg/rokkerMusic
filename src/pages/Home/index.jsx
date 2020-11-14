@@ -29,6 +29,8 @@ const Home = () => {
     setAlbumList,
     setAlbumContent,
     user,
+    setQueue,
+    queue,
     playListUser,
   } = useContext(Context);
 
@@ -50,6 +52,30 @@ const Home = () => {
       bringPlayList();
     }
   };
+
+  // bring top20
+  const bringTracks = async () => {
+    try {
+      const response = await API.get(`playlist/general/top20`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      console.log(`------------------------ `);
+      console.log(response.data.body[0].tracks);
+      setQueue(
+        [...response.data.body[0].tracks].filter(
+          (item) => item.trackId.url !== null
+        )
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (queue.length === 0) {
+      bringTracks();
+    }
+  }, []);
 
   useEffect(() => {
     bringAlbums();
