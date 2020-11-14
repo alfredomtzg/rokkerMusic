@@ -43,8 +43,14 @@ export default function LoginForm() {
         },
       });
       console.log(response);
+      localStorage.setItem("token", response.data.body.token);
+
+      localStorage.setItem("email", response.data.body.email);
+      localStorage.setItem("avatarPath", response.data.body.avatarPath);
+      localStorage.setItem("name", response.data.body.name);
+
       // keep data user
-      setUser(response.data.body);
+
       if (response.data.error === false) {
         // userRegister
         setIsAuth(true);

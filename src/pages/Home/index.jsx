@@ -21,6 +21,7 @@ import PlaylistContainer from "../../components/PlaylistContainer";
 // Global state
 import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
+import Axios from "axios";
 
 const Home = () => {
   const {
@@ -38,9 +39,7 @@ const Home = () => {
 
   const bringAlbums = async () => {
     if (albumList.length <= 0) {
-      await API.get(getAlbum, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      })
+      await Axios.get("https://rokker-music-app-test.herokuapp.com/api/album")
         .then((res) => {
           console.log(res);
           console.log(res.data.body.albums);
@@ -58,9 +57,9 @@ const Home = () => {
   // bring top20
   const bringTracks = async () => {
     try {
-      const response = await API.get(`playlist/general/top20`, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
+      const response = await Axios.get(
+        `https://rokker-music-app-test.herokuapp.com/api/playlist/general/top20`
+      );
       console.log(`------------------------ `);
       console.log(response.data.body[0].tracks);
       setQueuePlaylist(
@@ -87,7 +86,10 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard user={user.name} urlImage={user.avatarPath} />
+        <GreetingsCard
+          user={localStorage.getItem("name")}
+          urlImage={localStorage.getItem("avatarPath")}
+        />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>

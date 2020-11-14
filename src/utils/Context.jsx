@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 // import react
+import Axios from "axios";
 import React, { useState } from "react";
 // Data
 import Logo from "../assets/images/logo-rokker.png";
@@ -35,9 +36,7 @@ export const ContextProvider = ({ children }) => {
   const [playListUser, setPlayListUser] = useState([]);
   // bring the song list whit axios
   const bringPlayList = async () => {
-    await API.get(PlayList, {
-      headers: { Authorization: `Bearer ${user.token}` },
-    })
+    await Axios.get(PlayList)
       .then((res) => {
         setPlayListUser(res.data.body);
         console.log(res.data.body);

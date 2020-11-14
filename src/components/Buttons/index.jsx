@@ -75,7 +75,7 @@ export const HomeButton = (props) => {
   return (
     <>
       {login ? (
-        <Link to="/">
+        <Link to="/login">
           <StyledHomeButton>
             <h5>Login</h5>
           </StyledHomeButton>
@@ -112,7 +112,7 @@ export const StatsButton = () => {
 
 export const SingOutButton = () => {
   return (
-    <StyledSingOutButton>
+    <StyledSingOutButton onClick={() => localStorage.clear()}>
       <Link to="/signout">
         <h5>Sign Out</h5>
       </Link>
