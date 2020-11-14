@@ -5,12 +5,13 @@ import { LoginButton } from "../Buttons";
 import { FormContainer, TextLabel, TextInput } from "../Forms/dark-styles";
 import { API, signIn, ApiKey } from "../../route/axios";
 import { Context } from "../../utils/Context";
+import Loading from "../Loading";
 
 export default function LoginForm() {
   // history to redirect
   const history = useHistory();
   // bring context data
-  const { setUser, setIsAuth } = useContext(Context);
+  const { setUser, setIsAuth, setIsLoading, isLoading } = useContext(Context);
   // error
   const [error, setError] = useState(false);
   // Login Values
@@ -34,6 +35,7 @@ export default function LoginForm() {
 
   // Login whit axios
   const login = async () => {
+    setIsLoading(true);
     try {
       const response = await API.post(signIn, ApiKey, {
         headers: {
@@ -53,6 +55,7 @@ export default function LoginForm() {
       console.error(err);
       // show error
       setError(true);
+      setIsLoading(false);
     }
   };
 
@@ -62,6 +65,10 @@ export default function LoginForm() {
     // call Login function
     login();
   };
+
+  if (isLoading === true) {
+    return <Loading />;
+  }
 
   return (
     <FormContainer onSubmit={handleSubmitLogin}>

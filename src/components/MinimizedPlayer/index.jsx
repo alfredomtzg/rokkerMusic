@@ -61,7 +61,7 @@ const MinimizedPlayer = () => {
           type="button"
         >
           <StyledSongDescription>
-            <h6>{songData.songTitle}</h6>
+            <h6> {songData.songTitle}</h6>
             <p>{songData.artistName}</p>
           </StyledSongDescription>
         </button>

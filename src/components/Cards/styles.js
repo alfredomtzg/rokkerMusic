@@ -11,6 +11,9 @@ export const StyledMidCard = styled.div`
   border-radius: 1rem;
   background-color: ${Colors.G200};
   box-shadow: ${Colors.shadow};
+  :hover {
+    transform: scale(1.05);
+  }
 
   img {
     width: 13.8rem;

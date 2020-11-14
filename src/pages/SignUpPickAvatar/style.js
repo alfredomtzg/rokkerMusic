@@ -9,16 +9,31 @@ export const AvatarsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5vw;
+  max-width: 60rem;
+  margin: 0 auto;
 
   img {
     width: 10rem;
   }
 `;
 
-export const StyledForm = styled(AvatarsGrid)`
-  input {
-    display: none;
+export const StyledForm = styled(AvatarsGrid)``;
+
+export const StyledInput = styled.input`
+  position: relative;
+  left: 4rem;
+  top: 0.5rem;
+  &:checked + label {
+    border-color: ${Colors.R500};
   }
+`;
+
+export const StyledLabel = styled.label`
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  border: 0.2rem solid ${Colors.G100};
+  border-radius: 100%;
 `;
 
 /* Const of buttons */
@@ -39,4 +54,10 @@ export const StyledSendButton = styled.button`
   &:active {
     background: ${Colors.R500};
   }
+`;
+
+export const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;

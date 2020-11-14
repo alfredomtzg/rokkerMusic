@@ -2,6 +2,7 @@
 // import react
 import React, { useState } from "react";
 // Data
+import Logo from "../assets/images/logo-rokker.png";
 // import Axios
 import { API, PlayList } from "../route/axios";
 // create functional component for context provider and export it
@@ -13,10 +14,11 @@ export const ContextProvider = ({ children }) => {
   const [error, setError] = useState(false);
 
   const [songData, setSongData] = useState({
-    songTitle: `Volví a Nacer`,
-    songURL: `https://p.scdn.co/mp3-preview/563fd2df2c05a0e68a053808877f5409c12507f1?cid=82f8b011b4fb41a3a841ede2dd73edf0`,
-    artistName: "Salsa",
-    playlistName: "Favorites",
+    songTitle: `Seleciona una canción`,
+    songURL: `${queue[track]?.trackId.url}`,
+    artistName: "",
+    playlistName: ``,
+    album_Image: Logo,
     playlistFrom: "Top 20",
   });
   const [playerStatus, setPlayerStatus] = useState("pause");
@@ -46,6 +48,9 @@ export const ContextProvider = ({ children }) => {
 
   const [isAuth, setIsAuth] = useState(false);
 
+  //Loading
+  const [isLoading, setIsLoading] = useState(false);
+
   // return Value
   return (
     <Context.Provider
@@ -73,6 +78,8 @@ export const ContextProvider = ({ children }) => {
         playListUser,
         setPlayListUser,
         bringPlayList,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

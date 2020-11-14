@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-import React, { useContext } from "react";
+import React from "react";
 // eslint-disable-next-line import/no-cycle
 
 import {
@@ -18,35 +18,24 @@ import {
 
 import "../../assets/fonts/coolicons.css";
 import Song from "../../assets/images/SongCoverFullPlayer.svg";
-import { Context } from "../../utils/Context";
 
-export const PlaylistHeartDotsSong = (props) => {
-  const {
-    songData,
-    setSongData,
-    setPlayerStatus,
-    setAutoplay,
-    setTrack,
-  } = useContext(Context);
-
-  const startPlay = () => {
-    setAutoplay(true);
-    setPlayerStatus("play");
-    setSongData({
-      ...songData,
-      songTitle: `${props.title}`,
-      songURL: `${props.URL}`,
-    });
-    setTrack(props.index);
-  };
-
+export const PlaylistHeartDotsSong = ({
+  title,
+  index,
+  url,
+  artist_Name,
+  startPlay,
+  album_Image,
+}) => {
   return (
     <StyledPlaylistItem>
       <StyledIconsLeft>
-        <img src={Song} alt="Song Cover" />
-        <StyledSongDescription onClick={startPlay}>
-          <h6>{props.title}</h6>
-          <p>{props.genre}</p>
+        <img src={album_Image} alt="Song Cover" />
+        <StyledSongDescription
+          onClick={() => startPlay(title, url, index, artist_Name, album_Image)}
+        >
+          <h6>{title}</h6>
+          <p>{artist_Name}</p>
         </StyledSongDescription>
       </StyledIconsLeft>
       <StyledIconsRight>

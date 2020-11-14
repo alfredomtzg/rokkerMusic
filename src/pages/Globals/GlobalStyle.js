@@ -26,6 +26,8 @@ export const TopTextBox = styled.div`
 export const FormBox = styled.main`
   display: flex;
   justify-content: center;
+  max-width: 60rem;
+  margin: 0 auto;
 `;
 
 export const NextButtonBox = styled.div`

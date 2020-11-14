@@ -1,12 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useEffect, useContext } from "react";
+// style
+import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
+import { FavoritesBox, RecommendPlaylistsBox } from "./style";
 import {
   MainContainer,
   PageContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
-import { FavoritesBox, RecommendPlaylistsBox } from "./style";
+// Components
 import Header from "../../components/Header";
 import {
   GenreCard,
@@ -15,21 +17,21 @@ import {
   GreetingsCard,
 } from "../../components/Cards";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
 
+// Global state
 import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
 
 const Home = () => {
   const {
-    queue,
     bringPlayList,
     albumList,
     setAlbumList,
     setAlbumContent,
     user,
-    playListUser,
     setQueue,
+    queue,
+    playListUser,
   } = useContext(Context);
 
   const bringAlbums = async () => {
@@ -50,35 +52,34 @@ const Home = () => {
       bringPlayList();
     }
   };
+
+  // bring top20
   const bringTracks = async () => {
     try {
-      const response = await API.get(`/track`, {
+      const response = await API.get(`playlist/general/top20`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
-      console.log(response.data.body.tracks);
-      setQueue(response.data.body.tracks);
+      console.log(`------------------------ `);
+      console.log(response.data.body[0].tracks);
+      setQueue(
+        [...response.data.body[0].tracks].filter(
+          (item) => item.trackId.url !== null
+        )
+      );
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    bringTracks();
-    bringAlbums();
+    if (queue.length === 0) {
+      bringTracks();
+    }
   }, []);
 
-  const list = queue.map((item, index) => {
-    return (
-      <PlaylistHeartDotsSong
-        key={item._id}
-        title={item.title}
-        index={index}
-        URL={item.url}
-        genre={item.genres[0]}
-        artist="Daft Punk"
-      />
-    );
-  });
+  useEffect(() => {
+    bringAlbums();
+  }, []);
 
   return (
     <PageContainer>
@@ -114,7 +115,8 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>{list}</PlaylistContainer>
+          {/* Playlist Top */}
+          <PlaylistContainer />
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>

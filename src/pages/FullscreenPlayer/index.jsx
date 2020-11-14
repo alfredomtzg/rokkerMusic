@@ -8,6 +8,10 @@ import { Context } from "../../utils/Context";
 
 const FullscreenPlayerPage = (props) => {
   const audioRef = useRef();
+  // const audioTrack = audioRef.audioTracks;
+
+  // console.log(`Soy el audio ref : ${{ audioTrack }}`);
+
   const {
     songData,
     queue,
@@ -74,8 +78,11 @@ const FullscreenPlayerPage = (props) => {
     if (track < queue.length - 1) {
       setSongData({
         ...songData,
-        songTitle: `${queue[track + 1].title}`,
-        songURL: `${queue[track + 1].url}`,
+        songTitle: `${queue[track + 1].trackId.title}`,
+        songURL: `${queue[track + 1].trackId.url}`,
+        artistName: `${queue[track + 1].trackId.artist_Name}`,
+        playlistName: `${queue[track + 1].trackId.album_Name}`,
+        album_Image: `${queue[track + 1].trackId.album_Image}`,
       });
       setAutoplay(true);
       setTrack(track + 1);
@@ -83,8 +90,11 @@ const FullscreenPlayerPage = (props) => {
     } else {
       setSongData({
         ...songData,
-        songTitle: `${queue[0]?.title}`,
-        songURL: `${queue[0]?.url}`,
+        songTitle: `${queue[0]?.trackId.title}`,
+        songURL: `${queue[0]?.trackId.url}`,
+        artistName: `${queue[0].trackId.artist_Name}`,
+        playlistName: `${queue[0].trackId.album_Name}`,
+        album_Image: `${queue[0].trackId.album_Image}`,
       });
       setTrack(0);
     }
@@ -113,8 +123,11 @@ const FullscreenPlayerPage = (props) => {
     if (track > 0) {
       setSongData({
         ...songData,
-        songTitle: `${queue[track - 1].title}`,
-        songURL: `${queue[track - 1].url}`,
+        songTitle: `${queue[track - 1].trackId.title}`,
+        songURL: `${queue[track - 1].trackId.url}`,
+        artistName: `${queue[track - 1].trackId.artist_Name}`,
+        playlistName: `${queue[track - 1].trackId.album_Name}`,
+        album_Image: `${queue[track - 1].trackId.album_Image}`,
       });
       console.log(songData);
       setAutoplay(true);
@@ -122,6 +135,14 @@ const FullscreenPlayerPage = (props) => {
       setPlayerStatus("play");
     }
   };
+
+  useEffect(() => {
+    // end song?
+    console.log(`Se termino la canción? :${audioRef.current.ended}`);
+    if (audioRef.current.ended) {
+      nextSong();
+    }
+  }, [audioRef.current?.ended]);
 
   return ReactDOM.createPortal(
     <PlayerContainer playerDisplay={props.playerDisplay}>
