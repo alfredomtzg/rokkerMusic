@@ -1,4 +1,5 @@
 # Rokker
+<img src="https://user-images.githubusercontent.com/48015442/98870860-e8138680-2441-11eb-9a1f-f51a054412be.png" alt="logo" width="300px" height="200">
 
 Rokker is a music web application designed as mobile first.
 
