@@ -17,7 +17,7 @@ export default function UserCard() {
   return (
     <UserCardContainer>
       <ImgContainer>
-        <img src={Avatar} alt="avatar" />
+        <img src={user.avatarPath} alt="avatar" />
       </ImgContainer>
       <FormContainer>
         <TextLabel htmlFor="name">
