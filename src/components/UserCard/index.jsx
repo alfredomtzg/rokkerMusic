@@ -1,23 +1,19 @@
 import React, { useState, useContext } from "react";
 import { UserCardContainer, ImgContainer } from "./style";
 import { TextLabel, TextInput, FormContainer } from "../Forms/light-styles";
-import Avatar from "../../assets/images/avatars/Alexander.svg";
-import { Context } from "../../utils/Context";
 
 export default function UserCard() {
-  const { user } = useContext(Context);
-
   // Values Profile
   // eslint-disable-next-line no-unused-vars
   const [valuesProfile, setValuesProfile] = useState({
-    name: `${user.name}`,
-    email: `${user.email}`,
+    name: localStorage.getItem("name"),
+    email: localStorage.getItem("email"),
   });
 
   return (
     <UserCardContainer>
       <ImgContainer>
-        <img src={Avatar} alt="avatar" />
+        <img src={localStorage.getItem("avatarPath")} alt="avatar" />
       </ImgContainer>
       <FormContainer>
         <TextLabel htmlFor="name">

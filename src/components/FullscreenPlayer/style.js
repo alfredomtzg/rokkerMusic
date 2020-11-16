@@ -38,6 +38,7 @@ export const SongCover = styled.div`
 
   img {
     width: 50vw;
+    max-width: 30rem;
   }
 `;
 

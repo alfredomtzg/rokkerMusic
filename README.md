@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rokker
+<img src="https://user-images.githubusercontent.com/48015442/98870860-e8138680-2441-11eb-9a1f-f51a054412be.png" alt="logo" width="300px" height="200">
 
-## Available Scripts
+Rokker is a music web application designed as mobile first.
 
-In the project directory, you can run:
+## Application requirements
 
-### `npm start`
+### Design
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Build a basic design system.
+2. Make a complete app flow.
+3. Design wireframes, mockups and prototype before start constructing with code.
+4. Design the error controls through the application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Functionality
 
-### `npm test`
+1. Sign up via email.
+2. Allow login with email, gmail or facebook.
+3. All the users will be in a 'freemium' plan.
+4. User profiles must have an avatar, name and email.
+5. Every user must be created with a favorites playlist. One that the user cannot delete.
+6. All users can edit and delete the playlists created by him.
+7. Every user can follow/unfollow recommended playlists, but cannot edit or delete them.
+8. When opening a playlist, songs are serted by default regarding its adding date to the list, starting with the latest song added (desc). 
+9. Within the playlist, the user should be able to reorder them in display sorting by addind date.
+10. The user will be able to play a whole playlist from the start or pick a song and play the rest of the playlist from there.
+11. Enable a search section which helps the user remembering the last 5 searches he have made before and suggesting the 5 trending searches at the moment.
+12. The search section must return coincidencies with songs, artists and playlists.
+13. Mini and fullscreen player that keeps playing and enables access to the user regardless of the page he is in.
+14. Show a recommended playlists section in home page.
+15. Create an artist profile section to see and play its songs.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technical
 
-### `npm run build`
+1. Login and logout with cookie storage.
+2. Architecture based on components and state management (including its styles)
+3. HTML semantic.
+4. Google Lighthouse rating above 80.
+5. Render client-side.
+6. Song consumption only from backend.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Endpoints
 
-### `npm run eject`
+### Auth:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **/api/auth/sign-up**: enables the valid register method to the user which does not use authentication through social platforms.
+2. **/api/auth/sign-provider**: enables a valid register method for the user which sign up using social media (Google or Facebook).
+3. **/api/auth/Sign-in**: enables the login method for all the users.
+4. **/api/auth/recovery**: enables a recovery password method via email.
+5. **/api/auth/confirmation/:token**: enables a method to activate an account.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Artist, Album, Song and Genre
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. **GET /api/component:** returns all the component registers. In case it involves private data, it must be filtered according to the user which makes the call.
+2. **GET /api/component/:key**: returns the component by key or id received.
+3. **POST /api/component:** creates the component using the information received within the body.
+4. **PUT /api/component/:key** updates the component, choosing which one according to the key element received within the body.
+5. **DELETE /api/component/:key** deletes a register in the list accoording the component type.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The last part is an abstraction of a CRUD model, using a generic component called "Component". This abstraction mus be applied to the header's model.
 
-## Learn More
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Please make sure to update tests as appropriate.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## For further information check our Notion
+[Notion](https://www.notion.so/Rokker-cc1801d5d871494caca6dc79bfe4594d)
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

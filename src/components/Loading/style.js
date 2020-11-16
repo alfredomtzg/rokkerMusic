@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Colors } from "../styles/globals";
 
 export const spinnerSpin = keyframes`
  100% {
@@ -16,6 +17,14 @@ export const spinnerFade = keyframes`
     opacity: .1;
   }
 `;
+export const ContainerSpinner = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${Colors.G700};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const Spinner = styled.div`
   position: relative;
@@ -26,7 +35,7 @@ export const Spinner = styled.div`
   height: 20rem;
   border-radius: 10rem;
   border: 0.4rem solid rgba(255, 255, 255, 0.1);
-  -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.5), #000000 90%);
+  --webkit-mask: linear-gradient(rgba(0, 0, 0, 0.5), #000000 90%);
   transform-origin: 50% 70%;
   transform: perspective(20rem) rotateX(66deg);
   animation: spinner-wiggle 1.2s infinite;
@@ -54,5 +63,11 @@ export const Spinner = styled.div`
   &:after {
     border-top-color: #f0db75;
     animation-delay: 0.3s;
+  }
+  h2 {
+    color: ${Colors.white};
+    position: absolute;
+    top: 10rem;
+    left: 4rem;
   }
 `;

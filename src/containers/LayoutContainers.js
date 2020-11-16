@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
 `;
 
 export const MainContainer = styled.div`
-  padding: 0 5vw 5vh;
+  padding: 0 4vw 3vh;
 `;
 
 export const PlayerContainer = styled.div`
@@ -19,6 +19,7 @@ export const PlayerContainer = styled.div`
   left: 0;
   height: 100%;
   background-color: ${Colors.G100};
+  z-index: 5;
 `;
 
 export const StyledMiniPlayerAndNavContainer = styled.footer`

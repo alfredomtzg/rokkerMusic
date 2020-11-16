@@ -86,7 +86,7 @@ const FullscreenPlayer = (props) => {
         </button>
       </TopOptions>
       <SongCover>
-        <img src={SongCoverImg} alt="Cover for the song" />
+        <img src={songData.album_Image} alt="Cover for the song" />
       </SongCover>
       <SongTitleAndArtist>
         <h4> {songData.songTitle}</h4>

@@ -29,13 +29,12 @@ import AdminStats from "../pages/AdminStats";
 import NotRegisteredUser from "../pages/NotRegisteredUser";
 import { Context } from "../utils/Context";
 
-const UserLogged = ({ children }) => {
-  // const { isAuth } = useContext(Context);
-  return children({ isAuth: true });
-};
-
 const Routes = () => {
-  const { isAuth } = useContext(Context);
+  const { isAuth, setIsAuth, setUser } = useContext(Context);
+
+  if (!isAuth && localStorage.getItem("token")) {
+    setIsAuth(true);
+  }
 
   return (
     <Router>
@@ -60,6 +59,7 @@ const Routes = () => {
           />
           <Route exact path="/queue" component={FullscreenQueue} />
           <Route exact path="/admin" component={AdminStats} />
+          <Route exact path="/signout" component={SettingSignOut} />
           <Route component={Page404} />
         </Switch>
       ) : (

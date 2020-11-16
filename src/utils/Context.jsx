@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 // import react
+import Axios from "axios";
 import React, { useState } from "react";
 // Data
+import Logo from "../assets/images/logo-rokker.png";
 // import Axios
 import { API, PlayList } from "../route/axios";
 // create functional component for context provider and export it
@@ -9,14 +11,16 @@ export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
   const [queue, setQueue] = useState([]);
+  const [queuePlaylist, setQueuePlaylist] = useState([]);
   const [track, setTrack] = useState(0);
   const [error, setError] = useState(false);
 
   const [songData, setSongData] = useState({
-    songTitle: `Volví a Nacer`,
-    songURL: `https://p.scdn.co/mp3-preview/563fd2df2c05a0e68a053808877f5409c12507f1?cid=82f8b011b4fb41a3a841ede2dd73edf0`,
-    artistName: "Salsa",
-    playlistName: "Favorites",
+    songTitle: `Seleciona una canción`,
+    songURL: `${queue[track]?.trackId.url}`,
+    artistName: "",
+    playlistName: ``,
+    album_Image: Logo,
     playlistFrom: "Top 20",
   });
   const [playerStatus, setPlayerStatus] = useState("pause");
@@ -32,9 +36,7 @@ export const ContextProvider = ({ children }) => {
   const [playListUser, setPlayListUser] = useState([]);
   // bring the song list whit axios
   const bringPlayList = async () => {
-    await API.get(PlayList, {
-      headers: { Authorization: `Bearer ${user.token}` },
-    })
+    await Axios.get(PlayList)
       .then((res) => {
         setPlayListUser(res.data.body);
         console.log(res.data.body);
@@ -45,6 +47,9 @@ export const ContextProvider = ({ children }) => {
   };
 
   const [isAuth, setIsAuth] = useState(false);
+
+  //Loading
+  const [isLoading, setIsLoading] = useState(false);
 
   // return Value
   return (
@@ -73,6 +78,10 @@ export const ContextProvider = ({ children }) => {
         playListUser,
         setPlayListUser,
         bringPlayList,
+        isLoading,
+        setIsLoading,
+        queuePlaylist,
+        setQueuePlaylist,
       }}
     >
       {children}

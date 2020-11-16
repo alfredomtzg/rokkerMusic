@@ -7,7 +7,7 @@ export const API = axios.create({
 });
 // TOKEN
 export const ApiKey = {
-  "apiKeyToken": "ae264722356a385b5b0f9e0cb91e26dc5ccfb3ca90af8f853bb76d89ed758edc"
+  "apiKeyToken": "ece0d40ce8d1ec5fa311e7f799b01ff9a212bc4595040b3f341ec765776ce3c5"
 }
 
 // create end points
@@ -16,7 +16,7 @@ export const getAlbum = "album";
 // Get Album
 export const getAlbumId = "album/:albumid";
 // Create a new play list
-export const PlayList = 'playlist'
+export const PlayList = 'https://rokker-music-app-test.herokuapp.com/api/playlist'
 // autenticaón
 export const auth = '/auth/activate/'
 // get signUp
@@ -25,3 +25,5 @@ export const signUp = "auth/sign-up";
 export const signIn = '/auth/sign-in';
 // get List Top 20
 
+// get tracks
+export const tracks = 'track'

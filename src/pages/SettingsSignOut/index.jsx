@@ -5,18 +5,13 @@ import {
   FullPageCenterMsgBox,
   LoginOrSendButtonBox,
 } from "../Globals/GlobalStyle";
-import { LoginButton } from "../../components/Buttons";
+import { HomeButton } from "../../components/Buttons";
 
 const SettingsSignOut = () => {
   return (
     <PageContainer dark>
       <FullPageCenterMsgBox>
         <h1>Rokk you soon!</h1>
-        <LoginOrSendButtonBox>
-          <Link to="/">
-            <LoginButton />
-          </Link>
-        </LoginOrSendButtonBox>
       </FullPageCenterMsgBox>
     </PageContainer>
   );

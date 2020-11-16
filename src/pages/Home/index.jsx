@@ -1,12 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-console */
 import React, { useEffect, useContext } from "react";
+// style
+import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
+import { FavoritesBox, RecommendPlaylistsBox } from "./style";
 import {
   MainContainer,
   PageContainer,
 } from "../../containers/LayoutContainers";
-import { TopBar, PlaylistContentBox } from "../Globals/GlobalStyle";
-import { FavoritesBox, RecommendPlaylistsBox } from "./style";
+// Components
 import Header from "../../components/Header";
 import {
   GenreCard,
@@ -15,28 +17,29 @@ import {
   GreetingsCard,
 } from "../../components/Cards";
 import PlaylistContainer from "../../components/PlaylistContainer";
-import { PlaylistHeartDotsSong } from "../../components/PlaylistItem";
 
+// Global state
 import { API, getAlbum } from "../../route/axios";
 import { Context } from "../../utils/Context";
+import Axios from "axios";
 
 const Home = () => {
   const {
-    queue,
     bringPlayList,
     albumList,
     setAlbumList,
     setAlbumContent,
     user,
-    playListUser,
     setQueue,
+    queue,
+    playListUser,
+    queuePlaylist,
+    setQueuePlaylist,
   } = useContext(Context);
 
   const bringAlbums = async () => {
     if (albumList.length <= 0) {
-      await API.get(getAlbum, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      })
+      await Axios.get("https://rokker-music-app-test.herokuapp.com/api/album")
         .then((res) => {
           console.log(res);
           console.log(res.data.body.albums);
@@ -50,13 +53,20 @@ const Home = () => {
       bringPlayList();
     }
   };
+
+  // bring top20
   const bringTracks = async () => {
     try {
-      const response = await API.get(`/track`, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      console.log(response.data.body.tracks);
-      setQueue(response.data.body.tracks);
+      const response = await Axios.get(
+        `https://rokker-music-app-test.herokuapp.com/api/playlist/general/top20`
+      );
+      console.log(`------------------------ `);
+      console.log(response.data.body[0].tracks);
+      setQueuePlaylist(
+        [...response.data.body[0].tracks].filter(
+          (item) => item.trackId.url !== null
+        )
+      );
     } catch (error) {
       console.log(error);
     }
@@ -64,21 +74,11 @@ const Home = () => {
 
   useEffect(() => {
     bringTracks();
-    bringAlbums();
   }, []);
 
-  const list = queue.map((item, index) => {
-    return (
-      <PlaylistHeartDotsSong
-        key={item._id}
-        title={item.title}
-        index={index}
-        URL={item.url}
-        genre={item.genres[0]}
-        artist="Daft Punk"
-      />
-    );
-  });
+  useEffect(() => {
+    bringAlbums();
+  }, []);
 
   return (
     <PageContainer>
@@ -86,7 +86,10 @@ const Home = () => {
         <Header />
       </TopBar>
       <MainContainer>
-        <GreetingsCard user={user.name} urlImage={user.avatarPath} />
+        <GreetingsCard
+          user={localStorage.getItem("name")}
+          urlImage={localStorage.getItem("avatarPath")}
+        />
         <FavoritesBox>
           <WideCard />
         </FavoritesBox>
@@ -114,7 +117,8 @@ const Home = () => {
           })}
         </RecommendPlaylistsBox>
         <PlaylistContentBox>
-          <PlaylistContainer>{list}</PlaylistContainer>
+          {/* Playlist Top */}
+          <PlaylistContainer />
         </PlaylistContentBox>
       </MainContainer>
     </PageContainer>
